@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Teardown - Landing Page Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+        }
+
+        /* Mad Mex Color Variables - Actual Brand Colors */
+        :root {
+            --mad-green: #00A651;
+            --mad-red: #C8102E;
+            --mad-pink: #E91E63;
+            --mad-cream: #F5EFE6;
+            --mad-tan: #D4C5B0;
+            --dark-grey: #1A1A1A;
+            --medium-grey: #666666;
+            --accent-yellow: #F8B500;
+        }
+
+        /* Top Accent Bar */
+        .top-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--mad-green);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            color: var(--mad-pink);
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        .hero-subheading {
+            color: white;
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--mad-green);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid var(--mad-pink);
+        }
+
+        .trust-badges {
+            margin-top: 40px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge.yellow { background: var(--accent-yellow); color: var(--dark-grey); }
+        .badge.pink { background: var(--mad-pink); color: white; }
+        .badge.red { background: var(--mad-red); color: white; }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+            border-top: 3px solid var(--mad-pink);
+        }
+
+        .section-eyebrow {
+            text-align: center;
+            color: var(--mad-pink);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 18px;
+            color: var(--medium-grey);
+            margin-bottom: 60px;
+        }
+
+        .rounds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .round {
+            text-align: center;
+        }
+
+        .round-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+            border: 5px solid;
+        }
+
+        .round-icon.yellow { 
+            background: var(--accent-yellow); 
+            border-color: var(--accent-yellow);
+        }
+        .round-icon.pink { 
+            background: var(--mad-pink); 
+            border-color: var(--mad-pink);
+        }
+        .round-icon.green { 
+            background: var(--mad-green); 
+            border-color: var(--mad-green);
+        }
+
+        .round h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--dark-grey);
+        }
+
+        .round p {
+            color: var(--medium-grey);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* What You Get Section */
+        .what-you-get {
+            padding: 80px 20px;
+            background: white;
+            border-top: 3px solid var(--mad-red);
+        }
+
+        .features-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.5;
+        }
+
+        .stats-box {
+            background: var(--accent-yellow);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto 0;
+            border: 3px solid var(--dark-grey);
+        }
+
+        .stats-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+        }
+
+        .pricing-header {
+            background: var(--mad-green);
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .pricing-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            border: 4px solid;
+        }
+
+        .pricing-card.pink { border-color: var(--mad-pink); }
+        .pricing-card.green { 
+            border-color: var(--mad-green); 
+            background: rgba(0, 166, 81, 0.05);
+        }
+        .pricing-card.red { border-color: var(--mad-red); }
+
+        .card-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .card-badge.yellow { background: var(--accent-yellow); color: var(--dark-grey); }
+        .card-badge.red { background: var(--mad-red); }
+        .card-badge.green { background: var(--mad-green); }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .card-price {
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--dark-grey);
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .card-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--dark-grey);
+        }
+
+        .card-features li::before {
+            content: '✓';
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .pricing-card.pink .card-features li::before { color: var(--mad-pink); }
+        .pricing-card.green .card-features li::before { color: var(--mad-green); }
+        .pricing-card.red .card-features li::before { color: var(--mad-red); }
+
+        .card-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .pricing-card.pink .card-button { background: var(--mad-pink); color: white; }
+        .pricing-card.green .card-button { background: var(--mad-green); color: white; }
+        .pricing-card.red .card-button { background: var(--mad-red); color: white; }
+
+        /* Form Section */
+        .form-section {
+            padding: 80px 20px;
+            background: white;
+            border-top: 5px solid;
+            border-image: linear-gradient(to right, var(--mad-pink), var(--accent-yellow)) 1;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--mad-cream);
+            padding: 50px 40px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-grey);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--mad-green);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--mad-red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: var(--accent-yellow);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--mad-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--medium-grey);
+            font-size: 14px;
+        }
+
+        .footer-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--mad-green));
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subheading {
+                font-size: 18px;
+            }
+
+            .section-heading {
+                font-size: 32px;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Accent Bar -->
+    <div class="top-bar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">¡ATENCION! ECOMMERCE CHAMPIONS AND CHALLENGERS!</div>
+            <h1>ENTER THE RING FOR YOUR<br>FREE WEBSITE TEARDOWN!</h1>
+            <p class="hero-subheading">
+                Step into the arena where Australia's 3-time Retailer of the Year champion takes on your homepage. 
+                Get the BRUTAL TRUTH about what's costing you conversions – delivered with the intensity of a 
+                lucha libre showdown and the expertise of 16 years scaling Beer Cartel to $6M.
+            </p>
+            <div class="hero-buttons">
+                <a href="#form" class="btn btn-primary">🔥 THROW YOUR SITE IN THE RING</a>
+                <a href="#sample" class="btn btn-secondary">👁️ WATCH A SAMPLE SMACKDOWN</a>
+            </div>
+            <div class="trust-badges">
+                <div class="badge yellow">🏆 5x Retailer of the Year</div>
+                <div class="badge pink">💪 Top 50 Australian Ecommerce</div>
+                <div class="badge red">⚡ 100% Unfiltered Feedback</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="section-eyebrow">THE FIGHT CARD</div>
+        <h2 class="section-heading">How the Match Goes Down</h2>
+        <p class="section-intro">Three rounds. One winner. Your website.</p>
+        
+        <div class="rounds">
+            <div class="round">
+                <div class="round-icon yellow">🎯</div>
+                <h3>ROUND 1: SUBMIT YOUR CONTENDER</h3>
+                <p>Drop your homepage URL and tell me what's got you in a headlock. Every challenger enters the ring – I select the most worthy opponents for public battle.</p>
+            </div>
+            
+            <div class="round">
+                <div class="round-icon pink">🎬</div>
+                <h3>ROUND 2: I BRING THE SMACKDOWN</h3>
+                <p>I record a no-holds-barred video walkthrough plus written analysis. Every weak spot exposed. Every missed opportunity called out. Every quick win identified.</p>
+            </div>
+            
+            <div class="round">
+                <div class="round-icon green">📢</div>
+                <h3>ROUND 3: YOUR TEARDOWN GOES LIVE</h3>
+                <p>Your public teardown posts to LinkedIn and this site within 7 days. Wear it like a badge of honour – or use it to dominate your competition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="what-you-get">
+        <div class="section-eyebrow">YOUR CHAMPIONSHIP PACKAGE</div>
+        <h2 class="section-heading">What You Get in the Ring</h2>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-green)">✅</span>
+                <span class="feature-text">15-minute video replay of your homepage battle</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-pink)">✅</span>
+                <span class="feature-text">Written round-by-round analysis with screenshots</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--accent-yellow)">✅</span>
+                <span class="feature-text">3-5 quick wins you can execute TODAY to score points</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-red)">✅</span>
+                <span class="feature-text">Strategic power moves for bigger transformation</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-green)">✅</span>
+                <span class="feature-text">Mobile experience knockout review</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-pink)">✅</span>
+                <span class="feature-text">Trust & credibility assessment – are you championship material?</span>
+            </div>
+        </div>
+
+        <div class="stats-box">
+            <h3>💰 THE PRIZE</h3>
+            <p>Average client discovers 5-7 conversion killers costing them thousands in monthly revenue.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-header">
+            <h2>WANT MORE THAN A PUBLIC EXHIBITION? UPGRADE TO PRIVATE COACHING</h2>
+        </div>
+
+        <div class="pricing-cards">
+            <!-- Card 1 -->
+            <div class="pricing-card pink">
+                <div class="card-badge yellow">LIGHTWEIGHT</div>
+                <div class="card-title">Private Single-Round Review</div>
+                <div class="card-price">$197 AUD</div>
+                <ul class="card-features">
+                    <li>Private teardown (not published)</li>
+                    <li>1 page of your choice (homepage OR product page)</li>
+                    <li>15-minute video walkthrough</li>
+                    <li>Written knockout report</li>
+                    <li>Delivered within 5 business days</li>
+                </ul>
+                <button class="card-button">GET IN THE RING →</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="pricing-card green">
+                <div class="card-badge red">⭐ MOST POPULAR ⭐</div>
+                <div class="card-title">Private 3-Round Battle</div>
+                <div class="card-price">$799 AUD</div>
+                <ul class="card-features">
+                    <li>Private teardown (not published)</li>
+                    <li>3 pages (homepage + product + category)</li>
+                    <li>Video walkthrough + written analysis</li>
+                    <li>Prioritized action plan by impact</li>
+                    <li>30-day corner support (email)</li>
+                    <li>Delivered within 5 business days</li>
+                </ul>
+                <button class="card-button">CLAIM YOUR TITLE →</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pricing-card red">
+                <div class="card-badge green">HEAVYWEIGHT</div>
+                <div class="card-title">Complete Championship Audit</div>
+                <div class="card-price">$1,997 AUD</div>
+                <ul class="card-features">
+                    <li>Everything in 3-Round Battle PLUS:</li>
+                    <li>10 pages total coverage</li>
+                    <li>Technical SEO referee report</li>
+                    <li>Site speed performance analysis</li>
+                    <li>90-minute live strategy session</li>
+                    <li>30-day corner support (email)</li>
+                    <li>Priority turnaround (3 business days)</li>
+                </ul>
+                <button class="card-button">GO FOR GOLD →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="section-eyebrow">READY TO RUMBLE?</div>
+        <h2 class="section-heading">Throw Your Site in the Ring</h2>
+        <p class="section-intro">
+            I select and review the most interesting challengers weekly. The more you tell me, 
+            the better your chances of getting chosen – and the more devastating my feedback.
+        </p>
+
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="url">Website URL *</label>
+                    <input type="url" id="url" placeholder="https://yourwebsite.com.au" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" placeholder="Your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Your Role *</label>
+                    <select id="role" required>
+                        <option value="">→ Select your position</option>
+                        <option value="founder">Founder/Owner</option>
+                        <option value="marketing">Marketing Manager</option>
+                        <option value="ecommerce">Ecommerce Manager</option>
+                        <option value="agency">Agency/Consultant</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="revenue">Current Monthly Revenue *</label>
+                    <select id="revenue" required>
+                        <option value="">→ What's your ring size?</option>
+                        <option value="starting">Just stepping in the ring</option>
+                        <option value="under10k">Under $10k/month</option>
+                        <option value="10-50k">$10k-$50k/month</option>
+                        <option value="50-100k">$50k-$100k/month</option>
+                        <option value="100-500k">$100k-$500k/month</option>
+                        <option value="500k-1m">$500k-$1M/month</option>
+                        <option value="over1m">Over $1M/month</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="challenge">What's got you in a headlock? *</label>
+                    <textarea id="challenge" rows="4" placeholder='Example: "Traffic is strong but conversion is weak" or "Mobile visitors bounce faster than a luchador off the ropes"' required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select id="country" required>
+                        <option value="">→ Where's your arena?</option>
+                        <option value="australia">Australia</option>
+                        <option value="usa">United States</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">I understand this will be a PUBLIC teardown posted on LinkedIn and ecommerceteardown.com. I'm ready for the truth. *</label>
+                </div>
+
+                <button type="submit" class="submit-btn">🔥 BRING THE SMACKDOWN</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bar"></div>
+        <div class="footer-content">
+            <div>
+                <h3>🎭 The Ring</h3>
+                <ul>
+                    <li><a href="#">Free Public Teardown</a></li>
+                    <li><a href="#">Private Reviews</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Sample Teardowns</a></li>
+                    <li><a href="#">About the Champion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="mailto:richardkelsey@gmail.com">richardkelsey@gmail.com</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recent Battles</h3>
+                <ul>
+                    <li><a href="#">Brand Teardown →</a></li>
+                    <li><a href="#">Brand Teardown →</a></li>
+                    <li><a href="#">View All Takedowns →</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Richard Kelsey | ecommerceteardown.com</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Not affiliated with actual lucha libre wrestling. But the takedowns are just as real.</p>
+        </div>
+    </footer>
+</body>
+</html>
