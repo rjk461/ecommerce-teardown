@@ -797,7 +797,7 @@
             background: white;
             border-radius: 12px;
             padding: 40px;
-            max-width: 500px;
+            max-width: 650px;
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
@@ -871,7 +871,8 @@
             color: var(--dark-grey);
         }
 
-        .modal-form .form-group input {
+        .modal-form .form-group input,
+        .modal-form .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 2px solid #ddd;
@@ -881,7 +882,13 @@
             font-family: inherit;
         }
 
-        .modal-form .form-group input:focus {
+        .modal-form .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .modal-form .form-group input:focus,
+        .modal-form .form-group textarea:focus {
             outline: none;
             border-color: var(--mad-green);
         }
@@ -1474,7 +1481,9 @@
                 
                 const name = document.getElementById('modalName').value.trim();
                 const email = document.getElementById('modalEmail').value.trim();
+                const website = document.getElementById('modalWebsite').value.trim();
                 const phone = document.getElementById('modalPhone').value.trim();
+                const comments = document.getElementById('modalComments').value.trim();
                 const tier = modalTier.value;
                 
                 // Validation
@@ -1493,8 +1502,14 @@
                     formData.append('tier', tier);
                     formData.append('name', name);
                     formData.append('email', email);
+                    if (website) {
+                        formData.append('website', website);
+                    }
                     if (phone) {
                         formData.append('phone', phone);
+                    }
+                    if (comments) {
+                        formData.append('comments', comments);
                     }
                     formData.append('source', 'pricing-section');
                     formData.append('_to', 'richardkelsey@gmail.com');
@@ -1535,8 +1550,8 @@
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 class="modal-title">Enter the Ring</h2>
-            <p class="modal-subtitle">Tell us a bit about yourself and we'll redirect you to book your call</p>
-            <form id="pricingForm" class="modal-form">
+            <p class="modal-subtitle">Tell us a bit about your site and we'll get this started</p>
+            <form id="pricingForm" class="modal-form" action="https://formspree.io/f/meoykkey" method="POST">
                 <input type="hidden" name="tier" id="modalTier">
                 <input type="hidden" name="source" value="pricing-section">
                 <input type="hidden" name="_to" value="richardkelsey@gmail.com">
@@ -1553,8 +1568,18 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="modalWebsite">Website (Optional)</label>
+                    <input type="text" id="modalWebsite" name="website" placeholder="yoursite.com (no http:// needed)">
+                </div>
+                
+                <div class="form-group">
                     <label for="modalPhone">Phone Number (Optional)</label>
                     <input type="tel" id="modalPhone" name="phone" placeholder="Your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalComments">How can we help you? (Optional)</label>
+                    <textarea id="modalComments" name="comments" rows="4" placeholder="Tell us about your site and what you'd like to improve..."></textarea>
                 </div>
                 
                 <div class="modal-tier-display" id="modalTierDisplay"></div>
