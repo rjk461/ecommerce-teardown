@@ -290,7 +290,6 @@
         <div class="form-container">
             <form id="contactForm" action="https://formspree.io/f/meoykkey" method="POST">
                 <input type="hidden" name="_to" value="richardkelsey@gmail.com">
-                <input type="hidden" name="_subject" value="Contact Form Submission - Ecommerce Teardown">
                 
                 <div class="form-group">
                     <label for="name">Name *</label>
@@ -380,6 +379,13 @@
             
             try {
                 const formData = new FormData(form);
+                
+                // Get the user's subject and include it in the email subject
+                const userSubject = formData.get('subject');
+                if (userSubject) {
+                    formData.set('_subject', `Contact Form: ${userSubject}`);
+                }
+                
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
@@ -393,7 +399,7 @@
                     form.innerHTML = `
                         <div style="text-align: center; padding: 40px 20px;">
                             <h3 style="color: var(--mad-green); font-size: 24px; margin-bottom: 20px;">
-                                🎭 MESSAGE SENT!
+                                🥊 MESSAGE SENT!
                             </h3>
                             <p style="font-size: 18px; line-height: 1.6; color: var(--dark-grey);">
                                 Thanks for reaching out! I'll get back to you as soon as possible. Check your email for confirmation.
