@@ -380,10 +380,18 @@
             try {
                 const formData = new FormData(form);
                 
-                // Get the user's subject and include it in the email subject
+                // Get the user's subject and message
                 const userSubject = formData.get('subject');
+                const userMessage = formData.get('message');
+                
                 if (userSubject) {
+                    // Set the email subject line to include the user's subject
                     formData.set('_subject', `Contact Form: ${userSubject}`);
+                    
+                    // Prepend subject to message body to ensure it's visible in the email
+                    if (userMessage) {
+                        formData.set('message', `Subject: ${userSubject}\n\n${userMessage}`);
+                    }
                 }
                 
                 const response = await fetch(form.action, {
