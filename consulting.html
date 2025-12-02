@@ -152,6 +152,8 @@
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             letter-spacing: 0.3px;
+            white-space: normal;
+            word-break: break-word;
         }
 
         .hero-cta:hover {
@@ -864,6 +866,12 @@
             .modal-title {
                 font-size: 24px;
             }
+
+            .hero-cta {
+                font-size: 16px;
+                padding: 16px 30px;
+                line-height: 1.4;
+            }
         }
     </style>
 </head>
@@ -1294,7 +1302,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('bookingModal');
             const modalTrigger = document.getElementById('ctaBookingButton');
-            const modalClose = document.querySelector('.modal-close');
+            const modalClose = modal ? modal.querySelector('.modal-close') : null;
             const bookingForm = document.getElementById('bookingForm');
             const bookingSubmitBtn = document.getElementById('bookingSubmitBtn');
 

@@ -1415,7 +1415,7 @@
     <section class="championship-belts">
         <div class="section-eyebrow">TITLES DEFENDED</div>
         <h2 class="section-heading">Championship Belts & Victories</h2>
-        <p class="section-intro">When you step into the ring with me, you're facing someone who's already gone 12 rounds with<br>Australia's toughest ecommerce challenges - and collected the hardware to prove it.</p>
+        <p class="section-intro">When you step into the ring with Richard, you're facing someone who's already gone 12 rounds with<br>Australia's toughest ecommerce challenges - and collected the hardware to prove it.</p>
         
         <div class="belts-grid">
             <div class="belt-badge red">
@@ -1677,7 +1677,7 @@
             const modalSubject = document.getElementById('modalSubject');
             const modalForm = document.getElementById('pricingForm');
             const modalSubmitBtn = document.getElementById('modalSubmitBtn');
-            const modalClose = document.querySelector('.modal-close');
+            const modalClose = modal ? modal.querySelector('.modal-close') : null;
             const pricingButtons = document.querySelectorAll('.card-button[data-tier]');
 
             // Tier display names mapping
