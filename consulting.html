@@ -37,6 +37,8 @@
             line-height: 1.6;
             color: #1A1A1A;
             font-weight: 400;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* Mad Mex Color Variables */
@@ -218,8 +220,7 @@
         .service-category.support { border-top-color: var(--mad-red); }
 
         .service-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            display: none;
         }
 
         .service-category h3 {
@@ -298,6 +299,7 @@
         .investment-section {
             padding: 80px 20px;
             background: var(--mad-cream);
+            overflow-x: hidden;
         }
 
         .investment-grid {
@@ -306,6 +308,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            box-sizing: border-box;
         }
 
         .investment-card {
@@ -316,12 +319,15 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            box-sizing: border-box;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .investment-card.day { border-color: var(--mad-pink); }
         .investment-card.retainer { 
             border-color: var(--mad-green);
-            background: rgba(0, 166, 81, 0.05);
+            background: white;
         }
         .investment-card.custom { border-color: var(--accent-yellow); }
 
@@ -336,6 +342,8 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            max-width: calc(100% - 40px);
+            box-sizing: border-box;
         }
 
         .investment-badge.popular {
@@ -770,6 +778,7 @@
             .services-grid,
             .why-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
         }
 
@@ -794,10 +803,35 @@
             .services-grid,
             .why-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 10px;
+            }
+
+            .who-section,
+            .services-section,
+            .why-section {
+                padding: 60px 10px;
             }
 
             .investment-grid {
                 grid-template-columns: 1fr;
+                padding: 0 10px;
+            }
+
+            .investment-card {
+                padding: 30px 20px;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .investment-badge {
+                font-size: 11px;
+                padding: 6px 15px;
+                max-width: calc(100% - 20px);
+            }
+
+            .investment-price {
+                font-size: 28px;
             }
 
             .cta-section h2 {
@@ -880,8 +914,7 @@
         <div class="services-grid">
             <!-- Strategy & Leadership -->
             <div class="service-category strategy">
-                <div class="service-icon">🎯</div>
-                <h3>Battle Strategy & Game Plans</h3>
+                <h3>🎯 Battle Strategy & Game Plans</h3>
                 <ul>
                     <li>Full-day championship strategy sessions</li>
                     <li>Victory roadmap development</li>
@@ -892,8 +925,7 @@
 
             <!-- Marketing & Conversion -->
             <div class="service-category marketing">
-                <div class="service-icon">📈</div>
-                <h3>Knockout Marketing</h3>
+                <h3>📈 Knockout Marketing</h3>
                 <ul>
                     <li>Conversion optimization that closes sales</li>
                     <li>Email marketing that prints money</li>
@@ -904,8 +936,7 @@
 
             <!-- Platform & Technology -->
             <div class="service-category platform">
-                <div class="service-icon">⚙️</div>
-                <h3>Platform & Tech Arsenal</h3>
+                <h3>⚙️ Platform & Tech Arsenal</h3>
                 <ul>
                     <li>Platform migration battle plans</li>
                     <li>Marketing tech stack optimization</li>
@@ -916,8 +947,7 @@
 
             <!-- Ongoing Support -->
             <div class="service-category support">
-                <div class="service-icon">🤝</div>
-                <h3>In Your Corner Ongoing</h3>
+                <h3>🤝 In Your Corner Ongoing</h3>
                 <ul>
                     <li>Monthly corner man retainer</li>
                     <li>Between-rounds strategic guidance</li>
