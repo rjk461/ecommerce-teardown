@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Teardown - Landing Page Mockup</title>
+    <title>Ecommerce Teardown - Free Website Reviews by Richard Kelsey</title>
     <style>
         * {
             margin: 0;
@@ -300,6 +300,120 @@
         .stats-box h3 {
             font-size: 24px;
             margin-bottom: 15px;
+        }
+
+        /* Meet the Champion Section */
+        .meet-champion {
+            padding: 80px 20px;
+            background: white;
+            border-top: 3px solid var(--mad-green);
+        }
+
+        .champion-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .photo-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid var(--mad-green);
+            background: var(--mad-cream);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            margin: 0 auto;
+        }
+
+        .photo-placeholder p {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .photo-placeholder small {
+            font-size: 12px;
+            color: var(--medium-grey);
+        }
+
+        .champion-bio h3 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--mad-green);
+            margin-bottom: 10px;
+        }
+
+        .champion-title {
+            font-size: 18px;
+            color: var(--mad-pink);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .champion-bio p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Championship Belts Section */
+        .championship-belts {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+            border-top: 3px solid var(--mad-pink);
+        }
+
+        .belts-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .belt-badge {
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            border: 4px solid rgba(0,0,0,0.1);
+        }
+
+        .belt-badge.red { background: var(--mad-red); }
+        .belt-badge.green { background: var(--mad-green); }
+        .belt-badge.yellow { background: var(--accent-yellow); color: var(--dark-grey); }
+        .belt-badge.pink { background: var(--mad-pink); }
+
+        .belt-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .belt-badge h4 {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        .belt-count {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .belt-detail {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.4;
         }
 
         /* Pricing Section */
@@ -635,6 +749,28 @@
                 font-size: 18px;
                 padding: 18px;
             }
+
+            .champion-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .photo-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+
+            .champion-bio h3 {
+                font-size: 28px;
+            }
+
+            .champion-title {
+                font-size: 16px;
+            }
+
+            .champion-bio p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -652,7 +788,7 @@
                 <div class="hero-eyebrow">¡ATENCION! ECOMMERCE CHAMPIONS AND CHALLENGERS!</div>
                 <h1>ENTER THE RING FOR YOUR<br>FREE WEBSITE TEARDOWN!</h1>
                 <p class="hero-subheading">
-                    Step into the arena where a 3 time Australia Top 50 People of Ecommerce holder takes on your website. 
+                    Step into the arena where a 3x Top 50 Australia Ecommerce holder takes on your website. 
                     Get the BRUTAL TRUTH about what's costing you conversions – delivered with the intensity of a 
                     Mexican wrestling showdown and the expertise of 16 years scaling ecommerce businesses.
                 </p>
@@ -693,7 +829,7 @@
     <!-- What You Get Section -->
     <section class="what-you-get">
         <div class="section-eyebrow">YOUR CHAMPIONSHIP PACKAGE</div>
-        <h2 class="section-heading">What You From a Teardown</h2>
+        <h2 class="section-heading">What You Get From a Teardown</h2>
         
         <div class="features-grid">
             <div class="feature">
@@ -728,6 +864,88 @@
         </div>
     </section>
 
+    <!-- Meet the Champion Section -->
+    <section class="meet-champion">
+        <div class="section-eyebrow">KNOW YOUR OPPONENT</div>
+        <h2 class="section-heading">Meet the Reigning Champion</h2>
+        <p class="section-intro">16 years in the ring. Multiple titles defended. Ready to take on your site.</p>
+        
+        <div class="champion-content">
+            <div class="photo-placeholder">
+                <p>🎭</p>
+                <small>Luchador-style photo coming soon</small>
+            </div>
+            
+            <div class="champion-bio">
+                <h3>Richard Kelsey</h3>
+                <p class="champion-title">16-Year Ecommerce Veteran | 3x Top 50 Australia Ecommerce | Beer Cartel Founder</p>
+                
+                <p>I didn't just study ecommerce—I lived it in the trenches for 16 years. Built Beer Cartel from a scrappy startup to Australia's #1 online craft beer destination, scaling from $0 to $6M in annual revenue before a successful exit in 2024.</p>
+                
+                <p>Along the way, I built a database of 100,000+ customers, pioneered alcohol ecommerce in Australia when nobody believed it could work, raised $1.5M in funding, survived 5 platform migrations, and scaled operations to 30+ staff during COVID's 300% sales surge.</p>
+                
+                <p>My weapon of choice? Email marketing that generated 30% of revenue. Facebook campaigns with 5x ROAS. Product launches that delivered $1M in 4 days. And enough platform migrations to know every conversion killer hiding in your checkout flow.</p>
+                
+                <p>I've been in YOUR corner—wrestling with conversion rates, fighting for every percentage point of improvement, and learning what actually moves the needle versus what just looks pretty in a deck. Now I'm taking that hard-won knowledge into the ring to help other ecommerce warriors dominate.</p>
+                
+                <div class="stats-box">
+                    <p>💰 $6M Revenue Scaled | 🏆 100K+ Customers Built | ⚡ 5 Platform Migrations Survived</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Championship Belts Section -->
+    <section class="championship-belts">
+        <div class="section-eyebrow">TITLES DEFENDED</div>
+        <h2 class="section-heading">Championship Belts & Victories</h2>
+        <p class="section-intro">When you step into the ring with me, you're facing someone who's already gone 12 rounds with Australia's toughest ecommerce challenges—and collected the hardware to prove it.</p>
+        
+        <div class="belts-grid">
+            <div class="belt-badge red">
+                <div class="belt-icon">🏆</div>
+                <h4>ONLINE RETAILER OF THE YEAR</h4>
+                <p class="belt-count">5x Champion</p>
+                <p class="belt-detail">Australia's Premier Ecommerce Awards</p>
+            </div>
+
+            <div class="belt-badge green">
+                <div class="belt-icon">⭐</div>
+                <h4>TOP 50 PEOPLE IN AUSTRALIAN ECOMMERCE</h4>
+                <p class="belt-count">Hall of Fame: 2019, 2021, 2022</p>
+                <p class="belt-detail">Industry Peer Recognition</p>
+            </div>
+
+            <div class="belt-badge yellow">
+                <div class="belt-icon">💡</div>
+                <h4>RETAIL INNOVATOR OF THE YEAR</h4>
+                <p class="belt-count">National Champion</p>
+                <p class="belt-detail">ARA Australian Retail Awards</p>
+            </div>
+
+            <div class="belt-badge pink">
+                <div class="belt-icon">🚀</div>
+                <h4>BEST ONLINE RETAIL MARKETING</h4>
+                <p class="belt-count">Campaign Excellence</p>
+                <p class="belt-detail">Australia Post Awards</p>
+            </div>
+
+            <div class="belt-badge red">
+                <div class="belt-icon">⚡</div>
+                <h4>BIGCOMMERCE MAKE IT BIG</h4>
+                <p class="belt-count">2x Innovation Winner</p>
+                <p class="belt-detail">Platform Innovation Excellence</p>
+            </div>
+
+            <div class="belt-badge green">
+                <div class="belt-icon">📊</div>
+                <h4>BOARD MEMBER</h4>
+                <p class="belt-count">Retail Drinks Australia</p>
+                <p class="belt-detail">Industry Leadership 2019-2025</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="pricing">
         <div class="pricing-header">
@@ -759,7 +977,7 @@
                     <li>Private teardown (not published)</li>
                     <li>3 pages (homepage + product + category)</li>
                     <li>Video walkthrough + written analysis</li>
-                    <li>Prioritized action plan by impact</li>
+                    <li>Prioritised action plan by impact</li>
                     <li>30-day corner support (email)</li>
                     <li>Delivered within 5 business days</li>
                 </ul>
