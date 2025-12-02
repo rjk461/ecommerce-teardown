@@ -12,9 +12,10 @@
         }
 
         body {
-            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #1A1A1A;
+            font-weight: 400;
         }
 
         /* Mad Mex Color Variables - Actual Brand Colors */
@@ -53,7 +54,7 @@
             font-size: 16px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 15px;
         }
 
@@ -70,11 +71,12 @@
         .hero-subheading {
             color: white;
             font-size: 20px;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 40px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         .hero-buttons {
@@ -94,6 +96,7 @@
             text-decoration: none;
             display: inline-block;
             transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.3px;
         }
 
         .btn:hover {
@@ -129,6 +132,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            letter-spacing: 0.2px;
         }
 
         .badge.yellow { background: var(--accent-yellow); color: var(--dark-grey); }
@@ -148,7 +152,7 @@
             font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 10px;
         }
 
@@ -178,6 +182,8 @@
             font-size: 18px;
             color: var(--medium-grey);
             margin-bottom: 60px;
+            font-weight: 400;
+            line-height: 1.6;
         }
 
         .rounds {
@@ -219,15 +225,17 @@
 
         .round h3 {
             font-size: 22px;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 15px;
             color: var(--dark-grey);
+            letter-spacing: 0.3px;
         }
 
         .round p {
             color: var(--medium-grey);
             font-size: 16px;
             line-height: 1.6;
+            font-weight: 400;
         }
 
         /* What You Get Section */
@@ -259,7 +267,8 @@
         .feature-text {
             font-size: 16px;
             color: var(--dark-grey);
-            line-height: 1.5;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .stats-box {
@@ -330,6 +339,7 @@
             font-weight: 700;
             text-transform: uppercase;
             color: white;
+            letter-spacing: 0.5px;
         }
 
         .card-badge.yellow { background: var(--accent-yellow); color: var(--dark-grey); }
@@ -363,6 +373,8 @@
             gap: 10px;
             font-size: 15px;
             color: var(--dark-grey);
+            font-weight: 400;
+            line-height: 1.6;
         }
 
         .card-features li::before {
@@ -384,6 +396,7 @@
             border-radius: 8px;
             cursor: pointer;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .pricing-card.pink .card-button { background: var(--mad-pink); color: white; }
@@ -415,6 +428,7 @@
             font-weight: 600;
             margin-bottom: 8px;
             color: var(--dark-grey);
+            letter-spacing: 0.1px;
         }
 
         .form-group input,
@@ -426,6 +440,8 @@
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
+            font-weight: 400;
+            font-family: inherit;
         }
 
         .form-group input:focus,
@@ -458,6 +474,7 @@
             cursor: pointer;
             text-transform: uppercase;
             transition: transform 0.2s;
+            letter-spacing: 0.5px;
         }
 
         .submit-btn:hover {
@@ -511,6 +528,8 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             color: var(--medium-grey);
             font-size: 14px;
+            font-weight: 400;
+            line-height: 1.6;
         }
 
         .footer-bar {
@@ -520,20 +539,66 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
             .hero h1 {
-                font-size: 36px;
+                font-size: 32px;
+                line-height: 1.2;
+                letter-spacing: 0.5px;
             }
 
             .hero-subheading {
-                font-size: 18px;
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            .hero-eyebrow {
+                font-size: 14px;
+                letter-spacing: 0.3px;
             }
 
             .section-heading {
-                font-size: 32px;
+                font-size: 28px;
+                line-height: 1.2;
+            }
+
+            .section-intro {
+                font-size: 16px;
+            }
+
+            .round h3 {
+                font-size: 20px;
+            }
+
+            .round p {
+                font-size: 15px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 16px 32px;
+            }
+
+            .card-price {
+                font-size: 36px;
             }
 
             .pricing-cards {
                 grid-template-columns: 1fr;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
+            }
+
+            .submit-btn {
+                font-size: 18px;
+                padding: 18px;
             }
         }
     </style>
@@ -548,7 +613,7 @@
             <div class="hero-eyebrow">¡ATENCION! ECOMMERCE CHAMPIONS AND CHALLENGERS!</div>
             <h1>ENTER THE RING FOR YOUR<br>FREE WEBSITE TEARDOWN!</h1>
             <p class="hero-subheading">
-                Step into the arena where Australia's 3-time Retailer of the Year champion takes on your homepage. 
+                Step into the arena where Australia's 3-time Retailer of the Year champion takes on your homep. 
                 Get the BRUTAL TRUTH about what's costing you conversions – delivered with the intensity of a 
                 lucha libre showdown and the expertise of 16 years scaling Beer Cartel to $6M.
             </p>
@@ -796,7 +861,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Richard Kelsey | ecommerceteardown.com</p>
+            <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
             <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Not affiliated with actual lucha libre wrestling. But the takedowns are just as real.</p>
         </div>
     </footer>
