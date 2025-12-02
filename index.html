@@ -349,6 +349,16 @@
             color: var(--medium-grey);
         }
 
+        .champion-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid var(--mad-green);
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+        }
+
         .champion-bio h3 {
             font-size: 32px;
             font-weight: 900;
@@ -766,6 +776,11 @@
                 height: 250px;
             }
 
+            .champion-photo {
+                width: 250px;
+                height: 250px;
+            }
+
             .champion-bio h3 {
                 font-size: 28px;
             }
@@ -877,9 +892,8 @@
         <p class="section-intro">16 years in the ring. Multiple titles defended. Ready to take on your site.</p>
         
         <div class="champion-content">
-            <div class="photo-placeholder">
-                <p>🎭</p>
-                <small>Luchador-style photo coming soon</small>
+            <div>
+                <img src="images/Richard Kelsey Headshot.png" alt="Richard Kelsey" class="champion-photo">
             </div>
             
             <div class="champion-bio">
