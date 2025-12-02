@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Ecommerce Consulting - Richard Kelsey</title>
+    <meta name="description" content="Fractional Head of Ecommerce services for growing businesses. 16 years of battle-tested leadership, strategy, and implementation expertise. Day rates and retainers available.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecommerceteardown.com/consulting">
+    <meta property="og:title" content="Strategic Ecommerce Consulting - Richard Kelsey">
+    <meta property="og:description" content="Fractional Head of Ecommerce services for growing businesses. 16 years of battle-tested leadership, strategy, and implementation expertise.">
+    <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ecommerceteardown.com/consulting">
+    <meta name="twitter:title" content="Strategic Ecommerce Consulting - Richard Kelsey">
+    <meta name="twitter:description" content="Fractional Head of Ecommerce services for growing businesses. 16 years of battle-tested leadership, strategy, and implementation expertise.">
+    <meta name="twitter:image" content="https://ecommerceteardown.com/images/og-image.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            font-weight: 400;
+        }
+
+        /* Mad Mex Color Variables */
+        :root {
+            --mad-green: #00A651;
+            --mad-red: #C8102E;
+            --mad-pink: #E91E63;
+            --mad-cream: #F5EFE6;
+            --dark-grey: #1A1A1A;
+            --medium-grey: #666666;
+            --accent-yellow: #F8B500;
+        }
+
+        /* Top Accent Bar */
+        .top-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
+        }
+
+        /* Common Styles */
+        .section-eyebrow {
+            text-align: center;
+            color: var(--mad-pink);
+            font-size: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 18px;
+            color: var(--medium-grey);
+            margin-bottom: 60px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--mad-green);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            color: var(--accent-yellow);
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero-subheading {
+            color: white;
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background: white;
+            color: var(--mad-green);
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            letter-spacing: 0.3px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Who This Is For */
+        .who-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .who-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .who-card {
+            background: var(--mad-cream);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--mad-green);
+        }
+
+        .who-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark-grey);
+        }
+
+        .who-card p {
+            font-size: 16px;
+            color: var(--medium-grey);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-category {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            border-top: 5px solid;
+        }
+
+        .service-category.strategy { border-top-color: var(--mad-green); }
+        .service-category.marketing { border-top-color: var(--mad-pink); }
+        .service-category.platform { border-top-color: var(--accent-yellow); }
+        .service-category.support { border-top-color: var(--mad-red); }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-category h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-grey);
+        }
+
+        .service-category ul {
+            list-style: none;
+        }
+
+        .service-category li {
+            padding: 8px 0;
+            font-size: 16px;
+            color: var(--dark-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .service-category li::before {
+            content: '✓';
+            color: var(--mad-green);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* How It Works */
+        .how-works-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .steps-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--mad-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark-grey);
+        }
+
+        .step p {
+            font-size: 16px;
+            color: var(--medium-grey);
+            line-height: 1.6;
+        }
+
+        /* Investment Section */
+        .investment-section {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+        }
+
+        .investment-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .investment-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            border: 4px solid;
+            position: relative;
+        }
+
+        .investment-card.day { border-color: var(--mad-pink); }
+        .investment-card.retainer { 
+            border-color: var(--mad-green);
+            background: rgba(0, 166, 81, 0.05);
+        }
+        .investment-card.custom { border-color: var(--accent-yellow); }
+
+        .investment-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .investment-badge.popular {
+            background: var(--mad-red);
+            color: white;
+        }
+
+        .investment-badge.flexible {
+            background: var(--accent-yellow);
+            color: var(--dark-grey);
+        }
+
+        .investment-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--dark-grey);
+        }
+
+        .investment-price {
+            font-size: 36px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--dark-grey);
+        }
+
+        .investment-subtitle {
+            text-align: center;
+            color: var(--medium-grey);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .investment-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .investment-card li {
+            padding: 10px 0;
+            font-size: 15px;
+            color: var(--dark-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.6;
+        }
+
+        .investment-card li::before {
+            content: '✓';
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .investment-card.day li::before { color: var(--mad-pink); }
+        .investment-card.retainer li::before { color: var(--mad-green); }
+        .investment-card.custom li::before { color: var(--accent-yellow); }
+
+        .investment-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .investment-card.day .investment-button {
+            background: var(--mad-pink);
+            color: white;
+        }
+
+        .investment-card.retainer .investment-button {
+            background: var(--mad-green);
+            color: white;
+        }
+
+        .investment-card.custom .investment-button {
+            background: var(--accent-yellow);
+            color: var(--dark-grey);
+        }
+
+        .investment-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Why Section */
+        .why-section {
+            padding: 80px 20px;
+            background: var(--mad-green);
+        }
+
+        .why-section .section-heading {
+            color: white;
+        }
+
+        .why-section .section-heading::after {
+            background: white;
+        }
+
+        .why-section .section-intro {
+            color: white;
+        }
+
+        .why-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .why-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .why-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .why-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .why-item p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--mad-cream);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--mad-green);
+        }
+
+        .faq-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark-grey);
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: var(--medium-grey);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: var(--mad-pink);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: white;
+            color: var(--mad-pink);
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer h3 {
+            color: var(--accent-yellow);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--mad-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--medium-grey);
+            font-size: 14px;
+        }
+
+        .footer-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--mad-green));
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subheading {
+                font-size: 18px;
+            }
+
+            .section-heading {
+                font-size: 32px;
+            }
+
+            .section-intro {
+                font-size: 16px;
+            }
+
+            .investment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 32px;
+            }
+
+            .cta-section p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Accent Bar -->
+    <div class="top-bar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-eyebrow">🥊 CHAMPIONSHIP CORNER MAN SERVICES</div>
+            <h1>DON'T FIGHT ALONE<br>IN YOUR CORNER</h1>
+            <p class="hero-subheading">
+                Every champion needs a corner man. Someone who's been in the ring, taken the hits, 
+                and knows how to turn a losing round into a knockout victory. 16 years scaling ecommerce 
+                businesses from $0 to #1. Now in YOUR corner for $1M-$20M growing brands.
+            </p>
+            <a href="#investment" class="hero-cta">🔥 GET YOUR CORNER MAN →</a>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="who-section">
+        <div class="section-eyebrow">WHO NEEDS A CORNER MAN?</div>
+        <h2 class="section-heading">You're Ready If...</h2>
+        <p class="section-intro">
+            You're in the ring fighting for growth, but you're missing that experienced voice in your corner 
+            telling you when to attack, when to defend, and what moves will actually win the match.
+        </p>
+
+        <div class="who-grid">
+            <div class="who-card">
+                <h3>🥊 Fighting For Growth</h3>
+                <p>$1M-$20M revenue. You're past startup scrappy, ready to scale big—but you need championship-level strategy to get there.</p>
+            </div>
+
+            <div class="who-card">
+                <h3>🎯 Major Moves Ahead</h3>
+                <p>Platform migrations, market expansion, or growth initiatives that could make or break your business. No room for amateur mistakes.</p>
+            </div>
+
+            <div class="who-card">
+                <h3>💪 Team Needs Direction</h3>
+                <p>Your marketing and ecommerce teams can throw punches, but they need a corner man calling the strategy between rounds.</p>
+            </div>
+
+            <div class="who-card">
+                <h3>📊 Performance Plateau</h3>
+                <p>Conversion rates stagnant, growth slowing. You're landing punches but not knockouts. Time to change tactics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-eyebrow">TRAINING CAMP CURRICULUM</div>
+        <h2 class="section-heading">What You Get in Your Corner</h2>
+        <p class="section-intro">
+            16 years of battle scars, wins, and hard-learned lessons. Now deployed to make your business unstoppable.
+        </p>
+
+        <div class="services-grid">
+            <!-- Strategy & Leadership -->
+            <div class="service-category strategy">
+                <div class="service-icon">🎯</div>
+                <h3>Battle Strategy & Game Plans</h3>
+                <ul>
+                    <li>Full-day championship strategy sessions</li>
+                    <li>Victory roadmap development</li>
+                    <li>Team training and corner man coaching</li>
+                    <li>Growth strategy that actually wins</li>
+                </ul>
+            </div>
+
+            <!-- Marketing & Conversion -->
+            <div class="service-category marketing">
+                <div class="service-icon">📈</div>
+                <h3>Knockout Marketing</h3>
+                <ul>
+                    <li>Conversion optimization that closes sales</li>
+                    <li>Email marketing that prints money</li>
+                    <li>Facebook Ads that actually convert</li>
+                    <li>Social media that builds your brand</li>
+                </ul>
+            </div>
+
+            <!-- Platform & Technology -->
+            <div class="service-category platform">
+                <div class="service-icon">⚙️</div>
+                <h3>Platform & Tech Arsenal</h3>
+                <ul>
+                    <li>Platform migration battle plans</li>
+                    <li>Marketing tech stack optimization</li>
+                    <li>Automation and integration strategy</li>
+                    <li>Vendor evaluation (no BS recommendations)</li>
+                </ul>
+            </div>
+
+            <!-- Ongoing Support -->
+            <div class="service-category support">
+                <div class="service-icon">🤝</div>
+                <h3>In Your Corner Ongoing</h3>
+                <ul>
+                    <li>Monthly corner man retainer</li>
+                    <li>Between-rounds strategic guidance</li>
+                    <li>Team coaching and backup</li>
+                    <li>Priority support when fights get tough</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-works-section">
+        <div class="section-eyebrow">THE FIGHT PLAN</div>
+        <h2 class="section-heading">How We Work Together</h2>
+        <p class="section-intro">
+            No fluff. No filler. Just a straight path from "I need help" to "We're winning."
+        </p>
+
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Pre-Fight Assessment</h3>
+                <p>30-minute free call. You tell me what's broken, I tell you if I can fix it. No sales pitch.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Battle Plan</h3>
+                <p>Custom game plan with scope, timeline, and investment. Clear as day, no surprises.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Training Camp Begins</h3>
+                <p>Full-day intensive, audit, or kick-off. We dive deep and come up with your victory strategy.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Execute & Dominate</h3>
+                <p>Hands-on guidance, corner man direction, or ongoing support as you implement and win.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="investment-section" id="investment">
+        <div class="section-eyebrow">CORNER MAN PACKAGES</div>
+        <h2 class="section-heading">Choose Your Training Level</h2>
+        <p class="section-intro">
+            Whether you need a one-day intensive or a corner man in your business ongoing, 
+            we've got options that fit how you fight.
+        </p>
+
+        <div class="investment-grid">
+            <!-- Day Rate -->
+            <div class="investment-card day">
+                <h3>Single Training Day</h3>
+                <div class="investment-price">$1,997 AUD</div>
+                <div class="investment-subtitle">One full day intensive</div>
+                <ul>
+                    <li>8-hour championship strategy session</li>
+                    <li>Workshop facilitation and training</li>
+                    <li>Deep-dive audit with action plan</li>
+                    <li>Platform migration battle planning</li>
+                    <li>Team training and coaching</li>
+                    <li>Perfect for one-off projects</li>
+                </ul>
+                <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="investment-button">BOOK YOUR SESSION →</a>
+            </div>
+
+            <!-- Monthly Retainer -->
+            <div class="investment-card retainer">
+                <div class="investment-badge popular">⭐ CORNER MAN FAVOURITE ⭐</div>
+                <h3>Monthly Corner Man</h3>
+                <div class="investment-price">From $3,500 AUD</div>
+                <div class="investment-subtitle">2 days/month · 1-month minimum</div>
+                <ul>
+                    <li>Everything in Single Day PLUS:</li>
+                    <li>Ongoing corner man guidance</li>
+                    <li>Between-rounds support (Slack/email)</li>
+                    <li>Monthly strategy reviews</li>
+                    <li>Team access and coaching</li>
+                    <li>Volume discount on day rate (~12% off)</li>
+                    <li>Flexible scheduling around your fights</li>
+                </ul>
+                <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="investment-button">GET YOUR CORNER MAN →</a>
+            </div>
+
+            <!-- Custom Projects -->
+            <div class="investment-card custom">
+                <div class="investment-badge flexible">CHAMPIONSHIP PROGRAMS</div>
+                <h3>Custom Training Camp</h3>
+                <div class="investment-price">Custom</div>
+                <div class="investment-subtitle">Built for your specific battle</div>
+                <ul>
+                    <li>Platform migration knockout programs</li>
+                    <li>Complete marketing transformation</li>
+                    <li>Multi-month growth acceleration</li>
+                    <li>Team training series</li>
+                    <li>Fractional Head of Ecommerce roles</li>
+                    <li>Whatever it takes to win your fight</li>
+                </ul>
+                <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="investment-button">DISCUSS YOUR BATTLE →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Richard -->
+    <section class="why-section">
+        <div class="section-eyebrow">THE CHAMPION'S CREDENTIALS</div>
+        <h2 class="section-heading">Why I Can Be Your Corner Man</h2>
+        <p class="section-intro">
+            Not a theorist. Not a consultant who's never fought. A 16-year veteran who built, 
+            scaled, and defended a championship title in Australia's toughest ecommerce arena.
+        </p>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">🏆</div>
+                <h3>Championship Titles Defended</h3>
+                <p>Built Beer Cartel to #1 in Australia. 3x Top 50 People in Australian Ecommerce. Multiple industry belts won.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">💰</div>
+                <h3>Real Knockouts Delivered</h3>
+                <p>100,000+ customers. $1.5M raised. $1M product launches executed. Not hypothetical—actual results in the ring.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">🔧</div>
+                <h3>Battle-Tested Operator</h3>
+                <p>16 years taking actual punches. Platform migrations, conversion fights, team building—survived and won them all.</p>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon">📊</div>
+                <h3>Complete Arsenal</h3>
+                <p>Strategy, marketing, tech, operations. I don't just tell you WHAT to do—I show you HOW because I've done it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-eyebrow">STRAIGHT ANSWERS</div>
+        <h2 class="section-heading">Questions Fighters Ask</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>What actually happens in a full training day?</h3>
+                <p>8 hours of focused work. Could be a strategy intensive where we build your battle plan. Could be workshops with your team. Could be deep-dive audits. Could be hands-on implementation. Whatever gets you closest to winning—that's what we do.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does the monthly corner man work?</h3>
+                <p>You get me in your corner 2+ days per month, plus support between rounds via Slack and email. We schedule days in advance based on what fights you're facing. 1-month minimum commitment, but most fighters keep me around longer once they see the wins.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What size businesses do you work with?</h3>
+                <p>$1M-$20M annual revenue is the sweet spot. You're past the startup chaos but not yet enterprise scale. This is where having a championship corner man makes the biggest impact—turning good businesses into dominant ones.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Will you actually help us implement, or just tell us what to do?</h3>
+                <p>Both. I'm hands-on when needed—I'll work directly with your team, review campaigns, fix strategies, train people. But I'll also connect you with trusted partners for specialized technical work. I'm a corner man, not a solo act.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you only work with alcohol brands?</h3>
+                <p>Hell no. Beer Cartel was my training ground, but great ecommerce is great ecommerce. I've worked with fashion, homewares, food & beverage, beauty, consumer goods. If you sell online and want to win bigger, I can help.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can you work with our existing team?</h3>
+                <p>That's literally the point. I make your team better. Strategic direction for leaders, coaching for juniors, and backup when fights get tough. I'm not here to replace anyone—I'm here to make everyone more dangerous.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>READY TO STOP FIGHTING ALONE?</h2>
+            <p>
+                Every champion needs a corner man. Someone who's been in the ring, knows the moves, 
+                and can turn a tough fight into a knockout victory. Let's talk—30 minutes, no BS, 
+                just honest conversation about whether I can help you win.
+            </p>
+            <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="cta-button">🥊 BOOK YOUR CALL →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bar"></div>
+        <div class="footer-content">
+            <div>
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="/">Free Public Teardown</a></li>
+                    <li><a href="/#pricing">Private Reviews</a></li>
+                    <li><a href="/consulting">Strategic Consulting</a></li>
+                    <li><a href="/coming-soon">Sample Teardowns</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://linkedin.com/in/richardkelsey">LinkedIn</a></li>
+                    <li><a href="mailto:richardkelsey@gmail.com">richardkelsey@gmail.com</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>About</h3>
+                <ul>
+                    <li><a href="/#meet-champion">About Richard</a></li>
+                    <li><a href="/consulting">Consulting Services</a></li>
+                    <li>16 Years Experience</li>
+                    <li>3x Top 50 Australia Ecommerce</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
+        </div>
+    </footer>
+</body>
+</html>
