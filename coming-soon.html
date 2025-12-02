@@ -139,8 +139,65 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.3);
         }
 
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: var(--accent-yellow);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--mad-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--medium-grey);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .coming-soon {
+                align-items: flex-start;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                min-height: auto;
+            }
+
             .coming-soon-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -182,6 +239,49 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>The Ring</h3>
+                <ul>
+                    <li><a href="/#form">Free Public Teardown</a></li>
+                    <li><a href="/#pricing">Private Reviews</a></li>
+                    <li><a href="/consulting">Consulting</a></li>
+                    <li><a href="/coming-soon">Sample Teardowns</a></li>
+                    <li><a href="/#meet-champion">About the Champion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li>
+                        <a href="https://linkedin.com/in/richardkelsey" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                            <span>LinkedIn</span>
+                            <span style="color: var(--medium-grey); font-size: 14px;">(11,413 followers)</span>
+                        </a>
+                    </li>
+                    <li><a href="/contact">Contact Form</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recent Battles</h3>
+                <ul>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">View All Takedowns →</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Not affiliated with actual lucha libre wrestling. But the takedowns are just as real.</p>
+        </div>
+    </footer>
 </body>
 </html>
 
