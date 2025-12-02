@@ -1714,7 +1714,9 @@
                 modalForm.reset();
             }
 
-            modalClose.addEventListener('click', closeModal);
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
             
             // Close modal when clicking overlay
             modal.addEventListener('click', function(e) {
