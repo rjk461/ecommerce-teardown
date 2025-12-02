@@ -105,13 +105,27 @@
         /* Hero Section */
         .hero {
             background: var(--mad-green);
-            padding: 80px 20px;
-            text-align: center;
+            padding: 0 20px 20px 20px;
+            position: relative;
         }
 
         .hero-container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            text-align: left;
         }
 
         .hero-eyebrow {
@@ -121,6 +135,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 20px;
+            margin-top: -30px;
         }
 
         .hero h1 {
@@ -130,6 +145,7 @@
             line-height: 1.1;
             margin-bottom: 25px;
             text-transform: uppercase;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
         }
 
         .hero-subheading {
@@ -799,12 +815,34 @@
         }
 
         @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
             .hero h1 {
                 font-size: 36px;
+                line-height: 1.2;
+                letter-spacing: 0.5px;
             }
 
             .hero-subheading {
                 font-size: 18px;
+            }
+
+            .hero-eyebrow {
+                font-size: 16px;
+                letter-spacing: 0.3px;
             }
 
             .section-heading {
@@ -882,14 +920,19 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-eyebrow">🥊 CHAMPIONSHIP CORNER MAN SERVICES</div>
-            <h1>DON'T FIGHT WITH NO ONE<br>IN YOUR CORNER</h1>
-            <p class="hero-subheading">
-                Every champion needs a corner man. Someone who's been in the ring, taken the hits, 
-                and knows how to turn a losing round into a knockout victory. 16 years scaling ecommerce 
-                businesses from $0 to #1. Now in YOUR corner for $1M-$30M growing brands.
-            </p>
-            <a href="#investment" class="hero-cta">🔥 GET YOUR CORNER MAN →</a>
+            <div class="hero-image-wrapper">
+                <img src="images/Wrestler.png" alt="Lucha Libre wrestler" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">🥊 CHAMPIONSHIP CORNER MAN SERVICES</div>
+                <h1>DON'T FIGHT WITH NO ONE<br>IN YOUR CORNER</h1>
+                <p class="hero-subheading">
+                    Every champion needs a corner man. Someone who's been in the ring, taken the hits, 
+                    and knows how to turn a losing round into a knockout victory. 16 years scaling ecommerce 
+                    businesses from $0 to #1. Now in YOUR corner for $1M-$30M growing brands.
+                </p>
+                <a href="#investment" class="hero-cta">🔥 GET YOUR CORNER MAN →</a>
+            </div>
         </div>
     </section>
 
