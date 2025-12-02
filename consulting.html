@@ -277,6 +277,68 @@
             flex-shrink: 0;
         }
 
+        /* Championship Skills Section */
+        .skills-section {
+            padding: 80px 20px;
+            background: white;
+            border-top: 3px solid;
+            border-image: linear-gradient(to right, var(--mad-pink), var(--accent-yellow)) 1;
+        }
+
+        .skills-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .skill-category {
+            background: var(--mad-cream);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border-top: 5px solid;
+        }
+
+        .skill-category.marketing { border-top-color: var(--mad-pink); }
+        .skill-category.platform { border-top-color: var(--accent-yellow); }
+        .skill-category.merchandising { border-top-color: var(--mad-green); }
+
+        .skill-category h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-grey);
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: var(--dark-grey);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .skill-category li::before {
+            content: '✓';
+            color: var(--mad-green);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
+            margin: 0;
+        }
+
         /* How It Works */
         .how-works-section {
             padding: 80px 20px;
@@ -821,6 +883,10 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -918,6 +984,10 @@
                 font-size: 16px;
                 padding: 16px 30px;
                 line-height: 1.4;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1031,6 +1101,72 @@
             </div>
         </div>
     </section>
+
+    <!-- Championship Skills -->
+    <section class="skills-section">
+        <div class="section-eyebrow">THE COMPLETE PACKAGE</div>
+        <h2 class="section-heading">Championship Skills</h2>
+        <p class="section-intro">
+            16 years of hands-on experience across every discipline that matters in ecommerce. 
+            Not theory from a textbook - real skills forged in the arena.
+        </p>
+
+        <div class="skills-grid">
+            <!-- Growth & Marketing -->
+            <div class="skill-category marketing">
+                <h3>Growth & Marketing</h3>
+                <ul>
+                    <li>Ecommerce Roadmap Development</li>
+                    <li>Meta Ads (Facebook/Instagram)</li>
+                    <li>Email Marketing - Retention & Growth</li>
+                    <li>Conversion Rate Optimisation (CRO)</li>
+                    <li>Customer Acquisition Strategy</li>
+                    <li>Customer Retention & Loyalty Programs</li>
+                    <li>Marketing Automation Platforms</li>
+                    <li>Content Marketing & Authority Building</li>
+                    <li>Social Media Marketing</li>
+                    <li>Product Launch Strategy</li>
+                    <li>Seasonal Campaign Planning</li>
+                    <li>Partnership & Influencer Marketing</li>
+                </ul>
+            </div>
+
+            <!-- Technology & Platforms -->
+            <div class="skill-category platform">
+                <h3>Technology & Platforms</h3>
+                <ul>
+                    <li>Ecommerce Platforms: Shopify, BigCommerce</li>
+                    <li>Platform Migrations & Replatforming</li>
+                    <li>Email Marketing Platforms (dotdigital, Klaviyo, Mailchimp, etc.)</li>
+                    <li>Workflow Automation</li>
+                    <li>Analytics & Reporting (Google Analytics, GA4)</li>
+                    <li>Customer Support Systems (Gorgias, Reamaze)</li>
+                    <li>Shipping/Fulfillment Integrations</li>
+                    <li>Payment Gateway Optimisation</li>
+                </ul>
+            </div>
+
+            <!-- Website & Merchandising -->
+            <div class="skill-category merchandising">
+                <h3>Website & Merchandising</h3>
+                <ul>
+                    <li>Website/CRO Optimisation</li>
+                    <li>Subscriptions/Recurring Orders</li>
+                    <li>Merchandising & Product Display Strategy</li>
+                    <li>User Experience (UX) Optimization</li>
+                    <li>Mobile Optimisation</li>
+                    <li>Checkout Flow Optimisation</li>
+                    <li>Product Page Optimisation</li>
+                    <li>Category Page Strategy</li>
+                    <li>Site Search Optimization</li>
+                    <li>A/B Testing & Experimentation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
 
     <!-- How It Works -->
     <section class="how-works-section">
