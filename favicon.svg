@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background -->
+  <circle cx="32" cy="32" r="31" fill="#00A651"/>
+  
+  <!-- Mask base - pink main color -->
+  <path d="M 18 22 Q 18 16, 22 14 Q 27 12, 32 12 Q 37 12, 42 14 Q 46 16, 46 22 L 46 40 Q 46 48, 40 52 Q 36 54, 32 54 Q 28 54, 24 52 Q 18 48, 18 40 Z" fill="#E91E63"/>
+  
+  <!-- Yellow side panels -->
+  <path d="M 18 22 L 18 35 Q 18 40, 20 42 L 20 26 Q 20 22, 22 20 Q 20 20, 18 22 Z" fill="#F8B500"/>
+  <path d="M 46 22 L 46 35 Q 46 40, 44 42 L 44 26 Q 44 22, 42 20 Q 44 20, 46 22 Z" fill="#F8B500"/>
+  
+  <!-- Eye holes - characteristic diamond shape -->
+  <path d="M 24 30 L 27 27 L 30 30 L 27 33 Z" fill="#1A1A1A"/>
+  <path d="M 34 30 L 37 27 L 40 30 L 37 33 Z" fill="#1A1A1A"/>
+  
+  <!-- Eye outlines in white for contrast -->
+  <path d="M 24 30 L 27 27 L 30 30 L 27 33 Z" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+  <path d="M 34 30 L 37 27 L 40 30 L 37 33 Z" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+  
+  <!-- Forehead design - lightning bolt style -->
+  <path d="M 28 18 L 30 15 L 29 18 L 32 14 L 31 18 L 34 15 L 33 18 L 36 18" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Chin/mouth area decorative lines -->
+  <path d="M 28 42 Q 32 44, 36 42" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 26 38 Q 32 40, 38 38" stroke="#F8B500" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose bridge line (common in lucha masks) -->
+  <path d="M 32 26 L 32 38" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
