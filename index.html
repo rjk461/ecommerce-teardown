@@ -991,7 +991,7 @@
                     <li>Written knockout report</li>
                     <li>Delivered within 5 business days</li>
                 </ul>
-                <a href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">GET IN THE RING →</a>
+                <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">GET IN THE RING →</a>
             </div>
 
             <!-- Card 2 -->
@@ -1008,7 +1008,7 @@
                     <li>30-day corner support (email)</li>
                     <li>Delivered within 5 business days</li>
                 </ul>
-                <a href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">CLAIM YOUR TITLE →</a>
+                <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">CLAIM YOUR TITLE →</a>
             </div>
 
             <!-- Card 3 -->
@@ -1026,7 +1026,7 @@
                     <li>90-minute live strategy session</li>
                     <li>30-day corner support (email)</li>
                 </ul>
-                <a href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">GO FOR GOLD →</a>
+                <a href="https://calendly.com/richardkelsey-izs2/intro-call" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">GO FOR GOLD →</a>
             </div>
         </div>
     </section>
@@ -1046,7 +1046,7 @@
                 <input type="hidden" name="_subject" value="New Website Teardown Submission">
                 <div class="form-group">
                     <label for="url">Website URL *</label>
-                    <input type="url" id="url" name="url" placeholder="https://yourwebsite.com" required>
+                    <input type="text" id="url" name="url" placeholder="beercartel.com.au" required>
                 </div>
 
                 <div class="form-group">
@@ -1107,6 +1107,52 @@
             </form>
         </div>
     </section>
+
+    <script>
+        // Handle form submission with custom success message
+        const form = document.querySelector('.form-container form');
+        const submitBtn = document.querySelector('.submit-btn');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.textContent = '⚡ THROWING PUNCHES...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 40px 20px;">
+                            <h3 style="color: var(--mad-green); font-size: 24px; margin-bottom: 20px;">
+                                🎭 SUBMISSION ACCEPTED!
+                            </h3>
+                            <p style="font-size: 18px; line-height: 1.6;">
+                                You've thrown your site in the ring. We review submissions weekly and select the most worthy opponents for public battle. Check your email for confirmation!
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                // Error message
+                submitBtn.textContent = '🔥 BRING THE SMACKDOWN →';
+                submitBtn.disabled = false;
+                alert('Oops! There was a problem with your submission. Please try again.');
+            }
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="footer">
