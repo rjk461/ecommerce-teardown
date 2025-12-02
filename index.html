@@ -813,7 +813,7 @@
 
         /* Newsletter Section */
         .newsletter-section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             background: var(--mad-pink);
         }
 
@@ -821,8 +821,8 @@
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
             align-items: center;
         }
 
@@ -834,7 +834,7 @@
             font-size: 36px;
             font-weight: 900;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             line-height: 1.1;
         }
@@ -842,16 +842,17 @@
         .newsletter-section p {
             font-size: 18px;
             color: white;
-            line-height: 1.6;
+            line-height: 1.4;
         }
 
         .newsletter-form {
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .newsletter-form input {
-            flex: 1;
+            width: 100%;
             padding: 16px;
             border: none;
             border-radius: 8px;
@@ -1931,6 +1932,7 @@
                     
                     if (response.ok) {
                         const container = this.closest('.newsletter-container');
+                        container.style.display = 'block';
                         container.innerHTML = `
                             <div class="newsletter-success">
                                 <h3>🎉 YOU'RE IN THE RING!</h3>
@@ -2008,7 +2010,7 @@
             <div class="newsletter-form-wrapper">
                 <form class="newsletter-form" id="newsletterForm">
                     <input type="email" name="email" placeholder="your@email.com" required>
-                    <button type="submit" class="newsletter-btn">JOIN →</button>
+                    <button type="submit" class="newsletter-btn">GET RINGSIDE ALERTS →</button>
                 </form>
             </div>
         </div>
