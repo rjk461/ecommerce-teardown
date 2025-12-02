@@ -811,6 +811,72 @@
             box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
         }
 
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 80px 20px;
+            background: var(--mad-pink);
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section .section-eyebrow {
+            color: var(--accent-yellow);
+        }
+
+        .newsletter-section h2 {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .newsletter-section p {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .newsletter-btn {
+            padding: 20px;
+            background: white;
+            color: var(--mad-pink);
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
         /* Footer */
         .footer {
             background: var(--dark-grey);
@@ -1291,6 +1357,14 @@
             
             .consulting-divider {
                 display: none;
+            }
+
+            .newsletter-section h2 {
+                font-size: 32px;
+            }
+            
+            .newsletter-section p {
+                font-size: 18px;
             }
         }
     </style>
@@ -1796,6 +1870,49 @@
         });
     </script>
 
+    <script>
+        // Newsletter form handler
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('.newsletter-btn');
+                const originalText = btn.textContent;
+                
+                btn.textContent = '⚡ SIGNING YOU UP...';
+                btn.disabled = true;
+                
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        this.innerHTML = `
+                            <div style="text-align: center; padding: 40px 20px;">
+                                <h3 style="color: white; font-size: 24px; margin-bottom: 20px;">
+                                    🎉 YOU'RE IN THE RING!
+                                </h3>
+                                <p style="color: white; font-size: 18px; line-height: 1.6;">
+                                    Check your email to confirm your ringside seat. You'll be first to know when the next teardown drops!
+                                </p>
+                            </div>
+                        `;
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                } catch (error) {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    alert('Oops! There was a problem. Please try again.');
+                }
+            });
+        }
+    </script>
+
     <!-- Pricing Modal -->
     <div id="pricingModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
@@ -1841,6 +1958,25 @@
             </form>
         </div>
     </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="section-eyebrow">RINGSIDE SEATS</div>
+            <h2>DON'T MISS THE NEXT TEARDOWN</h2>
+            <p>
+                Get notified when fresh teardowns drop. Every week, one site steps into the ring 
+                and gets the full championship treatment. Be the first to see the carnage.
+            </p>
+            <form class="newsletter-form" action="https://formspree.io/f/meoykkey" method="POST">
+                <input type="hidden" name="_subject" value="Newsletter Signup">
+                <input type="hidden" name="source" value="newsletter">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit" class="newsletter-btn">🥊 GET RINGSIDE ALERTS →</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
