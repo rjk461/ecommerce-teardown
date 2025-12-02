@@ -1487,7 +1487,7 @@
                 const tier = modalTier.value;
                 
                 // Validation
-                if (!name || !email) {
+                if (!name || !email || !website || !phone || !comments) {
                     alert('Please fill in all required fields.');
                     return;
                 }
@@ -1502,15 +1502,9 @@
                     formData.append('tier', tier);
                     formData.append('name', name);
                     formData.append('email', email);
-                    if (website) {
-                        formData.append('website', website);
-                    }
-                    if (phone) {
-                        formData.append('phone', phone);
-                    }
-                    if (comments) {
-                        formData.append('comments', comments);
-                    }
+                    formData.append('website', website);
+                    formData.append('phone', phone);
+                    formData.append('comments', comments);
                     formData.append('source', 'pricing-section');
                     formData.append('_to', 'richardkelsey@gmail.com');
                     formData.append('_subject', modalSubject.value);
@@ -1538,7 +1532,7 @@
                 } catch (error) {
                     // Error handling
                     modalSubmitBtn.disabled = false;
-                    modalSubmitBtn.textContent = 'Continue to Booking →';
+                    modalSubmitBtn.textContent = 'Schedule a Call →';
                     alert('Oops! There was a problem submitting your information. Please try again.');
                 }
             });
@@ -1568,24 +1562,24 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="modalWebsite">Website (Optional)</label>
-                    <input type="text" id="modalWebsite" name="website" placeholder="yoursite.com (no http:// needed)">
+                    <label for="modalWebsite">Website *</label>
+                    <input type="text" id="modalWebsite" name="website" placeholder="yoursite.com" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="modalPhone">Phone Number (Optional)</label>
-                    <input type="tel" id="modalPhone" name="phone" placeholder="Your phone number">
+                    <label for="modalPhone">Phone Number *</label>
+                    <input type="tel" id="modalPhone" name="phone" placeholder="Your phone number" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="modalComments">How can we help you? (Optional)</label>
-                    <textarea id="modalComments" name="comments" rows="4" placeholder="Tell us about your site and what you'd like to improve..."></textarea>
+                    <label for="modalComments">How can we help you? *</label>
+                    <textarea id="modalComments" name="comments" rows="4" placeholder="Tell us about your site and what you'd like to improve..." required></textarea>
                 </div>
                 
                 <div class="modal-tier-display" id="modalTierDisplay"></div>
                 
                 <button type="submit" class="modal-submit-btn" id="modalSubmitBtn">
-                    Continue to Booking →
+                    Schedule a Call →
                 </button>
             </form>
         </div>
