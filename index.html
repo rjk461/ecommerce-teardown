@@ -40,13 +40,26 @@
         .hero {
             background: var(--mad-green);
             padding: 80px 20px;
-            text-align: center;
             position: relative;
         }
 
-        .hero-content {
-            max-width: 900px;
+        .hero-container {
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            text-align: left;
         }
 
         .hero-eyebrow {
@@ -73,16 +86,13 @@
             font-size: 20px;
             line-height: 1.6;
             margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
             font-weight: 400;
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
@@ -550,6 +560,21 @@
                 line-height: 1.6;
             }
 
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
             .hero h1 {
                 font-size: 32px;
                 line-height: 1.2;
@@ -564,6 +589,10 @@
             .hero-eyebrow {
                 font-size: 16px;
                 letter-spacing: 0.3px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
             }
 
             .section-heading {
@@ -615,16 +644,21 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-eyebrow">¡ATENCION! ECOMMERCE CHAMPIONS AND CHALLENGERS!</div>
-            <h1>ENTER THE RING FOR YOUR<br>FREE WEBSITE TEARDOWN!</h1>
-            <p class="hero-subheading">
-                Step into the arena where a 3 time Australia Top 50 People of Ecommerce holder takes on your website. 
-                Get the BRUTAL TRUTH about what's costing you conversions – delivered with the intensity of a 
-                Mexican wrestling showdown and the expertise of 16 years scaling ecommerce businesses.
-            </p>
-            <div class="hero-buttons">
-                <a href="#form" class="btn btn-primary">🔥 THROW YOUR SITE IN THE RING</a>
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="images/lucha-wrestler.png" alt="Lucha Libre wrestler holding a computer monitor" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">¡ATENCION! ECOMMERCE CHAMPIONS AND CHALLENGERS!</div>
+                <h1>ENTER THE RING FOR YOUR<br>FREE WEBSITE TEARDOWN!</h1>
+                <p class="hero-subheading">
+                    Step into the arena where a 3 time Australia Top 50 People of Ecommerce holder takes on your website. 
+                    Get the BRUTAL TRUTH about what's costing you conversions – delivered with the intensity of a 
+                    Mexican wrestling showdown and the expertise of 16 years scaling ecommerce businesses.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#form" class="btn btn-primary">🔥 THROW YOUR SITE IN THE RING</a>
+                </div>
             </div>
         </div>
     </section>
