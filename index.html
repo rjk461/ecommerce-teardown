@@ -895,7 +895,7 @@
     </section>
 
     <!-- Meet the Champion Section -->
-    <section class="meet-champion">
+    <section class="meet-champion" id="meet-champion">
         <div class="section-eyebrow">KNOW YOUR OPPONENT</div>
         <h2 class="section-heading">Meet the Reigning Champion</h2>
         <p class="section-intro">16 years in the ring. Multiple titles defended. Ready to take on your site.</p>
@@ -972,7 +972,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing">
+    <section class="pricing" id="pricing">
         <div class="pricing-header">
             <h2>WANT MORE THAN A PUBLIC EXHIBITION? UPGRADE TO PRIVATE COACHING</h2>
         </div>
@@ -991,7 +991,7 @@
                     <li>Written knockout report</li>
                     <li>Delivered within 5 business days</li>
                 </ul>
-                <button class="card-button">GET IN THE RING →</button>
+                <a href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">GET IN THE RING →</a>
             </div>
 
             <!-- Card 2 -->
@@ -1008,7 +1008,7 @@
                     <li>30-day corner support (email)</li>
                     <li>Delivered within 5 business days</li>
                 </ul>
-                <button class="card-button">CLAIM YOUR TITLE →</button>
+                <a href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">CLAIM YOUR TITLE →</a>
             </div>
 
             <!-- Card 3 -->
@@ -1026,7 +1026,7 @@
                     <li>90-minute live strategy session</li>
                     <li>30-day corner support (email)</li>
                 </ul>
-                <button class="card-button">GO FOR GOLD →</button>
+                <a href="https://calendly.com/YOUR_CALENDLY_LINK" target="_blank" class="card-button" style="text-decoration: none; display: block; text-align: center;">GO FOR GOLD →</a>
             </div>
         </div>
     </section>
@@ -1041,37 +1041,37 @@
         </p>
 
         <div class="form-container">
-            <form>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="hidden" name="_to" value="richardkelsey@gmail.com">
+                <input type="hidden" name="_subject" value="New Website Teardown Submission">
                 <div class="form-group">
                     <label for="url">Website URL *</label>
-                    <input type="url" id="url" placeholder="https://yourwebsite.com.au" required>
+                    <input type="url" id="url" name="url" placeholder="https://yourwebsite.com" required>
                 </div>
 
                 <div class="form-group">
                     <label for="name">Your Name *</label>
-                    <input type="text" id="name" placeholder="Your first name" required>
+                    <input type="text" id="name" name="name" placeholder="Your first name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address *</label>
-                    <input type="email" id="email" placeholder="your@email.com" required>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number">
                 </div>
 
                 <div class="form-group">
                     <label for="role">Your Role *</label>
-                    <select id="role" required>
-                        <option value="">→ Select your position</option>
-                        <option value="founder">Founder/Owner</option>
-                        <option value="marketing">Marketing Manager</option>
-                        <option value="ecommerce">Ecommerce Manager</option>
-                        <option value="agency">Agency/Consultant</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <input type="text" id="role" name="role" placeholder="Your role/position" required>
                 </div>
 
                 <div class="form-group">
                     <label for="revenue">Current Monthly Revenue *</label>
-                    <select id="revenue" required>
+                    <select id="revenue" name="revenue" required>
                         <option value="">→ What's your business size?</option>
                         <option value="starting">Just stepping in the ring</option>
                         <option value="under10k">Under $10k/month</option>
@@ -1085,12 +1085,12 @@
 
                 <div class="form-group">
                     <label for="challenge">What's got you in a headlock? *</label>
-                    <textarea id="challenge" rows="4" placeholder='Example: "Traffic is strong but conversion is weak" or "Mobile visitors bounce faster than a luchador off the ropes"' required></textarea>
+                    <textarea id="challenge" name="challenge" rows="4" placeholder='Example: "Traffic is strong but conversion is weak" or "Mobile visitors bounce faster than a luchador off the ropes"' required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="country">Country *</label>
-                    <select id="country" required>
+                    <select id="country" name="country" required>
                         <option value="">→ Where's your arena?</option>
                         <option value="australia">Australia</option>
                         <option value="usa">United States</option>
@@ -1103,7 +1103,7 @@
                     <label for="agree">I understand this will be a PUBLIC teardown posted on LinkedIn and ecommerceteardown.com. I'm ready for the truth. *</label>
                 </div>
 
-                <button type="submit" class="submit-btn">🔥 BRING THE SMACKDOWN</button>
+                <button type="submit" class="submit-btn">🔥 BRING THE SMACKDOWN →</button>
             </form>
         </div>
     </section>
@@ -1117,9 +1117,9 @@
                 <ul>
                     <li><a href="#">Free Public Teardown</a></li>
                     <li><a href="#">Private Reviews</a></li>
-                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#pricing">Consulting</a></li>
                     <li><a href="#">Sample Teardowns</a></li>
-                    <li><a href="#">About the Champion</a></li>
+                    <li><a href="#meet-champion">About the Champion</a></li>
                 </ul>
             </div>
             <div>
