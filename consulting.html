@@ -297,9 +297,10 @@
 
         /* Investment Section */
         .investment-section {
-            padding: 80px 20px;
+            padding: 100px 20px 80px 20px;
             background: var(--mad-cream);
             overflow-x: hidden;
+            overflow-y: visible;
         }
 
         .investment-grid {
@@ -344,6 +345,7 @@
             letter-spacing: 0.5px;
             max-width: calc(100% - 40px);
             box-sizing: border-box;
+            z-index: 10;
         }
 
         .investment-badge.popular {
@@ -622,6 +624,10 @@
             font-size: 14px;
         }
 
+        .footer-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--mad-green));
+        }
 
         /* Modal Styles */
         .modal-overlay {
@@ -857,7 +863,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-eyebrow">🥊 CHAMPIONSHIP CORNER MAN SERVICES</div>
-            <h1>DON'T FIGHT ALONE<br>IN YOUR CORNER</h1>
+            <h1>DON'T FIGHT WITH NO ONE<br>IN YOUR CORNER</h1>
             <p class="hero-subheading">
                 Every champion needs a corner man. Someone who's been in the ring, taken the hits, 
                 and knows how to turn a losing round into a knockout victory. 16 years scaling ecommerce 
@@ -870,7 +876,7 @@
     <!-- Who This Is For -->
     <section class="who-section">
         <div class="section-eyebrow">WHO NEEDS A CORNER MAN?</div>
-        <h2 class="section-heading">You're Ready If...</h2>
+        <h2 class="section-heading">You Do</h2>
         <p class="section-intro">
             You're in the ring fighting for growth, but you're missing that experienced voice in your corner 
             telling you when to attack, when to defend, and what moves will actually win the match.
