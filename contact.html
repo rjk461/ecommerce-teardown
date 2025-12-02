@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ecommerce Teardown</title>
+    <meta name="description" content="Get in touch with Richard Kelsey for ecommerce consulting, website teardowns, and strategic advice.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecommerceteardown.com/contact">
+    <meta property="og:title" content="Contact - Ecommerce Teardown">
+    <meta property="og:description" content="Get in touch with Richard Kelsey for ecommerce consulting, website teardowns, and strategic advice.">
+    <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Ecommerce Teardown">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ecommerceteardown.com/contact">
+    <meta name="twitter:title" content="Contact - Ecommerce Teardown">
+    <meta name="twitter:description" content="Get in touch with Richard Kelsey for ecommerce consulting, website teardowns, and strategic advice.">
+    <meta name="twitter:image" content="https://ecommerceteardown.com/images/og-image.png">
+    <meta name="twitter:image:alt" content="Ecommerce Teardown - Contact">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            font-weight: 400;
+        }
+
+        /* Mad Mex Color Variables - Actual Brand Colors */
+        :root {
+            --mad-green: #00A651;
+            --mad-red: #C8102E;
+            --mad-pink: #E91E63;
+            --mad-cream: #F5EFE6;
+            --mad-tan: #D4C5B0;
+            --dark-grey: #1A1A1A;
+            --medium-grey: #666666;
+            --accent-yellow: #F8B500;
+        }
+
+        /* Top Accent Bar */
+        .top-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
+        }
+
+        /* Header Navigation */
+        .header-nav {
+            background: var(--mad-green);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 80px 20px;
+            background: white;
+            border-top: 5px solid;
+            border-image: linear-gradient(to right, var(--mad-pink), var(--accent-yellow)) 1;
+        }
+
+        .section-eyebrow {
+            text-align: center;
+            color: var(--mad-pink);
+            font-size: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 18px;
+            color: var(--medium-grey);
+            margin-bottom: 60px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--mad-cream);
+            padding: 50px 40px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-grey);
+            letter-spacing: 0.1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            font-weight: 400;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--mad-green);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--mad-red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-grey);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: var(--accent-yellow);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--mad-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--medium-grey);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .footer-bar {
+            height: 5px;
+            background: linear-gradient(to right, var(--mad-pink), var(--mad-green));
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 32px;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Accent Bar -->
+    <div class="top-bar"></div>
+
+    <!-- Header Navigation -->
+    <nav class="header-nav">
+        <a href="/">← Back to Home</a>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="form-section" id="contact">
+        <div class="section-eyebrow">GET IN TOUCH</div>
+        <h2 class="section-heading">Contact the Champion</h2>
+        <p class="section-intro">
+            Have a question? Want to discuss a project? Ready to step into the ring?<br>
+            Send me a message and I'll get back to you as soon as possible.
+        </p>
+
+        <div class="form-container">
+            <form id="contactForm" action="https://formspree.io/f/meoykkey" method="POST">
+                <input type="hidden" name="_to" value="richardkelsey@gmail.com">
+                <input type="hidden" name="_subject" value="Contact Form Submission - Ecommerce Teardown">
+                
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell me what's on your mind..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">🔥 SEND MESSAGE →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bar"></div>
+        <div class="footer-content">
+            <div>
+                <h3>The Ring</h3>
+                <ul>
+                    <li><a href="/#form">Free Public Teardown</a></li>
+                    <li><a href="/#pricing">Private Reviews</a></li>
+                    <li><a href="/#pricing">Consulting</a></li>
+                    <li><a href="/coming-soon">Sample Teardowns</a></li>
+                    <li><a href="/#meet-champion">About the Champion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li>
+                        <a href="https://linkedin.com/in/richardkelsey" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                            <span>LinkedIn</span>
+                            <span style="color: var(--medium-grey); font-size: 14px;">(11,413 followers)</span>
+                        </a>
+                    </li>
+                    <li><a href="/contact">Contact Form</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recent Battles</h3>
+                <ul>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">View All Takedowns →</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Not affiliated with actual lucha libre wrestling. But the takedowns are just as real.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission with custom success message
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.textContent = '⚡ SENDING...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 40px 20px;">
+                            <h3 style="color: var(--mad-green); font-size: 24px; margin-bottom: 20px;">
+                                🎭 MESSAGE SENT!
+                            </h3>
+                            <p style="font-size: 18px; line-height: 1.6; color: var(--dark-grey);">
+                                Thanks for reaching out! I'll get back to you as soon as possible. Check your email for confirmation.
+                            </p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error message
+                submitBtn.textContent = '🔥 SEND MESSAGE →';
+                submitBtn.disabled = false;
+                alert('Oops! There was a problem sending your message. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
+
