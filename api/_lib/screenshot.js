@@ -54,8 +54,13 @@ async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
       .$eval("body", (el) => (el.innerText || "").slice(0, 4000))
       .catch(() => "");
 
-    // Use viewport screenshots to keep runtime predictable in serverless.
-    const png = await page.screenshot({ fullPage: false, type: "png" });
+    // For mobile, try to open navigation menu before screenshot so AI can analyze it.
+    if (isMobile) {
+      await tryOpenMobileMenu(page);
+    }
+
+    // Capture full-page screenshot to show entire page length.
+    const png = await page.screenshot({ fullPage: true, type: "png" });
 
     return {
       png,
@@ -92,6 +97,43 @@ async function gotoWithFallback(page, url) {
 
   // Give the browser a moment to render after heavy JS.
   await page.waitForTimeout(750);
+}
+
+async function tryOpenMobileMenu(page) {
+  // Common mobile menu button selectors to try.
+  const menuSelectors = [
+    'button[aria-label*="menu" i]',
+    'button[aria-label*="navigation" i]',
+    'button[aria-label*="open" i]',
+    '.mobile-menu-toggle',
+    '.menu-toggle',
+    '#mobile-menu-button',
+    '#menu-button',
+    '[data-menu-toggle]',
+    '[data-mobile-menu]',
+    'button.hamburger',
+    '.hamburger',
+    'nav button',
+    'header button:first-of-type'
+  ];
+
+  for (const selector of menuSelectors) {
+    try {
+      const button = await page.$(selector);
+      if (button) {
+        const isVisible = await button.isVisible().catch(() => false);
+        if (isVisible) {
+          await button.click();
+          // Wait for menu animation to complete.
+          await page.waitForTimeout(500);
+          return;
+        }
+      }
+    } catch {
+      // Continue to next selector.
+    }
+  }
+  // If no menu button found, continue without opening menu.
 }
 
 

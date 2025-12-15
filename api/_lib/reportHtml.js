@@ -1,6 +1,8 @@
 export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBase64, mobilePngBase64 }) {
   const safe = (v) => escapeHtml(String(v ?? ""));
-  const title = "AI Teardown PDF";
+  const brandName = extractBrandName(url);
+  const dateStr = formatDate(createdAt);
+  const title = `${brandName} Website Improvement Report - Ecommerce Teardown ${dateStr}`;
 
   const friction = Array.isArray(teardown?.friction_points) ? teardown.friction_points : [];
   const quickWins = teardown?.prioritized_fixes?.quick_wins ?? [];
@@ -106,11 +108,44 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
       .twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
       .small { font-size: 11px; color: var(--medium-grey); }
       a { color: var(--dark-grey); }
+      .header-link {
+        text-align: center;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        margin-bottom: 20px;
+      }
+      .header-link a {
+        color: var(--mad-green);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .header-link a:hover {
+        text-decoration: underline;
+      }
+      .footer-link {
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        margin-top: 30px;
+      }
+      .footer-link a {
+        color: var(--mad-green);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .footer-link a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
     <div class="topbar"></div>
     <div class="wrap">
+      <div class="header-link">
+        <a href="https://ecommerceteardown.com" target="_blank">ecommerceteardown.com</a>
+      </div>
       <h1>${safe(title)}</h1>
       <div class="meta">
         <div><span class="k">URL:</span> ${safe(url)}</div>
@@ -178,10 +213,58 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
       <div class="section small">
         Generated automatically. If a page blocks automated screenshots or is highly dynamic, results may vary.
       </div>
+      <div class="footer-link">
+        <a href="https://ecommerceteardown.com" target="_blank">ecommerceteardown.com</a>
+      </div>
     </div>
   </body>
 </html>`;
 }
+
+function extractBrandName(url) {
+  try {
+    const urlObj = new URL(url);
+    let hostname = urlObj.hostname.toLowerCase();
+    
+    // Remove www. prefix
+    if (hostname.startsWith('www.')) {
+      hostname = hostname.slice(4);
+    }
+    
+    // Extract main domain (remove TLD)
+    const parts = hostname.split('.');
+    if (parts.length >= 2) {
+      // Get the main domain part (second-to-last for .com.au, .co.uk, etc.)
+      const mainPart = parts[parts.length - 2];
+      // Capitalize first letter
+      return mainPart.charAt(0).toUpperCase() + mainPart.slice(1);
+    }
+    
+    // Fallback: use first part
+    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+  } catch {
+    return 'Website';
+  }
+}
+
+function formatDate(isoString) {
+  try {
+    const date = new Date(isoString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear()).slice(-2);
+    return `${day}-${month}-${year}`;
+  } catch {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = String(now.getFullYear()).slice(-2);
+    return `${day}-${month}-${year}`;
+  }
+}
+
+// Export helper functions for use in other modules
+export { extractBrandName, formatDate };
 
 function renderFriction(item) {
   const safe = (v) => escapeHtml(String(v ?? ""));

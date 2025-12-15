@@ -4,8 +4,9 @@ import { testTeardownSchema, normalizeUrl } from "./_lib/validate.js";
 import { newJobId, setJob, storeBlob } from "./_lib/storage.js";
 import { captureScreenshots } from "./_lib/screenshot.js";
 import { generateTeardown } from "./_lib/teardown.js";
-import { renderReportHtml } from "./_lib/reportHtml.js";
+import { renderReportHtml, extractBrandName, formatDate } from "./_lib/reportHtml.js";
 import { htmlToPdfBuffer } from "./_lib/pdf.js";
+import { sendTeardownReport } from "./_lib/email.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -76,6 +77,10 @@ export default async function handler(req, res) {
         data: mobile.png
       });
 
+      const pdfUrl = pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`;
+      const brandName = extractBrandName(url);
+      const dateStr = formatDate(startedAt);
+
       setJob(jobId, {
         status: "done",
         startedAt,
@@ -90,11 +95,27 @@ export default async function handler(req, res) {
         }
       });
 
+      // 5) Send email with report (if email provided and Resend configured)
+      if (email && email.trim()) {
+        try {
+          await sendTeardownReport({
+            to: email,
+            brandName,
+            dateStr,
+            pdfUrl,
+            pdfBuffer: pdfBuf
+          });
+        } catch (emailError) {
+          // Log email error but don't fail the request - user can still download from response
+          console.error("Failed to send email:", emailError);
+        }
+      }
+
       res.status(200).json({
         job_id: jobId,
         status: "done",
         url,
-        pdf_url: pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`,
+        pdf_url: pdfUrl,
         desktop_png_url:
           desktopStored.kind === "blob" ? desktopStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=desktop`,
         mobile_png_url:
