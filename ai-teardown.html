@@ -10,6 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -41,108 +42,44 @@
             color: #1A1A1A;
             font-weight: 400;
             overflow-x: hidden;
-        }
-
-        :root {
-            --mad-green: #00A651;
-            --mad-red: #C8102E;
-            --mad-pink: #E91E63;
-            --mad-cream: #F5EFE6;
-            --dark-grey: #1A1A1A;
-            --medium-grey: #666666;
-            --accent-yellow: #F8B500;
-        }
-
-        .top-bar {
-            height: 5px;
-            background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav {
-            background: white;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-
-        .nav-inner {
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--dark-grey);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-        }
-
-        .brand-badge {
-            width: 34px;
-            height: 34px;
-            border-radius: 9px;
-            background: linear-gradient(135deg, var(--mad-green), var(--mad-pink));
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-grey);
-            font-weight: 700;
-            font-size: 14px;
+            width: 100%;
         }
 
         .btn {
-            border: none;
-            border-radius: 10px;
-            padding: 14px 18px;
+            padding: 16px 32px;
+            font-size: 16px;
             font-weight: 800;
-            letter-spacing: 0.3px;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+            letter-spacing: 0.3px;
         }
 
-        .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,0.16); }
-        .btn:active { transform: translateY(0); box-shadow: none; }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn:active { transform: translateY(0); }
 
         .btn-primary {
-            background: var(--mad-green);
-            color: white;
-            box-shadow: 0 10px 24px rgba(0, 166, 81, 0.25);
+            background: white;
+            color: var(--mad-green);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
         }
 
         .btn-secondary {
-            background: rgba(0,0,0,0.04);
-            color: var(--dark-grey);
+            background: rgba(255,255,255,0.12);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.35);
         }
 
         .hero {
-            background: linear-gradient(180deg, rgba(0,166,81,0.10) 0%, rgba(245,239,230,0.5) 55%, white 100%);
-            padding: 42px 0 30px;
+            background: var(--mad-green);
+            padding: 48px 0 42px;
         }
 
         .hero-grid {
@@ -156,9 +93,9 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(233, 30, 99, 0.10);
-            color: var(--mad-pink);
-            border: 1px solid rgba(233, 30, 99, 0.25);
+            background: rgba(248, 181, 0, 0.14);
+            color: var(--accent-yellow);
+            border: 1px solid rgba(248, 181, 0, 0.35);
             border-radius: 999px;
             padding: 8px 12px;
             font-weight: 900;
@@ -169,17 +106,19 @@
 
         h1 {
             margin-top: 16px;
-            font-size: 46px;
-            line-height: 1.08;
-            font-weight: 1000;
-            letter-spacing: -0.6px;
+            color: white;
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
         }
 
         .subhead {
             margin-top: 16px;
-            color: var(--medium-grey);
-            font-size: 18px;
-            line-height: 1.7;
+            color: rgba(255,255,255,0.92);
+            font-size: 20px;
+            line-height: 1.6;
             max-width: 52ch;
         }
 
@@ -187,25 +126,25 @@
             margin-top: 18px;
             display: grid;
             gap: 10px;
-            color: var(--dark-grey);
+            color: rgba(255,255,255,0.92);
         }
 
         .hero-point {
             display: flex;
             gap: 10px;
             align-items: flex-start;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .check {
             width: 22px;
             height: 22px;
             border-radius: 6px;
-            background: rgba(0, 166, 81, 0.14);
+            background: rgba(255,255,255,0.18);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--mad-green);
+            color: white;
             flex-shrink: 0;
             margin-top: 2px;
             font-weight: 900;
@@ -256,8 +195,8 @@
         .form-group { margin-bottom: 14px; }
         label {
             display: block;
-            font-weight: 800;
-            font-size: 13px;
+            font-weight: 600;
+            font-size: 14px;
             color: var(--dark-grey);
             margin-bottom: 6px;
             letter-spacing: 0.2px;
@@ -287,6 +226,32 @@
             margin-top: 16px;
         }
 
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--mad-red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .fineprint {
             color: var(--medium-grey);
             font-size: 12px;
@@ -300,18 +265,34 @@
         }
 
         .section-title {
-            font-size: 34px;
-            line-height: 1.15;
-            font-weight: 1000;
-            letter-spacing: -0.4px;
-            margin-bottom: 12px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
         }
 
         .section-sub {
+            text-align: center;
             color: var(--medium-grey);
-            font-size: 16px;
-            line-height: 1.7;
-            max-width: 70ch;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .grid-3 {
@@ -405,42 +386,7 @@
             line-height: 1.7;
         }
 
-        .footer {
-            background: var(--dark-grey);
-            color: white;
-            padding: 50px 20px 30px;
-            margin-top: 40px;
-        }
-
-        .footer a { color: white; text-decoration: none; font-weight: 700; }
-        .footer a:hover { color: var(--mad-green); }
-
-        .footer-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 26px;
-            margin-bottom: 28px;
-        }
-
-        .footer h3 {
-            color: var(--accent-yellow);
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-
-        .footer ul { list-style: none; }
-        .footer li { margin-bottom: 10px; color: rgba(255,255,255,0.9); }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.12);
-            padding-top: 18px;
-            color: rgba(255,255,255,0.75);
-            font-size: 13px;
-            line-height: 1.6;
-        }
+        .footer { margin-top: 40px; }
 
         .sticky-cta {
             display: none;
@@ -456,7 +402,7 @@
         }
 
         .sticky-cta-inner {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -467,6 +413,12 @@
         .sticky-cta strong { font-weight: 1000; }
         .sticky-cta span { color: var(--medium-grey); font-size: 13px; }
 
+        .sticky-cta .btn-primary {
+            background: var(--mad-green);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 166, 81, 0.25);
+        }
+
         @media (max-width: 960px) {
             .hero-grid { grid-template-columns: 1fr; }
             h1 { font-size: 38px; }
@@ -475,7 +427,7 @@
         }
 
         @media (max-width: 640px) {
-            .nav-links a { display: none; }
+            .header-links a:not(.header-cta) { display: none; }
             .sticky-cta { display: block; }
             .hero { padding-bottom: 88px; }
             h1 { font-size: 34px; }
@@ -489,22 +441,19 @@
 <body>
     <div class="top-bar"></div>
 
-    <header class="nav">
+    <nav class="header-nav" aria-label="Primary">
         <div class="container">
-            <div class="nav-inner">
-                <a class="brand" href="/">
-                    <span class="brand-badge" aria-hidden="true"></span>
-                    <span>Ecommerce Teardown</span>
-                </a>
-                <nav class="nav-links" aria-label="Primary">
+            <div class="header-nav-inner">
+                <a class="header-brand" href="/">Ecommerce Teardown</a>
+                <div class="header-links">
                     <a href="#what">What you get</a>
                     <a href="#how">How it works</a>
                     <a href="#faq">FAQ</a>
-                    <a class="btn btn-primary" href="#order">Get the PDF →</a>
-                </nav>
+                    <a class="btn btn-primary header-cta" href="#order">Get the PDF →</a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <section class="hero">
@@ -551,7 +500,7 @@
                                 </div>
 
                                 <div class="form-actions">
-                                    <button class="btn btn-primary" type="submit" id="submitBtn">Pay & generate report →</button>
+                                    <button class="submit-btn" type="submit" id="submitBtn">Pay & generate report →</button>
                                     <div class="fineprint">You’ll be redirected to secure checkout. After payment, the report is generated and emailed to you.</div>
                                     <div class="fineprint">By submitting, you confirm you have permission to review this page and agree to our <a href="/contact">contact</a> terms.</div>
                                 </div>
@@ -636,27 +585,44 @@
         </section>
 
         <footer class="footer">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div>
                     <h3>The Ring</h3>
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/#form">Free Public Teardown</a></li>
+                        <li><a href="/#pricing">Private Reviews</a></li>
                         <li><a href="/consulting">Consulting</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/coming-soon">Sample Teardowns</a></li>
+                        <li><a href="/#meet-champion">About the Champion</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>AI Teardown</h3>
+                    <h3>Connect</h3>
                     <ul>
-                        <li><a href="#order">Buy report</a></li>
-                        <li><a href="#what">What you get</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li>
+                            <a href="https://linkedin.com/in/richardkelsey" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                                <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                                <span>LinkedIn</span>
+                                <span style="color: rgba(255,255,255,0.7); font-size: 14px;">(11,413 followers)</span>
+                            </a>
+                        </li>
+                        <li><a href="/contact">Contact Form</a></li>
+                        <li>Based in Sydney, Australia</li>
+                        <li>Open to Head of Ecommerce roles</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Recent Battles</h3>
+                    <ul>
+                        <li><a href="/coming-soon">Brand Teardown →</a></li>
+                        <li><a href="/coming-soon">Brand Teardown →</a></li>
+                        <li><a href="/coming-soon">View All Teardowns →</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
-                <p style="margin-top: 8px; font-size: 12px; opacity: 0.8;">Payments powered by Stripe. Report delivery via email.</p>
+                <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Payments powered by Stripe. Report delivery via email.</p>
             </div>
         </footer>
 
