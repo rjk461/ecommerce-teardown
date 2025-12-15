@@ -26,7 +26,12 @@ export async function storeBlob({ path, contentType, data }) {
     return { kind: "blob", url: res.url };
   }
 
-  // Fallback for local/dev environments: keep in memory.
+  // NOTE: In-memory storage is not reliable on Vercel (serverless instances are ephemeral).
+  // We only allow it for local dev to keep the flow testable without extra setup.
+  if (process.env.VERCEL === "1") {
+    throw new Error("Missing BLOB_READ_WRITE_TOKEN (required on Vercel for durable report URLs)");
+  }
+
   return { kind: "memory", data };
 }
 
