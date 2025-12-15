@@ -37,7 +37,7 @@ async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
   const page = await context.newPage();
 
   try {
-    await page.goto(url, { waitUntil: "networkidle", timeout: 45_000 });
+    await gotoWithFallback(page, url);
 
     const title = await page.title().catch(() => "");
     const description = await page
@@ -62,6 +62,28 @@ async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
     await page.close().catch(() => {});
     await context.close().catch(() => {});
   }
+}
+
+async function gotoWithFallback(page, url) {
+  // Many modern sites keep network activity alive indefinitely (analytics, chat, etc.).
+  // So "networkidle" is not a reliable primary gate. Use DOMContentLoaded as the main signal,
+  // then do a best-effort networkidle wait.
+  try {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90_000 });
+  } catch (e) {
+    // Retry once with a different wait condition.
+    await page.goto(url, { waitUntil: "load", timeout: 90_000 });
+  }
+
+  // Best effort: allow late resources to settle, but don't fail the whole job.
+  try {
+    await page.waitForLoadState("networkidle", { timeout: 10_000 });
+  } catch {
+    // ignore
+  }
+
+  // Give the browser a moment to render after heavy JS.
+  await page.waitForTimeout(750);
 }
 
 
