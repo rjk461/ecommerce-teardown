@@ -1,4 +1,4 @@
-import chromium from "@sparticuz/chromium-min";
+import chromium from "@sparticuz/chromium";
 
 function isLocal() {
   return process.env.VERCEL !== "1";
