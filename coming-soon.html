@@ -10,6 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -53,23 +54,7 @@
             font-weight: 400;
         }
 
-        /* Mad Mex Color Variables - Actual Brand Colors */
-        :root {
-            --mad-green: #00A651;
-            --mad-red: #C8102E;
-            --mad-pink: #E91E63;
-            --mad-cream: #F5EFE6;
-            --mad-tan: #D4C5B0;
-            --dark-grey: #1A1A1A;
-            --medium-grey: #666666;
-            --accent-yellow: #F8B500;
-        }
-
-        /* Top Accent Bar */
-        .top-bar {
-            height: 5px;
-            background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
-        }
+        /* Shared layout styles live in /site.css (colors, top bar, header, footer, etc.) */
 
         /* Coming Soon Section */
         .coming-soon {
@@ -147,56 +132,6 @@
         .back-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-grey);
-            color: white;
-            padding: 60px 20px 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer h3 {
-            color: var(--accent-yellow);
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .footer ul {
-            list-style: none;
-        }
-
-        .footer ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer a:hover {
-            color: var(--mad-green);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--medium-grey);
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 1.6;
         }
 
         /* Responsive */

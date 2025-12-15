@@ -8,6 +8,8 @@
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY"></script>
@@ -24,61 +26,131 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #1A1A1A;
-            background: linear-gradient(180deg, rgba(0,166,81,0.10) 0%, rgba(245,239,230,0.6) 55%, white 100%);
-            min-height: 100vh;
-        }
-        :root {
-            --mad-green: #00A651;
-            --mad-pink: #E91E63;
-            --accent-yellow: #F8B500;
-            --dark-grey: #1A1A1A;
-            --medium-grey: #666666;
-        }
-        .top-bar { height: 5px; background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow)); }
-        .wrap { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
-        .card {
             background: white;
-            border: 1px solid rgba(0,0,0,0.10);
-            border-radius: 18px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.10);
-            padding: 26px;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-        h1 { font-size: 34px; line-height: 1.15; font-weight: 1000; }
+        .status-section {
+            padding: 80px 0;
+        }
+
+        .section-eyebrow {
+            text-align: center;
+            color: #C62828;
+            font-size: 19px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 18px;
+            color: var(--medium-grey);
+            margin: 0 auto 30px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--mad-cream);
+            padding: 50px 40px;
+            border-radius: 12px;
+            border: 2px solid rgba(0,0,0,0.08);
+        }
+
         p { margin-top: 12px; color: var(--medium-grey); font-size: 16px; }
+
         .status {
             margin-top: 18px;
             padding: 14px 14px;
-            border-radius: 14px;
-            border: 1px solid rgba(0,0,0,0.08);
-            background: rgba(0,166,81,0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.10);
+            background: rgba(0,166,81,0.10);
             color: var(--dark-grey);
             font-weight: 800;
         }
+
         .actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+
         .btn {
             border: none;
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-weight: 900;
-            letter-spacing: 0.2px;
+            border-radius: 8px;
+            padding: 16px 28px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
         .btn-primary { background: var(--mad-green); color: white; }
-        .btn-secondary { background: rgba(0,0,0,0.04); color: var(--dark-grey); }
+        .btn-secondary { background: white; color: var(--dark-grey); border: 2px solid rgba(0,0,0,0.12); }
         code { background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 8px; }
+
+        .footer { margin-top: 40px; }
+
+        @media (max-width: 768px) {
+            .card { padding: 30px 20px; }
+            h1 { font-size: 32px; }
+            .intro { font-size: 16px; }
+        }
     </style>
 </head>
 <body>
     <div class="top-bar"></div>
-    <div class="wrap">
-        <div class="card">
-            <h1>Payment successful.</h1>
-            <p>Your AI teardown report is now being generated. You’ll receive a PDF by email when it’s ready.</p>
+
+    <nav class="header-nav" aria-label="Primary">
+        <div class="container">
+            <div class="header-nav-inner">
+                <a class="header-brand" href="/">Ecommerce Teardown</a>
+                <a class="btn btn-secondary" href="/ai-teardown">Run another teardown →</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="status-section">
+        <div class="container">
+            <div class="section-eyebrow">PAYMENT CONFIRMED</div>
+            <h1>Payment successful</h1>
+            <p class="intro">Your AI teardown report is now being generated. You’ll receive a PDF by email when it’s ready.</p>
+
+            <div class="card">
 
             <div id="status" class="status">Starting report generation…</div>
             <p id="details" style="margin-top: 10px;"></p>
@@ -90,8 +162,51 @@
 
             <p style="margin-top: 18px; font-size: 13px;">If delivery takes longer than expected, contact us via <a href="/contact">/contact</a> and include your <code>session_id</code> shown below.</p>
             <p id="sid" style="margin-top: 8px; font-size: 13px;"></p>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>The Ring</h3>
+                <ul>
+                    <li><a href="/#form">Free Public Teardown</a></li>
+                    <li><a href="/#pricing">Private Reviews</a></li>
+                    <li><a href="/consulting">Consulting</a></li>
+                    <li><a href="/coming-soon">Sample Teardowns</a></li>
+                    <li><a href="/#meet-champion">About the Champion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li>
+                        <a href="https://linkedin.com/in/richardkelsey" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                            <span>LinkedIn</span>
+                            <span style="color: rgba(255,255,255,0.7); font-size: 14px;">(11,413 followers)</span>
+                        </a>
+                    </li>
+                    <li><a href="/contact">Contact Form</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recent Battles</h3>
+                <ul>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">View All Teardowns →</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Payments powered by Stripe. Report delivery via email.</p>
+        </div>
+    </footer>
 
     <script>
         const statusEl = document.getElementById('status');
