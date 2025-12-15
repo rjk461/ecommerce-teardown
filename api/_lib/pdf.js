@@ -1,18 +1,8 @@
-import chromium from "@sparticuz/chromium";
 import { chromium as playwrightChromium } from "playwright-core";
-
-function isLocal() {
-  return process.env.VERCEL !== "1";
-}
+import { getLaunchOptions } from "./chromiumLaunch.js";
 
 export async function htmlToPdfBuffer(html) {
-  const launchOptions = isLocal()
-    ? { headless: true }
-    : {
-        args: chromium.args,
-        executablePath: await chromium.executablePath(),
-        headless: chromium.headless
-      };
+  const launchOptions = await getLaunchOptions();
 
   const browser = await playwrightChromium.launch(launchOptions);
   try {

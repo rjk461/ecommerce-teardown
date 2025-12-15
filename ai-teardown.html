@@ -727,8 +727,9 @@
             } catch (err) {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
+                const msg = (err && err.message) ? err.message : String(err || '');
                 alert(isTestMode()
-                    ? 'Sorry — there was a problem generating the report. Please try again.'
+                    ? `Sorry — there was a problem generating the report.\n\n${msg}`
                     : 'Sorry — there was a problem starting checkout. Please try again.');
                 console.error(err);
             }
