@@ -1,0 +1,104 @@
+import { testTeardownSchema, normalizeUrl } from "./_lib/validate.js";
+import { newJobId, setJob, storeBlob } from "./_lib/storage.js";
+import { captureScreenshots } from "./_lib/screenshot.js";
+import { generateTeardown } from "./_lib/teardown.js";
+import { renderReportHtml } from "./_lib/reportHtml.js";
+import { htmlToPdfBuffer } from "./_lib/pdf.js";
+
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    res.status(405).json({ error: "Method not allowed" });
+    return;
+  }
+
+  const jobId = newJobId();
+  const startedAt = new Date().toISOString();
+  setJob(jobId, { status: "running", startedAt });
+
+  try {
+    const parsed = testTeardownSchema.safeParse(req.body || {});
+    if (!parsed.success) {
+      setJob(jobId, { status: "error", error: "Invalid input" });
+      res.status(400).json({ error: "Invalid input", details: parsed.error.flatten() });
+      return;
+    }
+
+    const url = normalizeUrl(parsed.data.url);
+    if (!url) {
+      setJob(jobId, { status: "error", error: "Missing url" });
+      res.status(400).json({ error: "Missing url" });
+      return;
+    }
+
+    const notes = parsed.data.notes;
+    const email = parsed.data.email;
+
+    // 1) Screenshots + signals
+    const { desktop, mobile } = await captureScreenshots(url);
+
+    // 2) AI teardown
+    const teardown = await generateTeardown({ url, notes, desktop, mobile });
+
+    // 3) PDF
+    const desktopB64 = Buffer.from(desktop.png).toString("base64");
+    const mobileB64 = Buffer.from(mobile.png).toString("base64");
+    const reportHtml = renderReportHtml({
+      url,
+      notes,
+      createdAt: startedAt,
+      teardown,
+      desktopPngBase64: desktopB64,
+      mobilePngBase64: mobileB64
+    });
+    const pdfBuf = await htmlToPdfBuffer(reportHtml);
+
+    // 4) Store artifacts (Blob if configured; otherwise in-memory fallback)
+    const basePath = `ai-teardown/${jobId}`;
+    const pdfStored = await storeBlob({
+      path: `${basePath}/report.pdf`,
+      contentType: "application/pdf",
+      data: pdfBuf
+    });
+    const desktopStored = await storeBlob({
+      path: `${basePath}/desktop.png`,
+      contentType: "image/png",
+      data: desktop.png
+    });
+    const mobileStored = await storeBlob({
+      path: `${basePath}/mobile.png`,
+      contentType: "image/png",
+      data: mobile.png
+    });
+
+    setJob(jobId, {
+      status: "done",
+      startedAt,
+      url,
+      email,
+      notes,
+      teardown,
+      artifacts: {
+        pdf: pdfStored,
+        desktop: desktopStored,
+        mobile: mobileStored
+      }
+    });
+
+    res.status(200).json({
+      job_id: jobId,
+      status: "done",
+      url,
+      pdf_url: pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`,
+      desktop_png_url:
+        desktopStored.kind === "blob" ? desktopStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=desktop`,
+      mobile_png_url:
+        mobileStored.kind === "blob" ? mobileStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile`
+    });
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : "Unknown error";
+    setJob(jobId, { status: "error", error: msg });
+    res.status(500).json({ error: msg, job_id: jobId });
+  }
+}
+
+

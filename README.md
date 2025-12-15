@@ -21,6 +21,7 @@ Richard Kelsey (3x Australian Retailer of the Year, scaled Beer Cartel to $6M) o
 - Mad Mex brand-inspired color palette
 - Mobile responsive
 - Deployed on Vercel
+- Vercel Serverless Functions (for AI Teardown test mode)
 
 ## Design Inspiration
 
@@ -37,6 +38,30 @@ Mexican lucha libre wrestling aesthetic meets professional ecommerce consulting,
 ## Local Development
 
 Simply open `index.html` in a browser. No build process required.
+
+### AI Teardown test mode (no Stripe)
+
+You can generate a teardown report without a payment gateway:
+
+- Open: `/ai-teardown?test=1`
+- Submit a URL + email + notes
+- The page will call `POST /api/test-teardown` and return:
+  - mobile + desktop screenshots
+  - an OpenAI-generated teardown
+  - a downloadable PDF
+
+#### Required environment variables (Vercel)
+
+- `OPENAI_API_KEY` (required)
+- `OPENAI_MODEL` (optional, default: `gpt-4o-mini`)
+
+#### Optional (recommended) storage
+
+If you set up Vercel Blob, the API will store the PDF/screenshots and return public URLs:
+
+- `BLOB_READ_WRITE_TOKEN`
+
+If Blob is not configured, the implementation falls back to in-memory storage (suitable for local/dev only; not reliable across serverless invocations).
 
 ## Deployment
 

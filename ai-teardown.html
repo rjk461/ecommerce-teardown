@@ -427,7 +427,6 @@
         }
 
         @media (max-width: 640px) {
-            .header-links a:not(.header-cta) { display: none; }
             .sticky-cta { display: block; }
             .hero { padding-bottom: 88px; }
             h1 { font-size: 34px; }
@@ -445,12 +444,6 @@
         <div class="container">
             <div class="header-nav-inner">
                 <a class="header-brand" href="/">Ecommerce Teardown</a>
-                <div class="header-links">
-                    <a href="#what">What you get</a>
-                    <a href="#how">How it works</a>
-                    <a href="#faq">FAQ</a>
-                    <a class="btn btn-primary header-cta" href="#order">Get the PDF →</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -505,6 +498,25 @@
                                     <div class="fineprint">By submitting, you confirm you have permission to review this page and agree to our <a href="/contact">contact</a> terms.</div>
                                 </div>
                             </form>
+                            <div id="testResult" style="display:none; margin-top: 16px;">
+                                <div class="info" style="margin-top: 14px;">
+                                    <h3>Test mode result</h3>
+                                    <p style="margin-top: 8px;">
+                                        <a id="pdfLink" href="#" target="_blank" rel="noopener">Download PDF →</a>
+                                    </p>
+                                    <div style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                        <div>
+                                            <div style="font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">Desktop</div>
+                                            <img id="desktopImg" alt="Desktop screenshot" style="width: 100%; border-radius: 10px; border: 1px solid rgba(0,0,0,0.10);" />
+                                        </div>
+                                        <div>
+                                            <div style="font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;">Mobile</div>
+                                            <img id="mobileImg" alt="Mobile screenshot" style="width: 100%; border-radius: 10px; border: 1px solid rgba(0,0,0,0.10);" />
+                                        </div>
+                                    </div>
+                                    <p id="jobMeta" style="margin-top: 10px; font-size: 12px; color: var(--medium-grey);"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -646,6 +658,15 @@
 
         const form = document.getElementById('teardownForm');
         const submitBtn = document.getElementById('submitBtn');
+        const testResult = document.getElementById('testResult');
+        const pdfLink = document.getElementById('pdfLink');
+        const desktopImg = document.getElementById('desktopImg');
+        const mobileImg = document.getElementById('mobileImg');
+        const jobMeta = document.getElementById('jobMeta');
+
+        function isTestMode() {
+            return new URLSearchParams(window.location.search).get('test') === '1';
+        }
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -658,9 +679,36 @@
 
             submitBtn.disabled = true;
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Redirecting to checkout...';
+
+            const testMode = isTestMode();
+            submitBtn.textContent = testMode ? 'Generating report…' : 'Redirecting to checkout...';
 
             try {
+                if (testMode) {
+                    const res = await fetch('/api/test-teardown', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ url, email, notes })
+                    });
+
+                    if (!res.ok) {
+                        const msg = await res.text();
+                        throw new Error(msg || 'Failed to generate report');
+                    }
+
+                    const data = await res.json();
+                    if (!data || !data.job_id || !data.pdf_url) throw new Error('Missing test teardown result');
+
+                    pdfLink.href = data.pdf_url;
+                    desktopImg.src = data.desktop_png_url;
+                    mobileImg.src = data.mobile_png_url;
+                    jobMeta.textContent = `job_id: ${data.job_id}`;
+                    testResult.style.display = 'block';
+                    submitBtn.textContent = 'Done — generate another';
+                    submitBtn.disabled = false;
+                    return;
+                }
+
                 const res = await fetch('/api/create-checkout-session', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -679,7 +727,9 @@
             } catch (err) {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
-                alert('Sorry — there was a problem starting checkout. Please try again.');
+                alert(isTestMode()
+                    ? 'Sorry — there was a problem generating the report. Please try again.'
+                    : 'Sorry — there was a problem starting checkout. Please try again.');
                 console.error(err);
             }
         });

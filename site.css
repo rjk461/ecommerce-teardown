@@ -67,7 +67,7 @@ body {
   gap: 18px;
 }
 
-.header-links a {
+.header-links a:not(.btn) {
   color: white;
   text-decoration: none;
   font-size: 14px;

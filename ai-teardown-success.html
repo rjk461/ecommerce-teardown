@@ -154,6 +154,7 @@
 
             <div id="status" class="status">Starting report generation…</div>
             <p id="details" style="margin-top: 10px;"></p>
+            <p id="download" style="margin-top: 12px;"></p>
 
             <div class="actions">
                 <a class="btn btn-primary" href="/ai-teardown">Run another teardown →</a>
@@ -223,6 +224,35 @@
         }
 
         async function start() {
+            const testJobId = params.get('job_id');
+            if (testJobId) {
+                sidEl.textContent = `job_id: ${testJobId}`;
+                statusEl.textContent = 'Checking report status…';
+                try {
+                    const res = await fetch(`/api/teardown-status?job_id=${encodeURIComponent(testJobId)}`);
+                    const data = await res.json().catch(() => null);
+                    if (!res.ok || !data) throw new Error('Failed to fetch status');
+
+                    if (data.status === 'done' && data.pdf_url) {
+                        statusEl.textContent = 'Report ready.';
+                        const dl = document.getElementById('download');
+                        dl.innerHTML = `<a href="${data.pdf_url}" class="btn btn-primary" target="_blank" rel="noopener">Download PDF →</a>`;
+                        return;
+                    }
+
+                    statusEl.textContent = data.status === 'error'
+                        ? 'There was a problem generating the report.'
+                        : 'Report is still being generated. Please refresh in a moment.';
+                    if (data.error) detailsEl.textContent = data.error;
+                    return;
+                } catch (e) {
+                    statusEl.textContent = 'Could not check report status.';
+                    detailsEl.textContent = 'Please refresh the page or contact support.';
+                    console.error(e);
+                    return;
+                }
+            }
+
             if (!sessionId) {
                 statusEl.textContent = 'Missing session ID — cannot start generation automatically.';
                 return;
