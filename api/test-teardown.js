@@ -95,22 +95,7 @@ export default async function handler(req, res) {
         }
       });
 
-      // 5) Send email with report (if email provided and Resend configured)
-      if (email && email.trim()) {
-        try {
-          await sendTeardownReport({
-            to: email,
-            brandName,
-            dateStr,
-            pdfUrl,
-            pdfBuffer: pdfBuf
-          });
-        } catch (emailError) {
-          // Log email error but don't fail the request - user can still download from response
-          console.error("Failed to send email:", emailError);
-        }
-      }
-
+      // Send response immediately, then fire email in background (non-blocking)
       res.status(200).json({
         job_id: jobId,
         status: "done",
@@ -121,6 +106,21 @@ export default async function handler(req, res) {
         mobile_png_url:
           mobileStored.kind === "blob" ? mobileStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile`
       });
+
+      // 5) Send email with report in background (if email provided and Resend configured)
+      // Don't await - let it run asynchronously after response is sent
+      if (email && email.trim()) {
+        sendTeardownReport({
+          to: email,
+          brandName,
+          dateStr,
+          pdfUrl,
+          pdfBuffer: pdfBuf
+        }).catch((emailError) => {
+          // Log email error but don't fail the request - user can still download from response
+          console.error("Failed to send email:", emailError);
+        });
+      }
       return;
     } finally {
       await browser.close().catch(() => {});

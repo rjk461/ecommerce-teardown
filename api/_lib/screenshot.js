@@ -59,8 +59,31 @@ async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
       await tryOpenMobileMenu(page);
     }
 
-    // Capture full-page screenshot to show entire page length.
-    const png = await page.screenshot({ fullPage: true, type: "png" });
+    // Capture full-page screenshot, but limit height to prevent extremely long pages from timing out.
+    // Most pages are under 10,000px, so this cap prevents edge cases while still capturing full content.
+    const MAX_SCREENSHOT_HEIGHT = 10000;
+    const pageHeight = await page.evaluate(() => Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    )).catch(() => viewport?.height || 768);
+
+    let screenshotOptions = { type: "png" };
+    if (pageHeight <= MAX_SCREENSHOT_HEIGHT) {
+      screenshotOptions.fullPage = true;
+    } else {
+      // For extremely tall pages, clip to max height to prevent timeout
+      screenshotOptions.clip = {
+        x: 0,
+        y: 0,
+        width: viewport.width,
+        height: MAX_SCREENSHOT_HEIGHT
+      };
+    }
+
+    const png = await page.screenshot(screenshotOptions);
 
     return {
       png,
