@@ -1,3 +1,5 @@
+import { chromium as playwrightChromium } from "playwright-core";
+import { getLaunchOptions } from "./_lib/chromiumLaunch.js";
 import { testTeardownSchema, normalizeUrl } from "./_lib/validate.js";
 import { newJobId, setJob, storeBlob } from "./_lib/storage.js";
 import { captureScreenshots } from "./_lib/screenshot.js";
@@ -33,67 +35,76 @@ export default async function handler(req, res) {
     const notes = parsed.data.notes;
     const email = parsed.data.email;
 
-    // 1) Screenshots + signals
-    const { desktop, mobile } = await captureScreenshots(url);
+    // Launch Chromium once and reuse it for screenshots + PDF to reduce serverless runtime.
+    const browser = await playwrightChromium.launch(await getLaunchOptions());
+    let desktop, mobile, pdfBuf;
+    try {
+      // 1) Screenshots + signals
+      ({ desktop, mobile } = await captureScreenshots(url, { browser }));
 
-    // 2) AI teardown
-    const teardown = await generateTeardown({ url, notes, desktop, mobile });
+      // 2) AI teardown
+      const teardown = await generateTeardown({ url, notes, desktop, mobile });
 
-    // 3) PDF
-    const desktopB64 = Buffer.from(desktop.png).toString("base64");
-    const mobileB64 = Buffer.from(mobile.png).toString("base64");
-    const reportHtml = renderReportHtml({
-      url,
-      notes,
-      createdAt: startedAt,
-      teardown,
-      desktopPngBase64: desktopB64,
-      mobilePngBase64: mobileB64
-    });
-    const pdfBuf = await htmlToPdfBuffer(reportHtml);
+      // 3) PDF
+      const desktopB64 = Buffer.from(desktop.png).toString("base64");
+      const mobileB64 = Buffer.from(mobile.png).toString("base64");
+      const reportHtml = renderReportHtml({
+        url,
+        notes,
+        createdAt: startedAt,
+        teardown,
+        desktopPngBase64: desktopB64,
+        mobilePngBase64: mobileB64
+      });
+      pdfBuf = await htmlToPdfBuffer(reportHtml, { browser });
 
-    // 4) Store artifacts (Blob if configured; otherwise in-memory fallback)
-    const basePath = `ai-teardown/${jobId}`;
-    const pdfStored = await storeBlob({
-      path: `${basePath}/report.pdf`,
-      contentType: "application/pdf",
-      data: pdfBuf
-    });
-    const desktopStored = await storeBlob({
-      path: `${basePath}/desktop.png`,
-      contentType: "image/png",
-      data: desktop.png
-    });
-    const mobileStored = await storeBlob({
-      path: `${basePath}/mobile.png`,
-      contentType: "image/png",
-      data: mobile.png
-    });
+      // 4) Store artifacts (Blob if configured; otherwise in-memory fallback)
+      const basePath = `ai-teardown/${jobId}`;
+      const pdfStored = await storeBlob({
+        path: `${basePath}/report.pdf`,
+        contentType: "application/pdf",
+        data: pdfBuf
+      });
+      const desktopStored = await storeBlob({
+        path: `${basePath}/desktop.png`,
+        contentType: "image/png",
+        data: desktop.png
+      });
+      const mobileStored = await storeBlob({
+        path: `${basePath}/mobile.png`,
+        contentType: "image/png",
+        data: mobile.png
+      });
 
-    setJob(jobId, {
-      status: "done",
-      startedAt,
-      url,
-      email,
-      notes,
-      teardown,
-      artifacts: {
-        pdf: pdfStored,
-        desktop: desktopStored,
-        mobile: mobileStored
-      }
-    });
+      setJob(jobId, {
+        status: "done",
+        startedAt,
+        url,
+        email,
+        notes,
+        teardown,
+        artifacts: {
+          pdf: pdfStored,
+          desktop: desktopStored,
+          mobile: mobileStored
+        }
+      });
 
-    res.status(200).json({
-      job_id: jobId,
-      status: "done",
-      url,
-      pdf_url: pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`,
-      desktop_png_url:
-        desktopStored.kind === "blob" ? desktopStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=desktop`,
-      mobile_png_url:
-        mobileStored.kind === "blob" ? mobileStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile`
-    });
+      res.status(200).json({
+        job_id: jobId,
+        status: "done",
+        url,
+        pdf_url: pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`,
+        desktop_png_url:
+          desktopStored.kind === "blob" ? desktopStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=desktop`,
+        mobile_png_url:
+          mobileStored.kind === "blob" ? mobileStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile`
+      });
+      return;
+    } finally {
+      await browser.close().catch(() => {});
+    }
+
   } catch (e) {
     const msg = e instanceof Error ? e.message : "Unknown error";
     setJob(jobId, { status: "error", error: msg });
