@@ -40,6 +40,9 @@
       gtag('config', 'G-QS74BWRKTY');
     </script>
     
+    <!-- Reddit Pixel -->
+    <script src="/reddit-pixel.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -1366,7 +1369,7 @@
                     Mexican wrestling showdown and the expertise of 16 years scaling ecommerce businesses.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#form" class="btn btn-primary">🔥 THROW YOUR SITE IN THE RING <span class="arrow">→</span></a>
+                    <a href="#form" class="btn btn-primary" onclick="if(typeof trackRedditEvent==='function')trackRedditEvent('HeroCTAClick');">🔥 THROW YOUR SITE IN THE RING <span class="arrow">→</span></a>
                 </div>
             </div>
         </div>
@@ -1590,7 +1593,7 @@
                 <div class="consulting-pricing">
                     <span class="consulting-rate">$1,997 AUD/day</span>
                 </div>
-                <a href="/consulting" class="consulting-button">🔥 GET YOUR CORNER MAN →</a>
+                <a href="/consulting" class="consulting-button" onclick="if(typeof trackRedditEvent==='function')trackRedditEvent('ConsultingCTAClick');">🔥 GET YOUR CORNER MAN →</a>
             </div>
         </div>
     </section>
@@ -1697,6 +1700,11 @@
                 });
                 
                 if (response.ok) {
+                    // Track Reddit event
+                    if (typeof trackRedditEvent === 'function') {
+                        trackRedditEvent('TeardownFormSubmit');
+                    }
+                    
                     // Success message
                     form.innerHTML = `
                         <div style="text-align: center; padding: 40px 20px;" id="teardownSuccess">
@@ -1752,6 +1760,11 @@
                     e.preventDefault();
                     const tier = this.getAttribute('data-tier');
                     const tierName = this.getAttribute('data-tier-name');
+                    
+                    // Track Reddit event
+                    if (typeof trackRedditEvent === 'function') {
+                        trackRedditEvent('PricingTierClick');
+                    }
                     
                     // Set tier in form
                     modalTier.value = tier;
@@ -1835,6 +1848,11 @@
                     });
 
                     if (response.ok) {
+                        // Track Reddit event
+                        if (typeof trackRedditEvent === 'function') {
+                            trackRedditEvent('PricingFormSubmit');
+                        }
+                        
                         // Encode name and email for URL
                         const encodedName = encodeURIComponent(name);
                         const encodedEmail = encodeURIComponent(email);
@@ -1885,6 +1903,11 @@
                         });
                         
                         if (response.ok) {
+                            // Track Reddit event
+                            if (typeof trackRedditEvent === 'function') {
+                                trackRedditEvent('NewsletterSignup');
+                            }
+                            
                             const container = this.closest('.newsletter-container');
                             container.style.display = 'block';
                             container.innerHTML = `
