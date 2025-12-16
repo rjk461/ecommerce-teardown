@@ -93,7 +93,7 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         border-radius: 10px;
         overflow: hidden;
         background: #fff;
-        page-break-inside: avoid;
+        page-break-inside: auto; /* Allow breaking across pages */
         margin-bottom: 20px;
       }
       .shot-full .label {
@@ -106,14 +106,14 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         width: 100%;
         max-width: 100%;
         height: auto;
-        max-height: 800px;
+        max-height: none; /* Remove height restriction to allow full image */
         display: block;
         object-fit: contain;
-        page-break-inside: avoid;
+        page-break-inside: auto; /* Allow breaking across pages */
       }
       .screenshots-section {
         page-break-after: always;
-        page-break-inside: avoid;
+        page-break-inside: auto; /* Allow images to span pages */
       }
       .card {
         border: 1px solid rgba(0,0,0,0.10);
@@ -205,7 +205,7 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         ${friction.length ? friction.map(renderFriction).join("") : `<div class="small">No friction points returned.</div>`}
       </div>
 
-      <div class="section">
+      <div class="section" style="page-break-before: avoid;">
         <h2>Prioritized fixes</h2>
         ${quickWins.length ? `
           <div class="card">
