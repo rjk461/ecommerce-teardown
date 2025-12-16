@@ -314,6 +314,49 @@
             font-size: 20px;
         }
 
+        /* Testimonial Section */
+        .testimonial-box {
+            background: var(--mad-cream);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 5px solid var(--mad-green);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-quote {
+            font-size: 20px;
+            line-height: 1.8;
+            color: var(--dark-grey);
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 60px;
+            color: var(--mad-green);
+            position: absolute;
+            left: -20px;
+            top: -10px;
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--mad-green);
+            text-align: right;
+            margin-top: 20px;
+        }
+
         /* Quick Wins Section */
         .quick-wins-section {
             padding: 80px 20px;
@@ -695,6 +738,14 @@
                     <li>Make awards visible - they justify premium pricing</li>
                     <li>Add more products to homepage - more pathways = higher conversion</li>
                 </ul>
+            </div>
+
+            <!-- Testimonial Section -->
+            <div class="testimonial-box">
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">"Feedback was awesome and have already implemented a few of those changes – tweaking the rest this week. Loved your energy, and feedback was constructive without making me feel like it was a 'tear down' so thanks for that!"</p>
+                    <p class="testimonial-author">— Leanne Tubby, Owner, Baby BeeHinds</p>
+                </div>
             </div>
 
             <h2>Final Thoughts</h2>
