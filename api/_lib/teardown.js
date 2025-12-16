@@ -19,9 +19,8 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
     const mobileBase64 = Buffer.from(mobile.png).toString("base64");
 
     const resp = await client.messages.create({
-      // Default to a widely available Claude model; allow override via env.
-      // Use the 20241022 snapshot to avoid regional gaps for earlier Sonnet 3.5.
-      model: process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022",
+      // Default to a current Sonnet 4.5 snapshot; allow override via env.
+      model: process.env.CLAUDE_MODEL || "claude-sonnet-4-5-20250929",
       max_tokens: 4096,
       temperature: 0.4,
       system: "You are a senior CRO consultant with deep expertise in conversion optimization. Your analysis must be evidence-based, specific, and actionable. Avoid assumptions - only critique what you can clearly see in the screenshots. Focus on conversion impact and business value. Be thorough and compelling in your insights. Output must be valid JSON.",
