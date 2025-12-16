@@ -173,23 +173,19 @@
         }
 
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio (315/560 = 0.5625) */
-            height: 0;
-            overflow: hidden;
+            text-align: center;
+            margin: 40px auto;
             max-width: 560px;
-            margin: 0 auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
         .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            display: block;
+            max-width: 100%;
+            aspect-ratio: 560 / 315;
             width: 100%;
-            height: 100%;
-            border: none;
+            height: auto;
         }
 
         /* PDF Content Section */
@@ -513,7 +509,13 @@
             }
 
             .video-wrapper {
-                border-radius: 8px;
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .video-wrapper iframe {
+                width: 100% !important;
+                height: auto !important;
             }
 
             .pdf-download-btn,
@@ -554,14 +556,7 @@
         </p>
         
         <div class="video-wrapper">
-            <iframe 
-                src="https://www.youtube.com/embed/vrYMuBv0vPA?si=A_0vYF8_b1nrCSez" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vrYMuBv0vPA?si=UrgHTgmWXszbrPtG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
 
