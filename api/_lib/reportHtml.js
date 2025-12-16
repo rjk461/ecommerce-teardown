@@ -70,13 +70,17 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         text-transform: uppercase;
         letter-spacing: 0.3px;
       }
-      .section { margin-top: 26px; }
+      .section { 
+        margin-top: 26px;
+        page-break-inside: avoid;
+      }
       .section h2 {
         margin: 0 0 10px;
         font-size: 16px;
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.2px;
+        page-break-after: avoid;
       }
       .grid2 {
         display: grid;
@@ -88,6 +92,10 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         border-radius: 10px;
         overflow: hidden;
         background: #fff;
+        page-break-inside: avoid;
+      }
+      .grid2 {
+        page-break-inside: avoid;
       }
       .shot .label {
         padding: 10px 12px;
@@ -197,28 +205,30 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
 
       <div class="section">
         <h2>Prioritized fixes</h2>
-        <div class="twoCol">
-          <div>
-            <div class="card">
-              <h3>Quick wins</h3>
-              ${renderFixList(quickWins, "why", "how")}
-            </div>
-            <div class="card">
-              <h3>Medium lifts</h3>
-              ${renderFixList(medium, "why", "how")}
-            </div>
+        ${quickWins.length ? `
+          <div class="card">
+            <h3>Quick wins</h3>
+            ${renderFixList(quickWins, "why", "how")}
           </div>
-          <div>
-            <div class="card">
-              <h3>Experiments</h3>
-              ${renderExperimentList(experiments)}
-            </div>
-            <div class="card">
-              <h3>Mobile & accessibility notes</h3>
-              ${mobileNotes.length ? `<ul>${mobileNotes.map((x) => `<li>${safe(x)}</li>`).join("")}</ul>` : `<div class="small">No notes returned.</div>`}
-            </div>
+        ` : ''}
+        ${medium.length ? `
+          <div class="card">
+            <h3>Medium lifts</h3>
+            ${renderFixList(medium, "why", "how")}
           </div>
-        </div>
+        ` : ''}
+        ${experiments.length ? `
+          <div class="card">
+            <h3>Experiments</h3>
+            ${renderExperimentList(experiments)}
+          </div>
+        ` : ''}
+        ${mobileNotes.length ? `
+          <div class="card">
+            <h3>Mobile & accessibility notes</h3>
+            <ul>${mobileNotes.map((x) => `<li>${safe(x)}</li>`).join("")}</ul>
+          </div>
+        ` : ''}
       </div>
 
       <div class="section">
