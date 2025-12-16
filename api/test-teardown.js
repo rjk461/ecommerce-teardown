@@ -59,10 +59,15 @@ export default async function handler(req, res) {
       });
       pdfBuf = await htmlToPdfBuffer(reportHtml, { browser });
 
+      // Generate filename from title format
+      const brandName = extractBrandName(url);
+      const dateStr = formatDate(startedAt);
+      const pdfFilename = `${brandName.replace(/\./g, '-')}-Website-Improvement-Report-Ecommerce-Teardown-${dateStr}.pdf`;
+
       // 4) Store artifacts (Blob if configured; otherwise in-memory fallback)
       const basePath = `ai-teardown/${jobId}`;
       const pdfStored = await storeBlob({
-        path: `${basePath}/report.pdf`,
+        path: `${basePath}/${pdfFilename}`,
         contentType: "application/pdf",
         data: pdfBuf
       });
@@ -78,8 +83,6 @@ export default async function handler(req, res) {
       });
 
       const pdfUrl = pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`;
-      const brandName = extractBrandName(url);
-      const dateStr = formatDate(startedAt);
 
       setJob(jobId, {
         status: "done",

@@ -103,7 +103,7 @@ export async function sendTeardownReport({ to, brandName, dateStr, pdfUrl, pdfBu
       attachments: pdfBuffer
         ? [
             {
-              filename: `${brandName.replace(/\s+/g, "-")}-Website-Improvement-Report-${dateStr}.pdf`,
+              filename: `${brandName.replace(/\./g, '-')}-Website-Improvement-Report-Ecommerce-Teardown-${dateStr}.pdf`,
               content: Buffer.isBuffer(pdfBuffer) ? pdfBuffer.toString("base64") : pdfBuffer
             }
           ]

@@ -20,7 +20,7 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
       {
         role: "system",
         content:
-          "You are a senior CRO consultant. Be practical, specific, and prioritize impact. Use crisp language. Output must be valid JSON."
+          "You are a senior CRO consultant with deep expertise in conversion optimization. Your analysis must be evidence-based, specific, and actionable. Avoid assumptions - only critique what you can clearly see in the screenshots. Focus on conversion impact and business value. Be thorough and compelling in your insights. Output must be valid JSON."
       },
       {
         role: "user",
@@ -65,7 +65,7 @@ Mobile signals:
 - viewport: ${mobileSignals.viewport.width}x${mobileSignals.viewport.height}
 
 Task:
-Create a conversion-focused teardown as an action plan.
+Create a comprehensive, conversion-focused teardown as an actionable plan. Provide deep, compelling insights based on what you can actually see in the screenshots.
 
 Return STRICT JSON with this shape:
 {
@@ -80,11 +80,19 @@ Return STRICT JSON with this shape:
   "accessibility_mobile_notes": [string]
 }
 
-Rules:
-- Use evidence from the screenshots (hierarchy, trust signals, CTA clarity, friction, forms).
-- Keep items specific and actionable.
-- Prefer 5-8 friction points max.
-- Make prioritization sensible for a $2.99 report buyer.
+Critical Rules:
+- EVIDENCE-BASED ONLY: Only critique what you can clearly see in the screenshots. Do NOT make assumptions.
+- MOBILE TOUCH TARGETS: Do NOT criticize mobile touch target sizes unless you can clearly see they are too small in the screenshot. Most modern sites follow mobile design best practices - only flag if there's obvious evidence of a problem.
+- DEPTH & SPECIFICITY: Provide detailed, compelling insights. Reference specific elements visible in screenshots (e.g., "The CTA button in the hero section uses low-contrast text").
+- CONVERSION IMPACT: Explain the business impact of each issue. How does it hurt conversions? What's the potential value of fixing it?
+- ACTIONABLE: Every recommendation must be specific and implementable. Avoid vague suggestions.
+- PRIORITIZATION: Focus on issues with the highest conversion impact. Quick wins should be genuinely quick and impactful.
+- SCREENSHOT ANALYSIS: Carefully examine both desktop and mobile screenshots. Note differences, mobile-specific issues, and responsive design concerns.
+- TRUST & CREDIBILITY: Look for trust signals (reviews, badges, guarantees) and note where they're missing or could be improved.
+- HIERARCHY & CLARITY: Analyze visual hierarchy, information architecture, and clarity of messaging.
+- FRICTION POINTS: Identify specific friction points that could cause abandonment (forms, checkout, navigation, etc.).
+
+Output 5-8 high-impact friction points with detailed evidence and fixes.
 `.trim();
 }
 

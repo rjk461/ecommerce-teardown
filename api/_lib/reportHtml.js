@@ -86,7 +86,14 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         font-weight: 900;
         border-bottom: 1px solid rgba(0,0,0,0.08);
       }
-      .shot img { width: 100%; display: block; }
+      .shot img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 100%;
+        object-fit: contain;
+        page-break-inside: avoid;
+      }
       .card {
         border: 1px solid rgba(0,0,0,0.10);
         border-radius: 12px;
@@ -144,14 +151,14 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
     <div class="topbar"></div>
     <div class="wrap">
       <div class="header-link">
-        <a href="https://ecommerceteardown.com" target="_blank">ecommerceteardown.com</a>
+        <a href="https://ecommerceteardown.com" target="_blank">EcommerceTeardown.com</a>
       </div>
       <h1>${safe(title)}</h1>
       <div class="meta">
         <div><span class="k">URL:</span> ${safe(url)}</div>
-        <div><span class="k">Created:</span> ${safe(createdAt)}</div>
+        <div><span class="k">Created:</span> ${safe(formatDateOnly(createdAt))}</div>
       </div>
-      ${notes ? `<div class="pill">Goal: ${safe(notes)}</div>` : `<div class="pill">$2.99 / page report</div>`}
+      ${notes ? `<div class="pill">Goal: ${safe(notes)}</div>` : ''}
 
       <div class="section">
         <h2>Executive summary</h2>
@@ -165,11 +172,11 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         <div class="grid2">
           <div class="shot">
             <div class="label">Desktop</div>
-            <img src="data:image/png;base64,${desktopPngBase64}" alt="Desktop screenshot" />
+            <img src="data:image/png;base64,${desktopPngBase64}" alt="Desktop screenshot" width="100%" />
           </div>
           <div class="shot">
             <div class="label">Mobile</div>
-            <img src="data:image/png;base64,${mobilePngBase64}" alt="Mobile screenshot" />
+            <img src="data:image/png;base64,${mobilePngBase64}" alt="Mobile screenshot" width="100%" />
           </div>
         </div>
       </div>
@@ -214,7 +221,7 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         Generated automatically. If a page blocks automated screenshots or is highly dynamic, results may vary.
       </div>
       <div class="footer-link">
-        <a href="https://ecommerceteardown.com" target="_blank">ecommerceteardown.com</a>
+        <a href="https://ecommerceteardown.com" target="_blank">EcommerceTeardown.com</a>
       </div>
     </div>
   </body>
@@ -231,19 +238,10 @@ function extractBrandName(url) {
       hostname = hostname.slice(4);
     }
     
-    // Extract main domain (remove TLD)
-    const parts = hostname.split('.');
-    if (parts.length >= 2) {
-      // Get the main domain part (second-to-last for .com.au, .co.uk, etc.)
-      const mainPart = parts[parts.length - 2];
-      // Capitalize first letter
-      return mainPart.charAt(0).toUpperCase() + mainPart.slice(1);
-    }
-    
-    // Fallback: use first part
-    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+    // Return full uppercase domain (e.g., "kidstuff.com.au" -> "KIDSTUFF.COM.AU")
+    return hostname.toUpperCase();
   } catch {
-    return 'Website';
+    return 'WEBSITE';
   }
 }
 
@@ -259,6 +257,22 @@ function formatDate(isoString) {
     const day = String(now.getDate()).padStart(2, '0');
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const year = String(now.getFullYear()).slice(-2);
+    return `${day}-${month}-${year}`;
+  }
+}
+
+function formatDateOnly(isoString) {
+  try {
+    const date = new Date(isoString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  } catch {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
     return `${day}-${month}-${year}`;
   }
 }

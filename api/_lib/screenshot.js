@@ -123,27 +123,53 @@ async function gotoWithFallback(page, url) {
 }
 
 async function tryOpenMobileMenu(page) {
-  // Common mobile menu button selectors to try.
+  // Prioritize hamburger/menu-specific selectors, exclude chat buttons.
+  // Order matters: most specific first, then fallback to generic.
   const menuSelectors = [
-    'button[aria-label*="menu" i]',
-    'button[aria-label*="navigation" i]',
-    'button[aria-label*="open" i]',
-    '.mobile-menu-toggle',
-    '.menu-toggle',
-    '#mobile-menu-button',
-    '#menu-button',
-    '[data-menu-toggle]',
-    '[data-mobile-menu]',
-    'button.hamburger',
-    '.hamburger',
-    'nav button',
-    'header button:first-of-type'
+    // Hamburger-specific (highest priority)
+    'button[class*="hamburger" i]',
+    '[class*="hamburger" i]',
+    'button[class*="menu-icon" i]',
+    '[class*="menu-icon" i]',
+    // Menu toggle specific
+    'button[aria-label*="menu" i]:not([aria-label*="chat" i])',
+    'button[aria-label*="navigation" i]:not([aria-label*="chat" i])',
+    '.mobile-menu-toggle:not([class*="chat" i])',
+    '.menu-toggle:not([class*="chat" i])',
+    '#mobile-menu-button:not([id*="chat" i])',
+    '#menu-button:not([id*="chat" i])',
+    '[data-menu-toggle]:not([data-menu-toggle*="chat" i])',
+    '[data-mobile-menu]:not([data-mobile-menu*="chat" i])',
+    // Header/nav area buttons (lower priority, but still valid)
+    'header button:not([aria-label*="chat" i]):not([class*="chat" i]):not([id*="chat" i])',
+    'nav button:not([aria-label*="chat" i]):not([class*="chat" i]):not([id*="chat" i])'
   ];
 
   for (const selector of menuSelectors) {
     try {
       const button = await page.$(selector);
       if (button) {
+        // Double-check it's not a chat button by checking aria-label, class, id
+        const ariaLabel = await button.getAttribute('aria-label').catch(() => '');
+        const className = await button.getAttribute('class').catch(() => '');
+        const id = await button.getAttribute('id').catch(() => '');
+        
+        const isChatButton = 
+          ariaLabel.toLowerCase().includes('chat') ||
+          className.toLowerCase().includes('chat') ||
+          id.toLowerCase().includes('chat');
+        
+        if (isChatButton) {
+          continue; // Skip chat buttons
+        }
+        
+        // Check if button is in header/nav area (preferred location)
+        const isInHeaderNav = await page.evaluate((el) => {
+          const header = document.querySelector('header');
+          const nav = document.querySelector('nav');
+          return (header && header.contains(el)) || (nav && nav.contains(el));
+        }, button).catch(() => false);
+        
         const isVisible = await button.isVisible().catch(() => false);
         if (isVisible) {
           await button.click();
