@@ -65,7 +65,7 @@ Mobile signals:
 - viewport: ${mobileSignals.viewport.width}x${mobileSignals.viewport.height}
 
 Task:
-Create a comprehensive, conversion-focused teardown as an actionable plan. Provide deep, compelling insights based on what you can actually see in the screenshots.
+Create a comprehensive, conversion-focused teardown as an actionable plan. Provide deep, compelling insights based on what you can actually see in the screenshots. Be thorough and identify both obvious issues and subtle UX problems.
 
 Return STRICT JSON with this shape:
 {
@@ -83,16 +83,30 @@ Return STRICT JSON with this shape:
 Critical Rules:
 - EVIDENCE-BASED ONLY: Only critique what you can clearly see in the screenshots. Do NOT make assumptions.
 - MOBILE TOUCH TARGETS: Do NOT criticize mobile touch target sizes unless you can clearly see they are too small in the screenshot. Most modern sites follow mobile design best practices - only flag if there's obvious evidence of a problem.
-- DEPTH & SPECIFICITY: Provide detailed, compelling insights. Reference specific elements visible in screenshots (e.g., "The CTA button in the hero section uses low-contrast text").
-- CONVERSION IMPACT: Explain the business impact of each issue. How does it hurt conversions? What's the potential value of fixing it?
+- DEPTH & SPECIFICITY: Provide detailed, compelling insights. Reference specific elements visible in screenshots (e.g., "The CTA button in the hero section at the top center uses low-contrast text against a white background").
+- CONVERSION IMPACT: Explain the business impact of each issue. How does it hurt conversions? Estimate potential impact where possible (e.g., "This could reduce conversions by 5-10%").
 - ACTIONABLE: Every recommendation must be specific and implementable. Avoid vague suggestions.
 - PRIORITIZATION: Focus on issues with the highest conversion impact. Quick wins should be genuinely quick and impactful.
 - SCREENSHOT ANALYSIS: Carefully examine both desktop and mobile screenshots. Note differences, mobile-specific issues, and responsive design concerns.
+
+Detailed Analysis Areas - Examine these specific areas in depth:
+1. HERO SECTION: CTA visibility and contrast, value proposition clarity, trust signals, urgency/scarcity indicators, headline effectiveness
+2. PRODUCT PRESENTATION: Image quality and size, pricing clarity and prominence, availability indicators (stock status), product descriptions, add-to-cart button visibility
+3. NAVIGATION: Menu structure and clarity, search functionality visibility, category organization, breadcrumbs, mobile menu behavior
+4. FORMS & INPUTS: Field labels and placeholders, validation messages, error handling, form length and complexity, completion indicators
+5. CHECKOUT FLOW: Progress indicators, security badges, shipping options visibility, payment method clarity, trust elements
+6. MOBILE-SPECIFIC: Touch target sizes (only if obviously too small), thumb-friendly zones, responsive behavior, mobile menu functionality, mobile-specific CTAs
+7. TRUST ELEMENTS: Customer reviews and ratings placement, security badges, guarantees, testimonials, social proof, return policies
+8. VISUAL HIERARCHY: Information architecture, content prioritization, visual flow, whitespace usage, color contrast for readability
+9. PERFORMANCE INDICATORS: Loading states, skeleton screens, error handling, empty states, success messages
+10. MISSED OPPORTUNITIES: Upsells, cross-sells, email capture, social sharing, loyalty programs, exit-intent triggers
+
 - TRUST & CREDIBILITY: Look for trust signals (reviews, badges, guarantees) and note where they're missing or could be improved.
 - HIERARCHY & CLARITY: Analyze visual hierarchy, information architecture, and clarity of messaging.
 - FRICTION POINTS: Identify specific friction points that could cause abandonment (forms, checkout, navigation, etc.).
+- LOOK FOR BOTH PROBLEMS AND OPPORTUNITIES: Don't just find what's wrong - also identify what's missing that could improve conversions.
 
-Output 5-8 high-impact friction points with detailed evidence and fixes.
+Output 8-12 high-impact friction points (not just 5-8) with detailed evidence and fixes. Be thorough - examine every visible element on the page.
 `.trim();
 }
 

@@ -49,11 +49,24 @@ async function renderWithBrowser(browser, html) {
       });
     });
     
-    // Wait for all images to be loaded after Blob URL conversion
+    // Scroll to each image to ensure it's rendered in viewport (fixes caching/loading issues)
+    await page.evaluate(() => {
+      const images = document.querySelectorAll('img');
+      images.forEach((img, index) => {
+        // Scroll image into view to trigger rendering
+        img.scrollIntoView({ behavior: 'instant', block: 'center' });
+        // Force a reflow to ensure browser processes the image
+        void img.offsetHeight;
+      });
+      // Scroll back to top
+      window.scrollTo(0, 0);
+    });
+    
+    // Wait for all images to be loaded after Blob URL conversion and scrolling
     await page.evaluate(() => {
       return Promise.all(
         Array.from(document.images).map(img => {
-          if (img.complete && img.naturalWidth > 0) {
+          if (img.complete && img.naturalWidth > 0 && img.naturalHeight > 0) {
             return Promise.resolve();
           }
           return new Promise((resolve) => {
@@ -72,21 +85,31 @@ async function renderWithBrowser(browser, html) {
       );
     });
     
-    // Verify images have loaded and have dimensions
-    const imagesReady = await page.evaluate(() => {
-      const imgs = document.querySelectorAll('img');
-      if (imgs.length === 0) return true; // No images is fine
-      return Array.from(imgs).every(img => 
-        img.complete && img.naturalWidth > 0 && img.naturalHeight > 0
-      );
-    });
-    
-    if (!imagesReady) {
-      // Give images a bit more time if they're not ready
-      await page.waitForTimeout(1000);
+    // Verify images have loaded and have dimensions (with retry)
+    let imagesReady = false;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      imagesReady = await page.evaluate(() => {
+        const imgs = document.querySelectorAll('img');
+        if (imgs.length === 0) return true; // No images is fine
+        return Array.from(imgs).every(img => 
+          img.complete && img.naturalWidth > 0 && img.naturalHeight > 0
+        );
+      });
+      
+      if (imagesReady) break;
+      
+      // Scroll to each image again and wait
+      await page.evaluate(() => {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+          img.scrollIntoView({ behavior: 'instant', block: 'center' });
+          void img.offsetHeight;
+        });
+      });
+      await page.waitForTimeout(500);
     }
     
-    // Small delay to ensure rendering is complete
+    // Final delay to ensure rendering is complete
     await page.waitForTimeout(500);
     
     // Extract title from HTML for PDF metadata

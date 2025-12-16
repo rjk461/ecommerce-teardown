@@ -87,28 +87,32 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         grid-template-columns: 1fr 1fr;
         gap: 14px;
       }
-      .shot {
+      .shot-full {
+        width: 100%;
         border: 1px solid rgba(0,0,0,0.10);
         border-radius: 10px;
         overflow: hidden;
         background: #fff;
         page-break-inside: avoid;
+        margin-bottom: 20px;
       }
-      .grid2 {
-        page-break-inside: avoid;
-      }
-      .shot .label {
+      .shot-full .label {
         padding: 10px 12px;
         font-size: 12px;
         font-weight: 900;
         border-bottom: 1px solid rgba(0,0,0,0.08);
       }
-      .shot img {
+      .shot-full img {
         width: 100%;
-        height: auto;
-        display: block;
         max-width: 100%;
+        height: auto;
+        max-height: 800px;
+        display: block;
         object-fit: contain;
+        page-break-inside: avoid;
+      }
+      .screenshots-section {
+        page-break-after: always;
         page-break-inside: avoid;
       }
       .card {
@@ -184,17 +188,15 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         </div>
       </div>
 
-      <div class="section">
+      <div class="section screenshots-section">
         <h2>Screenshots</h2>
-        <div class="grid2">
-          <div class="shot">
-            <div class="label">Desktop</div>
-            <img src="data:image/png;base64,${desktopPngBase64}" alt="Desktop screenshot" width="100%" />
-          </div>
-          <div class="shot">
-            <div class="label">Mobile</div>
-            <img src="data:image/png;base64,${mobilePngBase64}" alt="Mobile screenshot" width="100%" />
-          </div>
+        <div class="shot-full">
+          <div class="label">Desktop</div>
+          <img src="data:image/png;base64,${desktopPngBase64}" alt="Desktop screenshot" />
+        </div>
+        <div class="shot-full">
+          <div class="label">Mobile</div>
+          <img src="data:image/png;base64,${mobilePngBase64}" alt="Mobile screenshot" />
         </div>
       </div>
 
