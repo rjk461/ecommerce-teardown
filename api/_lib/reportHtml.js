@@ -39,15 +39,24 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         height: 6px;
         background: linear-gradient(to right, var(--mad-pink), var(--accent-yellow));
       }
-      .wrap { padding: 28px 34px 40px; }
+      .wrap { padding: 20px 34px 40px; }
       h1 {
         margin: 0;
         font-size: 28px;
         font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 0.2px;
+        page-break-after: avoid;
       }
-      .meta { margin-top: 10px; color: var(--medium-grey); font-size: 12px; }
+      .meta { 
+        margin-top: 10px; 
+        color: var(--medium-grey); 
+        font-size: 12px;
+        page-break-after: avoid;
+      }
+      .header-link {
+        page-break-after: avoid;
+      }
       .pill {
         display: inline-block;
         margin-top: 12px;

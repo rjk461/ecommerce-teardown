@@ -20,17 +20,45 @@ async function renderWithBrowser(browser, html) {
   try {
     await page.setContent(html, { waitUntil: "load" });
     
-    // Wait for all images to be loaded before generating PDF
+    // Convert data URI images to Blob URLs for reliable PDF rendering
+    await page.evaluate(() => {
+      const images = document.querySelectorAll('img[src^="data:image"]');
+      images.forEach(img => {
+        try {
+          const dataUri = img.src;
+          // Extract base64 data from data URI
+          const base64Data = dataUri.split(',')[1];
+          const mimeType = dataUri.match(/data:([^;]+)/)?.[1] || 'image/png';
+          
+          // Convert base64 to binary
+          const binaryString = atob(base64Data);
+          const bytes = new Uint8Array(binaryString.length);
+          for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+          }
+          
+          // Create Blob and Blob URL
+          const blob = new Blob([bytes], { type: mimeType });
+          const blobUrl = URL.createObjectURL(blob);
+          
+          // Replace src with Blob URL
+          img.src = blobUrl;
+        } catch (error) {
+          console.warn('Failed to convert data URI to Blob URL:', error);
+        }
+      });
+    });
+    
+    // Wait for all images to be loaded after Blob URL conversion
     await page.evaluate(() => {
       return Promise.all(
         Array.from(document.images).map(img => {
           if (img.complete && img.naturalWidth > 0) {
             return Promise.resolve();
           }
-          return new Promise((resolve, reject) => {
+          return new Promise((resolve) => {
             img.onload = () => resolve();
             img.onerror = () => {
-              // Don't reject on error, just resolve to continue
               console.warn('Image failed to load:', img.src.substring(0, 50));
               resolve();
             };
