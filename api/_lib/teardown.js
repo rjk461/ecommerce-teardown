@@ -14,9 +14,13 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
 
     const prompt = buildPrompt({ url, notes, desktopSignals: desktop.signals, mobileSignals: mobile.signals });
 
+    // Resize screenshots if either dimension exceeds Claude image limits (8k px)
+    const desktopPng = await resizeIfNeeded(desktop.png);
+    const mobilePng = await resizeIfNeeded(mobile.png);
+
     // Convert screenshots to base64 strings
-    const desktopBase64 = Buffer.from(desktop.png).toString("base64");
-    const mobileBase64 = Buffer.from(mobile.png).toString("base64");
+    const desktopBase64 = Buffer.from(desktopPng).toString("base64");
+    const mobileBase64 = Buffer.from(mobilePng).toString("base64");
 
     const resp = await client.messages.create({
       // Default to a current Sonnet 4.5 snapshot; allow override via env.
@@ -159,6 +163,20 @@ Detailed Analysis Areas - Examine these specific areas ONLY if you can see clear
 
 Output 5-12 high-impact friction points with detailed evidence and fixes. Be thorough but accurate - only report what you can clearly see. If no additional findings can be made after careful analysis, return fewer items rather than making things up.
 `.trim();
+}
+
+async function resizeIfNeeded(pngBuffer) {
+  const maxDim = 8000;
+  // Lazy-load sharp to keep cold starts minimal when not needed
+  const sharp = (await import("sharp")).default;
+  const meta = await sharp(pngBuffer).metadata();
+  if (!meta.width || !meta.height) return pngBuffer;
+  if (meta.width <= maxDim && meta.height <= maxDim) return pngBuffer;
+
+  const scale = maxDim / Math.max(meta.width, meta.height);
+  const width = Math.floor(meta.width * scale);
+  const height = Math.floor(meta.height * scale);
+  return sharp(pngBuffer).resize(width, height, { fit: "inside" }).png().toBuffer();
 }
 
 function safe(v) {

@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.0",
+    "sharp": "^0.33.2",
     "@sparticuz/chromium": "^143.0.0",
     "@vercel/blob": "^0.27.0",
     "openai": "^4.73.1",
