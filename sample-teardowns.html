@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Teardown - Baby BeeHinds | Ecommerce Teardown</title>
+    <meta name="description" content="Watch a real ecommerce teardown in action. See how Richard Kelsey reviews Baby BeeHinds' website and identifies conversion opportunities. Download the full report and get your own teardown.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecommerceteardown.com/sample-teardowns">
+    <meta property="og:title" content="Sample Teardown - Baby BeeHinds | Ecommerce Teardown">
+    <meta property="og:description" content="Watch a real ecommerce teardown in action. See how Richard Kelsey reviews Baby BeeHinds' website and identifies conversion opportunities.">
+    <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Ecommerce Teardown">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ecommerceteardown.com/sample-teardowns">
+    <meta name="twitter:title" content="Sample Teardown - Baby BeeHinds | Ecommerce Teardown">
+    <meta name="twitter:description" content="Watch a real ecommerce teardown in action. See how Richard Kelsey reviews Baby BeeHinds' website and identifies conversion opportunities.">
+    <meta name="twitter:image" content="https://ecommerceteardown.com/images/og-image.png">
+    <meta name="twitter:image:alt" content="Ecommerce Teardown - Sample Teardown">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QS74BWRKTY');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            font-weight: 400;
+        }
+
+        /* Shared layout styles live in /site.css (colors, top bar, header, footer, etc.) */
+
+        /* Hero Section */
+        .hero {
+            background: var(--mad-green);
+            padding: 40px 20px 60px 20px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            color: var(--accent-yellow);
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-subheading {
+            color: white;
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .hero-website {
+            color: var(--accent-yellow);
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .hero-website:hover {
+            text-decoration: underline;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .section-eyebrow {
+            text-align: center;
+            color: var(--mad-red);
+            font-size: 19px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 18px;
+            color: var(--medium-grey);
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* PDF Download Section */
+        .pdf-section {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+            border-top: 3px solid var(--mad-pink);
+        }
+
+        .pdf-download-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pdf-download-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            background: var(--mad-red);
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .pdf-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Value Proposition Section */
+        .value-section {
+            padding: 80px 20px;
+            background: white;
+            border-top: 3px solid var(--mad-red);
+        }
+
+        .features-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .stats-box {
+            background: var(--accent-yellow);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto 0;
+            border: 3px solid var(--dark-grey);
+        }
+
+        .stats-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark-grey);
+        }
+
+        .stats-box p {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--dark-grey);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: var(--mad-green);
+            border-top: 3px solid var(--mad-green);
+        }
+
+        .cta-section .section-heading {
+            color: white;
+        }
+
+        .cta-section .section-heading::after {
+            background: white;
+        }
+
+        .cta-section .section-intro {
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: white;
+            color: var(--mad-green);
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subheading {
+                font-size: 18px;
+            }
+
+            .section-heading {
+                font-size: 32px;
+            }
+
+            .video-wrapper {
+                border-radius: 8px;
+            }
+
+            .pdf-download-btn,
+            .cta-button {
+                padding: 18px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Accent Bar -->
+    <div class="top-bar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-eyebrow">SAMPLE TEARDOWN</div>
+            <h1>BABY BEEHINDS<br>ENTERS THE RING</h1>
+            <p class="hero-subheading">
+                Watch a real ecommerce teardown in action. See how 16 years of experience 
+                identifies conversion opportunities and strategic improvements.
+            </p>
+            <a href="https://www.babybeehinds.com.au/" target="_blank" rel="noopener noreferrer" class="hero-website">
+                babybeehinds.com.au →
+            </a>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="section-eyebrow">WATCH THE BATTLE</div>
+        <h2 class="section-heading">The Teardown Video</h2>
+        <p class="section-intro">
+            A no-holds-barred video walkthrough of Baby BeeHinds' homepage. Every weak spot exposed. 
+            Every missed opportunity called out. Every quick win identified.
+        </p>
+        
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/vrYMuBv0vPA" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- PDF Download Section -->
+    <section class="pdf-section">
+        <div class="section-eyebrow">DETAILED ANALYSIS</div>
+        <h2 class="section-heading">Download The Full Report</h2>
+        <p class="section-intro">
+            Get the complete written analysis with screenshots, prioritized action items, 
+            and strategic recommendations.
+        </p>
+        
+        <div class="pdf-download-container">
+            <a href="/Sample/Baby Beehinds Teardown.pdf" download class="pdf-download-btn">
+                📥 DOWNLOAD FULL REPORT (PDF)
+            </a>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-section">
+        <div class="section-eyebrow">YOUR CHAMPIONSHIP PACKAGE</div>
+        <h2 class="section-heading">What You Get From a Teardown</h2>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-green)">✅</span>
+                <span class="feature-text">15-minute video replay of your homepage battle</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-pink)">✅</span>
+                <span class="feature-text">Written round-by-round analysis with screenshots</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--accent-yellow)">✅</span>
+                <span class="feature-text">3-5 quick wins you can execute TODAY to score points</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-red)">✅</span>
+                <span class="feature-text">Strategic power moves for bigger transformation</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-green)">✅</span>
+                <span class="feature-text">Mobile experience knockout review</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-pink)">✅</span>
+                <span class="feature-text">Trust & credibility assessment – are you championship material?</span>
+            </div>
+        </div>
+
+        <div class="stats-box">
+            <h3>💰 THE PRIZE</h3>
+            <p>Discover 5-7 conversion opportunities to drive monthly revenue.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-eyebrow">READY TO RUMBLE?</div>
+        <h2 class="section-heading">Get Your Own Teardown</h2>
+        <p class="section-intro">
+            Step into the ring and get the brutal truth about what's costing you conversions. 
+            Free public teardowns available for selected websites.
+        </p>
+        
+        <div style="text-align: center;">
+            <a href="/#form" class="cta-button">🔥 THROW YOUR SITE IN THE RING →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>The Ring</h3>
+                <ul>
+                    <li><a href="/#form">Free Public Teardown</a></li>
+                    <li><a href="/#pricing">Private Reviews</a></li>
+                    <li><a href="/consulting">Consulting</a></li>
+                    <li><a href="/sample-teardowns">Sample Teardowns</a></li>
+                    <li><a href="/#meet-champion">About the Champion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li>
+                        <a href="https://linkedin.com/in/richardkelsey" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                            <span>LinkedIn</span>
+                            <span style="color: var(--medium-grey); font-size: 14px;">(11,413 followers)</span>
+                        </a>
+                    </li>
+                    <li><a href="/contact">Contact Form</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recent Battles</h3>
+                <ul>
+                    <li><a href="/sample-teardowns">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">Brand Teardown →</a></li>
+                    <li><a href="/coming-soon">View All Teardowns →</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Richard Kelsey | ecommerceteardown.com</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Not affiliated with actual lucha libre wrestling. But the takedowns are just as real.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
