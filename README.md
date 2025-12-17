@@ -53,12 +53,9 @@ You can generate a teardown report without a payment gateway:
 
 #### Required environment variables (Vercel)
 
-**AI Provider (choose one):**
-- `CLAUDE_API_KEY` (preferred) - Uses Claude Sonnet for analysis
-- `CLAUDE_MODEL` (optional, default: `claude-sonnet-4-5-20250929`)
-- OR
-- `OPENAI_API_KEY` (fallback) - Uses OpenAI if Claude is not configured
-- `OPENAI_MODEL` (optional, default: `gpt-4o-mini`)
+**AI Provider (default: OpenAI)**
+- `OPENAI_API_KEY` (default path) - Vision model default: `gpt-4.1` (set `OPENAI_MODEL` to override; `gpt-4o` is a good fallback).
+- Optional Claude override: set `CLAUDE_API_KEY` (and optionally `CLAUDE_MODEL`, default `claude-sonnet-4-5-20250929`). Claude is only used if OpenAI is not configured.
 
 #### Optional (recommended) storage
 

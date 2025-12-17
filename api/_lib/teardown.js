@@ -2,59 +2,15 @@ import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 
 export async function generateTeardown({ url, notes, desktop, mobile }) {
-  // Prefer Claude API if available, fallback to OpenAI
-  const useClaude = !!process.env.CLAUDE_API_KEY;
-  
-  if (useClaude) {
-    if (!process.env.CLAUDE_API_KEY) {
-      throw new Error("Missing CLAUDE_API_KEY");
-    }
+  // Default to OpenAI if available; use Claude only when explicitly configured
+  const hasOpenAI = !!process.env.OPENAI_API_KEY;
+  const hasClaude = !!process.env.CLAUDE_API_KEY;
 
-    const client = new Anthropic({ apiKey: process.env.CLAUDE_API_KEY });
+  if (!hasOpenAI && !hasClaude) {
+    throw new Error("Missing OPENAI_API_KEY or CLAUDE_API_KEY");
+  }
 
-    const prompt = buildPrompt({ url, notes, desktopSignals: desktop.signals, mobileSignals: mobile.signals });
-
-    // Resize screenshots if either dimension exceeds Claude image limits (8k px)
-    const desktopPng = await resizeIfNeeded(desktop.png);
-    const mobilePng = await resizeIfNeeded(mobile.png);
-
-    // Convert screenshots to base64 strings
-    const desktopBase64 = Buffer.from(desktopPng).toString("base64");
-    const mobileBase64 = Buffer.from(mobilePng).toString("base64");
-
-    const resp = await client.messages.create({
-      // Default to a current Sonnet 4.5 snapshot; allow override via env.
-      model: process.env.CLAUDE_MODEL || "claude-sonnet-4-5-20250929",
-      max_tokens: 4096,
-      temperature: 0.4,
-      system: "You are a senior CRO consultant with deep expertise in conversion optimization. Your analysis must be evidence-based, specific, and actionable. Avoid assumptions - only critique what you can clearly see in the screenshots. Focus on conversion impact and business value. Be thorough and compelling in your insights. Output must be valid JSON.",
-      messages: [
-        {
-          role: "user",
-          content: [
-            { type: "text", text: prompt },
-            { type: "image", source: { type: "base64", media_type: "image/png", data: desktopBase64 } },
-            { type: "image", source: { type: "base64", media_type: "image/png", data: mobileBase64 } }
-          ]
-        }
-      ]
-    });
-
-    const text = resp.content?.[0]?.text || "{}";
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      data = { raw: text };
-    }
-
-    return normalizeTeardown(data);
-  } else {
-    // Fallback to OpenAI if Claude is not configured
-    if (!process.env.OPENAI_API_KEY) {
-      throw new Error("Missing OPENAI_API_KEY or CLAUDE_API_KEY");
-    }
-
+  if (hasOpenAI) {
     const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
     const prompt = buildPrompt({ url, notes, desktopSignals: desktop.signals, mobileSignals: mobile.signals });
@@ -65,7 +21,7 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
     const mobileDataUrl = `data:image/png;base64,${mobileBase64}`;
 
     const resp = await client.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      model: process.env.OPENAI_MODEL || "gpt-4.1",
       temperature: 0.4,
       response_format: { type: "json_object" },
       messages: [
@@ -95,6 +51,47 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
 
     return normalizeTeardown(data);
   }
+
+  // Claude path (only if OpenAI is not available)
+  const client = new Anthropic({ apiKey: process.env.CLAUDE_API_KEY });
+
+  const prompt = buildPrompt({ url, notes, desktopSignals: desktop.signals, mobileSignals: mobile.signals });
+
+  // Resize screenshots if either dimension exceeds Claude image limits (8k px)
+  const desktopPng = await resizeIfNeeded(desktop.png);
+  const mobilePng = await resizeIfNeeded(mobile.png);
+
+  // Convert screenshots to base64 strings
+  const desktopBase64 = Buffer.from(desktopPng).toString("base64");
+  const mobileBase64 = Buffer.from(mobilePng).toString("base64");
+
+  const resp = await client.messages.create({
+    // Default to a current Sonnet 4.5 snapshot; allow override via env.
+    model: process.env.CLAUDE_MODEL || "claude-sonnet-4-5-20250929",
+    max_tokens: 4096,
+    temperature: 0.4,
+    system: "You are a senior CRO consultant with deep expertise in conversion optimization. Your analysis must be evidence-based, specific, and actionable. Avoid assumptions - only critique what you can clearly see in the screenshots. Focus on conversion impact and business value. Be thorough and compelling in your insights. Output must be valid JSON.",
+    messages: [
+      {
+        role: "user",
+        content: [
+          { type: "text", text: prompt },
+          { type: "image", source: { type: "base64", media_type: "image/png", data: desktopBase64 } },
+          { type: "image", source: { type: "base64", media_type: "image/png", data: mobileBase64 } }
+        ]
+      }
+    ]
+  });
+
+  const text = resp.content?.[0]?.text || "{}";
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    data = { raw: text };
+  }
+
+  return normalizeTeardown(data);
 }
 
 function buildPrompt({ url, notes, desktopSignals, mobileSignals }) {
