@@ -111,6 +111,15 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         object-fit: contain;
         page-break-inside: auto; /* Allow breaking across pages */
       }
+      .shot-full.mobile {
+        max-width: 70%;
+        margin: 0 auto 20px;
+      }
+      .shot-full.mobile img {
+        max-width: 100%;
+        height: auto;
+        max-height: 1000px;
+      }
       .screenshots-section {
         page-break-after: always;
         page-break-inside: auto; /* Allow images to span pages */
@@ -194,7 +203,7 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
           <div class="label">Desktop</div>
           <img src="data:image/png;base64,${desktopPngBase64}" alt="Desktop screenshot" />
         </div>
-        <div class="shot-full">
+        <div class="shot-full mobile">
           <div class="label">Mobile</div>
           <img src="data:image/png;base64,${mobilePngBase64}" alt="Mobile screenshot" />
         </div>

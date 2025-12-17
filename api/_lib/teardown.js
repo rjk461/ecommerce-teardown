@@ -48,7 +48,7 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
       data = { raw: text };
     }
 
-    return data;
+    return normalizeTeardown(data);
   } else {
     // Fallback to OpenAI if Claude is not configured
     if (!process.env.OPENAI_API_KEY) {
@@ -93,7 +93,7 @@ export async function generateTeardown({ url, notes, desktop, mobile }) {
       data = { raw: text };
     }
 
-    return data;
+    return normalizeTeardown(data);
   }
 }
 
@@ -120,7 +120,7 @@ Mobile signals:
 Task:
 Create a comprehensive, conversion-focused teardown as an actionable plan. Provide deep, compelling insights based on what you can actually see in the screenshots. Be thorough and identify both obvious issues and subtle UX problems.
 
-Return STRICT JSON with this shape:
+Return STRICT JSON with this shape (do NOT leave arrays empty; if you cannot see legitimate issues, state why and what was checked):
 {
   "summary": string,
   "friction_points": [{ "title": string, "why_it_hurts": string, "evidence": string, "fix": string }],
@@ -161,7 +161,7 @@ Detailed Analysis Areas - Examine these specific areas ONLY if you can see clear
 - FRICTION POINTS: Identify specific friction points that could cause abandonment (forms, checkout, navigation, etc.) - ONLY if clearly visible.
 - LOOK FOR BOTH PROBLEMS AND OPPORTUNITIES: Don't just find what's wrong - also identify what's missing that could improve conversions - BUT only if you can see evidence of the absence.
 
-Output 5-12 high-impact friction points with detailed evidence and fixes. Be thorough but accurate - only report what you can clearly see. If no additional findings can be made after careful analysis, return fewer items rather than making things up.
+Output 5-12 high-impact friction points with detailed evidence and fixes. If you truly cannot find 5 legitimate issues, include 3-4 with explicit notes about what you inspected and why additional issues were not visible. Do NOT return empty arrays.
 `.trim();
 }
 
@@ -181,6 +181,69 @@ async function resizeIfNeeded(pngBuffer) {
 
 function safe(v) {
   return String(v || "").replace(/\s+/g, " ").slice(0, 300);
+}
+
+function normalizeTeardown(raw) {
+  const fallbackSummary = "Analysis incomplete: the AI response was empty. Please re-run or review the screenshots manually.";
+  const fallbackFriction = [
+    {
+      title: "Insights unavailable",
+      why_it_hurts: "The model did not return any friction points.",
+      evidence: "No evidence provided; model response was empty.",
+      fix: "Re-run the teardown or perform a manual review of the screenshots."
+    }
+  ];
+  const fallbackQuickWins = [
+    {
+      title: "Manual review required",
+      why: "The automated analysis returned no quick wins.",
+      how: "Re-run the teardown or audit the page manually to capture high-impact fixes."
+    }
+  ];
+  const fallbackCopy = [
+    {
+      location: "Key value prop",
+      before: "Analysis unavailable from the automated run.",
+      after: "Re-run the teardown or draft a concise value proposition that states who it's for, what it does, and why it's better."
+    }
+  ];
+  const fallbackMobileNotes = ["Automated mobile/accessibility notes were not returned; re-run or conduct a quick manual check for tap targets, readability, and menu behavior."];
+
+  const cleanArray = (v) => (Array.isArray(v) ? v : []);
+  const friction = cleanArray(raw?.friction_points).filter(validFinding);
+  const quickWins = cleanArray(raw?.prioritized_fixes?.quick_wins).filter(validFix);
+  const medium = cleanArray(raw?.prioritized_fixes?.medium_lifts).filter(validFix);
+  const experiments = cleanArray(raw?.prioritized_fixes?.experiments).filter(validExperiment);
+  const copy = cleanArray(raw?.copy_suggestions).filter(validCopy);
+  const mobileNotes = cleanArray(raw?.accessibility_mobile_notes).filter((x) => typeof x === "string" && x.trim());
+
+  return {
+    summary: typeof raw?.summary === "string" && raw.summary.trim() ? raw.summary : fallbackSummary,
+    friction_points: friction.length ? friction : fallbackFriction,
+    prioritized_fixes: {
+      quick_wins: quickWins.length ? quickWins : fallbackQuickWins,
+      medium_lifts: medium.length ? medium : [],
+      experiments: experiments.length ? experiments : []
+    },
+    copy_suggestions: copy.length ? copy : fallbackCopy,
+    accessibility_mobile_notes: mobileNotes.length ? mobileNotes : fallbackMobileNotes
+  };
+}
+
+function validFinding(x) {
+  return !!(x && (x.title || x.why_it_hurts || x.evidence || x.fix));
+}
+
+function validFix(x) {
+  return !!(x && (x.title || x.why || x.how));
+}
+
+function validExperiment(x) {
+  return !!(x && (x.title || x.hypothesis || x.test || x.success_metric));
+}
+
+function validCopy(x) {
+  return !!(x && (x.location || x.before || x.after));
 }
 
 
