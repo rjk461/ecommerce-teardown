@@ -38,7 +38,7 @@ export default async function handler(req, res) {
 
     // Launch Chromium once and reuse it for screenshots + PDF to reduce serverless runtime.
     const browser = await playwrightChromium.launch(await getLaunchOptions());
-    let desktop, mobile, pdfBuf;
+    let desktop, mobile, mobileMenu, pdfBuf;
     try {
       // 1) Screenshots + signals
       ({ desktop, mobile, mobileMenu } = await captureScreenshots(url, { browser }));

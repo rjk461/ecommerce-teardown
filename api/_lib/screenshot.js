@@ -33,14 +33,21 @@ async function captureWithBrowser(browser, targetUrl) {
     openMenu: false // First capture: menu closed
   });
 
-  const mobileMenu = await captureOne(browser, {
-    url: targetUrl,
-    viewport: { width: 390, height: 844 },
-    userAgent:
-      "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
-    isMobile: true,
-    openMenu: true // Second capture: menu open
-  });
+  // Try to capture mobile with menu open, but don't fail if it doesn't work
+  let mobileMenu = null;
+  try {
+    mobileMenu = await captureOne(browser, {
+      url: targetUrl,
+      viewport: { width: 390, height: 844 },
+      userAgent:
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+      isMobile: true,
+      openMenu: true // Second capture: menu open
+    });
+  } catch (error) {
+    // If menu capture fails, continue without it
+    console.warn('Failed to capture mobile menu:', error.message);
+  }
 
   return { desktop, mobile, mobileMenu };
 }
