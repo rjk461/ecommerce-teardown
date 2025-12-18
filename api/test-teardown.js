@@ -41,21 +41,23 @@ export default async function handler(req, res) {
     let desktop, mobile, pdfBuf;
     try {
       // 1) Screenshots + signals
-      ({ desktop, mobile } = await captureScreenshots(url, { browser }));
+      ({ desktop, mobile, mobileMenu } = await captureScreenshots(url, { browser }));
 
-      // 2) AI teardown
+      // 2) AI teardown (use mobile without menu for analysis)
       const teardown = await generateTeardown({ url, notes, desktop, mobile });
 
       // 3) PDF
       const desktopB64 = Buffer.from(desktop.png).toString("base64");
       const mobileB64 = Buffer.from(mobile.png).toString("base64");
+      const mobileMenuB64 = mobileMenu ? Buffer.from(mobileMenu.png).toString("base64") : null;
       const reportHtml = renderReportHtml({
         url,
         notes,
         createdAt: startedAt,
         teardown,
         desktopPngBase64: desktopB64,
-        mobilePngBase64: mobileB64
+        mobilePngBase64: mobileB64,
+        mobileMenuPngBase64: mobileMenuB64
       });
       pdfBuf = await htmlToPdfBuffer(reportHtml, { browser });
 
@@ -81,6 +83,11 @@ export default async function handler(req, res) {
         contentType: "image/png",
         data: mobile.png
       });
+      const mobileMenuStored = mobileMenu ? await storeBlob({
+        path: `${basePath}/mobile-menu.png`,
+        contentType: "image/png",
+        data: mobileMenu.png
+      }) : null;
 
       const pdfUrl = pdfStored.kind === "blob" ? pdfStored.url : `/api/teardown-result?job_id=${encodeURIComponent(jobId)}`;
 
@@ -94,7 +101,8 @@ export default async function handler(req, res) {
         artifacts: {
           pdf: pdfStored,
           desktop: desktopStored,
-          mobile: mobileStored
+          mobile: mobileStored,
+          mobileMenu: mobileMenuStored
         }
       });
 
@@ -107,7 +115,10 @@ export default async function handler(req, res) {
         desktop_png_url:
           desktopStored.kind === "blob" ? desktopStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=desktop`,
         mobile_png_url:
-          mobileStored.kind === "blob" ? mobileStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile`
+          mobileStored.kind === "blob" ? mobileStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile`,
+        mobile_menu_png_url: mobileMenuStored
+          ? (mobileMenuStored.kind === "blob" ? mobileMenuStored.url : `/api/teardown-asset?job_id=${encodeURIComponent(jobId)}&kind=mobile-menu`)
+          : null
       });
 
       // 5) Send email with report in background (if email provided and Resend configured)

@@ -23,18 +23,29 @@ async function captureWithBrowser(browser, targetUrl) {
     isMobile: false
   });
 
+  // Capture mobile in two states: full page (menu closed) and with menu open
   const mobile = await captureOne(browser, {
     url: targetUrl,
     viewport: { width: 390, height: 844 },
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
-    isMobile: true
+    isMobile: true,
+    openMenu: false // First capture: menu closed
   });
 
-  return { desktop, mobile };
+  const mobileMenu = await captureOne(browser, {
+    url: targetUrl,
+    viewport: { width: 390, height: 844 },
+    userAgent:
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+    isMobile: true,
+    openMenu: true // Second capture: menu open
+  });
+
+  return { desktop, mobile, mobileMenu };
 }
 
-async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
+async function captureOne(browser, { url, viewport, userAgent, isMobile, openMenu = false }) {
   const context = await browser.newContext({
     viewport,
     userAgent,
@@ -57,8 +68,13 @@ async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
     // Scroll through the page to trigger lazy-loaded images before screenshot
     await scrollToLoadImages(page);
 
-    // For mobile, try to open navigation menu before screenshot so AI can analyze it.
-    if (isMobile) {
+    // For desktop, close any open dropdowns before screenshot
+    if (!isMobile) {
+      await closeDesktopDropdowns(page);
+    }
+
+    // For mobile, open navigation menu if requested (for second mobile screenshot)
+    if (isMobile && openMenu) {
       await tryOpenMobileMenu(page);
     }
 
@@ -123,6 +139,38 @@ async function gotoWithFallback(page, url) {
 
   // Give the browser a moment to render after heavy JS.
   await page.waitForTimeout(750);
+}
+
+async function closeDesktopDropdowns(page) {
+  try {
+    // Press Escape to close any open dropdowns/menus
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(200);
+    
+    // Click outside any dropdown areas (click on body) to close dropdowns
+    await page.evaluate(() => {
+      // Find and close any open dropdowns by clicking outside
+      const body = document.body;
+      if (body) {
+        body.click();
+      }
+      
+      // Also try to close common dropdown patterns
+      const openDropdowns = document.querySelectorAll('[aria-expanded="true"], [data-open="true"], .dropdown.open, .menu.open');
+      openDropdowns.forEach(el => {
+        if (el.click) el.click();
+      });
+    });
+    
+    await page.waitForTimeout(300);
+    
+    // Press Escape one more time to ensure everything is closed
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(200);
+  } catch (error) {
+    // If closing dropdowns fails, continue anyway
+    console.warn('Failed to close desktop dropdowns:', error.message);
+  }
 }
 
 async function scrollToLoadImages(page) {

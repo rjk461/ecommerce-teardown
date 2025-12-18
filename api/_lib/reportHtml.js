@@ -1,4 +1,4 @@
-export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBase64, mobilePngBase64 }) {
+export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBase64, mobilePngBase64, mobileMenuPngBase64 }) {
   const safe = (v) => escapeHtml(String(v ?? ""));
   const brandName = extractBrandName(url);
   const dateStr = formatDate(createdAt);
@@ -121,8 +121,11 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
         max-height: 1000px;
       }
       .screenshots-section {
-        page-break-after: always;
+        page-break-before: avoid;
         page-break-inside: auto; /* Allow images to span pages */
+      }
+      .screenshots-section h2 {
+        page-break-after: avoid;
       }
       .card {
         border: 1px solid rgba(0,0,0,0.10);
@@ -204,9 +207,15 @@ export function renderReportHtml({ url, notes, createdAt, teardown, desktopPngBa
           <img src="data:image/png;base64,${desktopPngBase64}" alt="Desktop screenshot" />
         </div>
         <div class="shot-full mobile">
-          <div class="label">Mobile</div>
+          <div class="label">Mobile (Full Page)</div>
           <img src="data:image/png;base64,${mobilePngBase64}" alt="Mobile screenshot" />
         </div>
+        ${mobileMenuPngBase64 ? `
+        <div class="shot-full mobile">
+          <div class="label">Mobile (Navigation Menu)</div>
+          <img src="data:image/png;base64,${mobileMenuPngBase64}" alt="Mobile navigation menu screenshot" />
+        </div>
+        ` : ''}
       </div>
 
       <div class="section">
