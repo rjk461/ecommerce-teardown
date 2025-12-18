@@ -54,6 +54,9 @@ async function captureOne(browser, { url, viewport, userAgent, isMobile }) {
       .$eval("body", (el) => (el.innerText || "").slice(0, 4000))
       .catch(() => "");
 
+    // Scroll through the page to trigger lazy-loaded images before screenshot
+    await scrollToLoadImages(page);
+
     // For mobile, try to open navigation menu before screenshot so AI can analyze it.
     if (isMobile) {
       await tryOpenMobileMenu(page);
@@ -122,6 +125,70 @@ async function gotoWithFallback(page, url) {
   await page.waitForTimeout(750);
 }
 
+async function scrollToLoadImages(page) {
+  try {
+    // Get the full page height
+    const pageHeight = await page.evaluate(() => {
+      return Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+    });
+
+    const viewportHeight = await page.evaluate(() => window.innerHeight);
+    const scrollStep = 500; // Scroll in 500px increments
+    let currentScroll = 0;
+
+    // Scroll incrementally from top to bottom
+    while (currentScroll < pageHeight) {
+      await page.evaluate((scrollPos) => {
+        window.scrollTo(0, scrollPos);
+      }, currentScroll);
+      
+      // Wait for lazy-loaded images to start loading
+      await page.waitForTimeout(300);
+      
+      // Wait for images in current viewport to load
+      await page.evaluate(() => {
+        return Promise.all(
+          Array.from(document.images).map((img) => {
+            if (img.complete && img.naturalWidth > 0) {
+              return Promise.resolve();
+            }
+            return new Promise((resolve) => {
+              img.addEventListener('load', resolve, { once: true });
+              img.addEventListener('error', resolve, { once: true });
+              // Timeout after 1 second per image
+              setTimeout(resolve, 1000);
+            });
+          })
+        );
+      });
+
+      currentScroll += scrollStep;
+      
+      // Cap scrolling to prevent extremely long pages from timing out
+      if (currentScroll > 15000) {
+        break;
+      }
+    }
+
+    // Scroll back to top before taking screenshot
+    await page.evaluate(() => {
+      window.scrollTo(0, 0);
+    });
+    
+    // Give a moment for any final rendering
+    await page.waitForTimeout(200);
+  } catch (error) {
+    // If scrolling fails, continue without it
+    console.warn('Scroll to load images failed:', error.message);
+  }
+}
+
 async function tryOpenMobileMenu(page) {
   // Prioritize hamburger/menu-specific selectors, exclude chat buttons.
   // Order matters: most specific first, then fallback to generic.
@@ -134,12 +201,18 @@ async function tryOpenMobileMenu(page) {
     // Menu toggle specific
     'button[aria-label*="menu" i]:not([aria-label*="chat" i])',
     'button[aria-label*="navigation" i]:not([aria-label*="chat" i])',
+    'button[aria-expanded]',
+    '[data-toggle="menu"]',
+    '[data-toggle="navigation"]',
     '.mobile-menu-toggle:not([class*="chat" i])',
     '.menu-toggle:not([class*="chat" i])',
     '#mobile-menu-button:not([id*="chat" i])',
     '#menu-button:not([id*="chat" i])',
     '[data-menu-toggle]:not([data-menu-toggle*="chat" i])',
     '[data-mobile-menu]:not([data-mobile-menu*="chat" i])',
+    // SVG-based hamburgers (common pattern)
+    'button svg[viewBox*="24"]:has(path[d*="M3"]):has(path[d*="M3"])',
+    'button:has(svg):has(path[d*="M3"])',
     // Header/nav area buttons (lower priority, but still valid)
     'header button:not([aria-label*="chat" i]):not([class*="chat" i]):not([id*="chat" i])',
     'nav button:not([aria-label*="chat" i]):not([class*="chat" i]):not([id*="chat" i])'
@@ -172,9 +245,36 @@ async function tryOpenMobileMenu(page) {
         
         const isVisible = await button.isVisible().catch(() => false);
         if (isVisible) {
-          await button.click();
-          // Wait for menu animation to complete.
-          await page.waitForTimeout(500);
+          // Try clicking the button
+          await button.click({ force: true }).catch(() => button.click());
+          
+          // Wait for menu to appear - check for common menu containers
+          const menuAppeared = await page.waitForFunction(
+            () => {
+              const menuSelectors = [
+                '[class*="menu" i][class*="open" i]',
+                '[class*="nav" i][class*="open" i]',
+                '[class*="drawer" i]',
+                '[class*="sidebar" i]',
+                '[aria-expanded="true"]',
+                '[data-menu-open="true"]',
+                '.mobile-menu:not([style*="display: none"])',
+                '.nav-menu:not([style*="display: none"])'
+              ];
+              return menuSelectors.some(sel => {
+                try {
+                  const el = document.querySelector(sel);
+                  return el && window.getComputedStyle(el).display !== 'none';
+                } catch {
+                  return false;
+                }
+              });
+            },
+            { timeout: 2000 }
+          ).catch(() => false);
+          
+          // Wait a bit more for menu animation to complete
+          await page.waitForTimeout(menuAppeared ? 300 : 500);
           return;
         }
       }

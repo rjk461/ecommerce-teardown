@@ -140,10 +140,11 @@ Critical Rules - STRICT EVIDENCE REQUIREMENT:
 - PRIORITIZATION: Focus on issues with the highest conversion impact. Quick wins should be genuinely quick and impactful.
 - SCREENSHOT ANALYSIS: Carefully examine both desktop and mobile screenshots. Note differences, mobile-specific issues, and responsive design concerns.
 - NO FABRICATION: If you cannot find additional legitimate issues after thorough analysis, return fewer items. Do NOT generate findings that don't relate to what's actually visible on the page.
+- MISSING IMAGES: Only report missing images if you see clear broken image placeholders (grey boxes with borders, error icons, or alt text indicating failed loads). Do NOT assume images are missing just because they're not visible in the screenshot - they may be below the fold or lazy-loaded. Focus on what is actually visible rather than inferring what should be there.
 
 Detailed Analysis Areas - Examine these specific areas ONLY if you can see clear evidence:
 1. HERO SECTION: CTA visibility and contrast, value proposition clarity, trust signals, urgency/scarcity indicators, headline effectiveness
-2. PRODUCT PRESENTATION: Image quality and size, pricing clarity and prominence, availability indicators (stock status), product descriptions, add-to-cart button visibility
+2. PRODUCT PRESENTATION: Image quality and size, pricing clarity and prominence, availability indicators (stock status), product descriptions, add-to-cart button visibility. NOTE: Only flag missing/broken images if you see clear broken image placeholders, error icons, or grey boxes with alt text indicating failed loads. Images below the fold may not be visible in screenshots but are not necessarily "missing" - only report if there's clear visual evidence of a broken image.
 3. NAVIGATION: Menu structure and clarity, search functionality visibility, category organization, breadcrumbs, mobile menu behavior
 4. FORMS & INPUTS: Field labels and placeholders, validation messages, error handling, form length and complexity, completion indicators
 5. CHECKOUT FLOW: Progress indicators, security badges, shipping options visibility, payment method clarity, trust elements
