@@ -80,7 +80,7 @@ Deployed automatically via Vercel on push to `main` branch.
 
 ## License
 
-© 2025 Richard Kelsey. All rights reserved.
+© 2026 Richard Kelsey. All rights reserved.
 
 ## Contact
 
