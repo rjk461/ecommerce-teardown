@@ -536,6 +536,20 @@
             color: white;
         }
 
+        /* Two-column layout for Ad Hoc services */
+        .investment-card.ad-hoc ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 20px;
+            column-gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .investment-card.ad-hoc ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .investment-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
