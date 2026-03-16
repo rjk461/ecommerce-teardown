@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Private Website Teardown - Ecommerce Teardown by Richard Kelsey</title>
+    <meta name="description" content="Submit your ecommerce site for a free private teardown. Get brutal, actionable feedback from a 16-year ecommerce veteran — delivered privately to your inbox within 7 days.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecommerceteardown.com/free-teardown">
+    <meta property="og:title" content="Free Private Website Teardown - Ecommerce Teardown">
+    <meta property="og:description" content="Submit your ecommerce site for a free private teardown. Get brutal, actionable feedback from a 16-year ecommerce veteran.">
+    <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
+    <meta property="og:site_name" content="Ecommerce Teardown">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Private Website Teardown - Ecommerce Teardown">
+    <meta name="twitter:description" content="Submit your ecommerce site for a free private teardown. Brutal truth, actionable feedback, delivered privately.">
+    <meta name="twitter:image" content="https://ecommerceteardown.com/images/og-image.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QS74BWRKTY');
+    </script>
+
+    <!-- Reddit Pixel -->
+    <script src="/reddit-pixel.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--mad-green);
+            padding: 0 20px 20px 20px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-eyebrow {
+            color: var(--mad-red);
+            font-weight: 800;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            margin-top: -30px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        .hero-subheading {
+            color: white;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--mad-green);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary .arrow {
+            font-size: 1.3em;
+            margin-left: 4px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 20px;
+            background: var(--mad-cream);
+            border-top: 3px solid var(--mad-pink);
+        }
+
+        .section-eyebrow {
+            text-align: center;
+            color: #C62828;
+            font-size: 19px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--mad-green);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 18px;
+            color: var(--medium-grey);
+            margin-bottom: 60px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .rounds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .round {
+            text-align: center;
+        }
+
+        .round-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+            border: 5px solid;
+        }
+
+        .round-icon.yellow { background: var(--accent-yellow); border-color: var(--accent-yellow); }
+        .round-icon.pink { background: var(--mad-pink); border-color: var(--mad-pink); }
+        .round-icon.green { background: var(--mad-green); border-color: var(--mad-green); }
+
+        .round h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-grey);
+            letter-spacing: 0.3px;
+        }
+
+        .round p {
+            color: var(--medium-grey);
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* What You Get Section */
+        .what-you-get {
+            padding: 80px 20px;
+            background: white;
+            border-top: 3px solid var(--mad-red);
+        }
+
+        .features-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            color: var(--dark-grey);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .stats-box {
+            background: var(--accent-yellow);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto 0;
+            border: 3px solid var(--dark-grey);
+        }
+
+        .stats-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .stats-box p {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 80px 20px;
+            background: white;
+            border-top: 5px solid;
+            border-image: linear-gradient(to right, var(--mad-pink), var(--accent-yellow)) 1;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--mad-cream);
+            padding: 50px 40px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-grey);
+            letter-spacing: 0.1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            font-weight: 400;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--mad-green);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: var(--mad-red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 40px 20px;
+            background: var(--mad-pink);
+        }
+
+        .newsletter-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .newsletter-content { text-align: left; }
+
+        .newsletter-section h2 {
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .newsletter-section p {
+            font-size: 18px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .newsletter-btn {
+            padding: 16px 24px;
+            background: white;
+            color: var(--mad-pink);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .newsletter-success {
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-success h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-content { text-align: center; }
+
+            .hero-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+
+            .hero-subheading { font-size: 17px; }
+            .hero-eyebrow { font-size: 16px; }
+            .hero-buttons { justify-content: center; }
+            .section-heading { font-size: 28px; }
+            .section-intro { font-size: 16px; }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea { font-size: 16px; }
+
+            .submit-btn { font-size: 18px; padding: 18px; }
+
+            .newsletter-section { padding: 40px 20px; }
+            .newsletter-container { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .newsletter-content { text-align: center; }
+            .newsletter-section h2 { font-size: 28px; }
+            .newsletter-section p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar"></div>
+
+    <!-- Header Navigation -->
+    <nav class="header-nav" aria-label="Primary">
+        <div class="container">
+            <div class="header-nav-inner">
+                <a class="header-brand" href="/">Ecommerce Teardown</a>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="images/lucha-wrestler.png" alt="Lucha Libre wrestler holding a computer monitor" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">¡ATENCION! ECOMMERCE CHAMPIONS AND CHALLENGERS!</div>
+                <h1>ENTER THE RING FOR YOUR FREE WEBSITE TEARDOWN!</h1>
+                <p class="hero-subheading">
+                    Step into the arena where a 3 x Top 50 Australia Ecommerce holder takes on your website.
+                    Get the BRUTAL TRUTH about what's costing you conversions – delivered privately to your inbox
+                    within 7 days.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#form" class="btn btn-primary" onclick="if(typeof trackRedditEvent==='function')trackRedditEvent('HeroCTAClick');">🔥 THROW YOUR SITE IN THE RING <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="section-eyebrow">THE FIGHT CARD</div>
+        <h2 class="section-heading">How the Match Goes Down</h2>
+        <p class="section-intro">Three rounds. One winner. Your website.</p>
+
+        <div class="rounds">
+            <div class="round">
+                <div class="round-icon yellow">🎯</div>
+                <h3>ROUND 1: SUBMIT<br>YOUR WEBSITE</h3>
+                <p>Drop your homepage URL and tell me what's got you in a headlock. Every challenger enters the ring – I select the most worthy opponents for a private teardown.</p>
+            </div>
+
+            <div class="round">
+                <div class="round-icon pink">🥊</div>
+                <h3>ROUND 2: I BRING THE TEARDOWN</h3>
+                <p>I record a no-holds-barred video walkthrough plus written analysis. Every weak spot exposed. Every missed opportunity called out. Every quick win identified. <strong>All feedback is constructive and actionable</strong> – designed to help you improve, not embarrass.</p>
+            </div>
+
+            <div class="round">
+                <div class="round-icon green">📢</div>
+                <h3>ROUND 3: YOUR TEARDOWN IS DELIVERED</h3>
+                <p>Your private teardown is delivered to your inbox within 7 days. Actionable, confidential, and yours to use however you like.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="what-you-get">
+        <div class="section-eyebrow">YOUR CHAMPIONSHIP PACKAGE</div>
+        <h2 class="section-heading">What You Get From a Teardown</h2>
+
+        <div class="features-grid">
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-green)">✅</span>
+                <span class="feature-text">15-minute video replay of your homepage battle</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-pink)">✅</span>
+                <span class="feature-text">Written round-by-round analysis with screenshots</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--accent-yellow)">✅</span>
+                <span class="feature-text">3-5 quick wins you can execute TODAY to score points</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-red)">✅</span>
+                <span class="feature-text">Strategic power moves for bigger transformation</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-green)">✅</span>
+                <span class="feature-text">Mobile experience knockout review</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon" style="color: var(--mad-pink)">✅</span>
+                <span class="feature-text">Trust & credibility assessment – are you championship material?</span>
+            </div>
+        </div>
+
+        <div class="stats-box">
+            <h3>💰 THE PRIZE</h3>
+            <p>Discover 5-7 conversion opportunities to drive monthly revenue.</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="section-eyebrow">READY TO RUMBLE?</div>
+        <h2 class="section-heading">Throw Your Site in the Ring</h2>
+        <p class="section-intro">
+            I select and review the most interesting challengers weekly. The more you tell me,<br>
+            the better your chances of getting chosen – and the more devastating my feedback.
+        </p>
+
+        <!-- Guarantee Box -->
+        <div style="max-width: 700px; margin: 0 auto 40px; background: var(--mad-green); padding: 30px; border-radius: 12px; border: 4px solid var(--accent-yellow); text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 15px;">🛡️</div>
+            <h3 style="color: white; font-size: 24px; font-weight: 900; margin-bottom: 15px; text-transform: uppercase;">THE CHAMPIONSHIP GUARANTEE</h3>
+            <p style="color: white; font-size: 17px; line-height: 1.7; font-weight: 400;">
+                <strong>100% constructive feedback. Zero embarrassment.</strong> Every teardown focuses on actionable improvements, not personal attacks.
+                I'm here to help you win, not to make you look bad. The goal is growth, not humiliation.
+            </p>
+        </div>
+
+        <div class="form-container">
+            <form action="https://formspree.io/f/meoykkey" method="POST">
+                <input type="hidden" name="_to" value="richardkelsey@gmail.com">
+                <input type="hidden" name="_subject" value="New Website Teardown Submission">
+                <div class="form-group">
+                    <label for="url">Website URL *</label>
+                    <input type="text" id="url" name="url" placeholder="website.com.au" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Your Role *</label>
+                    <input type="text" id="role" name="role" placeholder="Your role/position" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="revenue">Current Monthly Revenue *</label>
+                    <select id="revenue" name="revenue" required>
+                        <option value="">→ What's your business size?</option>
+                        <option value="starting">Just stepping in the ring</option>
+                        <option value="under10k">Under $10k/month</option>
+                        <option value="10-50k">$10k-$50k/month</option>
+                        <option value="50-100k">$50k-$100k/month</option>
+                        <option value="100-500k">$100k-$500k/month</option>
+                        <option value="500k-1m">$500k-$1M/month</option>
+                        <option value="over1m">Over $1M/month</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="challenge">What's got you in a headlock? *</label>
+                    <textarea id="challenge" name="challenge" rows="4" placeholder='Example: "Traffic is strong but conversion is weak" or "Mobile visitors bounce faster than a luchador off the ropes"' required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select id="country" name="country" required>
+                        <option value="">→ Where's your arena?</option>
+                        <option value="australia">Australia</option>
+                        <option value="new zealand">New Zealand</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="usa">United States</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">I understand this will be a PRIVATE teardown delivered only to me. I'm ready for constructive, actionable feedback that helps me improve. *</label>
+                </div>
+
+                <button type="submit" class="submit-btn">🔥 BRING THE TEARDOWN →</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Handle form submission with custom success message
+        const form = document.querySelector('.form-container form');
+        const submitBtn = document.querySelector('.submit-btn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            submitBtn.textContent = '⚡ THROWING PUNCHES...';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    if (typeof trackRedditEvent === 'function') {
+                        trackRedditEvent('TeardownFormSubmit');
+                    }
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 40px 20px;" id="teardownSuccess">
+                            <h3 style="color: var(--mad-green); font-size: 24px; margin-bottom: 20px;">
+                                🥊 SUBMISSION ACCEPTED!
+                            </h3>
+                            <p style="font-size: 18px; line-height: 1.6;">
+                                You've thrown your site in the ring. I review submissions weekly and select the most worthy opponents for a private teardown. Check your email for confirmation!
+                            </p>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                        const successDiv = document.getElementById('teardownSuccess');
+                        if (successDiv) {
+                            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 100);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                submitBtn.textContent = '🔥 BRING THE TEARDOWN →';
+                submitBtn.disabled = false;
+                alert('Oops! There was a problem with your submission. Please try again.');
+            }
+        });
+    </script>
+
+    <script>
+        // Newsletter form handler
+        function attachNewsletterHandler() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm && !newsletterForm.dataset.handlerAttached) {
+                newsletterForm.dataset.handlerAttached = 'true';
+                newsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const btn = this.querySelector('.newsletter-btn');
+                    const emailInput = this.querySelector('input[name="email"]');
+                    const originalText = btn.textContent;
+
+                    btn.textContent = '⚡ JOINING...';
+                    btn.disabled = true;
+
+                    try {
+                        const formData = new FormData();
+                        formData.append('email', emailInput.value);
+                        formData.append('source', 'newsletter');
+                        formData.append('_subject', 'Newsletter Signup');
+
+                        const response = await fetch('https://formspree.io/f/meoykkey', {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            if (typeof trackRedditEvent === 'function') {
+                                trackRedditEvent('NewsletterSignup');
+                            }
+                            const container = this.closest('.newsletter-container');
+                            container.style.display = 'block';
+                            container.innerHTML = `
+                                <div class="newsletter-success" id="newsletterSuccess">
+                                    <h3>🎉 YOU'RE IN THE RING!</h3>
+                                    <p>Check your email to confirm. You'll be first to know when the next teardown drops!</p>
+                                </div>
+                            `;
+                            setTimeout(() => {
+                                const successDiv = document.getElementById('newsletterSuccess');
+                                if (successDiv) {
+                                    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }, 100);
+                        } else {
+                            throw new Error('Submission failed');
+                        }
+                    } catch (error) {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        alert('Oops! There was a problem. Please try again.');
+                    }
+                });
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', attachNewsletterHandler);
+        } else {
+            attachNewsletterHandler();
+        }
+    </script>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>DON'T MISS THE NEXT TEARDOWN</h2>
+                <p>
+                    Get notified when fresh teardowns drop. Every week, one site steps into the ring
+                    and gets the full championship treatment. Be the first to see the carnage.
+                </p>
+            </div>
+            <div class="newsletter-form-wrapper">
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required>
+                    <button type="submit" class="newsletter-btn">GET RINGSIDE ALERTS →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>The Ring</h3>
+                <ul>
+                    <li><a href="/free-teardown">Free Private Teardown</a></li>
+                    <li><a href="/#pricing">Private Reviews</a></li>
+                    <li><a href="/consulting">Consulting</a></li>
+                    <li><a href="/sample-teardowns">Sample Teardowns</a></li>
+                    <li><a href="/#meet-champion">About the Champion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <ul>
+                    <li>
+                        <a href="https://linkedin.com/in/richardkelsey" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                            <span>LinkedIn</span>
+                            <span style="color: var(--medium-grey); font-size: 14px;">(11,413 followers)</span>
+                        </a>
+                    </li>
+                    <li><a href="/contact">Contact Form</a></li>
+                    <li>Based in Sydney, Australia</li>
+                    <li>Open to Head of Ecommerce roles</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Recent Battles</h3>
+                <ul>
+                    <li><a href="/sample-teardowns">Brand Teardown →</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Richard Kelsey | ecommerceteardown.com</p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">Not affiliated with actual lucha libre wrestling. But the takedowns are just as real.</p>
+        </div>
+    </footer>
+
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Nav Drawer -->
+    <nav class="nav-drawer" id="nav-drawer" aria-label="Navigation menu">
+        <div class="nav-drawer-header">
+            <span class="nav-drawer-title">Menu</span>
+            <button class="nav-drawer-close" id="nav-close-btn" aria-label="Close navigation">&#x2715;</button>
+        </div>
+        <div class="nav-drawer-section">
+            <h3>The Ring</h3>
+            <ul class="nav-drawer-links">
+                <li><a href="/free-teardown">Free Private Teardown</a></li>
+                <li><a href="/#pricing">Private Reviews</a></li>
+                <li><a href="/consulting">Consulting</a></li>
+                <li><a href="/sample-teardowns">Sample Teardowns</a></li>
+                <li><a href="/#meet-champion">About the Champion</a></li>
+            </ul>
+            <h3>Connect</h3>
+            <ul class="nav-drawer-links">
+                <li><a href="https://linkedin.com/in/richardkelsey" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="/contact">Contact Form</a></li>
+            </ul>
+        </div>
+    </nav>
+    <script src="/nav.js"></script>
+</body>
+</html>
