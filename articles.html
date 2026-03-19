@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles — Richard Kelsey | Ecommerce Teardown</title>
+    <meta name="description" content="Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses — from Richard Kelsey.">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecommerceteardown.com/articles">
+    <meta property="og:title" content="Articles — Richard Kelsey | Ecommerce Teardown">
+    <meta property="og:description" content="Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses.">
+    <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QS74BWRKTY');
+    </script>
+
+    <!-- Reddit Pixel -->
+    <script src="/reddit-pixel.js"></script>
+
+    <style>
+    :root {
+      --green: #00C853;
+      --green-dim: rgba(0, 200, 83, 0.12);
+      --green-border: rgba(0, 200, 83, 0.25);
+      --dark: #0D1117;
+      --dark-2: #161B22;
+      --dark-3: #21262D;
+      --text: #E6EDF3;
+      --muted: #7D8590;
+      --border: #30363D;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── NAV ── */
+    header {
+      background: rgba(13, 17, 23, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .logo a {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span { color: var(--green); }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.15rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .nav-menu li a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-menu li a:hover { color: var(--text); background: var(--dark-3); }
+    .nav-menu li a.active { color: var(--green); }
+
+    .nav-coffee {
+      background: var(--green) !important;
+      color: #000 !important;
+      font-weight: 700 !important;
+    }
+
+    .nav-coffee:hover { opacity: 0.9; background: var(--green) !important; }
+
+    @media (max-width: 768px) {
+      .nav-hide-mobile { display: none; }
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header-inner {
+      max-width: 760px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0;
+    }
+
+    /* ── ARTICLES LIST ── */
+    .articles-section {
+      padding: 3rem 0 5rem;
+    }
+
+    .articles-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .articles-layout { grid-template-columns: 1fr; }
+      .articles-sidebar { order: -1; }
+    }
+
+    /* ── ARTICLE CARD ── */
+    .article-card {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .article-card:first-child { padding-top: 0; }
+
+    .article-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-card h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      line-height: 1.3;
+    }
+
+    .article-card h2 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .article-card h2 a:hover { color: var(--green); }
+
+    .article-excerpt {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0 0 1rem;
+      line-height: 1.65;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .article-meta .read-time {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ── COMING SOON STATE ── */
+    .coming-soon-card {
+      background: var(--dark-2);
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .coming-soon-card .cs-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .coming-soon-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 0.5rem;
+    }
+
+    .coming-soon-card p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-card h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+
+    .topic-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .topic-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      cursor: default;
+    }
+
+    .sidebar-bio {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+
+    .sidebar-bio strong { color: var(--text); }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #000;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      display: block;
+      text-align: center;
+    }
+
+    .btn-secondary:hover { border-color: var(--green); }
+
+    /* ── NOTIFY FORM ── */
+    .notify-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .notify-form input[type="email"] {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      outline: none;
+      font-family: inherit;
+    }
+
+    .notify-form input[type="email"]:focus {
+      border-color: var(--green);
+    }
+
+    .notify-form input[type="email"]::placeholder { color: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .footer-brand .logo-text {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand .logo-text span { color: var(--green); }
+
+    .footer-brand p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      line-height: 1.5;
+    }
+
+    .footer-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-linkedin:hover { color: var(--text); }
+
+    .footer-linkedin-count {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li { margin-bottom: 0.4rem; }
+
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-col ul li a:hover { color: var(--text); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="/">Ecommerce <span>Teardown</span></a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-hide-mobile"><a href="/#about">About</a></li>
+                    <li class="nav-hide-mobile"><a href="/free-teardown">Free Teardown</a></li>
+                    <li class="nav-hide-mobile"><a href="/consulting">Consulting</a></li>
+                    <li class="nav-hide-mobile"><a href="/linkedin">LinkedIn</a></li>
+                    <li class="nav-hide-mobile"><a href="/articles" class="active">Articles</a></li>
+                    <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-inner">
+                    <div class="page-eyebrow">Articles</div>
+                    <h1>The Ecommerce Operator's Playbook</h1>
+                    <p>Long-form thinking on ecommerce strategy, marketing operations, and what actually works in Australian retail. No fluff, no agency spin.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <div class="container">
+                <div class="articles-layout">
+
+                    <div class="articles-main">
+
+                        <!-- Placeholder article 1 -->
+                        <div class="article-card">
+                            <span class="article-tag">Email Marketing</span>
+                            <h2><a href="#">How We Scaled Email to 30% of Revenue (Without Spamming Everyone)</a></h2>
+                            <p class="article-excerpt">Most ecommerce brands treat email as a broadcast channel. The stores doing serious revenue treat it as a relationship. Here's the exact segmentation and lifecycle approach we used at Beer Cartel to make email our highest-ROAS channel.</p>
+                            <div class="article-meta">
+                                <span>Richard Kelsey</span>
+                                <span class="read-time">&#9202; 8 min read</span>
+                                <span>Coming soon</span>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder article 2 -->
+                        <div class="article-card">
+                            <span class="article-tag">Platform Migration</span>
+                            <h2><a href="#">BigCommerce to Shopify Plus in 90 Days: What We Learned</a></h2>
+                            <p class="article-excerpt">$100K in savings, zero revenue drop during cutover, and a team that barely noticed. A recount of how we planned and executed a high-risk platform migration without losing our minds — or our rankings.</p>
+                            <div class="article-meta">
+                                <span>Richard Kelsey</span>
+                                <span class="read-time">&#9202; 12 min read</span>
+                                <span>Coming soon</span>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder article 3 -->
+                        <div class="article-card">
+                            <span class="article-tag">Ecommerce Strategy</span>
+                            <h2><a href="#">The 3 Revenue Leaks I Find in Almost Every Ecommerce Site</a></h2>
+                            <p class="article-excerpt">After doing teardowns of dozens of Australian ecommerce sites, the same three problems keep showing up. They're not complicated to fix — they're just invisible until someone points at them.</p>
+                            <div class="article-meta">
+                                <span>Richard Kelsey</span>
+                                <span class="read-time">&#9202; 6 min read</span>
+                                <span>Coming soon</span>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder article 4 -->
+                        <div class="article-card">
+                            <span class="article-tag">Paid Media</span>
+                            <h2><a href="#">How to Hit 5:1 ROAS on a High Six-Figure Paid Media Budget</a></h2>
+                            <p class="article-excerpt">The playbook isn't complicated, but it requires discipline. Audience architecture, creative testing cadence, and the bidding strategy shifts that made the difference between 2:1 and 5:1.</p>
+                            <div class="article-meta">
+                                <span>Richard Kelsey</span>
+                                <span class="read-time">&#9202; 10 min read</span>
+                                <span>Coming soon</span>
+                            </div>
+                        </div>
+
+                        <!-- Placeholder article 5 -->
+                        <div class="article-card">
+                            <span class="article-tag">AI &amp; Tools</span>
+                            <h2><a href="#">How I Use AI in My Ecommerce Workflow (and What It Can't Replace)</a></h2>
+                            <p class="article-excerpt">I've rebuilt my research, copywriting, and analysis stack around AI tools in the past year. Here's what's actually useful, what's hype, and why the skill that matters isn't prompt engineering — it's knowing what to ask.</p>
+                            <div class="article-meta">
+                                <span>Richard Kelsey</span>
+                                <span class="read-time">&#9202; 7 min read</span>
+                                <span>Coming soon</span>
+                            </div>
+                        </div>
+
+                        <div class="coming-soon-card" style="margin-top: 2rem;">
+                            <div class="cs-icon">&#9999;&#65039;</div>
+                            <h3>Articles are in the works</h3>
+                            <p>These are in draft. Drop your email below and I'll send you a note when the first one goes live.</p>
+                        </div>
+
+                    </div>
+
+                    <aside class="articles-sidebar">
+
+                        <div class="sidebar-card">
+                            <h3>Get notified</h3>
+                            <p class="sidebar-bio">New articles land in your inbox. No weekly newsletters, no drip sequences. Just the article when it's done.</p>
+                            <form class="notify-form" action="https://formspree.io/f/meoykkey" method="POST">
+                                <input type="hidden" name="source" value="articles-subscribe">
+                                <input type="email" name="email" placeholder="your@email.com" required>
+                                <button type="submit" class="btn btn-primary btn-sm" style="width:100%; cursor:pointer;">Notify me</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>About Richard</h3>
+                            <p class="sidebar-bio"><strong>Richard Kelsey</strong> built Beer Cartel from a storage shed to Australia's #1 craft beer store — 7-figure revenue, 150K+ customers, successful exit. 3&times; Top 50 AU Ecommerce. Now open to Head of Ecommerce and senior marketing leadership roles in Australia.</p>
+                            <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="btn btn-secondary btn-sm">LinkedIn &rarr;</a>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Topics</h3>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Email Marketing</span>
+                                <span class="topic-tag">Shopify Plus</span>
+                                <span class="topic-tag">Paid Media</span>
+                                <span class="topic-tag">Platform Migration</span>
+                                <span class="topic-tag">AI Tools</span>
+                                <span class="topic-tag">AU Ecommerce</span>
+                                <span class="topic-tag">Team Leadership</span>
+                                <span class="topic-tag">P&amp;L</span>
+                            </div>
+                        </div>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo-text">Ecommerce <span>Teardown</span></a>
+                    <p>Richard Kelsey &mdash; Head of Ecommerce and CMO-level operator with 16+ years scaling Australian ecommerce. Based in Sydney.</p>
+                    <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="footer-linkedin">
+                        LinkedIn
+                        <span class="footer-linkedin-count">11,413 followers</span>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/free-teardown">Free Teardown</a></li>
+                        <li><a href="/consulting">Consulting</a></li>
+                        <li><a href="/sample-teardowns">Sample Teardowns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Writing</h4>
+                    <ul>
+                        <li><a href="/linkedin">LinkedIn Posts</a></li>
+                        <li><a href="/articles">Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank">Book a Coffee</a></li>
+                        <li><a href="https://linkedin.com/in/richardkelsey" target="_blank">LinkedIn</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Richard Kelsey / Ecommerce Teardown. All rights reserved.</p>
+                <p>Open to Head of Ecommerce roles in Australia &middot; Sydney based</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/site.js"></script>
+</body>
+</html>

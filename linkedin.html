@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Posts — Richard Kelsey | Ecommerce Teardown</title>
+    <meta name="description" content="Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="stylesheet" href="/site.css">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ecommerceteardown.com/linkedin">
+    <meta property="og:title" content="LinkedIn Posts — Richard Kelsey">
+    <meta property="og:description" content="Ecommerce strategy, marketing leadership, and building Australian retail brands.">
+    <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QS74BWRKTY');
+    </script>
+
+    <!-- Reddit Pixel -->
+    <script src="/reddit-pixel.js"></script>
+
+    <style>
+    :root {
+      --green: #00C853;
+      --green-dim: rgba(0, 200, 83, 0.12);
+      --green-border: rgba(0, 200, 83, 0.25);
+      --dark: #0D1117;
+      --dark-2: #161B22;
+      --dark-3: #21262D;
+      --text: #E6EDF3;
+      --muted: #7D8590;
+      --border: #30363D;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── NAV ── */
+    header {
+      background: rgba(13, 17, 23, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .logo a {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span { color: var(--green); }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.15rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .nav-menu li a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-menu li a:hover { color: var(--text); background: var(--dark-3); }
+    .nav-menu li a.active { color: var(--green); }
+
+    .nav-coffee {
+      background: var(--green) !important;
+      color: #000 !important;
+      font-weight: 700 !important;
+    }
+
+    .nav-coffee:hover { opacity: 0.9; background: var(--green) !important; }
+
+    @media (max-width: 768px) {
+      .nav-hide-mobile { display: none; }
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 4rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header-inner {
+      max-width: 760px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 0 1.5rem;
+    }
+
+    .linkedin-follow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0A66C2;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .linkedin-follow-btn:hover { opacity: 0.88; }
+
+    .linkedin-follow-btn .follower-count {
+      font-weight: 400;
+      opacity: 0.8;
+      font-size: 0.8rem;
+    }
+
+    /* ── POSTS GRID ── */
+    .posts-section {
+      padding: 3rem 0 5rem;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .post-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .post-card:hover {
+      border-color: var(--green-border);
+      transform: translateY(-2px);
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .post-author {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .post-date {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .post-body {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .post-body strong { color: var(--green); }
+
+    .post-read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .post-read-more:hover { text-decoration: underline; }
+
+    .post-engagement {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .post-engagement span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 0 0 5rem;
+    }
+
+    .cta-banner h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+    }
+
+    .cta-banner p {
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--green);
+      color: #000;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { border-color: var(--green); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .footer-brand .logo-text {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand .logo-text span { color: var(--green); }
+
+    .footer-brand p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      line-height: 1.5;
+    }
+
+    .footer-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-linkedin:hover { color: var(--text); }
+
+    .footer-linkedin-count {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li { margin-bottom: 0.4rem; }
+
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-col ul li a:hover { color: var(--text); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="/">Ecommerce <span>Teardown</span></a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-hide-mobile"><a href="/#about">About</a></li>
+                    <li class="nav-hide-mobile"><a href="/free-teardown">Free Teardown</a></li>
+                    <li class="nav-hide-mobile"><a href="/consulting">Consulting</a></li>
+                    <li class="nav-hide-mobile"><a href="/linkedin" class="active">LinkedIn</a></li>
+                    <li class="nav-hide-mobile"><a href="/articles">Articles</a></li>
+                    <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-inner">
+                    <div class="page-eyebrow">LinkedIn</div>
+                    <h1>Thinking Out Loud on Ecommerce</h1>
+                    <p>Posts on ecommerce strategy, marketing leadership, and the stuff nobody talks about in AU retail. Follow along for the unfiltered take.</p>
+                    <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="linkedin-follow-btn">
+                        Follow on LinkedIn
+                        <span class="follower-count">11,413 followers</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="posts-section">
+            <div class="container">
+
+                <div class="posts-grid">
+
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <div class="post-avatar">RK</div>
+                            <div>
+                                <div class="post-author">Richard Kelsey</div>
+                                <div class="post-date">Recent</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>Most ecommerce "audits" are just a list of things that are broken.</p>
+                            <p>A teardown is different. It's asking: <strong>why is this leaking revenue?</strong></p>
+                            <p>I've done enough of these now to know the patterns. Most stores are losing money in the same 3 places. And the fixes aren't complicated — they're just invisible until someone points at them.</p>
+                        </div>
+                        <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="post-read-more">Read on LinkedIn &rarr;</a>
+                        <div class="post-engagement">
+                            <span>&#128077; Reactions</span>
+                            <span>&#128172; Comments</span>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <div class="post-avatar">RK</div>
+                            <div>
+                                <div class="post-author">Richard Kelsey</div>
+                                <div class="post-date">Recent</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>Email at <strong>30% of revenue</strong> doesn't happen by accident.</p>
+                            <p>It happens when you treat the list like a relationship, not a broadcast channel. Segmentation, lifecycle, win-backs — and obsessing over the metrics that actually matter.</p>
+                            <p>Most brands are leaving 15–20% of their revenue sitting in an ignored Klaviyo account.</p>
+                        </div>
+                        <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="post-read-more">Read on LinkedIn &rarr;</a>
+                        <div class="post-engagement">
+                            <span>&#128077; Reactions</span>
+                            <span>&#128172; Comments</span>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <div class="post-avatar">RK</div>
+                            <div>
+                                <div class="post-author">Richard Kelsey</div>
+                                <div class="post-date">Recent</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>We moved Beer Cartel from BigCommerce to Shopify Plus in 90 days.</p>
+                            <p>$100K in savings. Zero revenue drop during migration. The team barely noticed.</p>
+                            <p>Platform migrations don't have to be nightmares. They just require <strong>a plan that doesn't start with the tech</strong>.</p>
+                        </div>
+                        <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="post-read-more">Read on LinkedIn &rarr;</a>
+                        <div class="post-engagement">
+                            <span>&#128077; Reactions</span>
+                            <span>&#128172; Comments</span>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <div class="post-avatar">RK</div>
+                            <div>
+                                <div class="post-author">Richard Kelsey</div>
+                                <div class="post-date">Recent</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>$1M in 4 days. For a craft beer store in Australia.</p>
+                            <p>It was our Christmas campaign. Everything came together — the email sequence, the paid media, the site experience, the logistics team.</p>
+                            <p>But it started <strong>months earlier</strong> with the inventory plan and the creative brief. Most people only see the spike.</p>
+                        </div>
+                        <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="post-read-more">Read on LinkedIn &rarr;</a>
+                        <div class="post-engagement">
+                            <span>&#128077; Reactions</span>
+                            <span>&#128172; Comments</span>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <div class="post-avatar">RK</div>
+                            <div>
+                                <div class="post-author">Richard Kelsey</div>
+                                <div class="post-date">Recent</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>AI isn't replacing ecommerce operators. It's replacing the ones who aren't using it.</p>
+                            <p>I've rebuilt my entire research, copywriting, and analysis workflow around Claude in the past 12 months. The output is better and it takes half the time.</p>
+                            <p>The skill that matters now isn't prompt engineering. It's <strong>knowing what questions to ask</strong>.</p>
+                        </div>
+                        <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="post-read-more">Read on LinkedIn &rarr;</a>
+                        <div class="post-engagement">
+                            <span>&#128077; Reactions</span>
+                            <span>&#128172; Comments</span>
+                        </div>
+                    </div>
+
+                    <div class="post-card">
+                        <div class="post-meta">
+                            <div class="post-avatar">RK</div>
+                            <div>
+                                <div class="post-author">Richard Kelsey</div>
+                                <div class="post-date">Recent</div>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>The hardest part of leading an ecommerce team isn't the strategy. It's the context switching.</p>
+                            <p>Monday: P&amp;L review. Tuesday: creative brief. Wednesday: board presentation. Thursday: troubleshooting a Shopify app conflict at 11pm.</p>
+                            <p><strong>The operators who thrive</strong> are the ones who can hold the 30,000-ft view and still get into the weeds when it matters.</p>
+                        </div>
+                        <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="post-read-more">Read on LinkedIn &rarr;</a>
+                        <div class="post-engagement">
+                            <span>&#128077; Reactions</span>
+                            <span>&#128172; Comments</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top: 2.5rem;">
+                    <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="btn btn-secondary">See all posts on LinkedIn &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section style="padding: 0 0 3rem;">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>Want to talk ecommerce?</h2>
+                    <p>Book a 30-minute coffee chat — no agenda, no sales pitch. Just a conversation.</p>
+                    <a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="btn btn-primary">Book a Coffee</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo-text">Ecommerce <span>Teardown</span></a>
+                    <p>Richard Kelsey &mdash; Head of Ecommerce and CMO-level operator with 16+ years scaling Australian ecommerce. Based in Sydney.</p>
+                    <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="footer-linkedin">
+                        LinkedIn
+                        <span class="footer-linkedin-count">11,413 followers</span>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/free-teardown">Free Teardown</a></li>
+                        <li><a href="/consulting">Consulting</a></li>
+                        <li><a href="/sample-teardowns">Sample Teardowns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Writing</h4>
+                    <ul>
+                        <li><a href="/linkedin">LinkedIn Posts</a></li>
+                        <li><a href="/articles">Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank">Book a Coffee</a></li>
+                        <li><a href="https://linkedin.com/in/richardkelsey" target="_blank">LinkedIn</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Richard Kelsey / Ecommerce Teardown. All rights reserved.</p>
+                <p>Open to Head of Ecommerce roles in Australia &middot; Sydney based</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/site.js"></script>
+</body>
+</html>
