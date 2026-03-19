@@ -135,6 +135,30 @@
     /* ── HERO ─────────────────────────────────────────────────── */
     .hero { padding: 5.5rem 0 4.5rem; }
 
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      display: block;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .hero-photo { display: none; }
+    }
+
     .hero-tag {
       display: inline-flex;
       align-items: center;
@@ -434,20 +458,23 @@
       background: var(--dark-2);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 0.75rem 1rem;
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
     }
 
-    .award-item .award-label {
-      display: block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 0.25rem;
+    .award-item img {
+      height: 28px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
     }
 
-    .award-item .award-name { font-size: 0.82rem; color: var(--text); }
+    .award-item .award-name { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
 
     /* ── TRUST SIGNALS ────────────────────────────────────────── */
     .trust-signals {
@@ -907,19 +934,26 @@
         <!-- ── HERO ──────────────────────────────────────────── -->
         <section id="hero" class="hero">
             <div class="container">
-                <div class="hero-tag">
-                    <span class="dot"></span>
-                    Open to Head of Ecommerce &amp; Marketing Leadership Roles &middot; Sydney
-                </div>
-                <h1>I Built Australia's #1 Craft Beer Store From <em>a Storage Shed.</em></h1>
-                <p class="lead">
-                    16 years. 7-figure revenue. Successful exit. I'm Richard Kelsey &mdash; Head of Ecommerce
-                    and CMO-level operator, now open to my next challenge. I also deliver free private
-                    teardowns of ecommerce sites, because someone has to.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="btn btn-primary">Book a Coffee</a>
-                    <a href="/free-teardown" class="btn btn-secondary">Get a Free Teardown</a>
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <div class="hero-tag">
+                            <span class="dot"></span>
+                            Open to Head of Ecommerce &amp; Marketing Leadership Roles &middot; Sydney
+                        </div>
+                        <h1>I Built Australia's #1 Craft Beer Store From <em>a Storage Shed.</em></h1>
+                        <p class="lead">
+                            16 years. 7-figure revenue. Successful exit. I'm Richard Kelsey &mdash; Head of Ecommerce
+                            and CMO-level operator, now open to my next challenge. I also deliver free private
+                            teardowns of ecommerce sites, because someone has to.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="btn btn-primary">Book a Coffee</a>
+                            <a href="/free-teardown" class="btn btn-secondary">Get a Free Teardown</a>
+                        </div>
+                    </div>
+                    <div class="hero-photo">
+                        <img src="/images/richard-hero.jpg" alt="Richard Kelsey — Beer Cartel" onerror="this.src='/images/Richard%20Kelsey%20Headshot.png'">
+                    </div>
                 </div>
                 <div class="stats-strip">
                     <div class="stat">
@@ -931,8 +965,8 @@
                         <span class="stat-label">Customer Database</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">5:1</span>
-                        <span class="stat-label">ROAS on Meta &amp; Google</span>
+                        <span class="stat-number">1M+</span>
+                        <span class="stat-label">Beers Sold Online</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">3&times;</span>
@@ -956,12 +990,12 @@
                     <ul class="what-i-bring">
                         <li>Full P&amp;L ownership &amp; commercial leadership</li>
                         <li>Cross-functional team leadership (4 direct reports)</li>
-                        <li>Shopify Plus &amp; end-to-end platform migrations</li>
-                        <li>Email marketing scaled to 30% of revenue</li>
+                        <li>Shopify &amp; BigCommerce end-to-end platform migrations</li>
+                        <li>Email lifecycle marketing scaled to 30% of revenue</li>
                         <li>5:1 ROAS on high six-figure paid media budgets</li>
                         <li>AI tools applied to real commercial outcomes</li>
                         <li>Board-level stakeholder management</li>
-                        <li>AU/NZ market expertise across retail &amp; DTC</li>
+                        <li>AU market expertise across retail &amp; DTC</li>
                     </ul>
                     <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="btn btn-secondary">View LinkedIn Profile &rarr;</a>
                 </div>
@@ -969,7 +1003,7 @@
                     <span class="coffee-icon">&#9749;</span>
                     <h3>Let's Have a Coffee</h3>
                     <p class="coffee-sub">
-                        A recruiter told me the best roles come from conversations, not applications.
+                        I was once told the best roles come from conversations, not applications.
                         So I built a page to make it easy. 30 minutes &mdash; in person or virtual.
                     </p>
                     <div class="coffee-slots">
@@ -1005,7 +1039,7 @@
                         In 2009, I co-founded Beer Cartel out of a Kennards Storage Shed with a goal to build
                         Australia's best online craft beer store. By the time we sold in 2024, it was
                         <strong>Australia's #1 online craft beer retailer</strong> &mdash; high 7-figure revenue,
-                        150,000+ customers, 30+ staff, and a 4.8 Google rating maintained through the chaos of COVID.
+                        150,000+ customers, and a 4.8 Google rating maintained through the chaos of COVID.
                     </p>
                     <p>
                         As Head of Ecommerce and CMO (acting), I owned the full commercial operation &mdash;
@@ -1026,28 +1060,28 @@
                     </p>
                     <div class="awards-grid">
                         <div class="award-item">
-                            <span class="award-label">Award</span>
+                            <img src="/images/inside-retail.png" alt="Inside Retail — Top 50 People in Australian Ecommerce">
                             <span class="award-name">Top 50 People in Australian Ecommerce (3&times;)</span>
                         </div>
                         <div class="award-item">
-                            <span class="award-label">Award</span>
+                            <img src="/images/bbh-logo-200-x-100-.png" alt="Beer &amp; Brewer — Online Retailer of the Year">
                             <span class="award-name">Online Retailer of the Year, Beer &amp; Brewer (5&times;)</span>
                         </div>
                         <div class="award-item">
-                            <span class="award-label">Award</span>
+                            <img src="/images/orias-logo.png" alt="ORIAS — Best Online Retail Marketing">
                             <span class="award-name">Best Online Retail Marketing &mdash; ORIAS</span>
                         </div>
                         <div class="award-item">
-                            <span class="award-label">Award</span>
+                            <img src="/images/ara-logo.png" alt="ARA — Retail Innovator of the Year">
                             <span class="award-name">Retail Innovator of the Year &mdash; ARA</span>
                         </div>
                         <div class="award-item">
-                            <span class="award-label">Award</span>
+                            <img src="/images/bigcommerce-white.png" alt="BigCommerce Make It Big Innovation">
                             <span class="award-name">BigCommerce Make It Big Innovation (2&times;)</span>
                         </div>
                         <div class="award-item">
-                            <span class="award-label">Board Member</span>
-                            <span class="award-name">Retail Drinks Australia (2019&ndash;2025)</span>
+                            <img src="/images/retail-drinks-logo.png" alt="Retail Drinks Australia">
+                            <span class="award-name">Retail Drinks Australia Board Member (2019&ndash;2025)</span>
                         </div>
                     </div>
                 </div>
@@ -1071,8 +1105,8 @@
                         <p>Saved on BigCommerce to Shopify migration &mdash; delivered in 90 days with zero downtime</p>
                     </div>
                     <div class="signal">
-                        <h3>30%</h3>
-                        <p>Of total revenue driven through email marketing via advanced segmentation and lifecycle triggers</p>
+                        <h3>5:1</h3>
+                        <p>ROAS sustained on a high six-figure annual paid media budget across Meta and Google</p>
                     </div>
                 </div>
             </div>
@@ -1152,7 +1186,7 @@
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>I Select &amp; Analyse</h3>
-                        <p>I review submissions weekly and pick the most interesting challenges. Deep dive into UX, funnel, trust signals, and conversion.</p>
+                        <p>I review submissions and pick the most interesting challenges. I look at UX, funnel, trust signals, conversion, and mobile experience.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
@@ -1250,7 +1284,7 @@
                     <p>Richard Kelsey &mdash; Head of Ecommerce and CMO-level operator with 16+ years scaling Australian ecommerce. Based in Sydney.</p>
                     <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="footer-linkedin">
                         LinkedIn
-                        <span class="footer-linkedin-count">11,413 followers</span>
+                        <span class="footer-linkedin-count">11,734 followers</span>
                     </a>
                 </div>
                 <div class="footer-col">
@@ -1275,7 +1309,7 @@
                         <li>
                             <a href="https://linkedin.com/in/richardkelsey" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
                                 <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="" style="width:14px;height:14px;">
-                                LinkedIn &middot; 11,413 followers
+                                LinkedIn &middot; 11,734 followers
                             </a>
                         </li>
                         <li><a href="/contact">Contact</a></li>
