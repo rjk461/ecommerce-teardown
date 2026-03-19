@@ -506,6 +506,82 @@
 
     .signal p { color: var(--muted); font-size: 1rem; margin: 0; line-height: 1.5; }
 
+    /* ── AREAS / SKILLS SECTIONS ──────────────────────────────── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin: 0 0 0.75rem;
+    }
+    .section-intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+    }
+    .areas-section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .area-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .area-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 1rem; }
+    .area-card ul { list-style: none; margin: 0; padding: 0; }
+    .area-card li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding: 0.35rem 0;
+      display: flex;
+      gap: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .area-card li:last-child { border-bottom: none; }
+    .area-card li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+    .skills-section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .skill-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green);
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .skill-card ul { list-style: none; margin: 0; padding: 0; }
+    .skill-card li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      display: flex;
+      gap: 0.6rem;
+    }
+    .skill-card li::before { content: '→'; color: var(--green); flex-shrink: 0; }
+
     /* ── SERVICES ─────────────────────────────────────────────── */
     .services { padding: 5.5rem 0; }
 
@@ -1104,6 +1180,109 @@
                     <div class="signal">
                         <h3>5:1</h3>
                         <p>ROAS sustained on a high six-figure annual paid media budget across Meta and Google</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── AREAS I WORK ACROSS ────────────────────────────── -->
+        <section class="areas-section">
+            <div class="container">
+                <div class="section-label">What I Do</div>
+                <h2 class="section-title">Areas I work across</h2>
+                <p class="section-intro">16 years of hands-on commercial leadership. Not theory — actual work done at scale.</p>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <h3>Strategy &amp; Leadership</h3>
+                        <ul>
+                            <li>Full P&amp;L ownership &amp; commercial leadership</li>
+                            <li>Growth roadmap development</li>
+                            <li>Team coaching and direction</li>
+                            <li>Board-level reporting and stakeholder management</li>
+                        </ul>
+                    </div>
+                    <div class="area-card">
+                        <h3>Marketing &amp; Conversion</h3>
+                        <ul>
+                            <li>Conversion rate optimisation</li>
+                            <li>Email lifecycle marketing</li>
+                            <li>Paid media (Meta &amp; Google)</li>
+                            <li>Customer acquisition and retention</li>
+                        </ul>
+                    </div>
+                    <div class="area-card">
+                        <h3>Platform &amp; Technology</h3>
+                        <ul>
+                            <li>Shopify &amp; BigCommerce migrations</li>
+                            <li>AI tools applied to commercial workflows</li>
+                            <li>Marketing tech stack review</li>
+                            <li>Automation and integration strategy</li>
+                            <li>Vendor evaluation and selection</li>
+                        </ul>
+                    </div>
+                    <div class="area-card">
+                        <h3>Ongoing Support</h3>
+                        <ul>
+                            <li>Monthly fractional retainer</li>
+                            <li>Slack/email between sessions</li>
+                            <li>Team access and coaching</li>
+                            <li>Priority scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── WHAT I BRING TO THE TABLE ──────────────────────── -->
+        <section class="skills-section">
+            <div class="container">
+                <div class="section-label">Full Skillset</div>
+                <h2 class="section-title">What I bring to the table</h2>
+                <p class="section-intro">Across 16 years, I've worked every discipline that matters in ecommerce — not as a specialist, but as the person responsible for all of it.</p>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Growth &amp; Marketing</h3>
+                        <ul>
+                            <li>Ecommerce roadmap development</li>
+                            <li>Meta Ads (Facebook/Instagram)</li>
+                            <li>Google Ads &amp; Shopping</li>
+                            <li>Email marketing — retention &amp; growth</li>
+                            <li>Conversion rate optimisation (CRO)</li>
+                            <li>Customer acquisition strategy</li>
+                            <li>Customer retention &amp; loyalty programs</li>
+                            <li>Marketing automation platforms</li>
+                            <li>Content marketing &amp; authority building</li>
+                            <li>Seasonal campaign planning</li>
+                            <li>Partnership &amp; influencer marketing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Technology &amp; Platforms</h3>
+                        <ul>
+                            <li>Shopify, BigCommerce</li>
+                            <li>Platform migrations &amp; replatforming</li>
+                            <li>Email platforms (dotdigital, Klaviyo, Mailchimp)</li>
+                            <li>AI tools applied to ecommerce operations</li>
+                            <li>Workflow automation</li>
+                            <li>Analytics &amp; reporting (GA4)</li>
+                            <li>Customer support systems (Gorgias, Reamaze)</li>
+                            <li>Shipping/fulfilment integrations</li>
+                            <li>Payment gateway optimisation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Website &amp; Merchandising</h3>
+                        <ul>
+                            <li>Website/CRO optimisation</li>
+                            <li>Subscriptions &amp; recurring orders</li>
+                            <li>Merchandising &amp; product display strategy</li>
+                            <li>UX optimisation</li>
+                            <li>Mobile optimisation</li>
+                            <li>Checkout flow optimisation</li>
+                            <li>Product page optimisation</li>
+                            <li>Category page strategy</li>
+                            <li>A/B testing &amp; experimentation</li>
+                        </ul>
                     </div>
                 </div>
             </div>
