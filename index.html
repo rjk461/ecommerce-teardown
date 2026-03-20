@@ -85,6 +85,59 @@
       z-index: 100;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      margin-left: 0.5rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--dark-2);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 0;
+      z-index: 99;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.9rem 2rem;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { background: var(--dark-3); }
+    .mobile-menu a.nav-coffee { color: var(--green); font-weight: 700; }
+    @media (max-width: 640px) {
+      .hamburger { display: flex; }
+      .nav-menu { display: none !important; }
+      .logo a { font-size: 1.25rem; }
+    }
+
     nav .container {
       display: flex;
       align-items: center;
@@ -1003,8 +1056,17 @@
                     <li class="nav-hide-mobile"><a href="/consulting">Consulting</a></li>
                     <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a></li>
                 </ul>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#about">About</a>
+            <a href="/free-teardown">Free Teardown</a>
+            <a href="/consulting">Consulting</a>
+            <a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a>
+        </div>
     </header>
 
     <main>
@@ -1496,5 +1558,19 @@
         </div>
     </footer>
 
+    <script>
+      var btn = document.getElementById('hamburger');
+      var menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', function() {
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    </script>
 </body>
 </html>
