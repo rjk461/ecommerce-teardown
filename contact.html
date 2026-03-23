@@ -44,13 +44,162 @@
     <script src="/reddit-pixel.js"></script>
     
     <style>
-        /* Shared layout styles live in /site.css (colors, top bar, header, footer, etc.) */
-
-        /* Form Section */
-        .form-section {
-            padding: 40px 20px;
-            background: white;
+        .contact-hero {
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid var(--border);
         }
+
+        .contact-hero .section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 0 0 0.75rem;
+        }
+
+        .contact-hero p {
+            color: var(--muted);
+            font-size: 1rem;
+            max-width: 520px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .contact-section {
+            padding: 3rem 0 5rem;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; gap: 2rem; } }
+
+        .contact-ways h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem;
+        }
+
+        .contact-option {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-option:first-of-type { border-top: 1px solid var(--border); }
+
+        .contact-option-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--green);
+        }
+
+        .contact-option a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .contact-option a:hover { color: var(--green); }
+
+        .contact-option p {
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .form-card {
+            background: var(--dark-2);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .form-card h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 1.75rem;
+        }
+
+        .form-group { margin-bottom: 1.25rem; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: var(--dark-3);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.7rem 0.9rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            font-family: inherit;
+            transition: border-color 0.2s;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus { border-color: var(--green); }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: var(--muted); }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--green);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 0.9rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+            font-family: inherit;
+            letter-spacing: -0.01em;
+            margin-top: 0.25rem;
+        }
+
+        .submit-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        .success-msg {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .success-msg .check { font-size: 2rem; color: var(--green); margin-bottom: 0.75rem; }
+        .success-msg h3 { font-size: 1.2rem; font-weight: 700; color: var(--green); margin: 0 0 0.5rem; }
+        .success-msg p { font-size: 0.875rem; color: var(--muted); margin: 0; line-height: 1.6; }
+
+        /* Reuse site-wide nav/header/footer styles from site.css */
 
         .section-eyebrow {
             text-align: center;
@@ -92,88 +241,6 @@
             line-height: 1.6;
         }
 
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--mad-cream);
-            padding: 50px 40px;
-            border-radius: 12px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--dark-grey);
-            letter-spacing: 0.1px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-            font-weight: 400;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--mad-green);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 20px;
-            background: var(--mad-red);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: transform 0.2s;
-            letter-spacing: 0.5px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(200, 16, 46, 0.3);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section-heading {
-                font-size: 32px;
-            }
-
-            .form-container {
-                padding: 30px 20px;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -202,48 +269,84 @@
         </div>
     </header>
 
-    <!-- Form Section -->
-    <section class="form-section" id="contact">
-        <div class="section-eyebrow">GET IN TOUCH</div>
-        <h2 class="section-heading">Contact the Champion</h2>
-        <p class="section-intro">
-            Have a question? Want to discuss a project? Ready to step into the ring?<br>
-            Send me a message and I'll get back to you as soon as possible.
-        </p>
+    <main>
 
-        <div class="form-container">
-            <form id="contactForm" action="https://formspree.io/f/meoykkey" method="POST">
-                <input type="hidden" name="_to" value="richardkelsey@gmail.com">
-                
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <!-- HERO -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="section-label">Get in Touch</div>
+                <h1>Let's Talk Ecommerce</h1>
+                <p>Whether you're exploring a teardown, a consulting engagement, or just want to connect — reach out and I'll get back to you quickly.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT LAYOUT -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-layout">
+
+                    <!-- Ways to connect -->
+                    <div class="contact-ways">
+                        <h2>Other ways to connect</h2>
+                        <div class="contact-option">
+                            <span class="contact-option-label">Book a Coffee</span>
+                            <a href="https://8coffees.ecommerceteardown.com/" target="_blank">Book a time &rarr;</a>
+                            <p>30-minute video call, no pitch, no commitment. Just a good conversation about your business.</p>
+                        </div>
+                        <div class="contact-option">
+                            <span class="contact-option-label">Free Teardown</span>
+                            <a href="/free-teardown">Apply for a teardown &rarr;</a>
+                            <p>Submit your site and get a private video walkthrough and written analysis within 7 days.</p>
+                        </div>
+                        <div class="contact-option">
+                            <span class="contact-option-label">LinkedIn</span>
+                            <a href="https://linkedin.com/in/richardkelsey" target="_blank">Richard Kelsey &rarr;</a>
+                            <p>11,734 followers. I post regularly about Australian ecommerce, strategy, and growth.</p>
+                        </div>
+                        <div class="contact-option">
+                            <span class="contact-option-label">Consulting</span>
+                            <a href="/consulting">View consulting options &rarr;</a>
+                            <p>From a single teardown to embedded monthly support — see what's available.</p>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="form-card">
+                        <h2>Send a message</h2>
+                        <form id="contactForm" action="https://formspree.io/f/meoykkey" method="POST">
+                            <input type="hidden" name="_to" value="richardkelsey@gmail.com">
+
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell me what's on your mind..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submitBtn">Send Message &rarr;</button>
+                        </form>
+                        <div class="success-msg" id="successMsg" style="display:none;">
+                            <div class="check">&#10003;</div>
+                            <h3>Message sent</h3>
+                            <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+        </section>
 
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Tell me what's on your mind..." required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn" id="submitBtn">🔥 SEND MESSAGE →</button>
-            </form>
-        </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -288,62 +391,36 @@
     </footer>
 
     <script>
-        // Handle form submission with custom success message
         const form = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
-        
+        const successMsg = document.getElementById('successMsg');
+
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Show loading state
-            submitBtn.textContent = '⚡ SENDING...';
+            submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-            
+
             try {
                 const formData = new FormData(form);
-                
-                // Get the user's subject and message
-                const userSubject = formData.get('subject');
-                const userMessage = formData.get('message');
-                
-                if (userSubject) {
-                    // Set the email subject line to include the user's subject
-                    formData.set('_subject', `Contact Form: ${userSubject}`);
-                    
-                    // Prepend subject to message body to ensure it's visible in the email
-                    if (userMessage) {
-                        formData.set('message', `Subject: ${userSubject}\n\n${userMessage}`);
-                    }
-                }
-                
+                const subject = formData.get('subject');
+                if (subject) formData.set('_subject', 'Contact: ' + subject);
+
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
-                
+
                 if (response.ok) {
-                    // Success message
-                    form.innerHTML = `
-                        <div style="text-align: center; padding: 40px 20px;">
-                            <h3 style="color: var(--mad-green); font-size: 24px; margin-bottom: 20px;">
-                                🥊 MESSAGE SENT!
-                            </h3>
-                            <p style="font-size: 18px; line-height: 1.6; color: var(--dark-grey);">
-                                Thanks for reaching out! I'll get back to you as soon as possible. Check your email for confirmation.
-                            </p>
-                        </div>
-                    `;
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error('failed');
                 }
             } catch (error) {
-                // Error message
-                submitBtn.textContent = '🔥 SEND MESSAGE →';
+                submitBtn.textContent = 'Send Message \u2192';
                 submitBtn.disabled = false;
-                alert('Oops! There was a problem sending your message. Please try again.');
+                alert('Something went wrong. Please try again.');
             }
         });
     </script>
