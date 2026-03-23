@@ -484,6 +484,83 @@
 
     .success-msg p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin: 0; }
 
+    /* ── SAMPLE TEARDOWN ── */
+    .sample-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sample-card-ft {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) { .sample-card-ft { grid-template-columns: 1fr; } }
+
+    .sample-label-ft {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      margin-bottom: 0.9rem;
+    }
+
+    .sample-card-ft h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 0.75rem; }
+    .sample-card-ft > div > p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin: 0 0 1.25rem; }
+
+    .sample-findings-ft {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .sample-findings-ft li {
+      font-size: 0.875rem;
+      color: var(--muted);
+      padding-left: 1.1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .sample-findings-ft li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    .sample-preview-ft {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 200px;
+    }
+
+    .sample-preview-ft p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
     /* ── NEWSLETTER ── */
     .newsletter-section {
       background: var(--dark-2);
@@ -810,6 +887,33 @@
                             <h3>Submission received</h3>
                             <p>I review submissions weekly and I'll be in touch if your site is selected. Check your email for confirmation.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAMPLE TEARDOWN -->
+        <section class="sample-section">
+            <div class="container">
+                <div class="section-label">See the Work</div>
+                <h2 class="section-title">Sample Teardown: Baby BeeHinds</h2>
+                <div class="sample-card-ft">
+                    <div>
+                        <span class="sample-label-ft">Real Teardown</span>
+                        <h3>Baby BeeHinds &mdash; Reusable Nappies</h3>
+                        <p>An Australian DTC brand with great product and loyal customers &mdash; but leaving conversions on the table through unclear navigation, weak trust signals, and a homepage that buried the value proposition.</p>
+                        <ul class="sample-findings-ft">
+                            <li>Hero message didn't answer "why switch to reusables" fast enough</li>
+                            <li>No social proof above the fold on mobile</li>
+                            <li>Checkout flow had 3 unnecessary friction points</li>
+                            <li>Email capture was an afterthought &mdash; placed below product listings</li>
+                            <li>5 quick wins identified, 2 implementable same day</li>
+                        </ul>
+                        <a href="/sample-teardowns" class="submit-btn" style="display:inline-block;width:auto;padding:0.75rem 1.5rem;text-decoration:none;">See the Full Sample &rarr;</a>
+                    </div>
+                    <div class="sample-preview-ft">
+                        <img src="/images/bbh-logo-200-x-100-.png" alt="Baby BeeHinds" style="max-width: 260px; width: 100%; height: auto; opacity: 0.9;">
+                        <p>Full teardown report &amp; PDF available at the link above</p>
                     </div>
                 </div>
             </div>
