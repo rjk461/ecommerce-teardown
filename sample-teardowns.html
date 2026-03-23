@@ -684,18 +684,18 @@
 
     <!-- Nav -->
     <header>
-        <nav aria-label="Primary">
+        <nav>
             <div class="container">
                 <div class="logo">
                     <a href="/">Ecommerce <span>Teardown</span></a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="/#about">About</a></li>
-                    <li><a href="/free-teardown" class="nav-hide-mobile">Free Teardown</a></li>
-                    <li><a href="/consulting" class="nav-hide-mobile">Consulting</a></li>
+                    <li class="nav-hide-mobile"><a href="/#about">About</a></li>
+                    <li class="nav-hide-mobile"><a href="/free-teardown">Free Teardown</a></li>
+                    <li class="nav-hide-mobile"><a href="/consulting">Consulting</a></li>
                     <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a></li>
                 </ul>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -922,11 +922,6 @@
                 <div class="footer-brand">
                     <a href="/" class="logo-text">Ecommerce <span>Teardown</span></a>
                     <p>Richard Kelsey &mdash; Head of Ecommerce and CMO-level operator with 16+ years scaling Australian ecommerce. Based in Sydney.</p>
-                    <a href="https://linkedin.com/in/richardkelsey" target="_blank" class="footer-li-link">
-                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn">
-                        LinkedIn
-                        <span class="footer-li-count">11,734 followers</span>
-                    </a>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
@@ -948,8 +943,8 @@
                     <ul>
                         <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank">Book a Coffee</a></li>
                         <li>
-                            <a href="https://linkedin.com/in/richardkelsey" target="_blank">
-                                <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="">
+                            <a href="https://linkedin.com/in/richardkelsey" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
+                                <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="" style="width:14px;height:14px;">
                                 LinkedIn &middot; 11,734 followers
                             </a>
                         </li>
@@ -964,14 +959,18 @@
     </footer>
 
     <script>
-    (function() {
-        var btn = document.getElementById('hamburger');
-        var menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', function() {
-            btn.classList.toggle('open');
-            menu.classList.toggle('open');
+      var btn = document.getElementById('hamburger');
+      var menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', function() {
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
         });
-    })();
+      });
     </script>
 
 </body>
