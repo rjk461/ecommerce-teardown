@@ -247,10 +247,25 @@
       background: var(--dark-2);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.5rem;
+      overflow: hidden;
       transition: border-color 0.2s, transform 0.2s;
       display: flex;
       flex-direction: column;
+    }
+
+    .post-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .post-card:hover {
@@ -516,70 +531,82 @@
 
                     <!-- POST 1: Beer Cartel Times Square billboard -->
                     <div class="post-card">
-                        <div class="post-meta">
-                            <div class="post-avatar">RK</div>
-                            <div>
-                                <div class="post-author">Richard Kelsey</div>
-                                <div class="post-date">Brand &amp; Content Strategy</div>
+                        <img src="/images/li-post-7439128677038292993.jpg" alt="Beer Cartel on Nasdaq billboard at Times Square" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-avatar">RK</div>
+                                <div>
+                                    <div class="post-author">Richard Kelsey</div>
+                                    <div class="post-date">Brand &amp; Content Strategy</div>
+                                </div>
                             </div>
+                            <div class="post-body">
+                                <p>The time Beer Cartel was on a billboard at Times Square New York.</p>
+                                <p>I remember writing the BigCommerce Make it Big competition entry on the bus one day on the way home from work. It talked about our Australian Craft Beer Survey &mdash; <strong>60,000+ new email subscribers. $100,000 in revenue each year directly attributable to the survey.</strong> Significant media coverage and SEO. And a shift from being just another store to a category authority.</p>
+                                <p>Content strategy done right doesn't just build an audience. It changes how people see you.</p>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7439128677038292993" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                         </div>
-                        <div class="post-body">
-                            <p>The time Beer Cartel was on a billboard at Times Square New York.</p>
-                            <p>I remember writing the BigCommerce Make it Big competition entry on the bus one day on the way home from work. It talked about our Australian Craft Beer Survey &mdash; <strong>60,000+ new email subscribers. $100,000 in revenue each year directly attributable to the survey.</strong> Significant media coverage and SEO. And a shift from being just another store to a category authority.</p>
-                            <p>Content strategy done right doesn't just build an audience. It changes how people see you.</p>
-                        </div>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7439128677038292993" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                     </div>
 
                     <!-- POST 2: Google Business Agent / UCP -->
                     <div class="post-card">
-                        <div class="post-meta">
-                            <div class="post-avatar">RK</div>
-                            <div>
-                                <div class="post-author">Richard Kelsey</div>
-                                <div class="post-date">Search &amp; AI Commerce</div>
+                        <img src="/images/li-post-7435543075273363456.jpg" alt="The ICONIC Google search with Business Agent panel" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-avatar">RK</div>
+                                <div>
+                                    <div class="post-author">Richard Kelsey</div>
+                                    <div class="post-date">Search &amp; AI Commerce</div>
+                                </div>
                             </div>
+                            <div class="post-body">
+                                <p>There's some pretty interesting changes in Google search happening right now.</p>
+                                <p>As part of Google's Universal Commerce Protocol, it's introduced Business Agent &mdash; a chat window surfaced at high-intent moments with the brand's own AI agent. A shopper can search, get answers in the brand's voice, compare products, and <strong>complete the purchase without ever leaving Search</strong>.</p>
+                                <p>If you're in ecommerce and you're not thinking about how your product data feeds into this, now is the time to start.</p>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7435543075273363456" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                         </div>
-                        <div class="post-body">
-                            <p>There's some pretty interesting changes in Google search happening right now.</p>
-                            <p>As part of Google's Universal Commerce Protocol, it's introduced Business Agent &mdash; a chat window surfaced at high-intent moments with the brand's own AI agent. A shopper can search, get answers in the brand's voice, compare products, and <strong>complete the purchase without ever leaving Search</strong>.</p>
-                            <p>If you're in ecommerce and you're not thinking about how your product data feeds into this, now is the time to start.</p>
-                        </div>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7435543075273363456" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                     </div>
 
                     <!-- POST 3: Chatbot CX data -->
                     <div class="post-card">
-                        <div class="post-meta">
-                            <div class="post-avatar">RK</div>
-                            <div>
-                                <div class="post-author">Richard Kelsey</div>
-                                <div class="post-date">Customer Experience</div>
+                        <img src="/images/li-post-7435184777626009600.jpg" alt="2026 Online CX Report — What it Takes to Win" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-avatar">RK</div>
+                                <div>
+                                    <div class="post-author">Richard Kelsey</div>
+                                    <div class="post-date">Customer Experience</div>
+                                </div>
                             </div>
+                            <div class="post-body">
+                                <p>"I'm sorry, I didn't get that. Try rephrasing your question or click Talk to a human."</p>
+                                <p>Mentions of "useless bots" in customer feedback are up <strong>70% year on year</strong>. Customer support is the reason 17.9% of shoppers abandon a purchase, up from 14.2%. A new abandonment category that didn't exist last year: <strong>3.4% of shoppers leave because a bot looped or blocked their path</strong>.</p>
+                                <p>A simple support option that works is better than a bot that can't.</p>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7435184777626009600" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                         </div>
-                        <div class="post-body">
-                            <p>"I'm sorry, I didn't get that. Try rephrasing your question or click Talk to a human."</p>
-                            <p>Mentions of "useless bots" in customer feedback are up <strong>70% year on year</strong>. Customer support is the reason 17.9% of shoppers abandon a purchase, up from 14.2%. A new abandonment category that didn't exist last year: <strong>3.4% of shoppers leave because a bot looped or blocked their path</strong>.</p>
-                            <p>A simple support option that works is better than a bot that can't.</p>
-                        </div>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7435184777626009600" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                     </div>
 
                     <!-- POST 4: Pokémon Go / last-mile delivery -->
                     <div class="post-card">
-                        <div class="post-meta">
-                            <div class="post-avatar">RK</div>
-                            <div>
-                                <div class="post-author">Richard Kelsey</div>
-                                <div class="post-date">Ecommerce Logistics</div>
+                        <img src="/images/li-post-7439459324663443456.jpg" alt="Coco delivery robot — last-mile logistics" class="post-image">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-avatar">RK</div>
+                                <div>
+                                    <div class="post-author">Richard Kelsey</div>
+                                    <div class="post-date">Ecommerce Logistics</div>
+                                </div>
                             </div>
+                            <div class="post-body">
+                                <p>Pok&eacute;mon Go players spent a decade unknowingly building the world's most detailed street map. Now it's being used to deliver pizza.</p>
+                                <p>Over my 16 years in ecommerce, last-mile delivery was one of those problems that never really got solved. GPS drifts by tens of metres in dense cities as signals bounce off glass and concrete. But <strong>30 billion urban images captured by 500M players</strong> over a decade? That solves it.</p>
+                                <p>The data that powers the next wave of ecommerce logistics already exists. Someone just has to connect it.</p>
+                            </div>
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7439459324663443456" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                         </div>
-                        <div class="post-body">
-                            <p>Pok&eacute;mon Go players spent a decade unknowingly building the world's most detailed street map. Now it's being used to deliver pizza.</p>
-                            <p>Over my 16 years in ecommerce, last-mile delivery was one of those problems that never really got solved. GPS drifts by tens of metres in dense cities as signals bounce off glass and concrete. But <strong>30 billion urban images captured by 500M players</strong> over a decade? That solves it.</p>
-                            <p>The data that powers the next wave of ecommerce logistics already exists. Someone just has to connect it.</p>
-                        </div>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7439459324663443456" target="_blank" class="post-read-more">Read full post on LinkedIn &rarr;</a>
                     </div>
 
                 </div>
