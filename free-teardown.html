@@ -186,33 +186,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--green-dim);
-      border: 1px solid var(--green-border);
-      border-radius: 20px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--green);
-      margin-bottom: 1.5rem;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
     .hero h1 {
       font-size: clamp(2.64rem, 5.4vw, 3.84rem);
       font-weight: 800;
@@ -561,63 +534,50 @@
 
     .sample-preview-ft p { font-size: 0.82rem; color: #666; margin: 0; }
 
-    /* ── NEWSLETTER ── */
-    .newsletter-section {
-      background: var(--dark-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 3rem 0;
-    }
-
-    .newsletter-layout {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 3rem;
+    .btn {
+      display: inline-flex;
       align-items: center;
-    }
-
-    @media (max-width: 768px) { .newsletter-layout { grid-template-columns: 1fr; gap: 1.5rem; } }
-
-    .newsletter-section h2 { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.4rem; }
-    .newsletter-section p { font-size: 0.95rem; color: var(--muted); margin: 0; }
-
-    .newsletter-form { display: flex; flex-direction: column; gap: 0.6rem; }
-
-    .newsletter-form input[type="email"] {
-      background: var(--dark-3);
-      border: 1px solid var(--border);
+      justify-content: center;
+      padding: 0.8rem 1.75rem;
       border-radius: 8px;
-      padding: 0.7rem 0.9rem;
-      font-size: 0.9rem;
-      color: var(--text);
-      font-family: inherit;
-      outline: none;
-    }
-
-    .newsletter-form input[type="email"]:focus { border-color: var(--green); }
-    .newsletter-form input[type="email"]::placeholder { color: var(--muted); }
-
-    .newsletter-btn {
-      background: var(--green);
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      padding: 0.7rem 1.2rem;
       font-size: 0.95rem;
       font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, opacity 0.15s;
       cursor: pointer;
+      border: none;
       font-family: inherit;
-      transition: opacity 0.2s;
     }
 
-    .newsletter-btn:hover { opacity: 0.88; }
+    .btn:hover { transform: translateY(-1px); opacity: 0.9; }
+    .btn-primary { background: var(--green); color: #000; }
 
-    .newsletter-done {
-      display: none;
-      color: var(--green);
-      font-weight: 600;
+    /* ── SUBSCRIBE ────────────────────────────────────────────── */
+    .subscribe-cta { padding: 5.5rem 0; text-align: center; background: var(--dark-2); }
+    .subscribe-cta .container { max-width: 560px; }
+    .subscribe-cta h2 { font-size: 2.28rem; font-weight: 900; letter-spacing: -0.5px; margin: 0 0 0.75rem; }
+    .subscribe-cta p { color: var(--muted); margin-bottom: 2rem; }
+
+    #subscribe-form {
+      display: flex;
+      gap: 0.6rem;
+      max-width: 420px;
+      margin: 0 auto 0.75rem;
+    }
+
+    #subscribe-form input {
+      flex: 1;
+      padding: 0.8rem 1.1rem;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
       font-size: 0.9rem;
+      font-family: inherit;
     }
+
+    #subscribe-form input:focus { outline: none; border-color: var(--green); }
+    .privacy-notice { font-size: 0.95rem; color: var(--muted); }
 
     /* ── FOOTER ── */
     footer {
@@ -706,7 +666,10 @@
 
     .footer-bottom p { font-size: 0.78rem; color: var(--muted); margin: 0; }
 
-    @media (max-width: 640px) { body { font-size: 20px; } }
+    @media (max-width: 640px) {
+      body { font-size: 20px; }
+      #subscribe-form { flex-direction: column; }
+    }
     </style>
 </head>
 <body>
@@ -741,10 +704,6 @@
         <!-- HERO -->
         <section class="hero">
             <div class="container">
-                <div class="hero-tag">
-                    <span class="dot"></span>
-                    Free &middot; Private &middot; Delivered within 7 days
-                </div>
                 <h1>Get a Free Private Teardown of Your <em>Ecommerce Site</em></h1>
                 <p class="lead">
                     Submit your site and I'll review it &mdash; a recorded walkthrough plus written analysis
@@ -776,7 +735,7 @@
                     <div class="step-card">
                         <div class="step-number">3</div>
                         <h3>You get the results</h3>
-                        <p>Your teardown lands in your inbox within 7 days. Private, actionable, and yours to use. I don't publish it without your permission.</p>
+                        <p>Your teardown lands in your inbox within 7 days. Private, actionable, and yours to use.</p>
                     </div>
                 </div>
             </div>
@@ -801,13 +760,9 @@
                     <div class="guarantee-box">
                         <h3>The guarantee</h3>
                         <p>
-                            Every teardown is <strong>constructive, not cruel</strong>. I'm looking at your site
+                            Every teardown is <strong>constructive</strong>. I'm looking at your site
                             to identify what's costing you revenue, not to make you feel bad. The feedback is
                             direct and honest &mdash; but always actionable, always respectful.
-                        </p>
-                        <p>
-                            Your submission is confidential. I won't share or publish anything without
-                            your explicit permission.
                         </p>
                     </div>
                 </div>
@@ -919,26 +874,21 @@
             </div>
         </section>
 
-    </main>
-
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-layout">
-                <div>
-                    <h2>Don't miss the next teardown</h2>
-                    <p>Get notified when new teardowns drop. No spam &mdash; just the analysis when it's ready.</p>
-                </div>
-                <div>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required>
-                        <button type="submit" class="newsletter-btn">Notify me &rarr;</button>
-                    </form>
-                    <p class="newsletter-done" id="newsletterDone">Done &mdash; you're on the list.</p>
-                </div>
+        <!-- ── SUBSCRIBE ──────────────────────────────────────── -->
+        <section id="subscribe" class="subscribe-cta">
+            <div class="container">
+                <h2>Get Ecommerce Insights</h2>
+                <p>Teardowns, tactics, and honest takes on what's working in Australian ecommerce. No fluff.</p>
+                <form id="subscribe-form" action="https://formspree.io/f/meoykkey" method="POST">
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                    <input type="hidden" name="source" value="free-teardown-subscribe">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="privacy-notice">No spam. Unsubscribe anytime.</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <footer>
         <div class="container">
@@ -1014,45 +964,6 @@
                 btn.textContent = 'Submit for a Teardown \u2192';
                 btn.disabled = false;
                 alert('Something went wrong. Please try again or email richardkelsey@gmail.com directly.');
-            });
-        });
-    })();
-
-    // Newsletter form
-    (function() {
-        var form = document.getElementById('newsletterForm');
-        var done = document.getElementById('newsletterDone');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var btn = form.querySelector('.newsletter-btn');
-            var email = form.querySelector('input[name="email"]').value;
-            btn.textContent = 'Subscribing\u2026';
-            btn.disabled = true;
-
-            var formData = new FormData();
-            formData.append('email', email);
-            formData.append('source', 'newsletter');
-            formData.append('_subject', 'Newsletter Signup');
-
-            fetch('https://formspree.io/f/meoykkey', {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(function(response) {
-                if (response.ok) {
-                    if (typeof trackRedditEvent === 'function') {
-                        trackRedditEvent('NewsletterSignup');
-                    }
-                    form.style.display = 'none';
-                    done.style.display = 'block';
-                } else {
-                    throw new Error('failed');
-                }
-            }).catch(function() {
-                btn.textContent = 'Notify me \u2192';
-                btn.disabled = false;
-                alert('Something went wrong. Please try again.');
             });
         });
     })();

@@ -548,43 +548,53 @@
       margin-top: auto;
     }
 
-    .adhoc-card {
-      background: var(--dark-2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 2rem;
+    /* Homepage-style Ad Hoc card (scoped — .service-card elsewhere is different) */
+    .pricing-card--ad-hoc {
+      border-color: var(--green-border);
+      border-radius: 12px;
     }
 
-    .adhoc-card h3 {
-      font-size: 1.1rem;
+    .pricing-card--ad-hoc .service-tag {
+      font-size: 0.9rem;
       font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .pricing-card--ad-hoc h3 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.3px;
+    }
+
+    .pricing-card--ad-hoc .service-price {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--green);
+      letter-spacing: -1px;
       margin: 0 0 0.25rem;
     }
 
-    .adhoc-card .pricing-price { font-size: 1.6rem; }
-
-    .adhoc-card ul {
-      list-style: none;
-      margin: 0.75rem 0 1.5rem;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0 2rem;
-    }
-
-    .adhoc-card li {
-      font-size: 0.95rem;
+    .pricing-card--ad-hoc .service-price-sub {
+      font-size: 0.96rem;
       color: var(--muted);
-      padding: 0.35rem 0;
-      display: flex;
-      gap: 0.6rem;
+      margin-bottom: 1.25rem;
     }
 
-    .adhoc-card li::before {
-      content: '✓';
-      color: var(--green);
-      font-weight: 700;
-      flex-shrink: 0;
+    .pricing-card--ad-hoc .service-list {
+      flex: 1;
+    }
+
+    .pricing-card--ad-hoc .service-list li {
+      padding: 0.3rem 0;
+    }
+
+    .pricing-card--ad-hoc .service-list li::before {
+      content: '\2713';
     }
 
     /* ── WHY ── */
@@ -886,7 +896,6 @@
       .container { padding: 0 1.25rem; }
       .footer-grid { grid-template-columns: 1fr; }
       .nav-menu { display: none; }
-      .adhoc-card ul { grid-template-columns: 1fr; }
     }
     </style>
 </head>
@@ -1107,19 +1116,20 @@
             <h2 class="section-title">Options that fit how you operate</h2>
             <p class="section-intro">Whether you need a focused day or an ongoing strategic partner, here's what's available.</p>
             <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Strategy Day</h3>
-                    <div class="pricing-price">$1,997</div>
-                    <div class="pricing-sub">AUD · Full day · One-off</div>
-                    <ul>
-                        <li>8-hour strategy session</li>
-                        <li>Deep-dive audit with action plan</li>
-                        <li>Workshop facilitation</li>
+                <div class="pricing-card pricing-card--ad-hoc">
+                    <span class="service-tag">Flexible</span>
+                    <h3>Ad Hoc Work</h3>
+                    <div class="service-price">From $500</div>
+                    <div class="service-price-sub">AUD &middot; Fixed scope &middot; One-off</div>
+                    <ul class="service-list">
+                        <li>Strategy sessions &amp; workshops</li>
+                        <li>Deep-dive site or funnel audits</li>
                         <li>Platform migration planning</li>
-                        <li>Team training and coaching</li>
-                        <li>Written output and next steps</li>
+                        <li>Paid media or email reviews</li>
+                        <li>Team training &amp; coaching</li>
+                        <li>Written output &amp; next steps</li>
                     </ul>
-                    <a href="#" class="btn-secondary investment-modal-trigger" data-package="Strategy Day" data-price="$1,997 AUD">Book a Day →</a>
+                    <a href="#" class="btn-secondary investment-modal-trigger" data-package="Ad Hoc Work" data-price="From $500 AUD">Discuss a Project &rarr;</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
@@ -1127,7 +1137,7 @@
                     <div class="pricing-price">From $3,500</div>
                     <div class="pricing-sub">AUD · 2 days/month · 1-month minimum</div>
                     <ul>
-                        <li>Everything in Strategy Day, plus:</li>
+                        <li>Everything in a scoped ad hoc engagement, plus:</li>
                         <li>Fractional Head of Ecommerce support</li>
                         <li>Ongoing strategic guidance</li>
                         <li>Slack/email between sessions</li>
@@ -1151,21 +1161,6 @@
                     </ul>
                     <a href="#" class="btn-secondary investment-modal-trigger" data-package="Custom Project" data-price="Custom">Discuss Your Project →</a>
                 </div>
-            </div>
-            <div class="adhoc-card">
-                <h3>Ad Hoc Services</h3>
-                <div class="pricing-price">Hourly Rate</div>
-                <div class="pricing-sub">Flexible project-based work — for when you need something specific without a full engagement</div>
-                <ul>
-                    <li>One-off strategy reviews</li>
-                    <li>Custom project scoping</li>
-                    <li>Platform evaluation and selection</li>
-                    <li>Technical troubleshooting</li>
-                    <li>Vendor assessments</li>
-                    <li>Quick wins and optimisation sprints</li>
-                    <li>Campaign audits and recommendations</li>
-                </ul>
-                <a href="#" class="btn-secondary investment-modal-trigger" data-package="Ad Hoc Services" data-price="Hourly Rate">Discuss Your Project →</a>
             </div>
         </div>
     </section>
