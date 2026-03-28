@@ -168,6 +168,9 @@ nav .container {
 }
 
 @media (max-width: 640px) {
+  header {
+    position: static;
+  }
   .hamburger { display: flex; }
   .nav-menu { display: none !important; }
   .logo {
@@ -178,15 +181,115 @@ nav .container {
     display: block;
     white-space: nowrap;
     line-height: 1.1;
-    font-size: clamp(1.05rem, 2.8vw + 0.75rem, 1.82rem);
+    font-size: clamp(0.945rem, calc(2.52vw + 0.675rem), 1.638rem);
   }
 }
 
 @supports (font-size: 1cqi) {
   @media (max-width: 640px) {
     nav .container .logo a {
-      font-size: clamp(1.05rem, 5.5cqi + 0.55rem, 1.82rem);
+      font-size: clamp(0.945rem, calc(4.95cqi + 0.495rem), 1.638rem);
     }
+  }
+}
+
+/* Marketing footer (matches homepage layout + typography) */
+footer {
+  background: var(--dark-2);
+  border-top: 1px solid var(--border);
+  padding: 3rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-brand .logo-text {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand .logo-text span { color: var(--green); }
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.footer-linkedin {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-linkedin:hover { color: var(--text); }
+
+.footer-linkedin-count {
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: var(--dark-3);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+
+.footer-col ul li { margin-bottom: 0.5rem; }
+
+.footer-col ul li a {
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover { color: var(--text); }
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }
 
