@@ -145,10 +145,12 @@
       overflow: hidden;
     }
 
+    /* One A4 / Word portrait page: height scales with container width (210:297) */
     .cv-iframe-wrap {
       position: relative;
       width: 100%;
-      min-height: 75vh;
+      aspect-ratio: 210 / 297;
+      min-height: 520px;
     }
 
     .cv-iframe-wrap iframe {
@@ -170,7 +172,7 @@
 
     @media (max-width: 640px) {
       body { font-size: 20px; }
-      .cv-iframe-wrap { min-height: 50vh; }
+      .cv-iframe-wrap { min-height: 420px; }
       .cv-fallback-note { display: block; }
     }
     </style>
