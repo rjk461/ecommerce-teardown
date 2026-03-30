@@ -7,6 +7,11 @@ Local repo: /c/Users/rjk_4/AppData/Local/Temp/ecommerce-teardown/
 ## Deploy workflow
 Edit → git commit → git push → Vercel auto-deploys (~60 seconds). No local preview server.
 
+## Shared header and footer
+- **Partials:** `partials/header.html`, `partials/footer.html` (nav order: CV, Consulting, Career game, Book a Coffee).
+- **Page bodies:** `src/*.html` use `<!-- HEADER -->` and `<!-- FOOTER -->` markers; build fills in partials and `aria-current` for CV / Consulting where applicable.
+- **After any change** to partials or `src/`, run `npm run build:site` so root `*.html` matches before deploy. Initial migration used `node scripts/migrate-to-src.mjs` (one-time strip of legacy header/footer).
+
 ## CSS gotchas
 - Media query overrides must come AFTER base rules in the stylesheet (equal specificity = later rule wins)
 - Mobile breakpoints: `640px` (hamburger nav), `900px` (general layout)

@@ -2,6 +2,10 @@
   "name": "ecommerce-teardown",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build:site": "node scripts/build.mjs",
+    "migrate:src": "node scripts/migrate-to-src.mjs"
+  },
   "engines": {
     "node": ">=18"
   },
