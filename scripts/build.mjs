@@ -15,7 +15,6 @@ const PAGES = [
   { src: 'cv.html', out: 'cv.html', nav: 'cv' },
   { src: 'articles.html', out: 'articles.html', nav: null },
   { src: 'linkedin.html', out: 'linkedin.html', nav: null },
-  { src: 'contact.html', out: 'contact.html', nav: null },
   { src: 'free-teardown.html', out: 'free-teardown.html', nav: null },
   { src: 'sample-teardowns.html', out: 'sample-teardowns.html', nav: null },
   { src: 'coming-soon.html', out: 'coming-soon.html', nav: null },
