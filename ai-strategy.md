@@ -34,7 +34,7 @@ Weekly trading reports, campaign summaries and questions like "why did conversio
 
 ### Content and search visibility
 
-Buying guides, collection copy and FAQs written from real customer questions. Combined with the technical basics, this is how a store shows up in AI answers. See [AI search readiness](https://ecommerceteardown.com/ai-search-readiness).
+Buying guides, collection copy and FAQs written from real customer questions. Combined with the technical basics, this is one way a store gets cited in AI answers. See [AI search readiness](https://ecommerceteardown.com/ai-search-readiness).
 
 ## How I sequence it
 
@@ -64,7 +64,7 @@ An agent system on the Claude API that handles parts of my daily work, and a web
 
 ### Training
 
-Claude Code in Action (Anthropic, March 2026), plus courses on generative AI for business leaders, responsible AI and Microsoft Copilot (September 2025). These are course completions, not a claim of more.
+Claude Code in Action (Anthropic, March 2026), plus LinkedIn and Microsoft AI courses (September 2025). These are course completions, not a claim of more.
 
 ## Options and prices
 
@@ -92,7 +92,7 @@ Fixed price, one store
 -   60-minute walkthrough
 -   Growth and AI opportunities ranked
 
-[See consulting options](https://ecommerceteardown.com/consulting)
+[See the growth audit](https://ecommerceteardown.com/consulting)
 
 ### AI Strategy Sprint
 
@@ -112,9 +112,9 @@ Two days a month, one-month minimum
 
 -   Ongoing advice and pilot support
 -   Monthly review of what is working
--   Email and call access between sessions
+-   Slack or email between sessions
 
-[See consulting options](https://ecommerceteardown.com/consulting)
+[See monthly consulting](https://ecommerceteardown.com/consulting)
 
 ## Questions
 

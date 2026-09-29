@@ -25,14 +25,17 @@ export function findBanned(text) {
   return BANNED.filter((w) => wordRe(w).test(text))
 }
 export function findEmDash(html) {
-  return /—|&mdash;|&#8212;/.test(html)
+  return /\u2014|\u2013|&mdash;|&ndash;|&#8212;|&#8211;/.test(html)
 }
 
 test('voice helpers can fail (positive control)', () => {
   assert.deepEqual(findBanned('We leverage a robust, seamless plan.'), ['leverage', 'seamless', 'robust'])
   assert.deepEqual(findBanned('Use it. Check the results.'), [])
-  assert.ok(findEmDash('a — b'))
+  assert.ok(findEmDash('a \u2014 b'))
   assert.ok(findEmDash('a &mdash; b'))
+  assert.ok(findEmDash('a \u2013 b'))
+  assert.ok(findEmDash('a &ndash; b'))
+  assert.ok(findEmDash('a &#8211; b'))
   assert.ok(!findEmDash('a - b'))
 })
 
@@ -44,11 +47,18 @@ for (const rel of NEW_PAGES) {
   })
 }
 
+const AMERICAN = ['organization', 'optimization', 'prioritized', 'analyze', 'color', 'behavior', 'customize']
+export function findAmerican(text) {
+  return AMERICAN.filter((w) => new RegExp(`\\b${w}`, 'i').test(text))
+}
+
+test('American spelling check can fail (positive control)', () => {
+  assert.deepEqual(findAmerican('Our organization will analyze the color.'), ['organization', 'analyze', 'color'])
+  assert.deepEqual(findAmerican('Our organisation will analyse the colour.'), [])
+})
+
 for (const rel of NEW_PAGES) {
   test(`${rel}: no American spellings`, () => {
-    const text = stripTags(read(rel))
-    for (const w of ['organization', 'optimization', 'prioritized', 'analyze', 'color', 'behavior', 'customize']) {
-      assert.ok(!new RegExp(`\\b${w}`, 'i').test(text), `American spelling: ${w}`)
-    }
+    assert.deepEqual(findAmerican(stripTags(read(rel))), [], 'American spellings found')
   })
 }
