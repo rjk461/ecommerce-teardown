@@ -18,6 +18,21 @@ Success looks like:
 3. Coffee chat stays.
 4. Beer Cartel dates are 2009 to September 2025. Richard worked for Just Wines after the June 2024 sale. The site currently implies the tenure ended in 2024.
 5. Revenue figures: add none. Keep only the existing "7-figure" wording where it already appears. Do not add "$6M" from LinkedIn.
+6. `robots.txt` allows AI training crawlers as well as search and citation crawlers.
+7. Career game stays, in the footer only.
+8. Prices for the new offers are proposed by me and await Richard's confirmation (see Proposed offer ladder below).
+9. Made 4 Tradies gets one line on the Experience page only, not the homepage or nav (recommendation, awaiting Richard's confirmation).
+
+## Proposed offer ladder (AUD, awaiting confirmation)
+
+Basis: Richard's current consulting page ($500 ad hoc, $3,500 a month for two days, which is $1,750 a day), his own view from the June 2026 call that small clients resist high hourly rates, and market ranges from consultancy websites (directional only: they are self-published, undated and unverified). Those ranges put senior day rates at about $2,000 to $4,500 and small strategy assessments at $1,500 to $3,500.
+
+- Free teardown: unchanged, the lead magnet.
+- AI Search Readiness Audit: $1,200 fixed. Written report plus a 45-minute walkthrough.
+- Ecommerce and AI Growth Audit: $1,500 fixed. One store, written report and a 60-minute walkthrough.
+- AI Strategy Sprint: $4,500 fixed over two weeks. Roadmap, two or three prioritised use cases, a 90-day plan.
+- Ad hoc: from $500, unchanged, plus a day rate of $2,000.
+- Monthly: from $4,500 for two days a month, one-month minimum. This replaces $3,500, which sits below the market range for a senior operator.
 
 ## Facts to use (source: Richard's LinkedIn screenshots, 2026-09-29, plus site and vault)
 
@@ -90,8 +105,6 @@ Out of scope, on purpose: MCP server, OAuth discovery, WebMCP, agent skills and 
 - After any change to `partials/` or `src/`, `npm run build:site` is run so the root `*.html` files match. Verification before the PR: build passes, every internal link resolves, no page still contains job-seeking phrases (a grep over the built HTML), structured data validates, `robots.txt`, `sitemap.xml` and `llms.txt` return 200 on the preview, and pages check at phone width.
 
 ## Open items for Richard
-- Prices for the AI audit and strategy sprint. Existing prices on the consulting page stay unless he says otherwise.
-- Whether AI training crawlers (for example GPTBot, Google-Extended) should be allowed or blocked in `robots.txt`.
-- Whether Made 4 Tradies gets a one-line mention on the site.
-- Whether Career game should stay in the footer or go.
+- Confirm the proposed offer ladder and the Made 4 Tradies one-liner.
 - A consulting-focused CV PDF: approve my draft when it arrives.
+- Outside this repo and not part of the work: his LinkedIn "Professional development" entry still says he is exploring Head of Ecommerce and CMO roles, which will contradict the new site.
