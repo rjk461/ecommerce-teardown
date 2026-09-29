@@ -1,6 +1,6 @@
 ---
-title: Ecommerce Consulting — Richard Kelsey
-description: Fractional Head of Ecommerce consulting. 16 years building and exiting Australia's #1 craft beer store. Day rates and monthly retainers available.
+title: Ecommerce and AI Consulting | Richard Kelsey
+description: Ecommerce growth and AI strategy for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint, and monthly consulting from a founder with 16 years running ecommerce.
 url: https://ecommerceteardown.com/consulting
 ---
 
@@ -70,6 +70,14 @@ What I Do
 -   Slack/email between sessions
 -   Team access and coaching
 -   Priority scheduling
+
+### AI Strategy & Adoption
+
+-   Picking the two or three AI uses worth building
+-   AI search readiness: ChatGPT, Perplexity, Google's AI answers
+-   Customer service and email workflows with AI
+-   Team training and adoption
+-   Measuring what AI saves or earns
 
 Full Skillset
 
@@ -145,6 +153,48 @@ Full-day intensive, audit, or kick-off session. We build the strategy and priori
 ### Execute & Improve
 
 Hands-on guidance as your team implements. Ongoing support to keep momentum and adjust as results come in.
+
+Fixed-Price Starting Points
+
+## Start with a fixed scope
+
+If you want to know what you are buying before you commit, start here. All prices in AUD.
+
+### AI Search Readiness Audit
+
+$1,200
+
+Fixed price
+
+-   Written report
+-   45-minute walkthrough
+-   Prioritised list of fixes
+
+[How the audit works](https://ecommerceteardown.com/ai-search-readiness)
+
+### Ecommerce and AI Growth Audit
+
+$1,500
+
+Fixed price, one store
+
+-   Written report
+-   60-minute walkthrough
+-   Growth and AI opportunities ranked
+
+### AI Strategy Sprint
+
+$4,500
+
+Fixed price, two weeks
+
+-   AI roadmap for your business
+-   Two or three prioritised use cases
+-   A 90-day plan
+
+[About AI strategy](https://ecommerceteardown.com/ai-strategy)
+
+Prefer to work by the day? Ad hoc work is from $500 for a fixed scope, or $2,000 a day. Monthly consulting is below.
 
 How to Work With Me
 
@@ -259,6 +309,14 @@ No. Beer Cartel was where I developed the skills, but good ecommerce is good eco
 ### Can you work with our existing marketing team?
 
 That's usually the whole point. I bring the senior strategy layer that gives direction to capable execution teams. I'm not here to replace anyone — I'm here to make the team more effective and connected to commercial outcomes.
+
+### Do you help with AI, or only traditional ecommerce?
+
+Both. Most of my work now sits where the two meet: fixing the basics of a store, and working out which uses of AI are worth building on top. See [AI strategy](https://ecommerceteardown.com/ai-strategy) and [AI search readiness](https://ecommerceteardown.com/ai-search-readiness).
+
+### Do you take on full or part time engagements?
+
+Yes, where the fit is right. Most of my work is fixed-price projects and monthly retainers, but I am open to a full or part time engagement with the right business.
 
 ## Ready to talk?
 

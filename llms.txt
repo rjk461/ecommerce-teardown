@@ -5,7 +5,7 @@
 ## Services
 
 - [Free homepage teardown](https://ecommerceteardown.com/free-teardown.md): Submit your ecommerce site for a free private teardown. Actionable feedback from a 16-year ecommerce veteran — delivered privately to your inbox within 7 days.
-- [Consulting](https://ecommerceteardown.com/consulting.md): Fractional Head of Ecommerce consulting. 16 years building and exiting Australia's #1 craft beer store. Day rates and monthly retainers available.
+- [Consulting](https://ecommerceteardown.com/consulting.md): Ecommerce growth and AI strategy for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint, and monthly consulting from a founder with 16 years running ecommerce.
 - [AI strategy for ecommerce](https://ecommerceteardown.com/ai-strategy.md): AI strategy for Australian online retailers. Work out where AI saves time or makes money in your store, pilot two or three uses, and measure the result. From a founder who has run ecommerce for 16 years.
 - [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible your online store is to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
 

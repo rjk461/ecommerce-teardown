@@ -116,3 +116,17 @@ test('homepage: AI area card exists and the AI bullet left Platform', () => {
   assert.ok(html.includes('<h3>AI Strategy &amp; Adoption</h3>'))
   assert.ok(!/Platform &amp; Technology[\s\S]{0,400}AI tools applied/.test(html))
 })
+
+test('consulting page: title, fixed-price section, AI card, new FAQs', () => {
+  const html = read('consulting.html')
+  assert.match(html, /<title>Ecommerce and AI Consulting \| Richard Kelsey<\/title>/)
+  assert.ok(html.includes('id="fixed-price"'))
+  for (const price of ['$1,200', '$1,500', '$4,500', '$2,000']) assert.ok(html.includes(price), `missing ${price}`)
+  assert.ok(html.includes('<h3>AI Strategy &amp; Adoption</h3>'))
+  assert.ok(html.includes('full or part time'))
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]))
+  const faq = blocks.find((b) => b['@type'] === 'FAQPage')
+  assert.ok(faq, 'FAQPage JSON-LD missing')
+  assert.ok(faq.mainEntity.some((q) => /AI/.test(q.name)))
+  assert.ok(faq.mainEntity.some((q) => /full or part time/.test(q.name)))
+})

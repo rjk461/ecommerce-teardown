@@ -3,9 +3,9 @@ import assert from 'node:assert/strict'
 import { OFFERS, PAGES } from '../scripts/site.config.mjs'
 import { read, stripTags } from './helpers.mjs'
 
-// Pages that have not been rewritten for the consulting offers yet.
-// Task 10 must delete this entry. ('/' was listed for Task 9 but already states its prices, so the stale-skip test removed it.)
-export const PENDING_PRICE_PAGES = ['/consulting']
+// Pages that have not been rewritten for the consulting offers yet. Empty now that every page states its prices;
+// add a path here only while a page is mid-rewrite. The stale-skip test below keeps an entry from outliving its purpose.
+export const PENDING_PRICE_PAGES = []
 
 export const formatPrice = (n) => '$' + n.toLocaleString('en-AU')
 
