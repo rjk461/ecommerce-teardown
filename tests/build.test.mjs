@@ -140,3 +140,21 @@ test('cv page: Experience framing, dates, and an indexable summary', () => {
   assert.ok(!/2009\s*(&ndash;|-|to)\s*2024/.test(html))
   assert.ok(html.includes('/Sample/Richard-Kelsey-CV.pdf'), 'PDF link must still work')
 })
+
+const EM_DASH = String.fromCharCode(8212)
+const EN_DASH = String.fromCharCode(8211)
+const findDashes = (s) => [EM_DASH, EN_DASH, '&mdash;', '&ndash;'].filter((d) => s.includes(d))
+
+test('dash checker flags em and en dashes, raw and as entities (positive control)', () => {
+  assert.deepEqual(findDashes('a ' + EM_DASH + ' b'), [EM_DASH])
+  assert.deepEqual(findDashes('a ' + EN_DASH + ' b'), [EN_DASH])
+  assert.deepEqual(findDashes('a &mdash; b'), ['&mdash;'])
+  assert.deepEqual(findDashes('a &ndash; b'), ['&ndash;'])
+  assert.deepEqual(findDashes('a, b: c to d'), [])
+})
+
+test('cv and consulting pages carry no em or en dashes in their source', () => {
+  for (const page of ['cv.html', 'consulting.html']) {
+    assert.deepEqual(findDashes(read('src/' + page)), [], 'dash found in src/' + page)
+  }
+})

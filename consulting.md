@@ -9,7 +9,7 @@ Fractional Ecommerce Consulting · Sydney, AU
 # 16 Years In.  
 Now Available to _Your Business._
 
-I built and exited Beer Cartel — Australia's #1 craft beer store. P&L ownership, platform strategy, paid media, email, CRO, team leadership. Available as a fractional Head of Ecommerce or for project-based consulting.
+I built and exited Beer Cartel, Australia's #1 craft beer store. P&L ownership, platform strategy, paid media, email, CRO, team leadership. Available as a fractional Head of Ecommerce or for project-based consulting.
 
 [View Options →](#investment) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
 
@@ -21,9 +21,9 @@ Who This Is For
 
 You don't need a full-time hire. You need someone who's been there, can see the problem clearly, and can actually fix it.
 
-### $1M–$30M Revenue
+### $1M to $30M Revenue
 
-Past the scrappy startup phase and ready to scale seriously — but the problems are getting more complex.
+Past the scrappy startup phase and ready to scale seriously, but the problems are getting more complex.
 
 ### Major Project Ahead
 
@@ -41,7 +41,7 @@ What I Do
 
 ## Areas I work across
 
-16 years of hands-on commercial leadership. Not theory — actual work done at scale.
+16 years of hands-on commercial leadership. Not theory. Actual work done at scale.
 
 ### Strategy & Leadership
 
@@ -83,13 +83,13 @@ Full Skillset
 
 ## What I bring to the table
 
-Across 16 years, I've worked every discipline that matters in ecommerce — not as a specialist, but as the person responsible for all of it.
+Across 16 years, I've worked every discipline that matters in ecommerce, not as a specialist, but as the person responsible for all of it.
 
 ### Growth & Marketing
 
 -   Ecommerce roadmap development
 -   Meta Ads (Facebook/Instagram)
--   Email marketing — retention & growth
+-   Email marketing: retention & growth
 -   Conversion rate optimisation (CRO)
 -   Customer acquisition strategy
 -   Customer retention & loyalty programs
@@ -140,7 +140,7 @@ No fluff. A straight path from "I need help" to "this is working."
 
 ### Scoped Proposal
 
-Custom scope, timeline, and investment. Clear from the start — no surprises mid-engagement.
+Custom scope, timeline, and investment. Clear from the start, with no surprises mid-engagement.
 
 3
 
@@ -256,7 +256,7 @@ Why Me
 
 ## An operator, not a theorist
 
-I spent 16 years actually running an ecommerce business — not advising on one. That changes how I see problems and how I fix them.
+I spent 16 years actually running an ecommerce business, not advising on one. That changes how I see problems and how I fix them.
 
 🏆
 
@@ -274,7 +274,7 @@ $1M revenue in 4 days. 5:1 ROAS on a high six-figure paid media budget. Email at
 
 ### Full-Stack Operator
 
-P&L, platforms, paid media, email, CRO, team leadership, board reporting. I've owned all of it — not just advised on parts of it.
+P&L, platforms, paid media, email, CRO, team leadership, board reporting. I've owned all of it, not just advised on parts of it.
 
 📊
 
@@ -288,7 +288,7 @@ Common Questions
 
 ### What actually happens in a full strategy day?
 
-8 hours of focused work. Could be a strategy intensive where we build your roadmap. Could be workshops with your team. Could be a deep-dive audit with written output. Whatever gets you the most commercial value — that's what we do.
+8 hours of focused work. Could be a strategy intensive where we build your roadmap. Could be workshops with your team. Could be a deep-dive audit with written output. Whatever gets you the most commercial value. That's what we do.
 
 ### How does the monthly retainer work?
 
@@ -296,7 +296,7 @@ You get me for 2+ days per month, plus support via Slack and email in between. W
 
 ### What size businesses do you work with?
 
-$1M–$30M annual revenue is the sweet spot. You're past the startup phase but not yet enterprise scale — which is where fractional senior experience tends to have the biggest commercial impact.
+$1M to $30M annual revenue is the sweet spot. You're past the startup phase but not yet enterprise scale, which is where fractional senior experience tends to have the biggest commercial impact.
 
 ### Will you help implement, or just tell us what to do?
 
@@ -308,7 +308,7 @@ No. Beer Cartel was where I developed the skills, but good ecommerce is good eco
 
 ### Can you work with our existing marketing team?
 
-That's usually the whole point. I bring the senior strategy layer that gives direction to capable execution teams. I'm not here to replace anyone — I'm here to make the team more effective and connected to commercial outcomes.
+That's usually the whole point. I bring the senior strategy layer that gives direction to capable execution teams. I'm not here to replace anyone. I'm here to make the team more effective and connected to commercial outcomes.
 
 ### Do you help with AI, or only traditional ecommerce?
 
