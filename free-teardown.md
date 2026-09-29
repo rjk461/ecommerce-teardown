@@ -1,12 +1,12 @@
 ---
-title: Free Private Ecommerce Teardown — Richard Kelsey
-description: Submit your ecommerce site for a free private teardown. Actionable feedback from a 16-year ecommerce veteran — delivered privately to your inbox within 7 days.
+title: Free Private Ecommerce Teardown | Richard Kelsey
+description: Submit your ecommerce site for a free private teardown. Actionable feedback from a 16-year ecommerce veteran, delivered privately to your inbox within 7 days.
 url: https://ecommerceteardown.com/free-teardown
 ---
 
 # Get a Free Private Teardown of Your _Ecommerce Site_
 
-Submit your site and I'll review it — a recorded walkthrough plus written analysis covering your conversion weaknesses, quick wins, and strategic gaps. Delivered privately to your inbox. No catch.
+Submit your site and I'll review it: a recorded walkthrough plus written analysis covering your conversion weaknesses, quick wins, and strategic gaps. Delivered privately to your inbox. No catch.
 
 [Submit Your Site ↓](#form)
 
@@ -20,13 +20,13 @@ I select the most interesting submissions each week. The more context you give m
 
 ### Submit your site
 
-Fill in the form below with your URL and context — what's frustrating you, where you're losing people, what you've already tried.
+Fill in the form below with your URL and context: what's frustrating you, where you're losing people, what you've already tried.
 
 2
 
 ### I do the teardown
 
-I record a video walkthrough of your site and write up the key findings — conversion issues, trust gaps, quick wins, and strategic recommendations.
+I record a video walkthrough of your site and write up the key findings: conversion issues, trust gaps, quick wins, and strategic recommendations.
 
 3
 
@@ -47,7 +47,7 @@ What's included
 
 ### The guarantee
 
-Every teardown is **constructive**. I'm looking at your site to identify what's costing you revenue, not to make you feel bad. The feedback is direct and honest — but always actionable, always respectful.
+Every teardown is **constructive**. I'm looking at your site to identify what's costing you revenue, not to make you feel bad. The feedback is direct and honest, but always actionable, always respectful.
 
 See the Work
 
@@ -55,14 +55,14 @@ See the Work
 
 Real Teardown
 
-### Baby BeeHinds — Reusable Nappies
+### Baby BeeHinds: Reusable Nappies
 
-An Australian DTC brand with great product and loyal customers — but leaving conversions on the table through unclear navigation, weak trust signals, and a homepage that buried the value proposition.
+An Australian DTC brand with great product and loyal customers, but leaving conversions on the table through unclear navigation, weak trust signals, and a homepage that buried the value proposition.
 
 -   Hero message didn't answer "why switch to reusables" fast enough
 -   No social proof above the fold on mobile
 -   Checkout flow had 3 unnecessary friction points
--   Email capture was an afterthought — placed below product listings
+-   Email capture was an afterthought, placed below product listings
 -   5 quick wins identified, 2 implementable same day
 
 [See the Full Sample →](https://ecommerceteardown.com/sample-teardowns)

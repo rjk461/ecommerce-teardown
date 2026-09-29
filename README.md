@@ -6,7 +6,7 @@ A lucha libre-themed landing page for professional ecommerce website audits and 
 
 ## About
 
-Richard Kelsey (3x Australian Retailer of the Year, scaled Beer Cartel to $6M) offers brutal, no-holds-barred website teardowns with the intensity of a lucha libre showdown.
+Richard Kelsey (3x Australian Retailer of the Year, scaled Beer Cartel to high 7-figure revenue) offers brutal, no-holds-barred website teardowns with the intensity of a lucha libre showdown.
 
 ## Services
 

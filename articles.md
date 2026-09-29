@@ -1,6 +1,6 @@
 ---
-title: Articles — Richard Kelsey | Ecommerce Teardown
-description: Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses — from Richard Kelsey.
+title: Articles | Richard Kelsey | Ecommerce Teardown
+description: Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses, from Richard Kelsey.
 url: https://ecommerceteardown.com/articles
 ---
 
@@ -22,7 +22,7 @@ Platform Migration
 
 ## [BigCommerce to Shopify Plus in 90 Days: What We Learned](#)
 
-$100K in savings, zero revenue drop during cutover, and a team that barely noticed. A recount of how we planned and executed a high-risk platform migration without losing our minds — or our rankings.
+$100K in savings, zero revenue drop during cutover, and a team that barely noticed. A recount of how we planned and executed a high-risk platform migration without losing our minds, or our rankings.
 
 Richard Kelsey ⏲ 12 min read Coming soon
 
@@ -30,7 +30,7 @@ Ecommerce Strategy
 
 ## [The 3 Revenue Leaks I Find in Almost Every Ecommerce Site](#)
 
-After doing teardowns of dozens of Australian ecommerce sites, the same three problems keep showing up. They're not complicated to fix — they're just invisible until someone points at them.
+After doing teardowns of dozens of Australian ecommerce sites, the same three problems keep showing up. They're not complicated to fix. They're just invisible until someone points at them.
 
 Richard Kelsey ⏲ 6 min read Coming soon
 
@@ -46,7 +46,7 @@ AI & Tools
 
 ## [How I Use AI in My Ecommerce Workflow (and What It Can't Replace)](#)
 
-I've rebuilt my research, copywriting, and analysis stack around AI tools in the past year. Here's what's actually useful, what's hype, and why the skill that matters isn't prompt engineering — it's knowing what to ask.
+I've rebuilt my research, copywriting, and analysis stack around AI tools in the past year. Here's what's actually useful, what's hype, and why the skill that matters isn't prompt engineering. It's knowing what to ask.
 
 Richard Kelsey ⏲ 7 min read Coming soon
 
@@ -62,7 +62,7 @@ New articles land in your inbox. No weekly newsletters, no drip sequences. Just 
 
 ### About Richard
 
-**Richard Kelsey** built Beer Cartel from a storage shed to Australia's #1 craft beer store — 7-figure revenue, 150K+ customers, successful exit. 3× Top 50 AU Ecommerce. Now works with Australian online retailers on ecommerce growth and practical AI.
+**Richard Kelsey** built Beer Cartel from a storage shed to Australia's #1 craft beer store: 7-figure revenue, 150K+ customers, successful exit. 3× Top 50 AU Ecommerce. Now works with Australian online retailers on ecommerce growth and practical AI.
 
 [LinkedIn →](https://linkedin.com/in/richardkelsey)
 

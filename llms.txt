@@ -4,7 +4,7 @@
 
 ## Services
 
-- [Free homepage teardown](https://ecommerceteardown.com/free-teardown.md): Submit your ecommerce site for a free private teardown. Actionable feedback from a 16-year ecommerce veteran — delivered privately to your inbox within 7 days.
+- [Free homepage teardown](https://ecommerceteardown.com/free-teardown.md): Submit your ecommerce site for a free private teardown. Actionable feedback from a 16-year ecommerce veteran, delivered privately to your inbox within 7 days.
 - [Consulting](https://ecommerceteardown.com/consulting.md): Ecommerce and AI consulting for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint and monthly consulting from a 16-year ecommerce founder.
 - [AI strategy for ecommerce](https://ecommerceteardown.com/ai-strategy.md): AI strategy for Australian online retailers. Find where AI saves time or makes money, pilot two or three uses and measure the result. From a 16-year ecommerce founder.
 - [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
@@ -16,7 +16,7 @@
 
 ## Writing
 
-- [Articles](https://ecommerceteardown.com/articles.md): Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses — from Richard Kelsey.
+- [Articles](https://ecommerceteardown.com/articles.md): Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses, from Richard Kelsey.
 - [LinkedIn posts](https://ecommerceteardown.com/linkedin.md): Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.
 
 ## Optional

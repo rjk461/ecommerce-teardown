@@ -1,5 +1,5 @@
 ---
-title: Sample Teardown — Baby BeeHinds | Ecommerce Teardown
+title: Sample Teardown | Baby BeeHinds | Ecommerce Teardown
 description: See a real ecommerce teardown in action. Richard Kelsey reviews Baby BeeHinds and identifies conversion opportunities. Watch the video and read the full report.
 url: https://ecommerceteardown.com/sample-teardowns
 ---
@@ -9,19 +9,19 @@ Sample Teardown
 # Baby BeeHinds  
 _Full Teardown_
 
-A real ecommerce teardown — video walkthrough, quick wins, and the complete written report. See exactly what you'd get.
+A real ecommerce teardown: video walkthrough, quick wins, and the complete written report. See exactly what you'd get.
 
 Store: [babybeehinds.com.au](https://www.babybeehinds.com.au/) Industry: Baby & Reusable Nappies Format: Video + Written Report
 
-"Feedback was awesome and have already implemented a few of those changes — tweaking the rest this week. Loved your energy, and feedback was constructive without making me feel like it was a 'tear down' so thanks for that!"
+"Feedback was awesome and have already implemented a few of those changes, tweaking the rest this week. Loved your energy, and feedback was constructive without making me feel like it was a 'tear down' so thanks for that!"
 
-— Leanne Tubby, Owner, Baby BeeHinds
+Leanne Tubby, Owner, Baby BeeHinds
 
 Watch the teardown
 
 ## 30-Minute Video Walkthrough
 
-Every weak spot exposed. Every missed opportunity called out. Every quick win identified — with only constructive feedback to grow the site.
+Every weak spot exposed. Every missed opportunity called out. Every quick win identified, with only constructive feedback to grow the site.
 
 Priority actions
 
@@ -34,20 +34,20 @@ High Impact
 ### 1\. Hero Section Transformation
 
 **Problem:** Text-only hero misses emotional connection.  
-**Fix:** Add a hero image of happy parent + baby, overlay proof points: "21 Years | 3M+ Nappies | Australia's #1". You have 3 seconds for emotional connection — make them count.
+**Fix:** Add a hero image of happy parent + baby, overlay proof points: "21 Years | 3M+ Nappies | Australia's #1". You have 3 seconds for emotional connection. Make them count.
 
 High Impact
 
 ### 2\. Award Visibility Upgrade
 
 **Problem:** GOLD awards hidden on a separate page.  
-**Fix:** Create a visual award badge section on the homepage. Awards justify premium pricing — but only if they're visible.
+**Fix:** Create a visual award badge section on the homepage. Awards justify premium pricing, but only if they're visible.
 
 Medium Impact
 
 ### 3\. Logo Prominence
 
-**Fix:** Increase logo size by 40–50%. A premium brand with 21 years of heritage — your logo should command respect.
+**Fix:** Increase logo size by 40–50%. A premium brand with 21 years of heritage. Your logo should command respect.
 
 Medium Impact
 
@@ -72,7 +72,7 @@ Full analysis
 
 ## Complete Teardown Report
 
-The full written report — executive summary, prioritised recommendations, and strategic opportunities.
+The full written report: executive summary, prioritised recommendations, and strategic opportunities.
 
 **Prepared for:** Leanne Tubby, Owner
 
@@ -80,27 +80,27 @@ The full written report — executive summary, prioritised recommendations, and 
 
 ## Executive Summary
 
-21 years, 3,010,988+ nappies sold, multiple awards — you've built genuine authority. However, there's a gap between what you've achieved and how you're presenting it. You're selling like a commodity store when you have championship-level credentials.
+21 years, 3,010,988+ nappies sold, multiple awards. You've built genuine authority. However, there's a gap between what you've achieved and how you're presenting it. You're selling like a commodity store when you have championship-level credentials.
 
-**Overall Score: 7/10** — solid fundamentals with real room to level up.
+**Overall Score: 7/10**: solid fundamentals with real room to level up.
 
 **Core Opportunity:** Transform from "we sell reusable nappies" to "THE Australian reusable nappy authority."
 
 ### What's Working Well
 
-Strong trust signals (3M+ counter, awards, reviews), professional product photography, clean navigation, and mobile-responsive design. These are solid foundations — now let's take it from good to exceptional.
+Strong trust signals (3M+ counter, awards, reviews), professional product photography, clean navigation, and mobile-responsive design. These are solid foundations. Now let's take it from good to exceptional.
 
 ## Priority 1: Quick Wins
 
 ### 1\. Hero Section Transformation (Impact: HIGH)
 
 **Problem + Fix:** Text-only hero misses emotional connection. Add hero image of happy parent + baby, overlay proof points: "21 Years | 3M+ Nappies | Australia's #1".  
-**Why:** You have 3 seconds for emotional connection — make them count.
+**Why:** You have 3 seconds for emotional connection. Make them count.
 
 ### 2\. Logo Prominence (Impact: MEDIUM)
 
 **Fix:** Increase logo size by 40–50%.  
-**Why:** Premium brand with 21 years heritage — your logo should command respect.
+**Why:** Premium brand with 21 years heritage. Your logo should command respect.
 
 ### 3\. Header Gap Issue (Impact: MEDIUM)
 
@@ -141,7 +141,7 @@ Strong trust signals (3M+ counter, awards, reviews), professional product photog
 
 ### 10\. Authority Positioning Overhaul (Impact: VERY HIGH)
 
-**Problem + Fix:** 21 years, 3M+ nappies, multiple awards — positioned as just another shop. Hero could become "Australia's Reusable Nappy Experts Since 2004" (authority), then "3M+ Nappies | Multi-Award Winning | 21 Years". Consider adding a "Why Choose Baby BeeHinds" section.  
+**Problem + Fix:** 21 years, 3M+ nappies, multiple awards. Positioned as just another shop. Hero could become "Australia's Reusable Nappy Experts Since 2004" (authority), then "3M+ Nappies | Multi-Award Winning | 21 Years". Consider adding a "Why Choose Baby BeeHinds" section.  
 **Why:** Authority positioning = premium pricing, customer loyalty, marketplace differentiation.
 
 ### 11\. Education & Objection Handling (Impact: VERY HIGH)
@@ -169,21 +169,21 @@ Strong trust signals (3M+ counter, awards, reviews), professional product photog
 ### 15\. Playful Brand Elements
 
 **Opportunity + Fix:** Baby BeeHinds = Bees, but no bee character or animations. Consider an animated bee (subtle), bee mascot, hive language ("Join our hive", "Buzzing with quality"), bee illustrations on category pages.  
-**Why:** Memorable brands have personality — playful fits a baby business.
+**Why:** Memorable brands have personality: playful fits a baby business.
 
 ### Key Takeaways
 
--   You've built genuine authority over 21 years — showcase it prominently
+-   You've built genuine authority over 21 years: showcase it prominently
 -   Transform from commodity positioning to "THE Australian reusable nappy authority"
--   Address the "poo question" head-on — it's the #1 objection preventing adoption
--   Make awards visible — they justify premium pricing
--   Add more products to the homepage — more pathways = higher conversion
+-   Address the "poo question" head-on: it's the #1 objection preventing adoption
+-   Make awards visible: they justify premium pricing
+-   Add more products to the homepage: more pathways = higher conversion
 
 ## Final Thoughts
 
-You've built something valuable over 21 years. Baby BeeHinds has real authority, proof points, and differentiation. The opportunity isn't to rebuild — it's to showcase what you've already achieved.
+You've built something valuable over 21 years. Baby BeeHinds has real authority, proof points, and differentiation. The opportunity isn't to rebuild. It's to showcase what you've already achieved.
 
-Focus on quick wins first: hero image, award visibility. Then tackle the strategic work: authority positioning, the poo question. Your homepage is your shop window — make these changes to match your online presence to your actual market position.
+Focus on quick wins first: hero image, award visibility. Then tackle the strategic work: authority positioning, the poo question. Your homepage is your shop window: make these changes to match your online presence to your actual market position.
 
 Good luck with the changes. You've got a great foundation to build on.
 
@@ -206,6 +206,6 @@ Next step
 
 ## Get Your Own Teardown
 
-Submit your ecommerce site for a free private teardown — actionable feedback from a 16-year ecommerce veteran, delivered privately to your inbox within 7 days.
+Submit your ecommerce site for a free private teardown: actionable feedback from a 16-year ecommerce veteran, delivered privately to your inbox within 7 days.
 
 [Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [View Consulting](https://ecommerceteardown.com/consulting)
