@@ -6,7 +6,8 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { PAGES } from './site.config.mjs'
-import { seoBlock } from './lib/outputs.mjs'
+import { seoBlock, sitemapXml, llmsTxt, pageMarkdown, mdPathFor } from './lib/outputs.mjs'
+import { getTitle, getMetaDescription } from './lib/html.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -22,6 +23,7 @@ export async function build({ root = ROOT, outDir = root } = {}) {
   const headerTpl = await fs.readFile(path.join(root, 'partials', 'header.html'), 'utf8')
   const footerTpl = await fs.readFile(path.join(root, 'partials', 'footer.html'), 'utf8')
   const written = []
+  const built = []
 
   for (const page of PAGES) {
     let body = await fs.readFile(path.join(root, 'src', page.src), 'utf8')
@@ -34,7 +36,20 @@ export async function build({ root = ROOT, outDir = root } = {}) {
     body = body.replace('<!-- SEO -->', () => seoBlock(page, body))
     await fs.writeFile(path.join(outDir, page.out), body, 'utf8')
     written.push(page.out)
+    built.push({ page, html: body })
   }
+
+  const entries = []
+  for (const { page, html } of built) {
+    if (!page.index) continue
+    const rel = mdPathFor(page).slice(1)
+    await fs.writeFile(path.join(outDir, rel), pageMarkdown(page, html), 'utf8')
+    written.push(rel)
+    if (page.llms) entries.push({ page, title: getTitle(html), description: getMetaDescription(html) })
+  }
+  await fs.writeFile(path.join(outDir, 'sitemap.xml'), sitemapXml(PAGES), 'utf8')
+  await fs.writeFile(path.join(outDir, 'llms.txt'), llmsTxt(entries), 'utf8')
+  written.push('sitemap.xml', 'llms.txt')
   return written
 }
 
