@@ -1,8 +1,9 @@
 import test from 'node:test'
+import { execFileSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 import { PAGES } from '../scripts/site.config.mjs'
 import { mdPathFor } from '../scripts/lib/outputs.mjs'
-import { read, mentionsAiTeardown } from './helpers.mjs'
+import { read, mentionsAiTeardown, ROOT } from './helpers.mjs'
 
 const cfg = JSON.parse(read('vercel.json'))
 const indexed = PAGES.filter((p) => p.index)
@@ -56,7 +57,6 @@ test('markdown and llms.txt are served with a text content type', () => {
 test('existing config is preserved', () => {
   assert.equal(cfg.cleanUrls, true)
   assert.equal(cfg.trailingSlash, false)
-  assert.equal(cfg.functions['api/*.js'].maxDuration, 300)
   assert.ok(cfg.headers.find((h) => h.source === '/(.*)').headers.some((h) => h.key === 'X-Content-Type-Options'))
 })
 
@@ -164,4 +164,23 @@ test('positive control: the ai-teardown check flags a string that contains it', 
   assert.ok(mentionsAiTeardown('/ai-teardown'))
   assert.ok(mentionsAiTeardown('</ai-teardown.md>; rel="alternate"'))
   assert.ok(!mentionsAiTeardown('/free-teardown'))
+})
+
+/** Problems that mean a serverless function is still wired up: a functions block in vercel.json, or tracked files under api/. */
+const functionProblems = (config, trackedApiFiles) => {
+  const problems = []
+  if ('functions' in config) problems.push('vercel.json has a functions block')
+  for (const f of trackedApiFiles) problems.push(`tracked file under api/: ${f}`)
+  return problems
+}
+
+test('the teardown serverless functions are offline: no functions block and no tracked api/ files', () => {
+  const tracked = execFileSync('git', ['ls-files', 'api'], { cwd: ROOT, encoding: 'utf8' }).split(/\s+/).filter(Boolean)
+  assert.deepEqual(functionProblems(cfg, tracked), [])
+})
+
+test('positive control: the functions check flags a functions block and a tracked api/ file', () => {
+  assert.deepEqual(functionProblems({ functions: { 'api/*.js': { maxDuration: 300 } } }, []), ['vercel.json has a functions block'])
+  assert.deepEqual(functionProblems({}, ['api/x.js']), ['tracked file under api/: api/x.js'])
+  assert.deepEqual(functionProblems({}, []), [])
 })
