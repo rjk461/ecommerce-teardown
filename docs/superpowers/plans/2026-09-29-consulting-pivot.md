@@ -1332,7 +1332,7 @@ Create `src/ai-strategy.html`. The head follows the existing pages (favicon, `si
                 </div>
                 <div class="card">
                     <h3>On this site</h3>
-                    <p>An <a href="/ai-teardown">AI homepage teardown tool</a> that reviews an ecommerce homepage for $2.99 a page, built and run by me.</p>
+                    <p>This site is set up for AI search: a sitemap, structured data, an llms.txt file and a Markdown copy of every page. The <a href="/ai-search-readiness">AI Search Readiness Audit</a> checks the same things on your store.</p>
                 </div>
                 <div class="card">
                     <h3>In my own work</h3>
@@ -2487,8 +2487,6 @@ import { ROOT, read, exists, stripTags } from './helpers.mjs'
 
 const pages = PAGES.filter((p) => p.index)
 const html = (p) => read(p.out)
-// The tool landing page keeps its long, purchase-intent title: its copy is out of scope for this pivot.
-const LONG_TITLE_OK = new Set(['/ai-teardown'])
 
 // Rules live in functions so the positive controls at the bottom run the same code as the real checks.
 const headingLevels = (h) => [...h.matchAll(/<h([1-6])[\s>]/gi)].map((m) => Number(m[1]))
@@ -2537,7 +2535,7 @@ test('titles and descriptions are a sensible length', () => {
     const h = html(p)
     const t = getTitle(h)
     const d = getMetaDescription(h)
-    assert.ok(t.length >= 20 && (t.length <= 70 || LONG_TITLE_OK.has(p.path)), `${p.path} title is ${t.length} chars: ${t}`)
+    assert.ok(t.length >= 20 && t.length <= 70, `${p.path} title is ${t.length} chars: ${t}`)
     assert.ok(d.length >= 70 && d.length <= 170, `${p.path} description is ${d.length} chars`)
   }
 })
@@ -2638,8 +2636,8 @@ Expected: FAIL on heading skips, `<main>` on `sample-teardowns` and `coming-soon
 1. Footer: in `partials/footer.html` change each column title (`<h4>Services</h4>`, Writing, Connect, plus any Task 8 added) to `<p class="footer-title">...</p>`. In `site.css` change the selector `.footer-col h4` to `.footer-col .footer-title` and keep every declaration. A footer column label is a label, not a document heading, so it should not appear in the outline at all. Grep `src/*.html` for an inline `.footer-col h4` rule and change it the same way.
 2. `src/sample-teardowns.html`: wrap the page body in one `<main>`, and repair the outline so no heading jumps a level. Change the tag, keep the look: for each demoted or promoted heading add a class that carries its current CSS (if `h4 { ... }` is a bare tag rule, add `.h-as-4 { ... }` beside it, or edit the selector to `h4, .h-as-4`).
 3. `src/coming-soon.html`: wrap the content in `<main>`.
-4. `src/ai-teardown.html` (h1 straight to h3) and any other page the test names: same method. Copy stays as it is.
-5. Run `npm run build:site`, then open `sample-teardowns` and `ai-teardown` in the browser at 1280px and 375px before and after, and confirm the layout is unchanged. Say in the report what you compared.
+4. Any other page the test names: same method. Copy stays as it is.
+5. Run `npm run build:site`, then open `sample-teardowns` in the browser at 1280px and 375px before and after, and confirm the layout is unchanged. Say in the report what you compared.
 
 - [ ] **Step 4: Fix the images**
 

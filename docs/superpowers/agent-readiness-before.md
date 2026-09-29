@@ -19,4 +19,4 @@ Category scores: Discoverability 0/4, Content 0/1, Bot Access Control 0/2, API/A
 | API Catalog, OAuth/OIDC discovery, OAuth Protected Resource Metadata, auth.md, MCP Server Card, Agent Skills index, WebMCP, ARD capability manifest | Fail, all out of scope for a static consulting site |
 | Commerce (x402, MPP, UCP, ACP) | Not detected (optional) |
 
-The checks in scope for this project are robots.txt, sitemap, Link headers, Markdown negotiation, AI bot rules and Content Signals. The tool's AI bot rules check names GPTBot, OAI-SearchBot, Claude-Web and Google-Extended as examples.
+The checks in scope for this project are robots.txt, sitemap, Link headers, Markdown negotiation, AI bot rules and Content Signals. The tool's AI bot rules check names GPTBot, OAI-SearchBot, Claude-Web and Google-Extended as examples. (Read from the scan result page on 2026-09-29. Cloudflare's published blog post does not list them, and Anthropic's crawler documentation does not list Claude-Web, so treat those names as the scanner's, not as vendor-confirmed tokens.)

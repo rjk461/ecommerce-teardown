@@ -22,6 +22,7 @@ Success looks like:
 7. Career game stays, in the footer only.
 8. Prices for the new offers are proposed by me and await Richard's confirmation (see Proposed offer ladder below).
 9. Made 4 Tradies gets one line on the Experience page only, not the homepage or nav (recommendation, awaiting Richard's confirmation).
+10. The $2.99 AI teardown tool page (`/ai-teardown`) and its success page are left out of the site (Richard, 2026-09-29: the page does not work correctly). Both pages leave the build, the sitemap, `llms.txt` and the Markdown copies, and `/ai-teardown` and `/ai-teardown-success` redirect (temporary) to `/free-teardown`. The `api/teardown-*` functions are not touched (out of scope), so they stay deployed until Richard decides otherwise.
 
 ## Proposed offer ladder (AUD, awaiting confirmation)
 
@@ -40,7 +41,7 @@ Basis: Richard's current consulting page ($500 ad hoc, $3,500 a month for two da
 - Independent Consultant, Digital Marketing and AI Strategy, freelance, from May 2026. Projects cover ecommerce growth strategy, customer acquisition planning and practical AI implementation for marketing and operations.
 - Beer Cartel CEO and Director 2009 to Sep 2025. Retail Drinks Australia board member Nov 2019 to Aug 2025.
 - AI credentials on the profile: Claude Code in Action (Anthropic, Mar 2026) and a set of LinkedIn and Microsoft AI courses (Sep 2025). Cite these as what they are. Do not present them as more than course completions.
-- Built systems that back up the AI claim: aiOS, ApplyHQ, the AI teardown tool on this site, the Made 4 Tradies pipeline. Claim only what Richard can show.
+- Built systems that back up the AI claim: aiOS, ApplyHQ, the Made 4 Tradies pipeline. The AI teardown tool is not claimed (decision 10). Claim only what Richard can show.
 - Client names (Just Wines, Sans Drinks, Liquor Loot) are not used without Richard's permission.
 - Screenshot text was small. Every fact above must be re-read against the live profile before it ships.
 
@@ -74,7 +75,7 @@ Rewrite the copy and the PDF around consulting: independent consulting from May 
 Beer Cartel end date corrected to 2025 wherever it appears. The `/contact` link in the footer needs checking, because `src/contact.html` no longer exists while a root `contact.html` does.
 
 ### Untouched
-The AI teardown tool, its APIs, pricing and payment flow are out of scope. Only the copy that points to it may change.
+The AI teardown tool's APIs, pricing and payment flow are out of scope and stay as they are. Its two pages leave the site (decision 10).
 
 ## AI readiness layer
 
