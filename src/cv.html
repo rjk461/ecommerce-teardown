@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV — Richard Kelsey | Ecommerce Teardown</title>
-    <meta name="description" content="Richard Kelsey's resume — Head of Ecommerce, 16+ years building Australian ecommerce, Beer Cartel exit.">
+    <title>Experience | Richard Kelsey | Ecommerce Teardown</title>
+    <meta name="description" content="Richard Kelsey's experience: independent ecommerce and AI consultant since May 2026, Beer Cartel co-founder (2009 to September 2025), 3x Top 50 in Australian Ecommerce.">
+    <!-- SEO -->
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/site.css?v=3">
+    <link rel="stylesheet" href="/site.css?v=4">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ecommerceteardown.com/cv">
-    <meta property="og:title" content="CV — Richard Kelsey | Ecommerce Teardown">
-    <meta property="og:description" content="Head of Ecommerce — resume and experience overview.">
+    <meta property="og:title" content="Experience | Richard Kelsey | Ecommerce Teardown">
+    <meta property="og:description" content="Independent ecommerce and AI consultant. Co-founder of Beer Cartel. 16 years running Australian online retail.">
     <meta property="og:image" content="https://ecommerceteardown.com/images/og-image.png">
 
     <!-- Google Analytics -->
@@ -38,8 +39,8 @@
       --dark: #0D1117;
       --dark-2: #161B22;
       --dark-3: #21262D;
-      --text: #E6EDF3;
-      --muted: #A8B3BD;
+      --text: #FFFFFF;
+      --muted: #D0D7DE;
       --border: #30363D;
     }
 
@@ -170,6 +171,14 @@
       border-top: 1px solid var(--border);
     }
 
+    /* CV summary */
+    .cv-summary { padding: 0 0 2rem; }
+    .cv-summary h2 { font-size: 1.4rem; margin: 0 0 1rem; }
+    .cv-glance { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+    .cv-glance li { color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
+    .cv-glance li:last-child { border-bottom: none; }
+    .cv-glance strong { color: var(--text); }
+
     @media (max-width: 640px) {
       body { font-size: 20px; }
       .cv-iframe-wrap { min-height: 315px; }
@@ -185,14 +194,29 @@
         <section class="page-header">
             <div class="container">
                 <div class="page-header-inner">
-                    <div class="page-eyebrow">Resume</div>
-                    <h1>Richard Kelsey CV</h1>
-                    <p>Head of Ecommerce and marketing leadership — 16 years scaling Australian ecommerce. View below or download the PDF.</p>
+                    <div class="page-eyebrow">Experience</div>
+                    <h1>Richard Kelsey: Experience</h1>
+                    <p>Independent ecommerce and AI consultant. 16 years building and running Australian online retail. View below or download the PDF.</p>
                     <div class="cv-actions">
                         <a href="/Sample/Richard-Kelsey-CV.pdf" class="btn btn-primary" download>Download PDF</a>
                         <a href="/Sample/Richard-Kelsey-CV.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Open in new tab</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="cv-summary">
+            <div class="container">
+                <h2>At a glance</h2>
+                <ul class="cv-glance">
+                    <li><strong>Independent Consultant, Digital Marketing and AI Strategy</strong> (May 2026 to present). Ecommerce growth strategy, customer acquisition planning and practical AI for marketing and operations.</li>
+                    <li><strong>Co-founder, Made 4 Tradies.</strong> Websites for Australian trade businesses.</li>
+                    <li><strong>Co-founder and CEO, Beer Cartel</strong> (2009 to September 2025). Built Australia&rsquo;s #1 online craft beer retailer from a storage shed. Sold in 2024, stayed on through the transition. Five platform migrations, four email platform implementations, a team that grew to 30+.</li>
+                    <li><strong>Board member, Retail Drinks Australia</strong> (November 2019 to September 2025), representing online liquor retailers.</li>
+                    <li><strong>Recognition.</strong> Top 50 People in Australian Ecommerce, Inside Retail (2019, 2021, 2022). Online Retailer of the Year, Beer &amp; Brewer (5 times).</li>
+                    <li><strong>AI training.</strong> Claude Code in Action (Anthropic, March 2026), plus courses on generative AI for business leaders, AI ethics and Microsoft Copilot (September 2025).</li>
+                    <li><strong>Education.</strong> BCom, Marketing and Finance, University of Canterbury. Postgraduate Diploma in Business Administration, Massey University.</li>
+                </ul>
             </div>
         </section>
 

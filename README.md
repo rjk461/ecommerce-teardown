@@ -6,7 +6,7 @@ A lucha libre-themed landing page for professional ecommerce website audits and 
 
 ## About
 
-Richard Kelsey (3x Australian Retailer of the Year, scaled Beer Cartel to $6M) offers brutal, no-holds-barred website teardowns with the intensity of a lucha libre showdown.
+Richard Kelsey (3x Australian Retailer of the Year, scaled Beer Cartel to high 7-figure revenue) offers brutal, no-holds-barred website teardowns with the intensity of a lucha libre showdown.
 
 ## Services
 
@@ -41,9 +41,11 @@ Simply open `index.html` in a browser. No build process required.
 
 ### AI Teardown test mode (no Stripe)
 
+**Withdrawn 2026-09-29:** the `/ai-teardown` and `/ai-teardown-success` pages are no longer part of the site (both redirect to `/consulting`, as does `/free-teardown`, the free teardown offer withdrawn on 2026-09-30). The `api/` functions were removed on 2026-09-29 (recoverable from git history), so the steps below no longer work; they are kept as the record of how the tool was tested.
+
 You can generate a teardown report without a payment gateway:
 
-- Open: `/ai-teardown?test=1`
+- Open: `/ai-teardown?test=1` (page withdrawn, see above)
 - Submit a URL + email + notes
 - The page will call `POST /api/test-teardown` and return:
   - mobile + desktop screenshots (full-page)

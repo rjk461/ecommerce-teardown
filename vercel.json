@@ -2,11 +2,6 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "functions": {
-    "api/*.js": {
-      "maxDuration": 300
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
@@ -51,6 +46,113 @@
           "value": "public, max-age=86400"
         }
       ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</index.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/cv",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</cv.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/articles",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</articles.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/linkedin",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</linkedin.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/sample-teardowns",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</sample-teardowns.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/consulting",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</consulting.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/ai-strategy",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</ai-strategy.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/ai-search-readiness",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</ai-search-readiness.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/ai-teardown",
+      "destination": "/consulting",
+      "permanent": false
+    },
+    {
+      "source": "/ai-teardown-success",
+      "destination": "/consulting",
+      "permanent": false
+    },
+    {
+      "source": "/free-teardown",
+      "destination": "/consulting",
+      "permanent": false
     }
   ]
 }

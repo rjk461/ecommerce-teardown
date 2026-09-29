@@ -15,7 +15,6 @@ const FILES = [
   'articles.html',
   'linkedin.html',
   'contact.html',
-  'free-teardown.html',
   'sample-teardowns.html',
   'coming-soon.html',
   'consulting.html',

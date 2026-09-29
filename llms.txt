@@ -1,0 +1,23 @@
+# Ecommerce Teardown
+
+> Richard Kelsey is an ecommerce and AI consultant based in Sydney, Australia. He co-founded Beer Cartel in 2009 and built it into Australia’s #1 online craft beer retailer, staying on until September 2025 after the 2024 sale. He has been named one of the Top 50 People in Australian Ecommerce three times by Inside Retail. He works with Australian online retailers on ecommerce growth and practical AI.
+
+## Services
+
+- [Consulting](https://ecommerceteardown.com/consulting.md): Ecommerce and AI consulting for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint and monthly consulting from a 16-year ecommerce founder.
+- [AI strategy for ecommerce](https://ecommerceteardown.com/ai-strategy.md): AI strategy for Australian online retailers. Find where AI saves time or makes money, pilot two or three uses and measure the result. From a 16-year ecommerce founder.
+- [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
+
+## About
+
+- [Home](https://ecommerceteardown.com/index.md): Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel into a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
+- [Experience](https://ecommerceteardown.com/cv.md): Richard Kelsey's experience: independent ecommerce and AI consultant since May 2026, Beer Cartel co-founder (2009 to September 2025), 3x Top 50 in Australian Ecommerce.
+
+## Writing
+
+- [Articles](https://ecommerceteardown.com/articles.md): Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses, from Richard Kelsey.
+- [LinkedIn posts](https://ecommerceteardown.com/linkedin.md): Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.
+
+## Optional
+
+- [Sample teardowns](https://ecommerceteardown.com/sample-teardowns.md): See a real ecommerce teardown in action. Richard Kelsey reviews Baby BeeHinds and identifies conversion opportunities. Watch the video and read the full report.
