@@ -32,7 +32,7 @@ Basis: Richard's current consulting page ($500 ad hoc, $3,500 a month for two da
 - Ecommerce and AI Growth Audit: $1,500 fixed. One store, written report and a 60-minute walkthrough.
 - AI Strategy Sprint: $4,500 fixed over two weeks. Roadmap, two or three prioritised use cases, a 90-day plan.
 - Ad hoc: from $500, unchanged, plus a day rate of $2,000.
-- Monthly: from $4,500 for two days a month, one-month minimum. This replaces $3,500, which sits below the market range for a senior operator.
+- Monthly: stays at from $3,500 for two days a month, one-month minimum (about $1,750 a day). Richard confirmed he is comfortable with this even though it sits below the market range I found for senior consultants.
 
 ## Facts to use (source: Richard's LinkedIn screenshots, 2026-09-29, plus site and vault)
 
