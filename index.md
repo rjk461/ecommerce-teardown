@@ -1,16 +1,16 @@
 ---
-title: Richard Kelsey — Head of Ecommerce | Ecommerce Teardown
-description: Richard Kelsey — Head of Ecommerce with 16 years building Australian ecommerce. Built Beer Cartel from $0 to 7-figure exit. 3x Top 50 Australian Ecommerce. Available for senior ecommerce and marketing leadership roles in Australia.
+title: Richard Kelsey | Ecommerce and AI Growth Consultant | Ecommerce Teardown
+description: Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel from a storage shed to a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
 url: https://ecommerceteardown.com/
 ---
 
 # I Built Australia's #1 Craft Beer Store From _a Storage Shed._
 
-16 years. 7-figure revenue. Successful exit. I’m Richard Kelsey — Head of Ecommerce. I built Beer Cartel from a storage shed into Australia’s #1 online craft beer retailer. Now I’m looking for the right business to do it again.
+16 years. 7-figure revenue. Successful exit. I’m Richard Kelsey. I built Beer Cartel from a storage shed into Australia’s #1 online craft beer retailer, and now I help other Australian online retailers grow their stores and put AI to work where it pays. Start with a free teardown of your homepage.
 
-[Book a Coffee](https://8coffees.ecommerceteardown.com/) [View CV](https://ecommerceteardown.com/cv)
+[Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
 
-![Richard Kelsey — Beer Cartel](https://ecommerceteardown.com/images/richard-hero.png)
+![Richard Kelsey, Beer Cartel](https://ecommerceteardown.com/images/richard-hero.png)
 
 7-Fig Revenue Built from $0
 
@@ -20,28 +20,26 @@ url: https://ecommerceteardown.com/
 
 3× Top 50 AU Ecommerce
 
-Available Now
+Available for Consulting
 
-## Looking for My Next Head of Ecommerce Role
+## How I Help Online Retailers
 
-After 16 years building and exiting Beer Cartel, I'm ready to bring that experience to an established brand. I'm looking for a senior ecommerce or marketing leadership role in Australia — ideally a business serious about growth, not just maintenance.
+I work with Australian online retailers who want experienced eyes on their store. Sometimes that is a fixed-price audit. Sometimes it is a two-week AI sprint or a couple of days a month of ongoing advice. I’m available for consulting, or a full or part time engagement where the fit is right.
 
--   Full P&L ownership & commercial leadership
--   Cross-functional team leadership (4 direct reports)
--   Shopify & BigCommerce end-to-end platform migrations
--   Email/SMS lifecycle marketing scaled to 30% of revenue
--   5:1 ROAS on high six-figure paid media budgets
--   AI tools applied to real commercial outcomes
--   Board-level stakeholder management
--   AU market expertise across B2C retail & online marketplaces
+-   [Ecommerce growth audits](https://ecommerceteardown.com/consulting): one store, one report, a clear list of what to fix first
+-   [AI strategy](https://ecommerceteardown.com/ai-strategy): where AI saves time or makes money in a retailer, and where it does not
+-   [AI search readiness](https://ecommerceteardown.com/ai-search-readiness): how ChatGPT, Perplexity and Google’s AI answers see your store
+-   Platform, email and paid media reviews from someone who has run all three
+-   Platform migration planning from someone who has done five
+-   Fractional Head of Ecommerce support, two days a month
 
-[View LinkedIn Profile →](https://linkedin.com/in/richardkelsey)
+[See consulting options →](https://ecommerceteardown.com/consulting)
 
 ☕
 
 ### Let's Have a Coffee
 
-I was once told the best roles come from conversations, not applications. So I built a page to make it easy. 30 minutes — in person or virtual.
+The best work usually starts with a conversation. 30 minutes, in person or virtual, to talk through your store and what you are trying to do.
 
 Sydney CBD North Shore Video call
 
@@ -55,27 +53,27 @@ BCom, PGDipBA · Sydney, AU
 
 ## About Richard
 
-In 2009, I co-founded Beer Cartel out of a Kennards Storage Shed with a goal to build Australia's best online craft beer store. By the time we sold in 2024, it was **Australia's #1 online craft beer retailer** — high 7-figure revenue, 150,000+ customers, and a 4.8 Google rating.
+In 2009, I co-founded Beer Cartel out of a Kennards Storage Shed with a goal to build Australia's best online craft beer store. It became **Australia's #1 online craft beer retailer**, with high 7-figure revenue, 150,000+ customers and a 4.8 Google rating. We sold in 2024 and I stayed on through the transition until September 2025.
 
-As Head of Ecommerce and CMO, I owned the full commercial operation — **P&L, platform strategy, paid media, email, CRO, team leadership, and board reporting.** Four direct reports (Marketing, Procurement, Operations, Finance), with monthly presentations to the board.
+At Beer Cartel I owned the full commercial operation: **P&L, platform strategy, paid media, email, CRO, team leadership, and board reporting.** Four direct reports (Marketing, Procurement, Operations, Finance), with monthly presentations to the board.
 
-![Inside Retail — Top 50 People in Australian Ecommerce](https://ecommerceteardown.com/images/inside-retail.png) Top 50 People in Australian Ecommerce (3×)
+![Inside Retail, Top 50 People in Australian Ecommerce](https://ecommerceteardown.com/images/inside-retail.png) Top 50 People in Australian Ecommerce (3×)
 
-![Beer & Brewer — Online Retailer of the Year](https://ecommerceteardown.com/images/beer-brewer-white.png) Online Retailer of the Year, Beer & Brewer (5×)
+![Beer & Brewer, Online Retailer of the Year](https://ecommerceteardown.com/images/beer-brewer-white.png) Online Retailer of the Year, Beer & Brewer (5×)
 
-![ORIAS — Best Online Retail Marketing](https://ecommerceteardown.com/images/orias-logo.png) Best Online Retail Marketing — ORIAS
+![ORIAS, Best Online Retail Marketing](https://ecommerceteardown.com/images/orias-logo.png) Best Online Retail Marketing (ORIAS)
 
-![ARA — Retail Innovator of the Year](https://ecommerceteardown.com/images/ara-logo.png) Retail Innovator of the Year — ARA
+![ARA, Retail Innovator of the Year](https://ecommerceteardown.com/images/ara-logo.png) Retail Innovator of the Year (ARA)
 
 ![BigCommerce Make It Big Innovation](https://ecommerceteardown.com/images/bigcommerce-white.png) BigCommerce Make It Big Innovation (2×)
 
-![Retail Drinks Australia](https://ecommerceteardown.com/images/retail-drinks-logo.png) Retail Drinks Australia Board Member (2019–2025)
+![Retail Drinks Australia](https://ecommerceteardown.com/images/retail-drinks-logo.png) Retail Drinks Australia Board Member (2019 to 2025)
 
 What I Do
 
 ## Areas I work across
 
-16 years of hands-on commercial leadership. Not theory — actual work done at scale.
+16 years of hands-on commercial leadership. Not theory, actual work done at scale.
 
 ### Strategy & Leadership
 
@@ -94,23 +92,30 @@ What I Do
 ### Platform & Technology
 
 -   Shopify & BigCommerce migrations
--   AI tools applied to commercial workflows
 -   Marketing tech stack review
 -   Automation and integration strategy
 -   Vendor evaluation and selection
+
+### AI Strategy & Adoption
+
+-   Picking the two or three AI uses worth building
+-   AI search readiness: ChatGPT, Perplexity, Google’s AI answers
+-   Customer service and email workflows with AI
+-   Team training and adoption
+-   Measuring what AI saves or earns
 
 Full Skillset
 
 ## What I bring to the table
 
-Across 16 years, I've run every commercial lever in ecommerce — revenue, conversion, platform, marketing, and team.
+Across 16 years, I've run every commercial lever in ecommerce: revenue, conversion, platform, marketing, and team.
 
 ### Growth & Marketing
 
 -   Ecommerce roadmap development
 -   Meta Ads (Facebook/Instagram)
 -   Google Ads & Shopping
--   Email marketing — retention & growth
+-   Email marketing: retention & growth
 -   Conversion rate optimisation (CRO)
 -   Customer acquisition strategy
 -   Customer retention & loyalty programs
@@ -147,7 +152,7 @@ Consulting
 
 ## Available for Consulting Engagements
 
-While I’m focused on finding the right full-time role, I take on a small number of consulting clients.
+I take on a small number of clients at a time: fixed-price audits, a two-week AI Strategy Sprint, or ongoing monthly support. [See the options](https://ecommerceteardown.com/consulting).
 
 Work With Me
 
@@ -165,10 +170,10 @@ Private · Delivered within 7 days
 
 -   15-min video walkthrough of your homepage
 -   Written analysis with screenshots
--   3–5 quick wins you can act on immediately
+-   3 to 5 quick wins you can act on immediately
 -   Mobile experience review
 -   Trust & credibility assessment
--   100% private — delivered to your inbox only
+-   100% private, delivered to your inbox only
 
 [Apply for a Teardown →](https://ecommerceteardown.com/free-teardown)
 
@@ -178,14 +183,15 @@ Flexible
 
 From $500
 
-AUD · Fixed scope · One-off
+AUD · Fixed scope · Day rate $2,000
 
 -   Strategy sessions & workshops
--   Deep-dive site or funnel audits
+-   Fixed-price audits: AI search readiness $1,200, ecommerce and AI growth $1,500
 -   Platform migration planning
 -   Paid media or email reviews
 -   Team training & coaching
 -   Written output & next steps
+-   AI Strategy Sprint, $4,500 over two weeks
 
 [Discuss a Project →](https://ecommerceteardown.com/consulting)
 

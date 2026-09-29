@@ -93,3 +93,26 @@ test('contact.html is hand-maintained but its header and footer match the built 
   // Positive control: the comparison must reject a drifted footer.
   assert.notEqual(grab(idx, 'footer'), grab(idx, 'footer').replace('Career game', 'Game'))
 })
+
+test('homepage: consulting positioning in title, description and hero', () => {
+  const html = read('index.html')
+  assert.match(html, /<title>Richard Kelsey \| Ecommerce and AI Growth Consultant \| Ecommerce Teardown<\/title>/)
+  assert.ok(!/Head of Ecommerce \|/.test(html))
+  assert.ok(html.includes('href="/free-teardown" class="btn btn-primary">Get a Free Teardown'))
+  assert.ok(!html.includes('>View CV<'))
+  assert.ok(!html.includes('id="open-for-role"'))
+  assert.ok(html.includes('id="how-i-help"'))
+})
+
+test('homepage: availability wording and Beer Cartel dates', () => {
+  const text = read('index.html')
+  assert.ok(text.includes('full or part time engagement'))
+  assert.ok(text.includes('until September 2025'))
+  assert.ok(!/\$6M|6 million/i.test(text), 'no new revenue figures')
+})
+
+test('homepage: AI area card exists and the AI bullet left Platform', () => {
+  const html = read('index.html')
+  assert.ok(html.includes('<h3>AI Strategy &amp; Adoption</h3>'))
+  assert.ok(!/Platform &amp; Technology[\s\S]{0,400}AI tools applied/.test(html))
+})
