@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { PAGES } from '../scripts/site.config.mjs'
 import { mdPathFor } from '../scripts/lib/outputs.mjs'
-import { read } from './helpers.mjs'
+import { read, mentionsAiTeardown } from './helpers.mjs'
 
 const cfg = JSON.parse(read('vercel.json'))
 const indexed = PAGES.filter((p) => p.index)
@@ -143,4 +143,25 @@ test('positive control: a named bot with its own group and no Disallow: /api/ is
   assert.ok(problems.some((p) => p.startsWith('GPTBot') && p.includes('Content-Signal')), problems.join('; '))
   assert.deepEqual(robotsProblems(bad, ['*']), [], 'the * group alone is fine')
   assert.equal(robotsGroups(bad).length, 2)
+})
+
+test('the withdrawn AI teardown pages redirect temporarily to /free-teardown', () => {
+  assert.ok(Array.isArray(cfg.redirects), 'no redirects array')
+  for (const source of ['/ai-teardown', '/ai-teardown-success']) {
+    const r = cfg.redirects.find((x) => x.source === source)
+    assert.ok(r, `no redirect for ${source}`)
+    assert.equal(r.destination, '/free-teardown')
+    assert.equal(r.permanent, false, `${source} must be a temporary redirect: the tool may return`)
+  }
+})
+
+test('no rewrite and no header rule refers to the AI teardown pages', () => {
+  for (const r of cfg.rewrites) assert.ok(!mentionsAiTeardown(r.source), `rewrite source ${r.source}`)
+  for (const h of cfg.headers) assert.ok(!mentionsAiTeardown(h.source), `header source ${h.source}`)
+})
+
+test('positive control: the ai-teardown check flags a string that contains it', () => {
+  assert.ok(mentionsAiTeardown('/ai-teardown'))
+  assert.ok(mentionsAiTeardown('</ai-teardown.md>; rel="alternate"'))
+  assert.ok(!mentionsAiTeardown('/free-teardown'))
 })

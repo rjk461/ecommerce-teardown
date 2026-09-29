@@ -45,10 +45,6 @@ export const PAGES = [
     schema: [], llms: null },
   { src: 'consulting.html', out: 'consulting.html', nav: 'consulting', path: '/consulting', index: true,
     schema: ['service', 'faq'], llms: { section: 'Services', label: 'Consulting' } },
-  { src: 'ai-teardown.html', out: 'ai-teardown.html', nav: null, path: '/ai-teardown', index: true,
-    schema: [], llms: { section: 'Services', label: 'AI homepage teardown' } },
-  { src: 'ai-teardown-success.html', out: 'ai-teardown-success.html', nav: null, path: '/ai-teardown-success', index: false,
-    schema: [], llms: null },
 ]
 
 /** Prices, AUD. `pages` lists every page that must state the price (a test enforces it). */

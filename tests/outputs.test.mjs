@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { PAGES, SITE } from '../scripts/site.config.mjs'
 import { sitemapXml, llmsTxt, pageMarkdown, mdPathFor, canonicalUrl } from '../scripts/lib/outputs.mjs'
-import { read, exists } from './helpers.mjs'
+import { read, exists, mentionsAiTeardown } from './helpers.mjs'
 
 const indexed = PAGES.filter((p) => p.index)
 
@@ -53,4 +53,17 @@ test('pageMarkdown drops forms and scripts and absolutises links (positive contr
   assert.ok(md.includes('# Hi'))
   assert.ok(md.includes('[x](https://ecommerceteardown.com/x)'))
   assert.ok(!md.includes('alert') && !md.includes('input'))
+})
+
+test('the withdrawn AI teardown pages leave no trace in the sitemap, llms.txt or the page files', () => {
+  assert.ok(!mentionsAiTeardown(read('sitemap.xml')), 'sitemap.xml mentions ai-teardown')
+  assert.ok(!mentionsAiTeardown(read('llms.txt')), 'llms.txt mentions ai-teardown')
+  for (const f of ['ai-teardown.md', 'ai-teardown.html', 'ai-teardown-success.html', 'src/ai-teardown.html', 'src/ai-teardown-success.html']) {
+    assert.ok(!exists(f), `${f} still exists`)
+  }
+})
+
+test('positive control: the ai-teardown check flags a string that contains it', () => {
+  assert.ok(mentionsAiTeardown('<loc>https://ecommerceteardown.com/ai-teardown</loc>'))
+  assert.ok(!mentionsAiTeardown('<loc>https://ecommerceteardown.com/free-teardown</loc>'))
 })

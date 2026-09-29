@@ -116,15 +116,6 @@
       ]
     },
     {
-      "source": "/ai-teardown",
-      "headers": [
-        {
-          "key": "Link",
-          "value": "</ai-teardown.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
-        }
-      ]
-    },
-    {
       "source": "/(.*)\\.md",
       "headers": [
         {
@@ -142,6 +133,10 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    { "source": "/ai-teardown", "destination": "/free-teardown", "permanent": false },
+    { "source": "/ai-teardown-success", "destination": "/free-teardown", "permanent": false }
   ],
   "rewrites": [
     {
@@ -220,17 +215,6 @@
         }
       ],
       "destination": "/consulting.md"
-    },
-    {
-      "source": "/ai-teardown",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/ai-teardown.md"
     }
   ]
 }

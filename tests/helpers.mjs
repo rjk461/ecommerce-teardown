@@ -12,3 +12,6 @@ export const stripTags = (html) =>
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
+
+/** True when the text mentions the withdrawn $2.99 AI teardown pages. */
+export const mentionsAiTeardown = (s) => /ai-teardown/i.test(s)
