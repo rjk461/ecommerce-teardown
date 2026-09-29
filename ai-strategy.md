@@ -60,7 +60,7 @@ This site is set up for AI search: a sitemap, structured data, an llms.txt file 
 
 ### In my own work
 
-An agent system on the Claude API that handles parts of my daily work, and a website pipeline for Australian trade businesses through Made 4 Tradies.
+An agent system on the Claude API that handles parts of my daily work.
 
 ### Training
 
