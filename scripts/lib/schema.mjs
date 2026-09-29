@@ -69,8 +69,12 @@ const service = (page, html) => ({
   offers: OFFERS.filter((o) => o.pages.includes(page.path)).map(offerFor),
 })
 
-/** Tag-stripping leaves a space where an inline tag ended ("readiness ."). Close the gap before punctuation. */
-export const tidyAnswerText = (text) => text.replace(/\s+([.,;:?!])/g, '$1')
+/**
+ * Tag-stripping leaves a space where an inline tag ended ("readiness ."). Close the gap before punctuation.
+ * A period only counts as sentence punctuation when whitespace or the end of the text follows it,
+ * so a file extension or domain such as " .csv" or " .com" is left alone.
+ */
+export const tidyAnswerText = (text) => text.replace(/\s+([,;:?!])/g, '$1').replace(/\s+\.(?=\s|$)/g, '.')
 
 const faq = (html) => ({
   '@context': CONTEXT,

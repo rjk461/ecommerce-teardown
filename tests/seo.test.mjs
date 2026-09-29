@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { PAGES, SITE } from '../scripts/site.config.mjs'
 import { seoBlock, canonicalUrl, mdPathFor } from '../scripts/lib/outputs.mjs'
-import { schemasFor } from '../scripts/lib/schema.mjs'
+import { schemasFor, tidyAnswerText } from '../scripts/lib/schema.mjs'
 import { read } from './helpers.mjs'
 
 const jsonLd = (html) =>
@@ -103,17 +103,25 @@ test('every FAQPage block carries at least one question', () => {
   }
 })
 
+// A stray space before , ; : ? ! or before a period that ends a sentence (a period before a word is an extension, not a full stop).
+const STRAY_SPACE = /[ ]([,;:?!]|[.](\s|$))/
 test('FAQ answer text has no stray space before punctuation', () => {
   const fixture =
     '<div class="faq-item"><h3>What is it?</h3><p>See <a href="/x">readiness</a>. Then <a href="/y">strategy</a>, or <em>both</em>?</p></div>'
   const [block] = schemasFor({ path: '/x', schema: ['faq'] }, fixture)
   assert.equal(block.mainEntity[0].acceptedAnswer.text, 'See readiness. Then strategy, or both?')
-  assert.ok(/ [.,;:?!]/.test('readiness .'), 'control: the pattern must be able to match a stray space')
+  assert.ok(STRAY_SPACE.test('readiness .'), 'control: the pattern must be able to match a stray space')
+  assert.ok(!STRAY_SPACE.test('see .csv files'), 'control: a space before a file extension is not stray')
+  assert.equal(tidyAnswerText('see .csv files'), 'see .csv files')
+  assert.equal(tidyAnswerText('open the .com domain'), 'open the .com domain')
+  assert.equal(tidyAnswerText('readiness .'), 'readiness.')
+  assert.equal(tidyAnswerText('readiness . Then more'), 'readiness. Then more')
+  assert.equal(tidyAnswerText('a , b ; c : d ? e !'), 'a, b; c: d? e!')
   for (const page of PAGES.filter((p) => p.schema.includes('faq'))) {
     const faq = jsonLd(read(page.out)).find((b) => b['@type'] === 'FAQPage')
     assert.ok(faq.mainEntity.length > 0, `${page.out} has no FAQ answers to check`)
     for (const q of faq.mainEntity) {
-      assert.ok(!/ [.,;:?!]/.test(q.acceptedAnswer.text), `${page.out}: stray space before punctuation in "${q.name}"`)
+      assert.ok(!STRAY_SPACE.test(q.acceptedAnswer.text), `${page.out}: stray space before punctuation in "${q.name}"`)
     }
   }
 })

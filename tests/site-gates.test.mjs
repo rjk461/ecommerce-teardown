@@ -19,6 +19,28 @@ test('the gates scan every surface (positive control for the surface list)', () 
   assert.ok(surfaces.includes('index.md'))
   assert.equal(new Set(surfaces).size, surfaces.length, 'a surface is listed twice')
   assert.equal(mdFiles.length, PAGES.filter((p) => p.index).length)
+  // The expected size is derived from the config so a legitimately added page does not break it: every page, contact.html,
+  // one .md copy per indexed page, and llms.txt. The plain floor of 21 catches the list quietly shrinking to nothing.
+  const expected = PAGES.length + 1 + PAGES.filter((p) => p.index).length + 1
+  assert.equal(surfaces.length, expected, 'the surface list is not pages + contact.html + indexed .md copies + llms.txt')
+  assert.ok(surfaces.length >= 21, `only ${surfaces.length} surfaces are scanned, expected at least 21`)
+})
+
+// stripTags drops attribute values, so the words a person or a crawler reads in alt, title, aria-label and content
+// attributes (meta descriptions, social cards) are pulled out separately and scanned with the visible text.
+// The leading whitespace requirement keeps data-title and similar names out.
+const ATTR_RE = /[\s](?:alt|title|aria-label|content)=(?:"([^"]*)"|'([^']*)')/gi
+const attrValues = (html) => [...html.matchAll(ATTR_RE)].map((m) => m[1] ?? m[2]).join(' ')
+const scannable = (rel) => {
+  const raw = read(rel)
+  return rel.endsWith('.html') ? stripTags(raw) + ' ' + attrValues(raw) : raw
+}
+
+test('attribute extraction can fail (positive control)', () => {
+  assert.equal(attrValues('<img src="/a.png" alt="A chart">'), 'A chart')
+  assert.equal(attrValues('<a href="/x" title="Go there" aria-label="Go now">x</a><meta content="Summary text">'), 'Go there Go now Summary text')
+  assert.equal(attrValues("<img alt='Single quoted'>"), 'Single quoted')
+  assert.equal(attrValues('<div data-title="hidden" class="alt"><input placeholder="you@example.com"></div>'), '')
 })
 
 // ---- Job-seeking language -------------------------------------------------
@@ -39,11 +61,16 @@ test('job-seeking scan can fail (positive control)', () => {
   assert.ok(findJobSeeking('Available Now for full-time roles').length >= 2)
   assert.deepEqual(findJobSeeking('Available for consulting, or a full or part time engagement.'), [])
   assert.deepEqual(findJobSeeking('You don' + String.fromCharCode(0x2019) + 't need a full-time hire.'), [])
+  // Attribute-borne wording: stripTags alone misses it, the attribute scan must catch it.
+  const sneaky = '<img src="/a.png" alt="Open to work: looking for my next Head of Ecommerce role"><a href="/x" aria-label="Hire me">x</a>'
+  assert.deepEqual(findJobSeeking(stripTags(sneaky)), [], 'control: visible text alone does not see the attributes')
+  assert.ok(findJobSeeking(stripTags(sneaky) + ' ' + attrValues(sneaky)).length >= 3)
+  assert.deepEqual(findJobSeeking(stripTags('<img alt="A chart of monthly revenue">') + ' ' + attrValues('<img alt="A chart of monthly revenue">')), [])
 })
 
 test('no job-seeking language on any served surface', () => {
   for (const rel of surfaces) {
-    const text = rel.endsWith('.html') ? stripTags(read(rel)) + ' ' + (read(rel).match(/content="[^"]*"/g) || []).join(' ') : read(rel)
+    const text = scannable(rel)
     assert.deepEqual(findJobSeeking(text), [], `${rel} reads like a job search`)
   }
 })
@@ -91,12 +118,14 @@ test('placeholder scan can fail (positive control)', () => {
   assert.ok(hasPlaceholder('<p>fine</p> {{name}}', 'fine'), 'a build token in the raw source is flagged even when the visible text is clean')
   assert.ok(!hasPlaceholder('<input placeholder="you@example.com"><style>.x-placeholder{}</style>', stripTags('<input placeholder="you@example.com"><style>.x-placeholder{}</style>')))
   assert.ok(!hasPlaceholder('A finished sentence about a to-do list app.'))
+  const attrBorne = '<img src="/a.png" alt="TBD"><meta content="Lorem ipsum dolor">'
+  assert.ok(!hasPlaceholder(attrBorne, stripTags(attrBorne)), 'control: visible text alone does not see the attributes')
+  assert.ok(hasPlaceholder(attrBorne, stripTags(attrBorne) + ' ' + attrValues(attrBorne)), 'a placeholder word inside an attribute is flagged')
 })
 
 test('no placeholder text on any served surface', () => {
   for (const rel of surfaces) {
-    const raw = read(rel)
-    assert.ok(!hasPlaceholder(raw, rel.endsWith('.html') ? stripTags(raw) : raw), `${rel} has placeholder text`)
+    assert.ok(!hasPlaceholder(read(rel), scannable(rel)), `${rel} has placeholder text`)
   }
 })
 
