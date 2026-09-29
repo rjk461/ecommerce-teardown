@@ -130,3 +130,13 @@ test('consulting page: title, fixed-price section, AI card, new FAQs', () => {
   assert.ok(faq.mainEntity.some((q) => /AI/.test(q.name)))
   assert.ok(faq.mainEntity.some((q) => /full or part time/.test(q.name)))
 })
+
+test('cv page: Experience framing, dates, and an indexable summary', () => {
+  const html = read('cv.html')
+  assert.match(html, /<title>Experience \| Richard Kelsey \| Ecommerce Teardown<\/title>/)
+  assert.ok(html.includes('September 2025'))
+  assert.ok(html.includes('May 2026'))
+  assert.ok(html.includes('Made 4 Tradies'))
+  assert.ok(!/2009\s*(&ndash;|-|to)\s*2024/.test(html))
+  assert.ok(html.includes('/Sample/Richard-Kelsey-CV.pdf'), 'PDF link must still work')
+})
