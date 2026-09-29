@@ -6,6 +6,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { PAGES } from './site.config.mjs'
+import { seoBlock } from './lib/outputs.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -29,6 +30,8 @@ export async function build({ root = ROOT, outDir = root } = {}) {
     }
     const header = injectNav(headerTpl, page.nav)
     body = body.replace('<!-- HEADER -->', () => header).replace('<!-- FOOTER -->', () => footerTpl)
+    if (!body.includes('<!-- SEO -->')) throw new Error(`Missing SEO marker in ${page.src}`)
+    body = body.replace('<!-- SEO -->', () => seoBlock(page, body))
     await fs.writeFile(path.join(outDir, page.out), body, 'utf8')
     written.push(page.out)
   }
