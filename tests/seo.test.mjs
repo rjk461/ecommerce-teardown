@@ -76,3 +76,29 @@ test('schemasFor returns Service with offers for the consulting page', () => {
   assert.ok(s.offers.length >= 3)
   for (const o of s.offers) assert.equal(o.priceCurrency, 'AUD')
 })
+
+test('a FAQ answer containing a script close cannot break out of the JSON-LD block (regression)', () => {
+  const html =
+    '<title>T</title><meta name="description" content="d">' +
+    '<div class="faq-item"><h3>Q?</h3><p>&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;</p></div>'
+  const page = { path: '/x', index: true, schema: ['faq'], out: 'x.html' }
+  const block = seoBlock(page, html)
+  const scriptBlocks = (block.match(/<script /g) || []).length
+  assert.equal(scriptBlocks, 1)
+  assert.equal((block.match(/<\/script>/g) || []).length, scriptBlocks, 'exactly one closing tag per script block')
+  const parsed = jsonLd(block)
+  assert.equal(parsed[0].mainEntity[0].acceptedAnswer.text, '</script><script>alert(1)</script>')
+})
+
+test('extractFaq finds every faq-item on the consulting page', async () => {
+  const { extractFaq } = await import('../scripts/lib/html.mjs')
+  const src = read('src/consulting.html')
+  assert.equal(extractFaq(src).length, (src.match(/class="faq-item"/g) || []).length)
+})
+
+test('every FAQPage block carries at least one question', () => {
+  for (const page of PAGES.filter((p) => p.index && p.schema.includes('faq'))) {
+    const faq = jsonLd(read(page.out)).find((b) => b['@type'] === 'FAQPage')
+    assert.ok(faq && faq.mainEntity.length > 0, `${page.out}: empty FAQPage`)
+  }
+})

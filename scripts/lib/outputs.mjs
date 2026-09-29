@@ -5,7 +5,7 @@ export const canonicalUrl = (page) => SITE.url + page.path
 export const mdPathFor = (page) => (page.path === '/' ? '/index.md' : `${page.path}.md`)
 
 /** JSON in a <script> block: neutralise "<" so nothing inside can close the tag. */
-const scriptJson = (obj) => JSON.stringify(obj).replace(/</g, '\u003c')
+const scriptJson = (obj) => JSON.stringify(obj).replace(/</g, '\\u003c')
 
 /** The head block that replaces the <!-- SEO --> marker. Empty for pages that are not indexed. */
 export function seoBlock(page, html) {
