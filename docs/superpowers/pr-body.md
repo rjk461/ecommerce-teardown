@@ -44,7 +44,7 @@ It does not promise rankings or citations. Sources checked on 2026-09-29:
 ### Agent Readiness score
 
 Before: 0 (Level 0, Not Ready), scanned 2026-09-29 14:46 AEST against the live site. Record: `docs/superpowers/agent-readiness-before.md`.
-After: recorded once the preview or production can be scanned. See the comment below for status.
+After: 33 (Level 2, Bot-Aware), scanned 2026-09-30 08:19 AEST on the preview. Record: `docs/superpowers/agent-readiness-after.md`. The 33 is not a target to push to 100: the rest of the checks (API catalogue, MCP, OAuth and similar) do not apply to a static consulting site. The Markdown negotiation check fails on purpose, see above. Production is re-scanned after merge.
 
 ### Checks run
 
