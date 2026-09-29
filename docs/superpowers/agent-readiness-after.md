@@ -21,4 +21,8 @@ Category scores: Discoverability 3/4 (75), Content 0/1, Bot Access Control 2/2 (
 
 ## Production scan (after merge)
 
-Not yet run.
+Scanned 2026-09-30 09:22 AEST against https://ecommerceteardown.com after PR #9 merged (squash commit 63d0888) and deployed.
+
+Overall score: 33 (Level 2, "Bot-Aware"), the same as the preview scan. Discoverability 75 (3/4: robots.txt, sitemap and Link headers pass; DNS-AID fails). Content 0 (Markdown negotiation fails on purpose, see the PR). Bot Access Control 100 (2/2). API, Auth, MCP and Skill Discovery 0/8 (not applicable to a static consulting site). Commerce: optional, not scored.
+
+The number in the "worked example" paragraph on /ai-search-readiness (0, then 33) matches, so no page change was needed.
