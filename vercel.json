@@ -51,6 +51,186 @@
           "value": "public, max-age=86400"
         }
       ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</index.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/cv",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</cv.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/articles",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</articles.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/linkedin",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</linkedin.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/free-teardown",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</free-teardown.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/sample-teardowns",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</sample-teardowns.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/consulting",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</consulting.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/ai-teardown",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</ai-teardown.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/index.md"
+    },
+    {
+      "source": "/cv",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/cv.md"
+    },
+    {
+      "source": "/articles",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/articles.md"
+    },
+    {
+      "source": "/linkedin",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/linkedin.md"
+    },
+    {
+      "source": "/free-teardown",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/free-teardown.md"
+    },
+    {
+      "source": "/sample-teardowns",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/sample-teardowns.md"
+    },
+    {
+      "source": "/consulting",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/consulting.md"
+    },
+    {
+      "source": "/ai-teardown",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/ai-teardown.md"
     }
   ]
 }

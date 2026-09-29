@@ -1,0 +1,56 @@
+# ecommerceteardown.com
+# Search, AI search and AI training crawlers are all welcome.
+# Content Signals state the preference: https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Legacy Anthropic token: not in Anthropic's current crawler documentation, kept so a scanner that still checks it finds an explicit Allow.
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://ecommerceteardown.com/sitemap.xml
