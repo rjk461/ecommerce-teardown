@@ -116,6 +116,15 @@
       ]
     },
     {
+      "source": "/ai-strategy",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</ai-strategy.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
       "source": "/(.*)\\.md",
       "headers": [
         {
@@ -215,6 +224,17 @@
         }
       ],
       "destination": "/consulting.md"
+    },
+    {
+      "source": "/ai-strategy",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/ai-strategy.md"
     }
   ]
 }
