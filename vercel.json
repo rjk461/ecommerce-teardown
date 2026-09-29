@@ -125,6 +125,15 @@
       ]
     },
     {
+      "source": "/ai-search-readiness",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</ai-search-readiness.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
       "source": "/(.*)\\.md",
       "headers": [
         {
@@ -235,6 +244,17 @@
         }
       ],
       "destination": "/ai-strategy.md"
+    },
+    {
+      "source": "/ai-search-readiness",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/ai-search-readiness.md"
     }
   ]
 }
