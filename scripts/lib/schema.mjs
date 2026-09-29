@@ -41,6 +41,16 @@ const professionalService = () => ({
   serviceType: ['Ecommerce consulting', 'AI strategy consulting', 'AI search readiness audit'],
 })
 
+const website = () => ({
+  '@context': CONTEXT,
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url + '/',
+  inLanguage: 'en-AU',
+  publisher: { '@id': PERSON_ID },
+})
+
 const offerFor = (o) => {
   const base = { '@type': 'Offer', name: o.name, description: o.description, priceCurrency: 'AUD', url: SITE.url + o.path }
   return o.from
@@ -59,13 +69,16 @@ const service = (page, html) => ({
   offers: OFFERS.filter((o) => o.pages.includes(page.path)).map(offerFor),
 })
 
+/** Tag-stripping leaves a space where an inline tag ended ("readiness ."). Close the gap before punctuation. */
+export const tidyAnswerText = (text) => text.replace(/\s+([.,;:?!])/g, '$1')
+
 const faq = (html) => ({
   '@context': CONTEXT,
   '@type': 'FAQPage',
   mainEntity: extractFaq(html).map(({ q, a }) => ({
     '@type': 'Question',
     name: q,
-    acceptedAnswer: { '@type': 'Answer', text: a },
+    acceptedAnswer: { '@type': 'Answer', text: tidyAnswerText(a) },
   })),
 })
 
@@ -73,6 +86,7 @@ export function schemasFor(page, html) {
   const makers = {
     person: () => person(),
     professionalService: () => professionalService(),
+    website: () => website(),
     service: () => service(page, html),
     faq: () => faq(html),
   }

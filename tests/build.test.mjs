@@ -96,7 +96,7 @@ test('contact.html is hand-maintained but its header and footer match the built 
 
 test('homepage: consulting positioning in title, description and hero', () => {
   const html = read('index.html')
-  assert.match(html, /<title>Richard Kelsey \| Ecommerce and AI Growth Consultant \| Ecommerce Teardown<\/title>/)
+  assert.match(html, /<title>Richard Kelsey \| Ecommerce and AI Growth Consultant<\/title>/)
   assert.ok(!/Head of Ecommerce \|/.test(html))
   assert.ok(html.includes('href="/free-teardown" class="btn btn-primary">Get a Free Teardown'))
   assert.ok(!html.includes('>View CV<'))

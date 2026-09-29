@@ -1,6 +1,6 @@
 ---
 title: Experience | Richard Kelsey | Ecommerce Teardown
-description: Richard Kelsey's experience: independent ecommerce and AI consultant since May 2026, co-founder of Beer Cartel (2009 to September 2025), board member of Retail Drinks Australia, 3x Top 50 People in Australian Ecommerce.
+description: Richard Kelsey's experience: independent ecommerce and AI consultant since May 2026, Beer Cartel co-founder (2009 to September 2025), 3x Top 50 in Australian Ecommerce.
 url: https://ecommerceteardown.com/cv
 ---
 

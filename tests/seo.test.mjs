@@ -102,3 +102,18 @@ test('every FAQPage block carries at least one question', () => {
     assert.ok(faq && faq.mainEntity.length > 0, `${page.out}: empty FAQPage`)
   }
 })
+
+test('FAQ answer text has no stray space before punctuation', () => {
+  const fixture =
+    '<div class="faq-item"><h3>What is it?</h3><p>See <a href="/x">readiness</a>. Then <a href="/y">strategy</a>, or <em>both</em>?</p></div>'
+  const [block] = schemasFor({ path: '/x', schema: ['faq'] }, fixture)
+  assert.equal(block.mainEntity[0].acceptedAnswer.text, 'See readiness. Then strategy, or both?')
+  assert.ok(/ [.,;:?!]/.test('readiness .'), 'control: the pattern must be able to match a stray space')
+  for (const page of PAGES.filter((p) => p.schema.includes('faq'))) {
+    const faq = jsonLd(read(page.out)).find((b) => b['@type'] === 'FAQPage')
+    assert.ok(faq.mainEntity.length > 0, `${page.out} has no FAQ answers to check`)
+    for (const q of faq.mainEntity) {
+      assert.ok(!/ [.,;:?!]/.test(q.acceptedAnswer.text), `${page.out}: stray space before punctuation in "${q.name}"`)
+    }
+  }
+})

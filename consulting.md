@@ -1,6 +1,6 @@
 ---
 title: Ecommerce and AI Consulting | Richard Kelsey
-description: Ecommerce growth and AI strategy for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint, and monthly consulting from a founder with 16 years running ecommerce.
+description: Ecommerce and AI consulting for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint and monthly consulting from a 16-year ecommerce founder.
 url: https://ecommerceteardown.com/consulting
 ---
 
@@ -13,7 +13,7 @@ I built and exited Beer Cartel, Australia's #1 craft beer store. P&L ownership, 
 
 [View Options →](#investment) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
 
-![Richard Kelsey presenting at Business Blueprint](https://ecommerceteardown.com/images/richard-speaking.png)
+![Richard Kelsey presenting at Business Blueprint](https://ecommerceteardown.com/images/richard-speaking.webp)
 
 Who This Is For
 

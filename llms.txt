@@ -5,14 +5,14 @@
 ## Services
 
 - [Free homepage teardown](https://ecommerceteardown.com/free-teardown.md): Submit your ecommerce site for a free private teardown. Actionable feedback from a 16-year ecommerce veteran — delivered privately to your inbox within 7 days.
-- [Consulting](https://ecommerceteardown.com/consulting.md): Ecommerce growth and AI strategy for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint, and monthly consulting from a founder with 16 years running ecommerce.
-- [AI strategy for ecommerce](https://ecommerceteardown.com/ai-strategy.md): AI strategy for Australian online retailers. Work out where AI saves time or makes money in your store, pilot two or three uses, and measure the result. From a founder who has run ecommerce for 16 years.
-- [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible your online store is to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
+- [Consulting](https://ecommerceteardown.com/consulting.md): Ecommerce and AI consulting for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint and monthly consulting from a 16-year ecommerce founder.
+- [AI strategy for ecommerce](https://ecommerceteardown.com/ai-strategy.md): AI strategy for Australian online retailers. Find where AI saves time or makes money, pilot two or three uses and measure the result. From a 16-year ecommerce founder.
+- [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
 
 ## About
 
-- [Home](https://ecommerceteardown.com/index.md): Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel from a storage shed to a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
-- [Experience](https://ecommerceteardown.com/cv.md): Richard Kelsey's experience: independent ecommerce and AI consultant since May 2026, co-founder of Beer Cartel (2009 to September 2025), board member of Retail Drinks Australia, 3x Top 50 People in Australian Ecommerce.
+- [Home](https://ecommerceteardown.com/index.md): Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel into a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
+- [Experience](https://ecommerceteardown.com/cv.md): Richard Kelsey's experience: independent ecommerce and AI consultant since May 2026, Beer Cartel co-founder (2009 to September 2025), 3x Top 50 in Australian Ecommerce.
 
 ## Writing
 

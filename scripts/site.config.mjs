@@ -30,7 +30,7 @@ export const SITE = {
  */
 export const PAGES = [
   { src: 'index.html', out: 'index.html', nav: null, path: '/', index: true,
-    schema: ['person', 'professionalService'], llms: { section: 'About', label: 'Home' } },
+    schema: ['person', 'professionalService', 'website'], llms: { section: 'About', label: 'Home' } },
   { src: 'cv.html', out: 'cv.html', nav: 'cv', path: '/cv', index: true,
     schema: ['person'], llms: { section: 'About', label: 'Experience' } },
   { src: 'articles.html', out: 'articles.html', nav: null, path: '/articles', index: true,

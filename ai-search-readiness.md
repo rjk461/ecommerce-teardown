@@ -1,6 +1,6 @@
 ---
 title: AI Search Readiness Audit | Richard Kelsey | Ecommerce Teardown
-description: A fixed-price audit of how visible your online store is to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
+description: A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
 url: https://ecommerceteardown.com/ai-search-readiness
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: AI Strategy for Ecommerce | Richard Kelsey | Ecommerce Teardown
-description: AI strategy for Australian online retailers. Work out where AI saves time or makes money in your store, pilot two or three uses, and measure the result. From a founder who has run ecommerce for 16 years.
+description: AI strategy for Australian online retailers. Find where AI saves time or makes money, pilot two or three uses and measure the result. From a 16-year ecommerce founder.
 url: https://ecommerceteardown.com/ai-strategy
 ---
 

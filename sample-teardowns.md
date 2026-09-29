@@ -31,40 +31,40 @@ High-impact improvements that can be implemented quickly to start driving conver
 
 High Impact
 
-#### 1\. Hero Section Transformation
+### 1\. Hero Section Transformation
 
 **Problem:** Text-only hero misses emotional connection.  
 **Fix:** Add a hero image of happy parent + baby, overlay proof points: "21 Years | 3M+ Nappies | Australia's #1". You have 3 seconds for emotional connection — make them count.
 
 High Impact
 
-#### 2\. Award Visibility Upgrade
+### 2\. Award Visibility Upgrade
 
 **Problem:** GOLD awards hidden on a separate page.  
 **Fix:** Create a visual award badge section on the homepage. Awards justify premium pricing — but only if they're visible.
 
 Medium Impact
 
-#### 3\. Logo Prominence
+### 3\. Logo Prominence
 
 **Fix:** Increase logo size by 40–50%. A premium brand with 21 years of heritage — your logo should command respect.
 
 Medium Impact
 
-#### 4\. Header Gap Issue
+### 4\. Header Gap Issue
 
 **Fix:** Add announcement bar content or adjust spacing between "Free Shipping" and "Login/Register". Visual inconsistencies undermine premium positioning.
 
 Medium Impact
 
-#### 5\. Reusable Nappies Clarity
+### 5\. Reusable Nappies Clarity
 
 **Problem:** "Reusables" isn't clear to new parents.  
 **Fix:** Use "reusable nappies" explicitly 2–3 times on the homepage for SEO and clarity. Never make customers guess what you sell.
 
 Medium Impact
 
-#### 6\. Reviews Quantification
+### 6\. Reviews Quantification
 
 **Fix:** Change to "2,347 Five Star Reviews" (or your actual count). Add Google Reviews badge in footer. Numbers = proof. No numbers = aspirational claims.
 
@@ -92,81 +92,81 @@ Strong trust signals (3M+ counter, awards, reviews), professional product photog
 
 ## Priority 1: Quick Wins
 
-#### 1\. Hero Section Transformation (Impact: HIGH)
+### 1\. Hero Section Transformation (Impact: HIGH)
 
 **Problem + Fix:** Text-only hero misses emotional connection. Add hero image of happy parent + baby, overlay proof points: "21 Years | 3M+ Nappies | Australia's #1".  
 **Why:** You have 3 seconds for emotional connection — make them count.
 
-#### 2\. Logo Prominence (Impact: MEDIUM)
+### 2\. Logo Prominence (Impact: MEDIUM)
 
 **Fix:** Increase logo size by 40–50%.  
 **Why:** Premium brand with 21 years heritage — your logo should command respect.
 
-#### 3\. Header Gap Issue (Impact: MEDIUM)
+### 3\. Header Gap Issue (Impact: MEDIUM)
 
 **Fix:** Add announcement bar content or adjust spacing between "Free Shipping" and "Login/Register".  
 **Why:** Visual inconsistencies undermine premium positioning.
 
-#### 4\. Award Visibility Upgrade (Impact: HIGH)
+### 4\. Award Visibility Upgrade (Impact: HIGH)
 
 **Problem + Fix:** GOLD awards hidden on a separate page. Create a visual award badge section on the homepage showing 3–4 key awards after the hero or alongside "As Seen In".  
 **Why:** Awards justify premium pricing but only if visible.
 
-#### 5\. Navigation Button Styling (Impact: MEDIUM)
+### 5\. Navigation Button Styling (Impact: MEDIUM)
 
 **Fix:** Increase navigation card sizes, reduce white space, make "Which Nappy Should I Choose?" more button-like (note: change to open in existing window).  
 **Why:** Primary navigation should be obvious and inviting.
 
-#### 6\. Reusable Nappies Clarity (Impact: MEDIUM)
+### 6\. Reusable Nappies Clarity (Impact: MEDIUM)
 
 **Problem + Fix:** "Reusables" isn't clear to parents new to reusables. Use "reusable nappies" explicitly 2–3 times on the homepage for SEO and clarity.  
 **Why:** Never make customers guess what you sell.
 
-#### 7\. Five Star Reviews Quantification (Impact: MEDIUM)
+### 7\. Five Star Reviews Quantification (Impact: MEDIUM)
 
 **Fix:** Change to "2,347 Five Star Reviews" or whatever your actual count is. Remove the "s" off "star(s)". Add Google Reviews badge in footer.  
 **Why:** Numbers = proof. No numbers = aspirational claims.
 
-#### 8\. Footer Cleanup (Impact: LOW)
+### 8\. Footer Cleanup (Impact: LOW)
 
 **Fix:** Adjust spacing so payment icons don't overlap "We Accept" text. Consolidate duplicate "About" sections.  
 **Why:** Detail-oriented customers notice messy footers.
 
 ## Priority 2: Strategic Opportunities
 
-#### 9\. Homepage Product Expansion (Impact: HIGH)
+### 9\. Homepage Product Expansion (Impact: HIGH)
 
 **Problem + Fix:** Only 4 products on the entire homepage. Add a bundles section, "Shop By Category" (4–8 tiles), "Bestsellers" (4–6 products), "New Arrivals", plus "Shop All" buttons.  
 **Why:** More products = more pathways to purchase = higher conversion.
 
-#### 10\. Authority Positioning Overhaul (Impact: VERY HIGH)
+### 10\. Authority Positioning Overhaul (Impact: VERY HIGH)
 
 **Problem + Fix:** 21 years, 3M+ nappies, multiple awards — positioned as just another shop. Hero could become "Australia's Reusable Nappy Experts Since 2004" (authority), then "3M+ Nappies | Multi-Award Winning | 21 Years". Consider adding a "Why Choose Baby BeeHinds" section.  
 **Why:** Authority positioning = premium pricing, customer loyalty, marketplace differentiation.
 
-#### 11\. Education & Objection Handling (Impact: VERY HIGH)
+### 11\. Education & Objection Handling (Impact: VERY HIGH)
 
 **The Elephant + Fix:** How do you handle poo? THE question preventing adoption, not addressed on the homepage. Add a "New to Reusables?" section: "5 Questions Every Parent Has" linking to: 1) Poo handling 2) Washing frequency 3) Cost savings 4) Environmental impact 5) Baby comfort. Include a cost savings calculator.  
 **Why:** Address objections head-on with playful honesty = higher conversion.
 
-#### 12\. Urgency & Scarcity (Impact: MEDIUM)
+### 12\. Urgency & Scarcity (Impact: MEDIUM)
 
 **Fix:** Add countdown timers to bundle offers if offering limited-time specials. Show stock levels e.g. "Only 7 left". Use honest scarcity only.  
 **Why:** Offers without deadlines get ignored.
 
-#### 13\. Enhanced Email Capture (Impact: MEDIUM)
+### 13\. Enhanced Email Capture (Impact: MEDIUM)
 
 **Fix:** Verify popup is working. Make "Join Our Hive" have instant email input (not a button). Offer: "Get 10% Off + Free Nappy Guide".  
 **Why:** Email list is your most valuable owned asset.
 
 ## Priority 3: Long-Term Enhancements
 
-#### 14\. Review Generation Strategy
+### 14\. Review Generation Strategy
 
 **Strategy:** Automated review request 14 days post-purchase. Incentive: 10% off next order. Feature reviews on the homepage, add video testimonials, respond to every review.  
 **Why:** Customer reviews convert.
 
-#### 15\. Playful Brand Elements
+### 15\. Playful Brand Elements
 
 **Opportunity + Fix:** Baby BeeHinds = Bees, but no bee character or animations. Consider an animated bee (subtle), bee mascot, hive language ("Join our hive", "Buzzing with quality"), bee illustrations on category pages.  
 **Why:** Memorable brands have personality — playful fits a baby business.
@@ -190,13 +190,13 @@ Good luck with the changes. You've got a great foundation to build on.
 **Richard Kelsey**  
 EcommerceTeardown.com
 
-#### Download Full Report
+### Download Full Report
 
 Get the complete written analysis with screenshots, prioritised action items, and strategic recommendations.
 
 [Download PDF Report](</Sample/Baby Beehinds Teardown.pdf>)
 
-#### Want one for your store?
+### Want one for your store?
 
 Submit your ecommerce site for a free private teardown. Delivered within 7 days.
 

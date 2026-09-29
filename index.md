@@ -1,6 +1,6 @@
 ---
-title: Richard Kelsey | Ecommerce and AI Growth Consultant | Ecommerce Teardown
-description: Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel from a storage shed to a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
+title: Richard Kelsey | Ecommerce and AI Growth Consultant
+description: Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel into a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
 url: https://ecommerceteardown.com/
 ---
 
@@ -10,7 +10,7 @@ url: https://ecommerceteardown.com/
 
 [Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
 
-![Richard Kelsey, Beer Cartel](https://ecommerceteardown.com/images/richard-hero.png)
+![Richard Kelsey, Beer Cartel](https://ecommerceteardown.com/images/richard-hero.webp)
 
 7-Fig Revenue Built from $0
 
