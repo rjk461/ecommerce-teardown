@@ -32,7 +32,7 @@ Header and footer: updated on every page.
 
 ### The AI readiness layer, and what it does not promise
 
-Added: `robots.txt` with Content Signals, `sitemap.xml`, `llms.txt`, a Markdown copy of every page, `Link` headers, structured data (Person, ProfessionalService, WebSite, Service, FAQPage), canonical tags, and a rewrite meant to serve Markdown when a request asks for it. That rewrite is untested on Vercel: Vercel's docs (updated 2026-08-14) say a rewrite source must not be an existing file, so it may not fire. If the live check shows it does not, the fallback is to ship the `.md` files and `Link` headers only and drop the rewrite.
+Added: `robots.txt` with Content Signals, `sitemap.xml`, `llms.txt`, a Markdown copy of every page, `Link` headers, structured data (Person, ProfessionalService, WebSite, Service, FAQPage), canonical tags, and a Markdown copy of every page that agents can find through those headers and `llms.txt`. The plan included a rewrite to serve Markdown when a request sends `Accept: text/markdown`. It was tested on the Vercel preview on 2026-09-30 and did not fire (the page still came back as HTML), which matches Vercel's docs (updated 2026-08-14: a rewrite source should not be an existing file). It has been removed rather than shipped as dead config. Everything else was confirmed live on the preview: `Link` headers, `.md` and `llms.txt` content types, the two redirects, and a normal browser still receiving HTML.
 
 It does not promise rankings or citations. Sources checked on 2026-09-29:
 
@@ -56,7 +56,7 @@ After: recorded once the preview or production can be scanned. See the comment b
 
 1. Approve the CV PDF draft: `C:\Users\rjk_4\personal-projects\ecommerce-teardown-consulting-pivot\docs\drafts\Richard-Kelsey-CV-consulting-DRAFT.pdf`. It replaces `Sample/Richard-Kelsey-CV.pdf` only after approval.
 2. Confirm the prices above once more.
-3. Confirm facts that cannot be checked while signed out of LinkedIn: the Claude Code in Action course (March 2026), the May 2026 consulting start, the personal agent system built on the Claude API, Top 50 in 2019, 2021 and 2022, five platform migrations and four email platform implementations, AI-assisted customer service and personalisation at Beer Cartel, and the "about a week" turnaround on the AI Search Readiness Audit.
+3. Confirmed by Richard on 2026-09-29: prices, CV draft, and these facts that could not be checked while signed out of LinkedIn: the Claude Code in Action course (March 2026), the May 2026 consulting start, the personal agent system built on the Claude API, Top 50 in 2019, 2021 and 2022, five platform migrations and four email platform implementations, AI-assisted customer service and personalisation at Beer Cartel, and the "about a week" turnaround on the AI Search Readiness Audit.
 3a. The live `/cv` page still shows the old CV PDF, which opens with "Head of Ecommerce and CMO". Approving the draft and swapping it in fixes that, so do not merge before then.
 4. Update the LinkedIn "Professional development" entry and check the "Open to work" banner. Both sit outside this repo.
 5. After merge: submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools.

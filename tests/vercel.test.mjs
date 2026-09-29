@@ -7,32 +7,12 @@ import { read, mentionsAiTeardown, ROOT } from './helpers.mjs'
 
 const cfg = JSON.parse(read('vercel.json'))
 const indexed = PAGES.filter((p) => p.index)
-const acceptRule = (r) => r.has?.find((h) => h.type === 'header' && h.key.toLowerCase() === 'accept')
-
-test('every indexed page has an Accept: text/markdown rewrite to its .md copy', () => {
-  for (const p of indexed) {
-    const rule = cfg.rewrites.find((r) => r.source === p.path && acceptRule(r))
-    assert.ok(rule, `no markdown rewrite for ${p.path}`)
-    assert.equal(rule.destination, mdPathFor(p))
-  }
-})
-
-test('every markdown rewrite carries the identical Accept has value', () => {
-  const rules = cfg.rewrites.filter((r) => acceptRule(r))
-  assert.equal(rules.length, indexed.length)
-  const values = new Set(rules.map((r) => JSON.stringify(r.has)))
-  assert.equal(values.size, 1, `rewrites disagree on the Accept match: ${[...values].join(' | ')}`)
-})
-
-test('the markdown rewrite matches agents and never matches a browser Accept header', () => {
-  const rule = cfg.rewrites.find((r) => acceptRule(r))
-  const re = new RegExp('^' + acceptRule(rule).value + '$')
-  assert.ok(re.test('text/markdown'))
-  assert.ok(re.test('text/markdown, text/html;q=0.9'))
-  const chrome = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
-  const firefox = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-  const wild = '*/*'
-  for (const a of [chrome, firefox, wild]) assert.ok(!re.test(a), `browser Accept matched: ${a}`)
+test('no Accept: text/markdown rewrite is configured, because Vercel does not fire it on these pages', () => {
+  // Tested live on a Vercel preview on 2026-09-30: with cleanUrls and static pages, a rewrite
+  // keyed on the Accept header never fired (Accept: text/markdown still returned text/html).
+  // Vercel's docs (vercel.json page, last updated 2026-08-14) say a rewrite source should not
+  // be a file. Agents find the Markdown through the Link header and llms.txt instead.
+  assert.equal(cfg.rewrites, undefined)
 })
 
 test('every indexed page sends a Link header pointing at its markdown copy and the sitemap', () => {
@@ -156,7 +136,7 @@ test('the withdrawn AI teardown pages redirect temporarily to /free-teardown', (
 })
 
 test('no rewrite and no header rule refers to the AI teardown pages', () => {
-  for (const r of cfg.rewrites) assert.ok(!mentionsAiTeardown(r.source), `rewrite source ${r.source}`)
+  for (const r of cfg.rewrites || []) assert.ok(!mentionsAiTeardown(r.source), `rewrite source ${r.source}`)
   for (const h of cfg.headers) assert.ok(!mentionsAiTeardown(h.source), `header source ${h.source}`)
 })
 

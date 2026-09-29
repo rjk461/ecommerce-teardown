@@ -148,108 +148,15 @@
     }
   ],
   "redirects": [
-    { "source": "/ai-teardown", "destination": "/free-teardown", "permanent": false },
-    { "source": "/ai-teardown-success", "destination": "/free-teardown", "permanent": false }
-  ],
-  "rewrites": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/index.md"
+      "source": "/ai-teardown",
+      "destination": "/free-teardown",
+      "permanent": false
     },
     {
-      "source": "/cv",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/cv.md"
-    },
-    {
-      "source": "/articles",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/articles.md"
-    },
-    {
-      "source": "/linkedin",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/linkedin.md"
-    },
-    {
-      "source": "/free-teardown",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/free-teardown.md"
-    },
-    {
-      "source": "/sample-teardowns",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/sample-teardowns.md"
-    },
-    {
-      "source": "/consulting",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/consulting.md"
-    },
-    {
-      "source": "/ai-strategy",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/ai-strategy.md"
-    },
-    {
-      "source": "/ai-search-readiness",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": ".*text/markdown.*"
-        }
-      ],
-      "destination": "/ai-search-readiness.md"
+      "source": "/ai-teardown-success",
+      "destination": "/free-teardown",
+      "permanent": false
     }
   ]
 }
