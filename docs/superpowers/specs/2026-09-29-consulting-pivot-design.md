@@ -39,7 +39,7 @@ Basis: Richard's current consulting page ($500 ad hoc, $3,500 a month for two da
 
 - Headline on LinkedIn: co-founder of Made 4 Tradies, AI and ecom leader, 3x Top 50 People in Australian Ecommerce.
 - Independent Consultant, Digital Marketing and AI Strategy, freelance, from May 2026. Projects cover ecommerce growth strategy, customer acquisition planning and practical AI implementation for marketing and operations.
-- Beer Cartel CEO and Director 2009 to Sep 2025. Retail Drinks Australia board member Nov 2019 to Aug 2025.
+- Beer Cartel CEO and Director 2009 to Sep 2025. Retail Drinks Australia board member Nov 2019 to Sep 2025 (corrected by Richard 2026-09-29, matching his CV).
 - AI credentials on the profile: Claude Code in Action (Anthropic, Mar 2026) and a set of LinkedIn and Microsoft AI courses (Sep 2025). Cite these as what they are. Do not present them as more than course completions.
 - Built systems that back up the AI claim: aiOS, ApplyHQ, the Made 4 Tradies pipeline. The AI teardown tool is not claimed (decision 10). Claim only what Richard can show.
 - Client names (Just Wines, Sans Drinks, Liquor Loot) are not used without Richard's permission.
