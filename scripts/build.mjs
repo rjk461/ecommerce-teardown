@@ -1,54 +1,46 @@
 /**
- * Stitch partials/header.html and partials/footer.html into src/*.html → root *.html
- * Run from repo root: node scripts/build.mjs
+ * Stitch partials/header.html and partials/footer.html into src/*.html -> root *.html.
+ * Run from repo root: npm run build:site
  */
-import fs from 'fs/promises'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import { PAGES } from './site.config.mjs'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const ROOT = path.join(__dirname, '..')
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
-/** nav: 'cv' | 'consulting' | null */
-const PAGES = [
-  { src: 'index.html', out: 'index.html', nav: null },
-  { src: 'cv.html', out: 'cv.html', nav: 'cv' },
-  { src: 'articles.html', out: 'articles.html', nav: null },
-  { src: 'linkedin.html', out: 'linkedin.html', nav: null },
-  { src: 'free-teardown.html', out: 'free-teardown.html', nav: null },
-  { src: 'sample-teardowns.html', out: 'sample-teardowns.html', nav: null },
-  { src: 'coming-soon.html', out: 'coming-soon.html', nav: null },
-  { src: 'consulting.html', out: 'consulting.html', nav: 'consulting' },
-  { src: 'ai-teardown.html', out: 'ai-teardown.html', nav: null },
-  { src: 'ai-teardown-success.html', out: 'ai-teardown-success.html', nav: null },
-]
-
-function injectNav(headerTpl, nav) {
-  const cvAria = nav === 'cv' ? ' aria-current="page"' : ''
-  const consAria = nav === 'consulting' ? ' aria-current="page"' : ''
-  return headerTpl
-    .replace(/__CV_ARIA__/g, cvAria)
-    .replace(/__CONSULTING_ARIA__/g, consAria)
+/** Replaces __ARIA_<KEY>__ with ` aria-current="page"` when <key> (lowercased, _ to -) is the current nav. */
+export function injectNav(headerTpl, nav) {
+  return headerTpl.replace(/__ARIA_([A-Z_]+)__/g, (_, key) =>
+    key.toLowerCase().replace(/_/g, '-') === nav ? ' aria-current="page"' : ''
+  )
 }
 
-async function main() {
-  const headerTpl = await fs.readFile(path.join(ROOT, 'partials', 'header.html'), 'utf8')
-  const footerTpl = await fs.readFile(path.join(ROOT, 'partials', 'footer.html'), 'utf8')
+/** Returns the list of files written, as paths relative to outDir. */
+export async function build({ root = ROOT, outDir = root } = {}) {
+  const headerTpl = await fs.readFile(path.join(root, 'partials', 'header.html'), 'utf8')
+  const footerTpl = await fs.readFile(path.join(root, 'partials', 'footer.html'), 'utf8')
+  const written = []
 
   for (const page of PAGES) {
-    const srcPath = path.join(ROOT, 'src', page.src)
-    let body = await fs.readFile(srcPath, 'utf8')
+    let body = await fs.readFile(path.join(root, 'src', page.src), 'utf8')
     if (!body.includes('<!-- HEADER -->') || !body.includes('<!-- FOOTER -->')) {
       throw new Error(`Missing markers in ${page.src}`)
     }
     const header = injectNav(headerTpl, page.nav)
-    body = body.replace('<!-- HEADER -->', header).replace('<!-- FOOTER -->', footerTpl)
-    await fs.writeFile(path.join(ROOT, page.out), body, 'utf8')
-    console.log('built', page.out)
+    body = body.replace('<!-- HEADER -->', () => header).replace('<!-- FOOTER -->', () => footerTpl)
+    await fs.writeFile(path.join(outDir, page.out), body, 'utf8')
+    written.push(page.out)
   }
+  return written
 }
 
-main().catch((e) => {
-  console.error(e)
-  process.exit(1)
-})
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+if (isMain) {
+  build()
+    .then((files) => files.forEach((f) => console.log('built', f)))
+    .catch((e) => {
+      console.error(e)
+      process.exit(1)
+    })
+}
