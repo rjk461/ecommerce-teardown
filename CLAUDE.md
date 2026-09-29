@@ -19,7 +19,7 @@ Edit → git commit → git push → Vercel auto-deploys (~60 seconds). No local
 
 ## Page structure
 - Homepage (index.html): `.hero { padding: 1.25rem 0 4.5rem }` — reference for spacing
-- Inner pages with hero: consulting.html, free-teardown.html, sample-teardowns.html → `.hero` class
+- Inner pages with hero: consulting.html, sample-teardowns.html → `.hero` class
 - Inner pages with page-header: articles.html, linkedin.html → `.page-header` class
 
 ## Design tokens

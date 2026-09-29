@@ -10,7 +10,7 @@ AI Search Readiness
 
 Some shoppers now ask an AI assistant what to buy before they open a store's website. The answer is built from what those systems can read on your site and across the web. I check whether they can read yours, and whether they have enough to recommend it.
 
-[Book a Coffee](https://8coffees.ecommerceteardown.com/) [Get a Free Teardown](https://ecommerceteardown.com/free-teardown)
+[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See Consulting](https://ecommerceteardown.com/consulting)
 
 ## What I check
 
@@ -89,6 +89,6 @@ About a week from the day I have access to your store and analytics.
 
 ## Want to know where you stand?
 
-Start with a free homepage teardown, or book a coffee and we can talk through the audit.
+Book a coffee and we can talk through the audit, or see the other ways I work with retailers.
 
-[Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
+[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See Consulting](https://ecommerceteardown.com/consulting)

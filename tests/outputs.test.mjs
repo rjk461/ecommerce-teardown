@@ -67,3 +67,11 @@ test('positive control: the ai-teardown check flags a string that contains it', 
   assert.ok(mentionsAiTeardown('<loc>https://ecommerceteardown.com/ai-teardown</loc>'))
   assert.ok(!mentionsAiTeardown('<loc>https://ecommerceteardown.com/free-teardown</loc>'))
 })
+
+test('the free teardown offer is withdrawn: no page, no markdown copy, no sitemap or llms.txt entry', () => {
+  for (const f of ['free-teardown.html', 'free-teardown.md', 'src/free-teardown.html']) {
+    assert.ok(!exists(f), `${f} still exists`)
+  }
+  assert.ok(!read('sitemap.xml').includes('free-teardown'))
+  assert.ok(!read('llms.txt').includes('free-teardown'))
+})

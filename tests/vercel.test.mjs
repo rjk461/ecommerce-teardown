@@ -125,12 +125,12 @@ test('positive control: a named bot with its own group and no Disallow: /api/ is
   assert.equal(robotsGroups(bad).length, 2)
 })
 
-test('the withdrawn AI teardown pages redirect temporarily to /free-teardown', () => {
+test('the withdrawn teardown pages redirect temporarily to /consulting', () => {
   assert.ok(Array.isArray(cfg.redirects), 'no redirects array')
-  for (const source of ['/ai-teardown', '/ai-teardown-success']) {
+  for (const source of ['/ai-teardown', '/ai-teardown-success', '/free-teardown']) {
     const r = cfg.redirects.find((x) => x.source === source)
     assert.ok(r, `no redirect for ${source}`)
-    assert.equal(r.destination, '/free-teardown')
+    assert.equal(r.destination, '/consulting')
     assert.equal(r.permanent, false, `${source} must be a temporary redirect: the tool may return`)
   }
 })

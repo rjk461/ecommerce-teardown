@@ -84,15 +84,6 @@
       ]
     },
     {
-      "source": "/free-teardown",
-      "headers": [
-        {
-          "key": "Link",
-          "value": "</free-teardown.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
-        }
-      ]
-    },
-    {
       "source": "/sample-teardowns",
       "headers": [
         {
@@ -150,12 +141,17 @@
   "redirects": [
     {
       "source": "/ai-teardown",
-      "destination": "/free-teardown",
+      "destination": "/consulting",
       "permanent": false
     },
     {
       "source": "/ai-teardown-success",
-      "destination": "/free-teardown",
+      "destination": "/consulting",
+      "permanent": false
+    },
+    {
+      "source": "/free-teardown",
+      "destination": "/consulting",
       "permanent": false
     }
   ]

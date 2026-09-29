@@ -67,7 +67,6 @@ test("titles carry each page's target phrase", () => {
     '/ai-strategy': /ai strategy/i,
     '/ai-search-readiness': /ai search/i,
     '/consulting': /consulting/i,
-    '/free-teardown': /teardown/i,
   }
   for (const [route, re] of Object.entries(want)) {
     const p = pages.find((x) => x.path === route)
@@ -99,7 +98,7 @@ test('no public page is an orphan, and the homepage links straight to the money 
   for (const p of pages) {
     if (p.path !== '/') assert.ok(inbound.get(p.path).size >= 1, `${p.path} has no internal link pointing to it`)
   }
-  for (const route of ['/ai-strategy', '/ai-search-readiness', '/consulting', '/free-teardown']) {
+  for (const route of ['/ai-strategy', '/ai-search-readiness', '/consulting']) {
     assert.ok(inbound.get(route).has('/'), `the homepage must link to ${route}`)
   }
 })

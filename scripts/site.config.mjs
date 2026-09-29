@@ -37,8 +37,6 @@ export const PAGES = [
     schema: [], llms: { section: 'Writing', label: 'Articles' } },
   { src: 'linkedin.html', out: 'linkedin.html', nav: null, path: '/linkedin', index: true,
     schema: [], llms: { section: 'Writing', label: 'LinkedIn posts' } },
-  { src: 'free-teardown.html', out: 'free-teardown.html', nav: null, path: '/free-teardown', index: true,
-    schema: [], llms: { section: 'Services', label: 'Free homepage teardown' } },
   { src: 'sample-teardowns.html', out: 'sample-teardowns.html', nav: null, path: '/sample-teardowns', index: true,
     schema: [], llms: { section: 'Optional', label: 'Sample teardowns' } },
   { src: 'coming-soon.html', out: 'coming-soon.html', nav: null, path: '/coming-soon', index: false,

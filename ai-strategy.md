@@ -142,4 +142,4 @@ I build small working tools myself. For bigger builds I write the brief and help
 
 Thirty minutes, in person in Sydney or on a video call, to talk through your store and where AI might help. No pitch.
 
-[Book a Coffee](https://8coffees.ecommerceteardown.com/) [Get a Free Teardown](https://ecommerceteardown.com/free-teardown)
+[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See Consulting](https://ecommerceteardown.com/consulting)

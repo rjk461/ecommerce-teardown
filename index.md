@@ -6,9 +6,9 @@ url: https://ecommerceteardown.com/
 
 # I Built Australia's #1 Craft Beer Store From _a Storage Shed._
 
-16 years. 7-figure revenue. Successful exit. I’m Richard Kelsey. I built Beer Cartel from a storage shed into Australia’s #1 online craft beer retailer, and now I help other Australian online retailers grow their stores and put AI to work where it pays. Start with a free teardown of your homepage.
+16 years. 7-figure revenue. Successful exit. I’m Richard Kelsey. I built Beer Cartel from a storage shed into Australia’s #1 online craft beer retailer, and now I help other Australian online retailers grow their stores and put AI to work where it pays. Start with a coffee and a talk about your store.
 
-[Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
+[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See Consulting](https://ecommerceteardown.com/consulting)
 
 ![Richard Kelsey, Beer Cartel](https://ecommerceteardown.com/images/richard-hero.webp)
 
@@ -158,24 +158,7 @@ Work With Me
 
 ## How I Can Help Your Business
 
-Whether you want a free look at your site or embedded consulting support, here's what's available.
-
-Free
-
-### Homepage Teardown
-
-$0
-
-Private · Delivered within 7 days
-
--   15-min video walkthrough of your homepage
--   Written analysis with screenshots
--   3 to 5 quick wins you can act on immediately
--   Mobile experience review
--   Trust & credibility assessment
--   100% private, delivered to your inbox only
-
-[Apply for a Teardown →](https://ecommerceteardown.com/free-teardown)
+Whether you want a one-off audit or embedded consulting support, here's what's available.
 
 Flexible
 

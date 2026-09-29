@@ -198,14 +198,14 @@ Get the complete written analysis with screenshots, prioritised action items, an
 
 ### Want one for your store?
 
-Submit your ecommerce site for a free private teardown. Delivered within 7 days.
+The Ecommerce and AI Growth Audit is a written review of your store with a walkthrough call. Fixed price.
 
-[Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [View Consulting Options](https://ecommerceteardown.com/consulting)
+[See the Growth Audit](https://ecommerceteardown.com/consulting) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
 
 Next step
 
 ## Get Your Own Teardown
 
-Submit your ecommerce site for a free private teardown: actionable feedback from a 16-year ecommerce veteran, delivered privately to your inbox within 7 days.
+The Ecommerce and AI Growth Audit gives you actionable feedback on your store from a 16-year ecommerce operator, written up privately with a walkthrough call.
 
-[Get a Free Teardown](https://ecommerceteardown.com/free-teardown) [View Consulting](https://ecommerceteardown.com/consulting)
+[See the Growth Audit](https://ecommerceteardown.com/consulting) [Book a Coffee](https://8coffees.ecommerceteardown.com/)

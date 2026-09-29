@@ -41,7 +41,7 @@ Simply open `index.html` in a browser. No build process required.
 
 ### AI Teardown test mode (no Stripe)
 
-**Withdrawn 2026-09-29:** the `/ai-teardown` and `/ai-teardown-success` pages are no longer part of the site (both redirect to `/free-teardown`). The `api/` functions were removed on 2026-09-29 (recoverable from git history), so the steps below no longer work; they are kept as the record of how the tool was tested.
+**Withdrawn 2026-09-29:** the `/ai-teardown` and `/ai-teardown-success` pages are no longer part of the site (both redirect to `/consulting`, as does `/free-teardown`, the free teardown offer withdrawn on 2026-09-30). The `api/` functions were removed on 2026-09-29 (recoverable from git history), so the steps below no longer work; they are kept as the record of how the tool was tested.
 
 You can generate a teardown report without a payment gateway:
 

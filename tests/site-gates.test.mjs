@@ -20,10 +20,10 @@ test('the gates scan every surface (positive control for the surface list)', () 
   assert.equal(new Set(surfaces).size, surfaces.length, 'a surface is listed twice')
   assert.equal(mdFiles.length, PAGES.filter((p) => p.index).length)
   // The expected size is derived from the config so a legitimately added page does not break it: every page, contact.html,
-  // one .md copy per indexed page, and llms.txt. The plain floor of 21 catches the list quietly shrinking to nothing.
+  // one .md copy per indexed page, and llms.txt. The plain floor of 19 (21 before the free teardown page went) catches the list quietly shrinking to nothing.
   const expected = PAGES.length + 1 + PAGES.filter((p) => p.index).length + 1
   assert.equal(surfaces.length, expected, 'the surface list is not pages + contact.html + indexed .md copies + llms.txt')
-  assert.ok(surfaces.length >= 21, `only ${surfaces.length} surfaces are scanned, expected at least 21`)
+  assert.ok(surfaces.length >= 19, `only ${surfaces.length} surfaces are scanned, expected at least 19`)
 })
 
 // stripTags drops attribute values, so the words a person or a crawler reads in alt, title, aria-label and content

@@ -54,7 +54,7 @@ test('token() and alphaColours() can find and can miss (positive controls)', () 
   assert.equal(token('--text: white;', 'text'), null)
   assert.deepEqual(alphaColours('p { color: rgba(255, 255, 255, 0.75); }'), ['color: rgba(255, 255, 255, 0.75)'])
   assert.deepEqual(alphaColours('p { border-color: rgba(1,2,3,0.5); background-color: rgba(1,2,3,0.5); }'), [])
-  assert.ok(pageSources.length >= 10 && tokenSources.includes('contact.html'), 'contact.html must be covered')
+  assert.ok(pageSources.length >= 9 && tokenSources.includes('contact.html'), 'contact.html must be covered')
 })
 
 for (const rel of tokenSources) {

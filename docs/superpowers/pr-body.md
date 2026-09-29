@@ -11,11 +11,11 @@ The site now sells consulting instead of looking for a full-time role.
 - The homepage, consulting page, menu and footer lead with ecommerce growth plus AI.
 - The CV page is now "Experience". A consulting version of the CV PDF is drafted for approval and is not live.
 - Text colours are pure white and a lighter grey for better contrast.
-- The $2.99 AI teardown page, its success page and the `api/` teardown functions are taken offline. The two old addresses redirect to `/free-teardown`.
+- The $2.99 AI teardown page, its success page and the `api/` teardown functions are taken offline. The two old addresses redirect to `/consulting`.
 
 ### Offer ladder (AUD)
 
-- Free teardown: unchanged.
+- Free teardown: withdrawn on 2026-09-30 at Richard's decision. The page, its form, every link to it, and its sitemap and llms.txt entries are gone. `/free-teardown` redirects (temporarily) to `/consulting`.
 - AI Search Readiness Audit: $1,200 fixed.
 - Ecommerce and AI Growth Audit: $1,500 fixed.
 - AI Strategy Sprint: $4,500 over two weeks.
@@ -48,7 +48,7 @@ After: 33 (Level 2, Bot-Aware), scanned 2026-09-30 08:19 AEST on the preview. Re
 
 ### Checks run
 
-- `npm test`: 124 pass, 0 fail. Covers a stale build, job-seeking wording, prices on each page, broken internal links, banned words and contrast.
+- `npm test`: 120 pass, 0 fail (the count fell because the free teardown page and its checks went). Covers a stale build, job-seeking wording, prices on each page, broken internal links, banned words and contrast.
 - Voice scan of the five changed pages: no banned words, em dashes, US spellings or AI sentence patterns.
 - Phone width (375px): no sideways scrolling on `/`, `/ai-strategy`, `/ai-search-readiness`, `/consulting`, `/cv`, `/contact`.
 
