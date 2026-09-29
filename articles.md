@@ -62,7 +62,7 @@ New articles land in your inbox. No weekly newsletters, no drip sequences. Just 
 
 ### About Richard
 
-**Richard Kelsey** built Beer Cartel from a storage shed to Australia's #1 craft beer store — 7-figure revenue, 150K+ customers, successful exit. 3× Top 50 AU Ecommerce. Now open to Head of Ecommerce and senior marketing leadership roles in Australia.
+**Richard Kelsey** built Beer Cartel from a storage shed to Australia's #1 craft beer store — 7-figure revenue, 150K+ customers, successful exit. 3× Top 50 AU Ecommerce. Now advises Australian online retailers on ecommerce growth and practical AI.
 
 [LinkedIn →](https://linkedin.com/in/richardkelsey)
 
