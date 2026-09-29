@@ -97,7 +97,7 @@ header {
   display: block;
   color: var(--text);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: calc(1.1rem + 2px);
   font-weight: 500;
   padding: 0.9rem 2rem;
   border-bottom: 1px solid var(--border);
@@ -129,7 +129,7 @@ nav .container {
 }
 
 @media (min-width: 641px) {
-  .logo a { font-size: 1.27rem; }
+  .logo a { font-size: calc(1.27rem + 2px); }
 }
 
 .nav-menu {
@@ -144,7 +144,7 @@ nav .container {
 .nav-menu li a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2px);
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   transition: color 0.2s, background 0.2s;
@@ -181,14 +181,14 @@ nav .container {
     display: block;
     white-space: nowrap;
     line-height: 1.1;
-    font-size: clamp(0.945rem, calc(2.52vw + 0.675rem), 1.638rem);
+    font-size: clamp(calc(0.945rem + 2px), calc(2.52vw + 0.675rem + 2px), calc(1.638rem + 2px));
   }
 }
 
 @supports (font-size: 1cqi) {
   @media (max-width: 640px) {
     nav .container .logo a {
-      font-size: clamp(0.945rem, calc(4.95cqi + 0.495rem), 1.638rem);
+      font-size: clamp(calc(0.945rem + 2px), calc(4.95cqi + 0.495rem + 2px), calc(1.638rem + 2px));
     }
   }
 }
@@ -209,7 +209,7 @@ footer {
 
 .footer-brand .logo-text {
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem + 2px);
   color: var(--text);
   text-decoration: none;
   display: block;
@@ -219,7 +219,7 @@ footer {
 .footer-brand .logo-text span { color: var(--green); }
 
 .footer-brand p {
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 2px);
   color: var(--muted);
   line-height: 1.6;
   margin: 0 0 1rem;
@@ -229,7 +229,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 2px);
   color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -238,7 +238,7 @@ footer {
 .footer-linkedin:hover { color: var(--text); }
 
 .footer-linkedin-count {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2px);
   color: var(--muted);
   background: var(--dark-3);
   border: 1px solid var(--border);
@@ -247,7 +247,7 @@ footer {
 }
 
 .footer-col .footer-title {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2px);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -260,7 +260,7 @@ footer {
 .footer-col ul li { margin-bottom: 0.5rem; }
 
 .footer-col ul li a {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2px);
   color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -276,7 +276,7 @@ footer {
 
 .footer-bottom p {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 2px);
   margin: 0;
 }
 
@@ -319,7 +319,7 @@ footer {
   transform: translateX(-50%);
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -335,7 +335,7 @@ footer {
 .header-links a:not(.btn) {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.4px;
@@ -365,7 +365,7 @@ footer {
 
 .footer h3 {
   color: var(--accent-yellow);
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 15px;
 }
 
@@ -393,7 +393,7 @@ footer {
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -473,7 +473,7 @@ footer {
 
 .nav-drawer-title {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -484,7 +484,7 @@ footer {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1;
   padding: 0;
   display: flex;
@@ -505,7 +505,7 @@ footer {
 
 .nav-drawer-section h3 {
   color: var(--accent-yellow);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -525,7 +525,7 @@ footer {
   display: block;
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   padding: 11px 0;
   transition: color 0.2s, padding-left 0.2s;
