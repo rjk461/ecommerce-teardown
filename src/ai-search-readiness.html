@@ -28,12 +28,13 @@
     <meta name="twitter:image" content="https://ecommerceteardown.com/images/og-image.png">
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-QS74BWRKTY');
+    // Load the Google tag after the page has finished loading so it never competes with the first paint.
+    addEventListener('load', function () { setTimeout(function () { var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QS74BWRKTY'; document.head.appendChild(s); }, 1500); });
     </script>
 
 </head>
