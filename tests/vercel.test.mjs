@@ -12,6 +12,7 @@ test('no Accept: text/markdown rewrite is configured, because Vercel does not fi
   // keyed on the Accept header never fired (Accept: text/markdown still returned text/html).
   // Vercel's docs (vercel.json page, last updated 2026-08-14) say a rewrite source should not
   // be a file. Agents find the Markdown through the Link header and llms.txt instead.
+  // Markdown negotiation is done by middleware.js instead (see tests/middleware.test.mjs).
   assert.equal(cfg.rewrites, undefined)
 })
 
