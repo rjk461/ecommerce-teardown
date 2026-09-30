@@ -13,7 +13,7 @@ const person = () => ({
   jobTitle: SITE.owner.jobTitle,
   description: SITE.summary,
   url: SITE.url + '/',
-  image: SITE.ogImage,
+  image: SITE.ownerImage,
   sameAs: [SITE.owner.linkedin],
   address: {
     '@type': 'PostalAddress',
@@ -36,6 +36,13 @@ const professionalService = () => ({
   name: SITE.name,
   url: SITE.url + '/',
   description: SITE.summary,
+  image: SITE.ownerImage,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.owner.locality,
+    addressRegion: SITE.owner.region,
+    addressCountry: SITE.owner.country,
+  },
   founder: { '@id': PERSON_ID },
   areaServed: { '@type': 'Country', name: 'Australia' },
   serviceType: ['Ecommerce consulting', 'AI strategy consulting', 'AI search readiness audit'],

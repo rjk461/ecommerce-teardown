@@ -1,6 +1,6 @@
 ---
 title: Articles | Richard Kelsey | Ecommerce Teardown
-description: Long-form writing on ecommerce strategy, marketing operations, and building Australian retail businesses, from Richard Kelsey.
+description: Upcoming articles from Richard Kelsey on email, platform migrations and ecommerce strategy for Australian retailers. Coming soon.
 url: https://ecommerceteardown.com/articles
 ---
 

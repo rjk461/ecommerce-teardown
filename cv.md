@@ -8,7 +8,7 @@ Experience
 
 # Richard Kelsey: Experience
 
-Independent ecommerce and AI consultant. 16 years building and running Australian online retail. View below or download the PDF.
+Independent ecommerce and AI consultant in Sydney. 16 years building and running Australian online retail. View below or download the PDF. To work together, see [Ecommerce Consulting](https://ecommerceteardown.com/consulting) or [AI Strategy](https://ecommerceteardown.com/ai-strategy).
 
 [Download PDF](https://ecommerceteardown.com/Sample/Richard-Kelsey-CV.pdf) [Open CV in new tab](https://ecommerceteardown.com/Sample/Richard-Kelsey-CV.pdf)
 

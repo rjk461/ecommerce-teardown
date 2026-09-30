@@ -91,4 +91,4 @@ About a week from the day I have access to your store and analytics.
 
 Book a coffee and we can talk through the audit, or see the other ways I work with retailers.
 
-[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See Consulting](https://ecommerceteardown.com/consulting)
+[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See AI Strategy](https://ecommerceteardown.com/ai-strategy) [See Consulting](https://ecommerceteardown.com/consulting)

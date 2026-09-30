@@ -1,6 +1,6 @@
 ---
 title: Richard Kelsey | Ecommerce and AI Growth Consultant
-description: Ecommerce growth and AI strategy for Australian online retailers. Richard Kelsey built Beer Cartel into a 7-figure exit and is a 3x Top 50 Australian Ecommerce name.
+description: Ecommerce growth and AI strategy for Australian retailers. Richard Kelsey built Beer Cartel into a 7-figure business, exited it, and is a 3x Top 50 AU Ecommerce name.
 url: https://ecommerceteardown.com/
 ---
 
@@ -53,7 +53,7 @@ BCom, PGDipBA · Sydney, AU
 
 ## About Richard
 
-In 2009, I co-founded Beer Cartel out of a Kennards Storage Shed with a goal to build Australia's best online craft beer store. It became **Australia's #1 online craft beer retailer**, with high 7-figure revenue, 150,000+ customers and a 4.8 Google rating. We sold in 2024 and I stayed on through the transition until September 2025.
+In 2009, I co-founded Beer Cartel out of a Kennards Storage Shed with a goal to build Australia's best online craft beer store. It became **Australia's #1 online craft beer retailer**, with 7-figure revenue, 150,000+ customers and a 4.8 Google rating. We sold in 2024 and I stayed on through the transition until September 2025.
 
 At Beer Cartel I owned the full commercial operation: **P&L, platform strategy, paid media, email, CRO, team leadership, and board reporting.** Four direct reports (Marketing, Procurement, Operations, Finance), with monthly presentations to the board.
 
