@@ -47,12 +47,17 @@ test('drift gate can fail: a stale copy is detected', () => {
   assert.notEqual(lf('a\r\nb'), lf('a\r\nc'))
 })
 
-test('header nav: AI Strategy, Consulting, Experience, Book a Coffee; no Career game', () => {
+test('header nav: Ecommerce Consulting, AI Strategy, Experience, Book a Coffee in that order; no Career game', () => {
   const html = read('index.html')
   const header = html.match(/<header>[\s\S]*?<\/header>/)[0]
-  for (const label of ['AI Strategy', 'Consulting', 'Experience', 'Book a Coffee']) {
+  const labels = ['Ecommerce Consulting', 'AI Strategy', 'Experience', 'Book a Coffee']
+  for (const label of labels) {
     assert.ok(header.includes(`>${label}</a>`), `header missing ${label}`)
   }
+  const menu = header.match(/<ul class="nav-menu">[\s\S]*?<\/ul>/)[0]
+  const order = labels.map((l) => menu.indexOf(`>${l}</a>`))
+  assert.deepEqual(order, [...order].sort((x, y) => x - y), 'nav order must be Ecommerce Consulting first')
+  assert.ok(!/>Consulting<\/a>/.test(header), 'nav label is Ecommerce Consulting')
   assert.ok(!header.includes('Career game'), 'Career game must be footer only')
   assert.ok(!/>CV</.test(header), 'nav label CV must read Experience')
 })

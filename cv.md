@@ -10,7 +10,9 @@ Experience
 
 Independent ecommerce and AI consultant. 16 years building and running Australian online retail. View below or download the PDF.
 
-[Download PDF](https://ecommerceteardown.com/Sample/Richard-Kelsey-CV.pdf) [Open in new tab](https://ecommerceteardown.com/Sample/Richard-Kelsey-CV.pdf)
+[Download PDF](https://ecommerceteardown.com/Sample/Richard-Kelsey-CV.pdf) [Open CV in new tab](https://ecommerceteardown.com/Sample/Richard-Kelsey-CV.pdf)
+
+On mobile, the preview may be limited. Use **Download PDF** or **Open CV in new tab** above for the full layout.
 
 ## At a glance
 
@@ -21,5 +23,3 @@ Independent ecommerce and AI consultant. 16 years building and running Australia
 -   **Recognition.** Top 50 People in Australian Ecommerce, Inside Retail (2019, 2021, 2022). Online Retailer of the Year, Beer & Brewer (5 times).
 -   **AI training.** Claude Code in Action (Anthropic, March 2026), plus courses on generative AI for business leaders, AI ethics and Microsoft Copilot (September 2025).
 -   **Education.** BCom, Marketing and Finance, University of Canterbury. Postgraduate Diploma in Business Administration, Massey University.
-
-On mobile, the preview may be limited. Use **Download PDF** or **Open in new tab** above for the full layout.

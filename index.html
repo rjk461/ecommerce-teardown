@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/site.css?v=4">
+    <link rel="preload" as="image" href="/images/richard-hero.webp" fetchpriority="high">
+    <link rel="stylesheet" href="/site.css?v=7">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -44,7 +45,7 @@
     </script>
 
     <!-- Reddit Pixel -->
-    <script src="/reddit-pixel.js"></script>
+    <script defer src="/reddit-pixel.js"></script>
 
     <style>
     /* ============================================================
@@ -108,36 +109,6 @@
         gap: 2rem;
       }
       .hero-photo img { max-height: 300px; object-fit: cover; object-position: top; }
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--green-dim);
-      border: 1px solid var(--green-border);
-      color: var(--green);
-      padding: 0.35rem 0.9rem;
-      border-radius: 100px;
-      font-size: calc(0.82rem + 2px);
-      font-weight: 600;
-      letter-spacing: 0.75px;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-    }
-
-    .hero-tag .dot {
-      width: 7px;
-      height: 7px;
-      background: var(--green);
-      border-radius: 50%;
-      flex-shrink: 0;
-      animation: blink 2.2s ease-in-out infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
     }
 
     .hero h1 {
@@ -238,12 +209,8 @@
 
     .role-eyebrow {
       display: inline-block;
-      background: var(--green-dim);
-      border: 1px solid var(--green-border);
       color: var(--green);
-      padding: 0.3rem 0.8rem;
-      border-radius: 4px;
-      font-size: calc(0.95rem + 2px);
+      font-size: calc(0.75rem + 2px);
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -891,8 +858,8 @@
                     <a href="/">Ecommerce <span>Teardown</span></a>
                 </div>
                 <ul class="nav-menu">
+                    <li class="nav-hide-mobile"><a href="/consulting">Ecommerce Consulting</a></li>
                     <li class="nav-hide-mobile"><a href="/ai-strategy">AI Strategy</a></li>
-                    <li class="nav-hide-mobile"><a href="/consulting">Consulting</a></li>
                     <li class="nav-hide-mobile"><a href="/cv">Experience</a></li>
                     <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a></li>
                 </ul>
@@ -902,8 +869,8 @@
             </div>
         </nav>
         <div class="mobile-menu" id="mobile-menu">
+            <a href="/consulting">Ecommerce Consulting</a>
             <a href="/ai-strategy">AI Strategy</a>
-            <a href="/consulting">Consulting</a>
             <a href="/cv">Experience</a>
             <a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a>
         </div>
@@ -930,7 +897,7 @@
                         </div>
                     </div>
                     <div class="hero-photo">
-                        <img src="/images/richard-hero.webp" width="720" height="720" fetchpriority="high" alt="Richard Kelsey, Beer Cartel" onerror="this.src='/images/richard-hero.png'">
+                        <img src="/images/richard-hero.webp" width="720" height="720" fetchpriority="high" alt="Richard Kelsey, Beer Cartel">
                     </div>
                 </div>
                 <div class="stats-strip">
@@ -999,7 +966,7 @@
             <div class="container">
                 <div class="about-sidebar">
                     <div class="about-avatar">
-                        <img src="/images/Richard%20Kelsey%20Headshot.png" width="796" height="811" loading="lazy" alt="Richard Kelsey">
+                        <img src="/images/richard-headshot-360.webp" width="360" height="367" loading="lazy" alt="Richard Kelsey">
                     </div>
                     <div>
                         <p class="about-name">Richard Kelsey</p>
@@ -1074,6 +1041,7 @@
                             <li>Conversion rate optimisation</li>
                             <li>Email/SMS lifecycle marketing</li>
                             <li>Paid media (Meta &amp; Google)</li>
+                            <li>Being found in Google and AI answers</li>
                             <li>Customer acquisition and retention</li>
                         </ul>
                     </div>
@@ -1087,6 +1055,16 @@
                         </ul>
                     </div>
                     <div class="area-card">
+                        <h3>Data &amp; Reporting</h3>
+                        <ul>
+                            <li>GA4 and tracking health checks</li>
+                            <li>Trading dashboards and weekly reporting</li>
+                            <li>Product and customer data clean-up</li>
+                            <li>Getting your data ready to use with AI</li>
+                            <li>Reporting that explains why sales moved</li>
+                        </ul>
+                    </div>
+                    <div class="area-card">
                         <h3>AI Strategy &amp; Adoption</h3>
                         <ul>
                             <li>Picking the two or three AI uses worth building</li>
@@ -1094,6 +1072,15 @@
                             <li>Customer service and email workflows with AI</li>
                             <li>Team training and adoption</li>
                             <li>Measuring what AI saves or earns</li>
+                        </ul>
+                    </div>
+                    <div class="area-card">
+                        <h3>Ongoing Support</h3>
+                        <ul>
+                            <li>Monthly fractional retainer</li>
+                            <li>Slack/email between sessions</li>
+                            <li>Team access and coaching</li>
+                            <li>Priority scheduling</li>
                         </ul>
                     </div>
                 </div>

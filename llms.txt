@@ -6,7 +6,7 @@
 
 - [Consulting](https://ecommerceteardown.com/consulting.md): Ecommerce and AI consulting for Australian online retailers. Fixed-price audits, a two-week AI Strategy Sprint and monthly consulting from a 16-year ecommerce founder.
 - [AI strategy for ecommerce](https://ecommerceteardown.com/ai-strategy.md): AI strategy for Australian online retailers. Find where AI saves time or makes money, pilot two or three uses and measure the result. From a 16-year ecommerce founder.
-- [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
+- [AI search readiness audit](https://ecommerceteardown.com/ai-search-readiness.md): A fixed-price audit of how visible your store is in Google, ChatGPT, Perplexity and AI shopping agents. $1,200, with a written report and a 45-minute walkthrough.
 
 ## About
 

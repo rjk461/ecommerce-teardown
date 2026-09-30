@@ -14,7 +14,11 @@ Most retailers I talk to have tried ChatGPT and have a folder of half-finished e
 
 ## Where AI pays off in a retailer
 
-These are the five places I look first. Each one is a repeat task with a number attached, which is what makes it easy to test.
+These are the six places I look first. Each one is a repeat task with a number attached, which is what makes it easy to test.
+
+### Data readiness
+
+AI can only use the data it can read. Product titles and attributes have gaps, customer data sits in the store, the email tool and the ad accounts, and tracking often has not been checked in a year. I start there: clean product data, one agreed definition of a customer and an order, and tracking you can trust. Clean product data also helps search engines and AI assistants understand what you sell.
 
 ### Email and lifecycle
 
@@ -24,17 +28,17 @@ Subject lines, segment definitions and first drafts of flows are quick wins. The
 
 Order status, delivery and returns questions repeat all day. AI can draft answers from your own policies for a person to approve. I have worked on AI-assisted customer service in a live retail business, so I know where it needs a human in the loop.
 
-### Product data and merchandising
-
-Titles, descriptions, attributes and categories are tedious to clean up across hundreds or thousands of products. AI is good at a first pass, and someone who knows the range still has to check it. Clean product data also helps search engines and AI assistants understand what you sell.
-
 ### Reporting and analysis
 
 Weekly trading reports, campaign summaries and questions like "why did conversion drop on Tuesday" can be answered in minutes once the data is connected. The work is in connecting the data and writing down the questions.
 
-### Content and search visibility
+### Advertising
 
-Buying guides, collection copy and FAQs written from real customer questions. Combined with the technical basics, this is one way a store gets cited in AI answers. See [AI search readiness](https://ecommerceteardown.com/ai-search-readiness).
+Meta and Google now use AI to choose audiences and placements, so the inputs decide the result: a clean product feed, working conversion tracking and creative worth testing. AI drafts and varies ad copy quickly. I have run paid media on both platforms, and I focus on measurement so you know whether the spend earned its money.
+
+### Being found in Google and AI answers
+
+Buying guides, collection copy and FAQs written from real customer questions help in Google and in AI answers, because both run on the same basics: pages a crawler can read, clear product data and answers to real questions. See [AI search readiness](https://ecommerceteardown.com/ai-search-readiness).
 
 ## How I sequence it
 
@@ -133,6 +137,14 @@ A pilot runs two to four weeks on real work, so you get a measured answer inside
 ### What if AI is not worth it for us yet?
 
 Then the audit says so. Part of the job is telling you where not to spend money.
+
+### What does data readiness mean?
+
+It means your product data, customer data and tracking are clean and consistent enough for AI to use. In practice that is complete product attributes, one agreed definition of a customer and an order, and tracking you have tested. The audit lists what to fix first.
+
+### Do I need a data warehouse first?
+
+Usually not. Most stores can start with the reports their platform, Google Analytics and email tool already give them, once those are cleaned up. A warehouse earns its cost when you sell across several channels and have questions no single tool can answer.
 
 ### Can you build it as well as advise on it?
 

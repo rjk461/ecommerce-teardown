@@ -45,7 +45,7 @@ Sydney CBD North Shore Video call
 
 [Book a Time](https://8coffees.ecommerceteardown.com/) No commitment. No pitch. Just a good conversation.
 
-![Richard Kelsey](https://ecommerceteardown.com/images/Richard%20Kelsey%20Headshot.png)
+![Richard Kelsey](https://ecommerceteardown.com/images/richard-headshot-360.webp)
 
 Richard Kelsey
 
@@ -87,6 +87,7 @@ What I Do
 -   Conversion rate optimisation
 -   Email/SMS lifecycle marketing
 -   Paid media (Meta & Google)
+-   Being found in Google and AI answers
 -   Customer acquisition and retention
 
 ### Platform & Technology
@@ -96,6 +97,14 @@ What I Do
 -   Automation and integration strategy
 -   Vendor evaluation and selection
 
+### Data & Reporting
+
+-   GA4 and tracking health checks
+-   Trading dashboards and weekly reporting
+-   Product and customer data clean-up
+-   Getting your data ready to use with AI
+-   Reporting that explains why sales moved
+
 ### AI Strategy & Adoption
 
 -   Picking the two or three AI uses worth building
@@ -103,6 +112,13 @@ What I Do
 -   Customer service and email workflows with AI
 -   Team training and adoption
 -   Measuring what AI saves or earns
+
+### Ongoing Support
+
+-   Monthly fractional retainer
+-   Slack/email between sessions
+-   Team access and coaching
+-   Priority scheduling
 
 Full Skillset
 
