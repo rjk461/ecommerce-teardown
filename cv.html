@@ -52,7 +52,7 @@
       background: var(--dark);
       color: var(--text);
       font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 18px;
+      font-size: 20px;
       margin: 0;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -79,7 +79,7 @@
     }
 
     .page-eyebrow {
-      font-size: 0.8rem;
+      font-size: calc(0.8rem + 2px);
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -88,7 +88,7 @@
     }
 
     .page-header h1 {
-      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-size: clamp(calc(2rem + 2px), calc(4vw + 2px), calc(2.75rem + 2px));
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 0 0 1rem;
@@ -96,7 +96,7 @@
     }
 
     .page-header p {
-      font-size: 1.1rem;
+      font-size: calc(1.1rem + 2px);
       color: var(--muted);
       max-width: 600px;
       margin: 0 0 1.5rem;
@@ -117,7 +117,7 @@
       font-weight: 600;
       border-radius: 8px;
       padding: 0.65rem 1.25rem;
-      font-size: 0.95rem;
+      font-size: calc(0.95rem + 2px);
       transition: opacity 0.2s, transform 0.2s;
     }
 
@@ -168,21 +168,21 @@
     .cv-fallback-note {
       display: none;
       padding: 1rem 1.25rem;
-      font-size: 0.9rem;
+      font-size: calc(0.9rem + 2px);
       color: var(--muted);
       border-top: 1px solid var(--border);
     }
 
     /* CV summary */
     .cv-summary { padding: 0 0 2rem; }
-    .cv-summary h2 { font-size: 1.4rem; margin: 0 0 1rem; }
+    .cv-summary h2 { font-size: calc(1.4rem + 2px); margin: 0 0 1rem; }
     .cv-glance { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
     .cv-glance li { color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; }
     .cv-glance li:last-child { border-bottom: none; }
     .cv-glance strong { color: var(--text); }
 
     @media (max-width: 640px) {
-      body { font-size: 20px; }
+      body { font-size: 22px; }
       .cv-iframe-wrap { min-height: 315px; }
       .cv-fallback-note { display: block; }
     }
