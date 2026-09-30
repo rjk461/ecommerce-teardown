@@ -271,13 +271,13 @@ I spent 16 years actually running an ecommerce business, not advising on one. Th
 
 ### Proven Track Record
 
-Built Beer Cartel to #1 in Australia. 3× Top 50 People in Australian Ecommerce. Multiple industry awards across 16 years.
+Built Beer Cartel to #1 in Australia. Top 50 People in Australian Ecommerce three times (Inside Retail, 2019, 2021 and 2022). Multiple industry awards across 16 years.
 
 💰
 
 ### Real Commercial Results
 
-$1M revenue in 4 days. 5:1 ROAS on a high six-figure paid media budget. Email at 30% of total revenue. Not hypothetical.
+$1M revenue in 4 days (Beer Advent Calendar, our peak year). 5:1 ROAS on a $650K annual paid media budget. Email at 30% of total revenue. Not hypothetical.
 
 ⚙️
 

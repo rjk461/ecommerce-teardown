@@ -15,7 +15,6 @@
 
 ## Writing
 
-- [Articles](https://ecommerceteardown.com/articles.md): Upcoming articles from Richard Kelsey on email, platform migrations and ecommerce strategy for Australian retailers. Coming soon.
 - [LinkedIn posts](https://ecommerceteardown.com/linkedin.md): Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.
 
 ## Optional
