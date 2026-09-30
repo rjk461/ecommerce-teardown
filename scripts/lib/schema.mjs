@@ -81,6 +81,21 @@ const service = (page, html) => ({
  * A period only counts as sentence punctuation when whitespace or the end of the text follows it,
  * so a file extension or domain such as " .csv" or " .com" is left alone.
  */
+const article = (page, html) => ({
+  '@context': CONTEXT,
+  '@type': 'Article',
+  headline: getTitle(html).split('|')[0].trim(),
+  description: getMetaDescription(html),
+  url: SITE.url + page.path,
+  mainEntityOfPage: SITE.url + page.path,
+  datePublished: page.published,
+  dateModified: page.published,
+  inLanguage: 'en-AU',
+  image: SITE.ogImage,
+  author: { '@id': PERSON_ID },
+  publisher: { '@id': PERSON_ID },
+})
+
 export const tidyAnswerText = (text) => text.replace(/\s+([,;:?!])/g, '$1').replace(/\s+\.(?=\s|$)/g, '.')
 
 const faq = (html) => ({
@@ -100,6 +115,7 @@ export function schemasFor(page, html) {
     website: () => website(),
     service: () => service(page, html),
     faq: () => faq(html),
+    article: () => article(page, html),
   }
   return page.schema.map((key) => makers[key]())
 }

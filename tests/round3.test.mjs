@@ -124,3 +124,18 @@ test('on phones the hero reads headline, photo, then body text, and /consulting 
   }
   assert.ok(!/\.hero-photo \{ display: none; \}/.test(read('consulting.html')), '/consulting must not hide its photo on phones')
 })
+
+test('the retailer study is a public page with Article schema, linked from the audit page, and states its date and denominators', () => {
+  const p = PAGES.find((x) => x.path === '/ai-readiness-study')
+  assert.ok(p && p.index, 'study page must be indexed')
+  const h = read('ai-readiness-study.html')
+  const art = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1])).find((b) => b['@type'] === 'Article')
+  assert.ok(art, 'Article schema missing')
+  assert.equal(art.datePublished, '2026-09-30')
+  assert.equal(art.author['@id'], 'https://ecommerceteardown.com/#richard-kelsey')
+  assert.match(h, /30 September 2026/)
+  assert.match(h, /Nothing here names a retailer/)
+  assert.match(h, /href="\/ai-search-readiness"/)
+  assert.match(read('ai-search-readiness.html'), /href="\/ai-readiness-study"/)
+  assert.match(read('llms.txt'), /ai-readiness-study\.md/)
+})

@@ -57,6 +57,8 @@ I did this work on ecommerceteardown.com first, so I know what it costs in time 
 
 Cloudflare’s Agent Readiness check scored this site 0 on 29 September 2026 and 33 on 30 September 2026. That is its Level 2, “Bot-Aware”. The check also tests things a static consulting site has no reason to run, such as an API catalogue or an MCP server, so 33 is not a target to chase to 100.
 
+I also ran a public-file check across 123 Australian online retailers. [Read the results](https://ecommerceteardown.com/ai-readiness-study).
+
 ### What is on this site
 
 -   A `robots.txt` that names the major search and AI crawlers and states how content may be used
