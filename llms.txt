@@ -16,6 +16,7 @@
 ## Writing
 
 - [LinkedIn posts](https://ecommerceteardown.com/linkedin.md): Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.
+- [Can AI find Australian online retailers? A 123-store study](https://ecommerceteardown.com/ai-readiness-study.md): I checked 123 Australian online retailers on 30 September 2026 for AI crawler blocks, structured data, llms.txt and more. Aggregate results, no retailers named.
 
 ## Optional
 
