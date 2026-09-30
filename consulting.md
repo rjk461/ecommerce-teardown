@@ -163,48 +163,6 @@ Full-day intensive, audit, or kick-off session. We build the strategy and priori
 
 Hands-on guidance as your team implements. Ongoing support to keep momentum and adjust as results come in.
 
-Fixed-Price Starting Points
-
-## Start with a fixed scope
-
-If you want to know what you are buying before you commit, start here. All prices in AUD.
-
-### AI Search Readiness Audit
-
-$1,200
-
-Fixed price
-
--   Written report
--   45-minute walkthrough
--   Prioritised list of fixes
-
-[How the audit works](https://ecommerceteardown.com/ai-search-readiness)
-
-### Ecommerce and AI Growth Audit
-
-$1,500
-
-Fixed price, one store
-
--   Written report
--   60-minute walkthrough
--   Growth and AI opportunities ranked
-
-### AI Strategy Sprint
-
-$4,500
-
-Fixed price, two weeks
-
--   AI roadmap for your business
--   Two or three prioritised use cases
--   A 90-day plan
-
-[About AI strategy](https://ecommerceteardown.com/ai-strategy)
-
-Prefer to work by the day? Ad hoc work is from $500 for a fixed scope, or $2,000 a day. Monthly consulting is below.
-
 How to Work With Me
 
 ## Options that fit how you operate
@@ -260,6 +218,48 @@ Scoped to your specific need
 -   Whatever the situation actually requires
 
 [Discuss Your Project →](#)
+
+Fixed-Price Starting Points
+
+## Start with a fixed scope
+
+If you want to know what you are buying before you commit, start here. All prices in AUD.
+
+### AI Search Readiness Audit
+
+$1,200
+
+Fixed price
+
+-   Written report
+-   45-minute walkthrough
+-   Prioritised list of fixes
+
+[How the audit works](https://ecommerceteardown.com/ai-search-readiness)
+
+### Ecommerce and AI Growth Audit
+
+$1,500
+
+Fixed price, one store
+
+-   Written report
+-   60-minute walkthrough
+-   Growth and AI opportunities ranked
+
+### AI Strategy Sprint
+
+$4,500
+
+Fixed price, two weeks
+
+-   AI roadmap for your business
+-   Two or three prioritised use cases
+-   A 90-day plan
+
+[About AI strategy](https://ecommerceteardown.com/ai-strategy)
+
+Prefer to work by the day? Ad hoc work is from $500 for a fixed scope, or $2,000 a day. Monthly consulting is below.
 
 Why Me
 

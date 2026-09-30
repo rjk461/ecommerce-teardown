@@ -51,6 +51,9 @@ img { max-width: 100%; height: auto; }
 .section-intro { color: var(--muted); max-width: 62ch; margin: 0 0 2rem; }
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .card-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .card-grid-3 { grid-template-columns: 1fr; } }
 .card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
 .card h3 { font-size: calc(1.15rem + 2px); margin: 0 0 0.6rem; }
 .card p { color: var(--muted); margin: 0 0 0.75rem; font-size: calc(1rem + 2px); }
