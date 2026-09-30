@@ -9,7 +9,7 @@ Fractional Ecommerce Consulting · Sydney, AU
 # 16 Years In.  
 Now Available to _Your Business._
 
-I built and exited Beer Cartel, Australia's #1 craft beer store. P&L ownership, platform strategy, paid media, email, CRO, team leadership. Available as a fractional Head of Ecommerce or for project-based consulting.
+I am a Sydney-based ecommerce consultant. I built and exited Beer Cartel, Australia's #1 craft beer store. P&L ownership, platform strategy, paid media, email, CRO, team leadership. Available as a fractional Head of Ecommerce or for project-based consulting.
 
 [View Options →](#investment) [Book a Coffee](https://8coffees.ecommerceteardown.com/)
 
@@ -55,6 +55,7 @@ What I Do
 -   Conversion rate optimisation
 -   Email lifecycle marketing
 -   Paid media (Meta & Google)
+-   Being found in Google and AI answers
 -   Customer acquisition and retention
 
 ### Platform & Technology
@@ -64,12 +65,13 @@ What I Do
 -   Automation and integration strategy
 -   Vendor evaluation and selection
 
-### Ongoing Support
+### Data & Reporting
 
--   Monthly fractional retainer
--   Slack/email between sessions
--   Team access and coaching
--   Priority scheduling
+-   GA4 and tracking health checks
+-   Trading dashboards and weekly reporting
+-   Product and customer data clean-up
+-   Getting your data ready to use with AI
+-   Reporting that explains why sales moved
 
 ### AI Strategy & Adoption
 
@@ -78,6 +80,13 @@ What I Do
 -   Customer service and email workflows with AI
 -   Team training and adoption
 -   Measuring what AI saves or earns
+
+### Ongoing Support
+
+-   Monthly fractional retainer
+-   Slack/email between sessions
+-   Team access and coaching
+-   Priority scheduling
 
 Full Skillset
 

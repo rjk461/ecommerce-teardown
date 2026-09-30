@@ -1,6 +1,6 @@
 ---
 title: AI Search Readiness Audit | Richard Kelsey | Ecommerce Teardown
-description: A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.
+description: A fixed-price audit of how visible your store is in Google, ChatGPT, Perplexity and AI shopping agents. $1,200, with a written report and a 45-minute walkthrough.
 url: https://ecommerceteardown.com/ai-search-readiness
 ---
 
@@ -14,7 +14,7 @@ Some shoppers now ask an AI assistant what to buy before they open a store's web
 
 ## What I check
 
-Four things decide whether a machine can understand a store. Most stores have gaps in at least two.
+Four things decide whether a machine can understand a store. Most stores have gaps in at least two. The same four help you show up in Google search, not only in AI answers.
 
 ### Crawler access
 
@@ -91,4 +91,4 @@ About a week from the day I have access to your store and analytics.
 
 Book a coffee and we can talk through the audit, or see the other ways I work with retailers.
 
-[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See Consulting](https://ecommerceteardown.com/consulting)
+[Book a Coffee](https://8coffees.ecommerceteardown.com/) [See AI Strategy](https://ecommerceteardown.com/ai-strategy) [See Consulting](https://ecommerceteardown.com/consulting)

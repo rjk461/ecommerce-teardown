@@ -98,7 +98,7 @@ header {
   color: var(--text);
   text-decoration: none;
   font-size: calc(1.1rem + 2px);
-  font-weight: 500;
+  font-weight: 700;
   padding: 0.9rem 2rem;
   border-bottom: 1px solid var(--border);
   transition: background 0.15s;
@@ -145,6 +145,7 @@ nav .container {
   color: var(--muted);
   text-decoration: none;
   font-size: calc(0.95rem + 2px);
+  font-weight: 700;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   transition: color 0.2s, background 0.2s;
@@ -165,6 +166,20 @@ nav .container {
 .nav-coffee:hover {
   background: #00a843 !important;
   color: #000 !important;
+}
+
+/* Mid-width desktop: keep the logo on one line by tightening the (bolder) nav links; below 860px use the hamburger */
+@media (min-width: 641px) and (max-width: 1080px) {
+  .logo a { white-space: nowrap; }
+  .nav-menu { gap: 0; }
+  .nav-menu li a { padding: 0.4rem 0.5rem; }
+  .nav-coffee { margin-left: 0.25rem; }
+}
+
+@media (max-width: 860px) {
+  .hamburger { display: flex; }
+  .nav-menu { display: none !important; }
+  .logo { flex: 1 1 auto; min-width: 0; }
 }
 
 @media (max-width: 640px) {

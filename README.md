@@ -37,7 +37,11 @@ Mexican lucha libre wrestling aesthetic meets professional ecommerce consulting,
 
 ## Local Development
 
-Simply open `index.html` in a browser. No build process required.
+Page copy lives in `src/*.html` and `partials/`. After editing, run `npm run build:site` to regenerate the root `*.html`, the `.md` copies, `sitemap.xml` and `llms.txt`, then `npm test`. Open `index.html` in a browser to preview (Vercel deploys the root files from `main`; there is no build step on Vercel).
+
+### Restoring the AI teardown tool
+
+The withdrawn teardown tool's `api/` functions live on in git at the tag `ai-teardown-tool-last-live`. To bring them back: `git checkout ai-teardown-tool-last-live -- api`, then reinstall the packages it used (`@anthropic-ai/sdk`, `@sparticuz/chromium`, `@vercel/blob`, `openai`, `resend`, `zod`) and set fresh OpenAI, Blob and Resend keys in Vercel.
 
 ### AI Teardown test mode (no Stripe)
 

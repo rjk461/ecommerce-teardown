@@ -9,9 +9,9 @@ export const mdPathFor = (page) => (page.path === '/' ? '/index.md' : `${page.pa
 /** JSON in a <script> block: neutralise "<" so nothing inside can close the tag. */
 const scriptJson = (obj) => JSON.stringify(obj).replace(/</g, '\\u003c')
 
-/** The head block that replaces the <!-- SEO --> marker. Empty for pages that are not indexed. */
+/** The head block that replaces the <!-- SEO --> marker. Pages that are not indexed get a noindex tag instead of a canonical. */
 export function seoBlock(page, html) {
-  if (!page.index) return ''
+  if (!page.index) return '<meta name="robots" content="noindex, follow">'
   const lines = [
     `<link rel="canonical" href="${canonicalUrl(page)}">`,
     `<link rel="alternate" type="text/markdown" href="${mdPathFor(page)}">`,

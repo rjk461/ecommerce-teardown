@@ -176,7 +176,7 @@ const internalRefs = (html) => [...html.matchAll(/(?:href|src)="(\/[^"]*)"/g)].m
 test('link check can fail (positive control)', () => {
   assert.equal(resolves('/definitely-not-a-page'), false)
   assert.equal(resolves('/consulting'), true)
-  assert.equal(resolves('/images/Richard%20Kelsey%20Headshot.png'), true)
+  assert.equal(resolves('/images/richard-hero.webp'), true)
   assert.equal(resolves('/images/No%20Such%20File.png'), false)
   assert.deepEqual(internalRefs('<a href="/consulting">x</a><a href="//cdn.example.com/a.js">y</a><a href="https://a.com">z</a>'), ['/consulting'])
 })

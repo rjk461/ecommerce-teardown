@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Search Readiness Audit | Richard Kelsey | Ecommerce Teardown</title>
-    <meta name="description" content="A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.">
+    <meta name="description" content="A fixed-price audit of how visible your store is in Google, ChatGPT, Perplexity and AI shopping agents. $1,200, with a written report and a 45-minute walkthrough.">
     <link rel="canonical" href="https://ecommerceteardown.com/ai-search-readiness">
     <link rel="alternate" type="text/markdown" href="/ai-search-readiness.md">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"AI Search Readiness Audit","description":"A fixed-price audit of how visible you are to ChatGPT, Perplexity, Google's AI answers and shopping agents. $1,200, with a written report and a 45-minute walkthrough.","url":"https://ecommerceteardown.com/ai-search-readiness","provider":{"@id":"https://ecommerceteardown.com/#consulting"},"areaServed":{"@type":"Country","name":"Australia"},"offers":[{"@type":"Offer","name":"AI Search Readiness Audit","description":"A fixed-price audit of how visible a retailer is to AI search and shopping agents: written report plus a 45-minute walkthrough.","priceCurrency":"AUD","url":"https://ecommerceteardown.com/ai-search-readiness","price":"1200"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://ecommerceteardown.com/#consulting","name":"Ecommerce Teardown","url":"https://ecommerceteardown.com/","description":"Richard Kelsey is an ecommerce and AI consultant based in Sydney, Australia. He co-founded Beer Cartel in 2009 and built it into Australia’s #1 online craft beer retailer, staying on until September 2025 after the 2024 sale. He has been named one of the Top 50 People in Australian Ecommerce three times by Inside Retail. He works with Australian online retailers on ecommerce growth and practical AI.","image":"https://ecommerceteardown.com/images/richard-headshot-360.webp","address":{"@type":"PostalAddress","addressLocality":"Sydney","addressRegion":"NSW","addressCountry":"AU"},"founder":{"@id":"https://ecommerceteardown.com/#richard-kelsey"},"areaServed":{"@type":"Country","name":"Australia"},"serviceType":["Ecommerce consulting","AI strategy consulting","AI search readiness audit"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"AI Search Readiness Audit","description":"A fixed-price audit of how visible your store is in Google, ChatGPT, Perplexity and AI shopping agents. $1,200, with a written report and a 45-minute walkthrough.","url":"https://ecommerceteardown.com/ai-search-readiness","provider":{"@id":"https://ecommerceteardown.com/#consulting"},"areaServed":{"@type":"Country","name":"Australia"},"offers":[{"@type":"Offer","name":"AI Search Readiness Audit","description":"A fixed-price audit of how visible a retailer is to AI search and shopping agents: written report plus a 45-minute walkthrough.","priceCurrency":"AUD","url":"https://ecommerceteardown.com/ai-search-readiness","price":"1200"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will this get my store recommended by ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"No one can promise that. What I can do is remove the things that stop AI systems reading and understanding your store, and tell you what is outside your control."}},{"@type":"Question","name":"Do I need an llms.txt file?","acceptedAnswer":{"@type":"Answer","text":"It is cheap to add and harmless, and I have one on this site. I treat it as a small extra, not a fix, because I could not find the major AI providers confirming that their crawlers use it."}},{"@type":"Question","name":"Should I block AI crawlers?","acceptedAnswer":{"@type":"Answer","text":"That depends on your business. One option is to block training crawlers and allow search and shopping crawlers. On this site I allow all of them. I will walk you through the trade-off for your store."}},{"@type":"Question","name":"Does this work on Shopify?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shopify has limits on what you can edit, so the report separates what you can change yourself from what needs an app or a developer."}},{"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"About a week from the day I have access to your store and analytics."}}]}</script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/site.css?v=4">
+    <link rel="stylesheet" href="/site.css?v=7">
     <link rel="stylesheet" href="/content-pages.css?v=1">
 
     <!-- Open Graph -->
@@ -40,7 +41,7 @@
     </script>
 
     <!-- Reddit Pixel -->
-    <script src="/reddit-pixel.js"></script>
+    <script defer src="/reddit-pixel.js"></script>
 </head>
 <body>
 
@@ -51,8 +52,8 @@
                     <a href="/">Ecommerce <span>Teardown</span></a>
                 </div>
                 <ul class="nav-menu">
+                    <li class="nav-hide-mobile"><a href="/consulting">Ecommerce Consulting</a></li>
                     <li class="nav-hide-mobile"><a href="/ai-strategy" aria-current="page">AI Strategy</a></li>
-                    <li class="nav-hide-mobile"><a href="/consulting">Consulting</a></li>
                     <li class="nav-hide-mobile"><a href="/cv">Experience</a></li>
                     <li><a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a></li>
                 </ul>
@@ -62,8 +63,8 @@
             </div>
         </nav>
         <div class="mobile-menu" id="mobile-menu">
+            <a href="/consulting">Ecommerce Consulting</a>
             <a href="/ai-strategy" aria-current="page">AI Strategy</a>
-            <a href="/consulting">Consulting</a>
             <a href="/cv">Experience</a>
             <a href="https://8coffees.ecommerceteardown.com/" target="_blank" class="nav-coffee">Book a Coffee</a>
         </div>
@@ -87,7 +88,7 @@
     <section class="content-section">
         <div class="container">
             <h2 class="section-title">What I check</h2>
-            <p class="section-intro">Four things decide whether a machine can understand a store. Most stores have gaps in at least two.</p>
+            <p class="section-intro">Four things decide whether a machine can understand a store. Most stores have gaps in at least two. The same four help you show up in Google search, not only in AI answers.</p>
             <div class="card-grid">
                 <div class="card">
                     <h3>Crawler access</h3>
@@ -187,6 +188,7 @@
             <p>Book a coffee and we can talk through the audit, or see the other ways I work with retailers.</p>
             <div class="cta-row">
                 <a href="https://8coffees.ecommerceteardown.com/" target="_blank" rel="noopener" class="btn btn-primary">Book a Coffee</a>
+                <a href="/ai-strategy" class="btn btn-secondary">See AI Strategy</a>
                 <a href="/consulting" class="btn btn-secondary">See Consulting</a>
             </div>
         </div>

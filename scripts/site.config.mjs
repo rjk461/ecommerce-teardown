@@ -8,6 +8,8 @@ export const SITE = {
   url: 'https://ecommerceteardown.com',
   name: 'Ecommerce Teardown',
   ogImage: 'https://ecommerceteardown.com/images/og-image.png',
+  // A photo of Richard, used as the Person and ProfessionalService image (og-image.png is a social-card graphic).
+  ownerImage: 'https://ecommerceteardown.com/images/richard-headshot-360.webp',
   // One facts block. llms.txt and the JSON-LD descriptions both use it, so the claims match everywhere.
   summary:
     'Richard Kelsey is an ecommerce and AI consultant based in Sydney, Australia. He co-founded Beer Cartel in 2009 and built it into Australia’s #1 online craft beer retailer, staying on until September 2025 after the 2024 sale. He has been named one of the Top 50 People in Australian Ecommerce three times by Inside Retail. He works with Australian online retailers on ecommerce growth and practical AI.',
@@ -41,12 +43,14 @@ export const PAGES = [
     schema: [], llms: { section: 'Optional', label: 'Sample teardowns' } },
   { src: 'coming-soon.html', out: 'coming-soon.html', nav: null, path: '/coming-soon', index: false,
     schema: [], llms: null },
+  { src: '404.html', out: '404.html', nav: null, path: '/404', index: false,
+    schema: [], llms: null },
   { src: 'consulting.html', out: 'consulting.html', nav: 'consulting', path: '/consulting', index: true,
-    schema: ['service', 'faq'], llms: { section: 'Services', label: 'Consulting' } },
+    schema: ['professionalService', 'service', 'faq'], llms: { section: 'Services', label: 'Consulting' } },
   { src: 'ai-strategy.html', out: 'ai-strategy.html', nav: 'ai-strategy', path: '/ai-strategy', index: true,
-    schema: ['service', 'faq'], llms: { section: 'Services', label: 'AI strategy for ecommerce' } },
+    schema: ['professionalService', 'service', 'faq'], llms: { section: 'Services', label: 'AI strategy for ecommerce' } },
   { src: 'ai-search-readiness.html', out: 'ai-search-readiness.html', nav: 'ai-strategy', path: '/ai-search-readiness', index: true,
-    schema: ['service', 'faq'], llms: { section: 'Services', label: 'AI search readiness audit' } },
+    schema: ['professionalService', 'service', 'faq'], llms: { section: 'Services', label: 'AI search readiness audit' } },
 ]
 
 /** Prices, AUD. `pages` lists every page that must state the price (a test enforces it). */

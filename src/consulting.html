@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/site.css?v=4">
+    <link rel="stylesheet" href="/site.css?v=7">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
     </script>
 
     <!-- Reddit Pixel -->
-    <script src="/reddit-pixel.js"></script>
+    <script defer src="/reddit-pixel.js"></script>
 
     <style>
     :root {
@@ -96,17 +96,12 @@
     }
 
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--green-dim);
-      border: 1px solid var(--green-border);
+      display: inline-block;
       color: var(--green);
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
-      font-size: calc(0.8rem + 2px);
-      font-weight: 600;
-      letter-spacing: 0.3px;
+      font-size: calc(0.75rem + 2px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
 
@@ -231,6 +226,11 @@
       gap: 1.25rem;
     }
 
+    /* Six areas: three across on desktop, two on tablet, one on phones */
+    .areas-grid { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 1000px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .areas-grid { grid-template-columns: 1fr; } }
+
     .service-card {
       background: var(--dark-2);
       border: 1px solid var(--border);
@@ -239,7 +239,7 @@
     }
 
     .service-card h3 {
-      1.2rem;
+      font-size: calc(1.2rem + 2px);
       font-weight: 700;
       margin: 0 0 1rem;
     }
@@ -707,8 +707,8 @@
             <div class="hero-inner">
                 <div class="hero-text">
                     <div class="hero-tag">Fractional Ecommerce Consulting · Sydney, AU</div>
-                    <h1>16 Years In.<br>Now Available to <em>Your Business.</em></h1>
-                    <p class="lead">I built and exited Beer Cartel, Australia's #1 craft beer store. P&L ownership, platform strategy, paid media, email, CRO, team leadership. Available as a fractional Head of Ecommerce or for project-based consulting.</p>
+                    <h1>16 Years In. <br>Now Available to <em>Your Business.</em></h1>
+                    <p class="lead">I am a Sydney-based ecommerce consultant. I built and exited Beer Cartel, Australia's #1 craft beer store. P&L ownership, platform strategy, paid media, email, CRO, team leadership. Available as a fractional Head of Ecommerce or for project-based consulting.</p>
                     <div class="cta-buttons">
                         <a href="#investment" class="btn-primary">View Options →</a>
                         <a href="https://8coffees.ecommerceteardown.com/" class="btn-secondary">Book a Coffee</a>
@@ -754,7 +754,7 @@
             <div class="section-label">What I Do</div>
             <h2 class="section-title">Areas I work across</h2>
             <p class="section-intro">16 years of hands-on commercial leadership. Not theory. Actual work done at scale.</p>
-            <div class="services-grid">
+            <div class="services-grid areas-grid">
                 <div class="service-card">
                     <h3>Strategy & Leadership</h3>
                     <ul>
@@ -770,6 +770,7 @@
                         <li>Conversion rate optimisation</li>
                         <li>Email lifecycle marketing</li>
                         <li>Paid media (Meta & Google)</li>
+                        <li>Being found in Google and AI answers</li>
                         <li>Customer acquisition and retention</li>
                     </ul>
                 </div>
@@ -783,12 +784,13 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Ongoing Support</h3>
+                    <h3>Data &amp; Reporting</h3>
                     <ul>
-                        <li>Monthly fractional retainer</li>
-                        <li>Slack/email between sessions</li>
-                        <li>Team access and coaching</li>
-                        <li>Priority scheduling</li>
+                        <li>GA4 and tracking health checks</li>
+                        <li>Trading dashboards and weekly reporting</li>
+                        <li>Product and customer data clean-up</li>
+                        <li>Getting your data ready to use with AI</li>
+                        <li>Reporting that explains why sales moved</li>
                     </ul>
                 </div>
                 <div class="service-card">
@@ -799,6 +801,15 @@
                         <li>Customer service and email workflows with AI</li>
                         <li>Team training and adoption</li>
                         <li>Measuring what AI saves or earns</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Ongoing Support</h3>
+                    <ul>
+                        <li>Monthly fractional retainer</li>
+                        <li>Slack/email between sessions</li>
+                        <li>Team access and coaching</li>
+                        <li>Priority scheduling</li>
                     </ul>
                 </div>
             </div>
