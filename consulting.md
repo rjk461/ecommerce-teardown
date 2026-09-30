@@ -113,7 +113,7 @@ Across 16 years, I've worked every discipline that matters in ecommerce, not as 
 
 -   Shopify, BigCommerce
 -   Platform migrations & replatforming
--   Email platforms (dotdigital, Klaviyo, Mailchimp)
+-   Email platforms (dotdigital, Klaviyo, Attentive, Mailchimp)
 -   Workflow automation
 -   Analytics & reporting (GA4)
 -   Customer support systems (Gorgias, Reamaze)
@@ -277,7 +277,7 @@ Built Beer Cartel to #1 in Australia. Top 50 People in Australian Ecommerce thre
 
 ### Real Commercial Results
 
-$1M revenue in 4 days (Beer Advent Calendar, our peak year). 5:1 ROAS on a $650K annual paid media budget. Email at 30% of total revenue. Not hypothetical.
+$1M revenue in 4 days (Beer Advent Calendar, our peak year). 5:1 ROAS on a $650K annual paid media budget. Email at 30% of total revenue. An Australian retailer increased their category conversion rate by 20% through improved merchandising. Not hypothetical.
 
 ⚙️
 
@@ -301,7 +301,7 @@ Common Questions
 
 ### How does the monthly retainer work?
 
-You get me for 2+ days per month, plus support via Slack and email in between. We schedule days in advance based on what you're working on. 1-month minimum, but most engagements run longer once there's momentum.
+You get me for 2 days per month, plus support via Slack and email in between. Extra days are available at the $2,000 day rate. We schedule days in advance based on what you're working on. 1-month minimum, but most engagements run longer once there's momentum.
 
 ### What size businesses do you work with?
 
@@ -329,6 +329,6 @@ Yes, where the fit is right. Most of my work is fixed-price projects and monthly
 
 ## Ready to talk?
 
-30 minutes. No pitch. Honest conversation about whether I can help and how. If it's not a fit, I'll tell you.
+30 minutes. No pitch. Honest conversation about whether I can help and how. If it's not a fit, I'll tell you. Prefer to talk now? Call [0405 251 864](tel:+61405251864).
 
 [Book a Coffee →](https://8coffees.ecommerceteardown.com/) [Send an Enquiry](#)

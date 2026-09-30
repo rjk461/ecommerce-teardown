@@ -124,3 +124,13 @@ test('on phones the hero reads headline, photo, then body text, and /consulting 
   }
   assert.ok(!/\.hero-photo \{ display: none; \}/.test(read('consulting.html')), '/consulting must not hide its photo on phones')
 })
+
+test('contact phone shows on every page footer, retainer is 2 days, and every email platform is named', () => {
+  for (const p of PAGES) assert.ok(read(p.out).includes('href="tel:+61405251864"'), `${p.out} footer lost the phone link`)
+  assert.ok(read('contact.html').includes('href="tel:+61405251864"'))
+  const c = read('consulting.html')
+  assert.ok(!/2\+ days/.test(c), '/consulting must not say 2+ days')
+  assert.ok(c.includes('2 days per month') && c.includes('$2,000 day rate'))
+  for (const f of ['consulting.html', 'index.html']) for (const n of ['dotdigital', 'Klaviyo', 'Attentive', 'Mailchimp']) assert.ok(read(f).includes(n), `${f} missing ${n}`)
+  assert.match(read('consulting.html'), /category conversion rate by 20%/)
+})
