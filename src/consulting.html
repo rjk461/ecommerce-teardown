@@ -34,8 +34,6 @@
     gtag('config', 'G-QS74BWRKTY');
     </script>
 
-    <!-- Reddit Pixel -->
-    <script defer src="/reddit-pixel.js"></script>
 
     <style>
     :root {
@@ -1225,7 +1223,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
                 });
                 if (response.ok) {
-                    if (typeof trackRedditEvent === 'function') trackRedditEvent('ConsultingFormSubmit');
                     var encodedName = encodeURIComponent(name);
                     var encodedEmail = encodeURIComponent(email);
                     window.location.href = 'https://calendly.com/richardjkelsey/intro-call?name=' + encodedName + '&email=' + encodedEmail;
@@ -1305,7 +1302,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
                 });
                 if (response.ok) {
-                    if (typeof trackRedditEvent === 'function') trackRedditEvent('ConsultingPackageFormSubmit');
                     var encodedName = encodeURIComponent(name);
                     var encodedEmail = encodeURIComponent(email);
                     window.location.href = 'https://calendly.com/richardjkelsey/intro-call?name=' + encodedName + '&email=' + encodedEmail;

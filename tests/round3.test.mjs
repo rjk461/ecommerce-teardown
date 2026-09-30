@@ -53,11 +53,12 @@ test('/consulting areas grid has six cards including Data & Reporting', () => {
   assert.ok(grid[0].includes('Data &amp; Reporting'))
 })
 
-test('the Reddit pixel never blocks rendering', () => {
+test('no page loads the Reddit pixel or third-party ad tags of its own', () => {
   for (const p of PAGES) {
     const h = read(p.out)
-    assert.ok(!/<script src="\/reddit-pixel\.js"/.test(h), `${p.out} loads the Reddit pixel synchronously`)
+    assert.ok(!/reddit/i.test(h), `${p.out} still mentions Reddit`)
   }
+  assert.ok(!/reddit/i.test(read('contact.html')), 'contact.html still mentions Reddit')
 })
 
 test('pages left out of the sitemap say noindex; indexed pages do not', () => {

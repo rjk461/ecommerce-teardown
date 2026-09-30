@@ -44,7 +44,7 @@ Baseline: Cloudflare Agent Readiness score 33 (Level 2), scanned 2026-09-30 09:2
 | "2+ days" versus "2 days", Klaviyo versus Attentive | Claims differ between pages; only Richard knows which is right. |
 | No client evidence for the new consulting offers | Nothing invented; a short anonymous outcome line would help. |
 | Publish one original-data article? | Original-data pages are the ones AI assistants cite most. Needs Richard's data. |
-| Is the Reddit pixel still needed? | Deferred, not removed. Removing it is the biggest single speed gain if no Reddit ads are running. |
+| Is the Reddit pixel still needed? | Answered 2026-09-30: no. Removed in a follow-up PR (pixel file, script tags and the two form-submit calls). |
 | `sharp` security advisory | `npm audit` flags it; the fix is a breaking version bump. It is a build-time tool only. |
 
 ## Richard's own actions (not done, by design)
