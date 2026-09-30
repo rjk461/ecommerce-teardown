@@ -144,7 +144,7 @@ Across 16 years, I've run every commercial lever in ecommerce: revenue, conversi
 
 -   Shopify, BigCommerce
 -   Platform migrations & replatforming
--   Email/SMS platforms (dotdigital, Attentive, Mailchimp)
+-   Email/SMS platforms (dotdigital, Klaviyo, Attentive, Mailchimp)
 -   AI tools applied to ecommerce operations
 -   Workflow automation
 -   Analytics & reporting (GA4)

@@ -37,6 +37,7 @@ const professionalService = () => ({
   url: SITE.url + '/',
   description: SITE.summary,
   image: SITE.ownerImage,
+  telephone: '+61405251864',
   address: {
     '@type': 'PostalAddress',
     addressLocality: SITE.owner.locality,
