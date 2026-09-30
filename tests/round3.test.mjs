@@ -114,3 +114,13 @@ test('the Google tag loads after the page, and no page hot-links a LinkedIn imag
   }
   assert.ok(!/content\.linkedin\.com/.test(read('contact.html')))
 })
+
+test('on phones the hero reads headline, photo, then body text, and /consulting shows its photo', () => {
+  for (const f of ['index.html', 'consulting.html']) {
+    const h = read(f)
+    assert.match(h, /\.hero-text \{ display: contents; \}/, `${f} must flatten .hero-text on phones`)
+    assert.match(h, /\.hero-photo \{ order: 2;/, `${f} photo must sit between headline and body`)
+    assert.match(h, /\.hero \.?[\w-]*\s*\{?[^}]*order: 3;|\.lead \{ order: 3; \}/, `${f} body text must come after the photo`)
+  }
+  assert.ok(!/\.hero-photo \{ display: none; \}/.test(read('consulting.html')), '/consulting must not hide its photo on phones')
+})
