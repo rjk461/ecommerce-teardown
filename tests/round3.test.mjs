@@ -104,3 +104,13 @@ test('/ai-strategy shows the six areas three across', () => {
 test('/cv intro links have their own colour, not the browser default', () => {
   assert.match(read('cv.html'), /\.page-header p a \{ color: var\(--green\)/)
 })
+
+test('the Google tag loads after the page, and no page hot-links a LinkedIn image', () => {
+  for (const p of PAGES) {
+    const h = read(p.out)
+    assert.ok(!/<script async src="https:\/\/www\.googletagmanager\.com/.test(h), `${p.out} loads the Google tag in the head`)
+    if (/gtag\('config'/.test(h)) assert.ok(/googletagmanager\.com\/gtag\/js\?id=G-QS74BWRKTY/.test(h), `${p.out} lost the Google tag`)
+    assert.ok(!/content\.linkedin\.com/.test(h), `${p.out} hot-links a LinkedIn image`)
+  }
+  assert.ok(!/content\.linkedin\.com/.test(read('contact.html')))
+})
