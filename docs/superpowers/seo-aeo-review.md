@@ -76,3 +76,9 @@ Lab measure, local, mobile emulation (4x CPU slowdown, 1.6 Mbps, 150 ms latency,
 | /ai-strategy | 1,616 ms | 1,528 ms |
 
 These differences are inside run-to-run noise, so this measure shows no gain and no loss from the site's own files. It cannot show the main cost PageSpeed Insights reported (the Reddit pixel pulling a second script from Reddit's servers while blocking the page), because those requests were blocked to keep the test repeatable. The target (LCP at or under 2.5 s, Performance 90 or more) is therefore not yet confirmed. The real check is PageSpeed Insights on production after merge.
+
+## Production readings after merge, 2026-09-30
+
+- Agent Readiness scan (isitagentready.com, 4:17 pm AEST): 40, Level 4 (was 33, Level 2). Content check 1/1 after Markdown negotiation shipped. The remaining 0/8 items describe APIs, sign-in and payments this site does not have, so they are left alone.
+- PageSpeed Insights mobile, one run each, about 4:18 to 4:32 pm: home 98, /cv 99, /ai-strategy 100, /consulting 99. Best Practices, Accessibility and SEO 100 on every page tested. Lab scores vary by about 5 points run to run.
+- Google Search Console: sitemap status Success, 8 pages discovered.
