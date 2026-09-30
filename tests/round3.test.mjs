@@ -87,3 +87,19 @@ test('custom 404 page exists, is noindex and links home', () => {
   assert.match(h, /noindex/)
   assert.match(h, /href="\/"/)
 })
+
+test('/consulting shows How to Work With Me above Fixed-Price Starting Points', () => {
+  const h = read('consulting.html')
+  const a = h.indexOf('How to Work With Me')
+  const b = h.indexOf('Fixed-Price Starting Points')
+  assert.ok(a > 0 && b > 0 && a < b)
+})
+
+test('/ai-strategy shows the six areas three across', () => {
+  assert.match(read('ai-strategy.html'), /class="card-grid card-grid-3"/)
+  assert.match(read('content-pages.css'), /\.card-grid-3 \{ grid-template-columns: repeat\(3, 1fr\); \}/)
+})
+
+test('/cv intro links have their own colour, not the browser default', () => {
+  assert.match(read('cv.html'), /\.page-header p a \{ color: var\(--green\)/)
+})
