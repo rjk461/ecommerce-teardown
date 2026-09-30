@@ -39,6 +39,10 @@ Mexican lucha libre wrestling aesthetic meets professional ecommerce consulting,
 
 Page copy lives in `src/*.html` and `partials/`. After editing, run `npm run build:site` to regenerate the root `*.html`, the `.md` copies, `sitemap.xml` and `llms.txt`, then `npm test`. Open `index.html` in a browser to preview (Vercel deploys the root files from `main`; there is no build step on Vercel).
 
+### Telling Bing about new or changed pages (IndexNow)
+
+After a merge has deployed, run `npm run indexnow` to submit every URL in `sitemap.xml`, or `npm run indexnow -- <url>` for one page. It needs the site live first, because IndexNow checks the key file at the site root. The key is public by design.
+
 ### Restoring the AI teardown tool
 
 The withdrawn teardown tool's `api/` functions live on in git at the tag `ai-teardown-tool-last-live`. To bring them back: `git checkout ai-teardown-tool-last-live -- api`, then reinstall the packages it used (`@anthropic-ai/sdk`, `@sparticuz/chromium`, `@vercel/blob`, `openai`, `resend`, `zod`) and set fresh OpenAI, Blob and Resend keys in Vercel.
