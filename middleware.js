@@ -6,7 +6,7 @@
 import { next, rewrite } from '@vercel/functions'
 
 export const config = {
-  matcher: ['/', '/consulting', '/ai-strategy', '/ai-search-readiness', '/cv', '/articles', '/linkedin', '/sample-teardowns'],
+  matcher: ['/', '/consulting', '/ai-strategy', '/ai-search-readiness', '/cv', '/linkedin', '/sample-teardowns'],
 }
 
 export default function middleware(request) {
