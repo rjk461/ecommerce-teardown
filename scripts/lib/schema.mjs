@@ -90,7 +90,7 @@ const article = (page, html) => ({
   url: SITE.url + page.path,
   mainEntityOfPage: SITE.url + page.path,
   datePublished: page.published,
-  dateModified: page.published,
+  dateModified: page.modified || page.published,
   inLanguage: 'en-AU',
   image: SITE.ogImage,
   author: { '@id': PERSON_ID },

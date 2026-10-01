@@ -168,7 +168,7 @@ nav .container {
   color: #000 !important;
 }
 
-/* Mid-width desktop: keep the logo on one line by tightening the (bolder) nav links; below 860px use the hamburger */
+/* Mid-width desktop: keep the logo on one line by tightening the (bolder) nav links; below 980px use the hamburger (the phone number needs the room) */
 @media (min-width: 641px) and (max-width: 1080px) {
   .logo a { white-space: nowrap; }
   .nav-menu { gap: 0; }
@@ -176,7 +176,7 @@ nav .container {
   .nav-coffee { margin-left: 0.25rem; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 979px) {
   .hamburger { display: flex; }
   .nav-menu { display: none !important; }
   .logo { flex: 1 1 auto; min-width: 0; }
