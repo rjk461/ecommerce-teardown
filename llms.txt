@@ -15,6 +15,7 @@
 
 ## Writing
 
+- [Articles](https://ecommerceteardown.com/articles.md): Research and plain-English guides on ecommerce and AI for Australian online retailers, by Richard Kelsey.
 - [LinkedIn posts](https://ecommerceteardown.com/linkedin.md): Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.
 - [Can AI find Australian online retailers? A 123-store study](https://ecommerceteardown.com/ai-readiness-study.md): What 123 Australian online retailers do about AI crawlers, what blocking them means, and what a store owner can do. Plain-English results, no retailers named.
 

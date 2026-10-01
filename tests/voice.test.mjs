@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { read, stripTags } from './helpers.mjs'
 
 // Pages written from scratch for this project. Add new pages here.
-export const NEW_PAGES = ['src/ai-strategy.html', 'src/ai-search-readiness.html', 'src/ai-readiness-study.html']
+export const NEW_PAGES = ['src/ai-strategy.html', 'src/ai-search-readiness.html', 'src/ai-readiness-study.html', 'src/articles.html']
 
 const BANNED = [
   'delve', 'realm', 'harness', 'unlock', 'tapestry', 'paradigm', 'cutting-edge', 'revolutionize', 'landscape',
