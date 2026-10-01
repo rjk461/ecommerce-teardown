@@ -149,3 +149,30 @@ test('contact phone shows on every page footer, retainer is 2 days, and every em
   for (const f of ['consulting.html', 'index.html']) for (const n of ['dotdigital', 'Klaviyo', 'Attentive', 'Mailchimp']) assert.ok(read(f).includes(n), `${f} missing ${n}`)
   assert.match(read('consulting.html'), /category conversion rate by 20%/)
 })
+
+test('the study explains why it matters, what blocking means per crawler, and calls out that the llms.txt file is Shopify text', () => {
+  const h = read('ai-readiness-study.html')
+  assert.match(h, /Why this matters, in plain English/)
+  assert.match(h, /What blocking an AI crawler actually means/)
+  for (const bot of ['OAI-SearchBot', 'GPTBot', 'Claude-SearchBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'CCBot']) {
+    assert.match(h, new RegExp(`<td data-label="Crawler">${bot} `), `crawler table missing ${bot}`)
+  }
+  assert.match(h, /Google says it does not affect whether you appear in Google Search/)
+  assert.match(h, /It is Shopify's text, and part of it promotes Shopify/)
+  assert.match(h, /20 of the 23 Shopify files are the same template/)
+  assert.match(h, /28 May 2026/)
+  assert.match(h, /Shopify's own Shop skill/)
+  assert.match(h, /I have not measured how many shoppers use these tools/)
+  const art = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1])).find((b) => b['@type'] === 'Article')
+  assert.equal(art.dateModified, '2026-10-01')
+  assert.equal(art.datePublished, '2026-09-30')
+})
+
+test('the header shows the phone number on desktop and in the mobile menu, and the hamburger takes over before the bar can overflow', () => {
+  const h = read('index.html')
+  const header = h.match(/<header>[\s\S]*?<\/header>/)[0]
+  assert.equal((header.match(/href="tel:\+61405251864"/g) || []).length, 2, 'desktop bar and mobile menu each need the tel link')
+  const menu = header.match(/<ul class="nav-menu">[\s\S]*?<\/ul>/)[0]
+  assert.ok(menu.indexOf('0405 251 864') > menu.indexOf('>Experience</a>') && menu.indexOf('0405 251 864') < menu.indexOf('>Book a Coffee</a>'), 'phone sits between Experience and Book a Coffee')
+  assert.match(read('site.css'), /@media \(max-width: 979px\) \{\s*\.hamburger \{ display: flex; \}/)
+})
