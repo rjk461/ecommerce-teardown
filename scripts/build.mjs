@@ -8,6 +8,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { PAGES } from './site.config.mjs'
 import { seoBlock, sitemapXml, llmsTxt, pageMarkdown, mdPathFor } from './lib/outputs.mjs'
 import { getTitle, getMetaDescription } from './lib/html.mjs'
+import { agentFiles } from './lib/agent.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -50,6 +51,11 @@ export async function build({ root = ROOT, outDir = root } = {}) {
   await fs.writeFile(path.join(outDir, 'sitemap.xml'), sitemapXml(PAGES), 'utf8')
   await fs.writeFile(path.join(outDir, 'llms.txt'), llmsTxt(entries), 'utf8')
   written.push('sitemap.xml', 'llms.txt')
+  for (const f of agentFiles()) {
+    await fs.mkdir(path.dirname(path.join(outDir, f.path)), { recursive: true })
+    await fs.writeFile(path.join(outDir, f.path), f.content, 'utf8')
+    written.push(f.path)
+  }
   return written
 }
 

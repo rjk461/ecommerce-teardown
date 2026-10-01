@@ -1261,6 +1261,29 @@
             </div>
         </div>
     </footer>
+    <script>
+    // WebMCP: offers two read-only tools to browsers that support it. Nothing runs, and nothing is sent, unless an agent calls a tool.
+    (function () {
+      var mc = document.modelContext || navigator.modelContext;
+      if (!mc || !mc.registerTool) return;
+      function add(tool) { try { var r = mc.registerTool(tool); if (r && r.catch) r.catch(function () {}); } catch (e) {} }
+      var text = function (t) { return { content: [{ type: 'text', text: t }] }; };
+      add({
+        name: 'get_services_and_prices',
+        description: 'Returns the consulting services on this site with current AUD prices and how to enquire.',
+        inputSchema: { type: 'object', properties: {} },
+        annotations: { readOnlyHint: true },
+        execute: function () { return fetch('/.well-known/agent-skills/ecommerce-teardown-consulting/SKILL.md').then(function (r) { return r.text(); }).then(text); }
+      });
+      add({
+        name: 'get_booking_options',
+        description: 'Returns how to book an intro call or contact Richard Kelsey. This does not book anything by itself.',
+        inputSchema: { type: 'object', properties: {} },
+        annotations: { readOnlyHint: true },
+        execute: function () { return Promise.resolve(text('Book a coffee at https://8coffees.ecommerceteardown.com/ or phone +61 405 251 864.')); }
+      });
+    })();
+    </script>
 
 
 <script>
