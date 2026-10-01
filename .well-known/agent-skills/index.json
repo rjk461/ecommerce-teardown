@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "ecommerce-teardown-consulting",
+      "type": "skill-md",
+      "description": "Who Richard Kelsey is, what the consulting services cost, and how to book, for Australian online retailers.",
+      "url": "https://ecommerceteardown.com/.well-known/agent-skills/ecommerce-teardown-consulting/SKILL.md",
+      "digest": "sha256:33d50860f7f03689308b045201339a3e88e120a8e57b04a84f668ecf6bc6f324"
+    }
+  ]
+}

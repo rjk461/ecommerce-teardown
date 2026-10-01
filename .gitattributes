@@ -1,0 +1,2 @@
+# Agent discovery files carry a SHA-256 digest of their exact bytes, so never convert their line endings.
+.well-known/** -text

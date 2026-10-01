@@ -1,0 +1,31 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Ecommerce Teardown",
+    "identifier": "ecommerceteardown.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:ecommerceteardown.com:skill:ecommerce-teardown-consulting",
+      "displayName": "Ecommerce Teardown consulting: services, prices and how to book",
+      "type": "text/markdown",
+      "url": "https://ecommerceteardown.com/.well-known/agent-skills/ecommerce-teardown-consulting/SKILL.md",
+      "representativeQueries": [
+        "who can audit my Australian online store for AI search readiness",
+        "how much does an AI search readiness audit cost in Australia",
+        "ecommerce consultant in Sydney with fixed-price audits",
+        "how do I book an ecommerce and AI strategy consultant"
+      ]
+    },
+    {
+      "identifier": "urn:air:ecommerceteardown.com:index:llms-txt",
+      "displayName": "Ecommerce Teardown site index (llms.txt)",
+      "type": "text/plain",
+      "url": "https://ecommerceteardown.com/llms.txt",
+      "representativeQueries": [
+        "what pages does ecommerceteardown.com have",
+        "Markdown copies of the Ecommerce Teardown pages"
+      ]
+    }
+  ]
+}
