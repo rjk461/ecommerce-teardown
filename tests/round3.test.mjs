@@ -176,3 +176,14 @@ test('the header shows the phone number on desktop and in the mobile menu, and t
   assert.ok(menu.indexOf('0405 251 864') > menu.indexOf('>Experience</a>') && menu.indexOf('0405 251 864') < menu.indexOf('>Book a Coffee</a>'), 'phone sits between Experience and Book a Coffee')
   assert.match(read('site.css'), /@media \(max-width: 979px\) \{\s*\.hamburger \{ display: flex; \}/)
 })
+
+test('/articles is live with the study as its only article, no placeholders, no client names, and is indexed', () => {
+  const h = read('articles.html')
+  assert.doesNotMatch(h, /noindex/)
+  assert.match(h, /<link rel="canonical" href="https:\/\/ecommerceteardown\.com\/articles">/)
+  assert.equal((h.match(/class="article-card"/g) || []).length, 1)
+  assert.match(h, /<a class="article-card" href="\/ai-readiness-study">/)
+  for (const gone of ['Coming soon', 'Beer Cartel', 'formspree', 'href="#"']) assert.ok(!h.includes(gone), `still contains ${gone}`)
+  assert.match(read('sitemap.xml'), /<loc>https:\/\/ecommerceteardown\.com\/articles<\/loc>/)
+  assert.match(read('llms.txt'), /\[Articles\]\(https:\/\/ecommerceteardown\.com\/articles\.md\)/)
+})
