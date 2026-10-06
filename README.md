@@ -39,6 +39,29 @@ Mexican lucha libre wrestling aesthetic meets professional ecommerce consulting,
 
 Page copy lives in `src/*.html` and `partials/`. After editing, run `npm run build:site` to regenerate the root `*.html`, the `.md` copies, `sitemap.xml` and `llms.txt`, then `npm test`. Open `index.html` in a browser to preview (Vercel deploys the root files from `main`; there is no build step on Vercel).
 
+### Agent discovery and DNS
+**Published and verified 2026-10-07, 10:17 AEDT.** Richard added `port=443` in GoDaddy. A fresh public scan accepted the ServiceMode record with port 443 and DNSSEC validation; the displayed score increased from **60/100 to 67/100**, with **Discoverability 4/4** and Level 4 (Agent-Integrated). The other displayed categories remained Content 1/1, Bot Access Control 2/2 and API/Auth/MCP/Skill Discovery 3/8. Commerce remains optional. Some regional resolver caches initially retained the earlier record under its one-hour TTL.
+
+The dated proposal below is retained as the pre-change record; its approval and publication steps have now been completed. The rollback value remains valid.
+
+The consulting site exposes its services and booking options through two browser WebMCP tools. Its generated agent skill, skills index and AI catalog live under `.well-known/`; their source is `scripts/lib/agent.mjs`, using facts and prices from `scripts/site.config.mjs`. The site has no public HTTP API, authentication service, remote MCP server or checkout. Publish metadata only for services that actually exist. The scanner's commerce checks are informational and do not affect its displayed score.
+
+**DNS change pending Richard's approval, 2026-10-07 (Sydney).** The public [agent-readiness report](https://isitagentready.com/ecommerceteardown.com) displays 60/100. Its DNS-AID check rejects the existing ServiceMode SVCB record because it lacks an explicit port. The existing record was authenticated by validating DNS resolvers; DNSSEC does not need to be enabled again.
+
+In GoDaddy, edit the existing SVCB record, preserving its name, priority, target, ALPN and one-hour TTL. Add only `port=443`:
+
+```dns
+_index._agents.ecommerceteardown.com. 3600 IN SVCB 1 ecommerceteardown.com. alpn="h2" port=443
+```
+
+Rollback: restore the existing value `1 ecommerceteardown.com. alpn=h2`, with TTL 3600. This record is separate from the website's A/CNAME and email records.
+
+After the approved edit, confirm the record in GoDaddy, then query its SVCB RRset through both [Google DNS](https://dns.google/resolve?name=_index._agents.ecommerceteardown.com&type=SVCB&do=1) and [Cloudflare DNS](https://cloudflare-dns.com/dns-query?name=_index._agents.ecommerceteardown.com&type=SVCB&do=1). Check for `port=443`, successful resolution and authenticated data (`AD=true`). Allow the existing one-hour cache TTL before treating an older answer as a failed publication. Rerun the public scanner and verify its DNS-AID result and displayed score; do not report an estimated score as achieved.
+
+The scan also observed DNSSEC SERVFAIL responses for absent `_mcp._agents` and `_search._agents` names. Those observations do not negate authentication of the existing `_index._agents` record, but do prevent claiming that all discovery-name lookups are healthy. If validation fails after publication, investigate the provider's signing responses before making further DNSSEC changes.
+
+This correction meets the scanner's explicit-port requirement. It does not establish a working MCP/A2A service or guarantee AI search rankings. [DNS-AID remains an Internet-Draft](https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/); [RFC 9460](https://www.rfc-editor.org/rfc/rfc9460) defines the underlying SVCB format.
+
 ### Telling Bing about new or changed pages (IndexNow)
 
 After a merge has deployed, run `npm run indexnow` to submit every URL in `sitemap.xml`, or `npm run indexnow -- <url>` for one page. It needs the site live first, because IndexNow checks the key file at the site root. The key is public by design.
