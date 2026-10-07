@@ -12,6 +12,14 @@ Plain-English writing on ecommerce and AI for Australian store owners, with the 
 
 [
 
+Case study, 7 October 2026
+
+## The Australian Craft Beer Survey
+
+How we built a research project the craft beer industry could use, with the original reports, independent coverage and shared credit.
+
+Read the case study →](https://ecommerceteardown.com/case-studies/australian-craft-beer-survey)[
+
 Research, 30 September 2026
 
 ## Can AI Find Australian Online Retailers? A 123-Store Study

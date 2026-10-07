@@ -1,0 +1,29 @@
+/* Scoped styles for biography, media and the survey case study. */
+.media-section { padding: 3rem 0; }
+.media-section h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.25; }
+.media-section p, .media-record p, .media-feature p { line-height: 1.65; color: var(--muted); }
+.media-section a, .media-record a, .media-feature a, .survey-editions a { color: var(--green); text-underline-offset: 4px; }
+.media-feature-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+.media-feature { border: 1px solid var(--border); border-radius: 12px; background: var(--dark-2); padding: 1.5rem; min-width: 0; }
+.media-feature h3, .media-record h3 { line-height: 1.35; margin: .4rem 0 .75rem; font-size: 1.25rem; overflow-wrap: anywhere; }
+.media-meta { font-size: .85rem; margin: 0; }
+.media-attribution { font-size: .85rem; margin: .75rem 0 0; color: var(--green) !important; }
+.media-jump { display: flex; flex-wrap: wrap; gap: .65rem; margin: 0 0 2rem; }
+.media-jump a { border: 1px solid var(--border); border-radius: 8px; padding: .6rem .9rem; color: var(--text); text-decoration: none; }
+.media-jump a:hover, .media-jump a:focus-visible { border-color: var(--green); }
+.media-group { scroll-margin-top: 110px; padding: 1.75rem 0 2rem; }
+.media-group-intro { color: var(--muted); }
+.media-record { padding: 1.5rem 0; border-bottom: 1px solid var(--border); max-width: 900px; }
+.media-record:last-child { border-bottom: 0; }
+.media-record p { margin-bottom: .5rem; }
+.media-prose { max-width: 860px; }
+.media-prose h2 { margin-top: 2.5rem; }
+.media-prose p, .media-prose li { line-height: 1.75; }
+.profile-timeline { margin: 1.5rem 0; padding-left: 1.5rem; }
+.profile-timeline li { padding: .75rem 0; color: var(--muted); }
+.profile-timeline strong { color: var(--text); }
+.survey-editions { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; }
+.survey-editions li { border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+.survey-editions span { display: block; color: var(--muted); font-size: .85rem; margin-top: .35rem; }
+.media-section a:focus-visible, .media-prose a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+@media (max-width: 760px) { .media-feature-grid, .survey-editions { grid-template-columns: 1fr; } .media-section { padding: 2rem 0; } }

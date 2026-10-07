@@ -35,18 +35,19 @@ test('every page declares Australian English', () => {
   assert.match(read('contact.html'), /<html lang="en-AU">/)
 })
 
-test('/cv shows the CV viewer before "At a glance", and the button says Open CV in new tab', () => {
+test('/cv shows the readable biography before the retained CV viewer', () => {
   const h = read('cv.html')
   const viewer = h.indexOf('class="cv-section"')
   const glance = h.indexOf('class="cv-summary"')
   assert.ok(viewer > 0 && glance > 0, 'both sections must exist')
-  assert.ok(viewer < glance, 'CV viewer must come before At a glance')
+  assert.ok(glance < viewer, 'Readable experience must come before the PDF viewer')
+  assert.ok(h.indexOf('From research to online retail') < glance)
   assert.ok(h.includes('>Open CV in new tab</a>'))
   assert.ok(!h.includes('>Open in new tab</a>'))
 })
 
 test('/consulting areas grid has six cards including Data & Reporting', () => {
-  const h = read('consulting.html')
+  const h = read('consulting.html').replace(/\r\n/g, '\n')
   const grid = h.match(/<div class="services-grid areas-grid">[\s\S]*?\n            <\/div>\n        <\/div>\n    <\/section>/)
   assert.ok(grid, 'areas grid missing')
   assert.equal((grid[0].match(/class="service-card"/g) || []).length, 6)
@@ -90,7 +91,7 @@ test('custom 404 page exists, is noindex and links home', () => {
 })
 
 test('/consulting shows How to Work With Me above Fixed-Price Starting Points', () => {
-  const h = read('consulting.html')
+  const h = read('consulting.html').replace(/\r\n/g, '\n')
   const a = h.indexOf('How to Work With Me')
   const b = h.indexOf('Fixed-Price Starting Points')
   assert.ok(a > 0 && b > 0 && a < b)
@@ -177,13 +178,14 @@ test('the header shows the phone number on desktop and in the mobile menu, and t
   assert.match(read('site.css'), /@media \(max-width: 979px\) \{\s*\.hamburger \{ display: flex; \}/)
 })
 
-test('/articles is live with the study as its only article, no placeholders, no client names, and is indexed', () => {
+test('/articles links both research articles without placeholders and is indexed', () => {
   const h = read('articles.html')
   assert.doesNotMatch(h, /noindex/)
   assert.match(h, /<link rel="canonical" href="https:\/\/ecommerceteardown\.com\/articles">/)
-  assert.equal((h.match(/class="article-card"/g) || []).length, 1)
+  assert.equal((h.match(/class="article-card"/g) || []).length, 2)
+  assert.ok(h.includes('href="/case-studies/australian-craft-beer-survey"'))
   assert.match(h, /<a class="article-card" href="\/ai-readiness-study">/)
-  for (const gone of ['Coming soon', 'Beer Cartel', 'formspree', 'href="#"']) assert.ok(!h.includes(gone), `still contains ${gone}`)
+  for (const gone of ['Coming soon', 'formspree', 'href="#"']) assert.ok(!h.includes(gone), `still contains ${gone}`)
   assert.match(read('sitemap.xml'), /<loc>https:\/\/ecommerceteardown\.com\/articles<\/loc>/)
   assert.match(read('llms.txt'), /\[Articles\]\(https:\/\/ecommerceteardown\.com\/articles\.md\)/)
 })

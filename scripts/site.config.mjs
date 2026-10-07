@@ -17,6 +17,7 @@ export const SITE = {
     name: 'Richard Kelsey',
     jobTitle: 'Ecommerce and AI consultant',
     linkedin: 'https://www.linkedin.com/in/richardkelsey',
+    m4tProfile: 'https://made4tradies.com.au/about/richard-kelsey',
     locality: 'Sydney',
     region: 'NSW',
     country: 'AU',
@@ -31,10 +32,14 @@ export const SITE = {
  * llms:   null, or { section, label } for llms.txt
  */
 export const PAGES = [
+  { src: 'media.html', out: 'media.html', nav: null, path: '/media', index: true,
+    schema: ['mediaCollection'], llms: { section: 'Writing', label: 'Media and podcasts' } },
+  { src: 'australian-craft-beer-survey.html', out: 'case-studies/australian-craft-beer-survey.html', nav: null, path: '/case-studies/australian-craft-beer-survey', index: true, published: '2026-10-07', modified: '2026-10-07',
+    schema: ['article'], llms: { section: 'Writing', label: 'Australian Craft Beer Survey case study' } },
   { src: 'index.html', out: 'index.html', nav: null, path: '/', index: true,
     schema: ['person', 'professionalService', 'website'], llms: { section: 'About', label: 'Home' } },
   { src: 'cv.html', out: 'cv.html', nav: 'cv', path: '/cv', index: true,
-    schema: ['person'], llms: { section: 'About', label: 'Experience' } },
+    schema: ['person', 'profile'], llms: { section: 'About', label: 'Experience' } },
   { src: 'articles.html', out: 'articles.html', nav: null, path: '/articles', index: true,
     schema: [], llms: { section: 'Writing', label: 'Articles' } },
   { src: 'linkedin.html', out: 'linkedin.html', nav: null, path: '/linkedin', index: true,
