@@ -3,6 +3,24 @@ import { schemasFor } from './schema.mjs'
 import TurndownService from 'turndown'
 import { getTitle, getMetaDescription, mainOrBody } from './html.mjs'
 
+
+/** Shared image metadata. Page titles and descriptions remain in their source heads. */
+export function socialImageMeta() {
+  const escape = (value) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
+  const image = escape(SITE.ogImage)
+  const alt = escape(SITE.ogImageAlt)
+  return [
+    `<meta property="og:image" content="${image}">`,
+    '<meta property="og:image:width" content="1200">',
+    '<meta property="og:image:height" content="630">',
+    '<meta property="og:image:type" content="image/png">',
+    `<meta property="og:image:alt" content="${alt}">`,
+    '<meta name="twitter:card" content="summary_large_image">',
+    `<meta name="twitter:image" content="${image}">`,
+    `<meta name="twitter:image:alt" content="${alt}">`,
+  ].join('\n    ')
+}
+
 export const canonicalUrl = (page) => SITE.url + page.path
 export const mdPathFor = (page) => (page.path === '/' ? '/index.md' : `${page.path}.md`)
 

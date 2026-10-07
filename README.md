@@ -161,3 +161,20 @@ sections. This is not manual listening. Keep its ASR uncertainty and time-covera
 evidence in the screening record; do not treat show notes alone as a full screen.
 
 Episode 278 retains approximately nine seconds of untranscribed opening show music\nafter the targeted second-model pass. This is a stated ASR coverage limit, not a\nclaim of manual listening or a guarantee that transcription captured every word.\n
+
+## Social sharing card
+
+The current consulting card is images/richard-kelsey-social-2026.png (1200 by
+630 pixels). scripts/generate-social-card.mjs renders it from the site's current
+dark/green branding and existing Richard hero photo, using the installed sharp
+dependency. Run npm run build:social-card to regenerate it and visually inspect
+the PNG before committing. If the design changes, use a new asset filename and
+update the generator and SITE.ogImage together so new crawls request a fresh URL.
+
+SITE.ogImage and SITE.ogImageAlt in scripts/site.config.mjs own the shared card.
+The <!-- SOCIAL_IMAGE --> marker in source heads is replaced at build time with
+Open Graph dimensions, type and alt text plus the Twitter large-image card.
+Page-specific titles and descriptions stay in src/*.html. Run npm run build:site
+and npm test, then commit the generated pages alongside the image and source.
+The original wrestling graphic is retained as a legacy asset, with no active
+page metadata pointing to it. Cached page previews may require another crawl.

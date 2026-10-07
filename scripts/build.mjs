@@ -6,7 +6,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { PAGES } from './site.config.mjs'
-import { seoBlock, sitemapXml, llmsTxt, pageMarkdown, mdPathFor } from './lib/outputs.mjs'
+import { seoBlock, socialImageMeta, sitemapXml, llmsTxt, pageMarkdown, mdPathFor } from './lib/outputs.mjs'
 import { getTitle, getMetaDescription } from './lib/html.mjs'
 import { agentFiles } from './lib/agent.mjs'
 import { mediaArchive, featuredMedia, surveyEditions } from './lib/media.mjs'
@@ -38,6 +38,7 @@ export async function build({ root = ROOT, outDir = root } = {}) {
     body = body.replace('<!-- MEDIA_ARCHIVE -->', () => mediaArchive())
       .replace('<!-- FEATURED_MEDIA -->', () => featuredMedia())
       .replace('<!-- SURVEY_EDITIONS -->', () => surveyEditions())
+    body = body.replace('<!-- SOCIAL_IMAGE -->', () => socialImageMeta())
     body = body.replace('<!-- SEO -->', () => seoBlock(page, body))
     await fs.mkdir(path.dirname(path.join(outDir, page.out)), { recursive: true })
     await fs.writeFile(path.join(outDir, page.out), body, 'utf8')
