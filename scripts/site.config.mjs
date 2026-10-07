@@ -7,8 +7,9 @@
 export const SITE = {
   url: 'https://ecommerceteardown.com',
   name: 'Ecommerce Teardown',
-  ogImage: 'https://ecommerceteardown.com/images/og-image.png',
-  // A photo of Richard, used as the Person and ProfessionalService image (og-image.png is a social-card graphic).
+  ogImage: 'https://ecommerceteardown.com/images/richard-kelsey-social-2026.png',
+  ogImageAlt: 'Richard Kelsey, ecommerce growth and practical AI for Australian online retailers.',
+  // A photo of Richard, used as the Person and ProfessionalService image (the shared OG image is a social-card graphic).
   ownerImage: 'https://ecommerceteardown.com/images/richard-headshot-360.webp',
   // One facts block. llms.txt and the JSON-LD descriptions both use it, so the claims match everywhere.
   summary:
