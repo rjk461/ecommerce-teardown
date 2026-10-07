@@ -1,5 +1,6 @@
 import { SITE, OFFERS } from '../site.config.mjs'
 import { extractFaq, getTitle, getMetaDescription } from './html.mjs'
+import { mediaCollectionSchema } from './media.mjs'
 
 const CONTEXT = 'https://schema.org'
 const PERSON_ID = `${SITE.url}/#richard-kelsey`
@@ -14,7 +15,7 @@ const person = () => ({
   description: SITE.summary,
   url: SITE.url + '/',
   image: SITE.ownerImage,
-  sameAs: [SITE.owner.linkedin],
+  sameAs: [SITE.owner.linkedin, SITE.owner.m4tProfile],
   address: {
     '@type': 'PostalAddress',
     addressLocality: SITE.owner.locality,
@@ -93,7 +94,7 @@ const article = (page, html) => ({
   dateModified: page.modified || page.published,
   inLanguage: 'en-AU',
   image: SITE.ogImage,
-  author: { '@id': PERSON_ID },
+  author: { '@type': 'Person', '@id': PERSON_ID, name: SITE.owner.name, url: SITE.url + '/cv' },
   publisher: { '@id': PERSON_ID },
 })
 
@@ -112,6 +113,8 @@ const faq = (html) => ({
 export function schemasFor(page, html) {
   const makers = {
     person: () => person(),
+    profile: () => ({ '@context': CONTEXT, '@type': 'ProfilePage', url: SITE.url + page.path, mainEntity: { '@id': PERSON_ID } }),
+    mediaCollection: () => mediaCollectionSchema(SITE, PERSON_ID),
     professionalService: () => professionalService(),
     website: () => website(),
     service: () => service(page, html),

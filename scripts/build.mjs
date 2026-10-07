@@ -9,6 +9,7 @@ import { PAGES } from './site.config.mjs'
 import { seoBlock, sitemapXml, llmsTxt, pageMarkdown, mdPathFor } from './lib/outputs.mjs'
 import { getTitle, getMetaDescription } from './lib/html.mjs'
 import { agentFiles } from './lib/agent.mjs'
+import { mediaArchive, featuredMedia, surveyEditions } from './lib/media.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -34,7 +35,11 @@ export async function build({ root = ROOT, outDir = root } = {}) {
     const header = injectNav(headerTpl, page.nav)
     body = body.replace('<!-- HEADER -->', () => header).replace('<!-- FOOTER -->', () => footerTpl)
     if (!body.includes('<!-- SEO -->')) throw new Error(`Missing SEO marker in ${page.src}`)
+    body = body.replace('<!-- MEDIA_ARCHIVE -->', () => mediaArchive())
+      .replace('<!-- FEATURED_MEDIA -->', () => featuredMedia())
+      .replace('<!-- SURVEY_EDITIONS -->', () => surveyEditions())
     body = body.replace('<!-- SEO -->', () => seoBlock(page, body))
+    await fs.mkdir(path.dirname(path.join(outDir, page.out)), { recursive: true })
     await fs.writeFile(path.join(outDir, page.out), body, 'utf8')
     written.push(page.out)
     built.push({ page, html: body })
@@ -44,6 +49,7 @@ export async function build({ root = ROOT, outDir = root } = {}) {
   for (const { page, html } of built) {
     if (!page.index) continue
     const rel = mdPathFor(page).slice(1)
+    await fs.mkdir(path.dirname(path.join(outDir, rel)), { recursive: true })
     await fs.writeFile(path.join(outDir, rel), pageMarkdown(page, html), 'utf8')
     written.push(rel)
     if (page.llms) entries.push({ page, title: getTitle(html), description: getMetaDescription(html) })

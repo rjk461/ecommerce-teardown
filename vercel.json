@@ -163,6 +163,24 @@
           "value": "text/plain; charset=utf-8"
         }
       ]
+    },
+    {
+      "source": "/media",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</media.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/case-studies/australian-craft-beer-survey",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</case-studies/australian-craft-beer-survey.md>; rel=\"alternate\"; type=\"text/markdown\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        }
+      ]
     }
   ],
   "redirects": [

@@ -123,3 +123,41 @@ Deployed automatically via Vercel on push to `main` branch.
 ---
 
 **Let's build something new** 🎭💪🔥
+
+
+## Biography, media and survey sources
+
+The readable biography stays at /cv; its existing PDF remains available. Richard's
+Person ID is unchanged. His Made 4 Tradies biography is the reciprocal personal
+profile in sameAs; press coverage is not identity metadata.
+
+The media archive at /media is generated from scripts/media.config.mjs. Only
+included records with completed screening enter the public data. Read the entire
+article or publisher transcript before adding a record. For audio-only sources,
+screen the complete recording using a transcript and check uncertain segments.
+Exclude the entire piece if it mentions crowdfunding. Hold inaccessible or
+incompletely screened sources outside this public module. Do not add their URLs,
+titles or screening notes to public output.
+
+Record exact source URLs, personal versus company attribution, publisher, a
+conservative original summary and a publication date only when established.
+Unknown dates stay unknown. An edition year is not its publication date. Vendor
+case studies and company releases are labelled as such; their reported business
+outcomes are not independently audited. Deduplicate alternate URLs for one story.
+
+The survey case study links six original report editions, shares team and partner
+credit, and states the limits of the sample and commercial claims. Its new
+publication date does not change the historic source dates.
+
+Run npm run build:site after changing source pages or media records, then npm test.
+Commit the generated HTML, Markdown, sitemap and llms.txt together. The build
+supports nested case-study paths; middleware and Vercel Link headers must include
+each indexed route. Visual checks cover desktop and phone layouts, category links,
+profile links and the retained PDF.
+
+Audio screening for the Small Business Big Marketing archive entries uses a local
+machine transcript covering the full recording, including sponsor and outro
+sections. This is not manual listening. Keep its ASR uncertainty and time-coverage
+evidence in the screening record; do not treat show notes alone as a full screen.
+
+Episode 278 retains approximately nine seconds of untranscribed opening show music\nafter the targeted second-model pass. This is a stated ASR coverage limit, not a\nclaim of manual listening or a guarantee that transcription captured every word.\n

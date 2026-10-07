@@ -15,6 +15,8 @@
 
 ## Writing
 
+- [Media and podcasts](https://ecommerceteardown.com/media.md): Interviews, podcasts, retail coverage and Australian Craft Beer Survey reports connected to Richard Kelsey and Beer Cartel.
+- [Australian Craft Beer Survey case study](https://ecommerceteardown.com/case-studies/australian-craft-beer-survey.md): How Richard Kelsey and Beer Cartel built the Australian Craft Beer Survey, worked with industry partners and published six research editions.
 - [Articles](https://ecommerceteardown.com/articles.md): Research and plain-English guides on ecommerce and AI for Australian online retailers, by Richard Kelsey.
 - [LinkedIn posts](https://ecommerceteardown.com/linkedin.md): Richard Kelsey's LinkedIn posts on ecommerce strategy, marketing leadership, and building Australian retail brands.
 - [Can AI find Australian online retailers? A 123-store study](https://ecommerceteardown.com/ai-readiness-study.md): What 123 Australian online retailers do about AI crawlers, what blocking them means, and what a store owner can do. Plain-English results, no retailers named.

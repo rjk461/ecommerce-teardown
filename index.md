@@ -216,3 +216,33 @@ AUD · 2 days/month · 1-month minimum
 Teardowns, tactics, and honest takes on what's working in Australian ecommerce. No fluff.
 
 No spam. Unsubscribe anytime.
+
+## Research and retail experience
+
+Interviews and reporting from my time building Beer Cartel and the Australian Craft Beer Survey.
+
+The Crafty Pint · 17 October 2019
+
+### [Balter Top Australia's Biggest Craft Beer Survey](https://craftypint.com/news/2209/balter-top-australias-biggest-craft-beer-survey)
+
+Reports the 2019 results and identifies Rich Kelsey as a driving force behind the survey. He comments on changes in craft beer preferences.
+
+Richard quoted
+
+The Crafty Pint · 28 November 2019
+
+### [Behind Bars: Beer Cartel At Ten](https://craftypint.com/news/2241/behind-bars-beer-cartel-at-ten)
+
+An anniversary profile covers the founders, ecommerce business and survey. Richard describes designing the research with input from industry participants.
+
+Richard interview
+
+SmartCompany · 27 July 2018
+
+### [Using market research to build Beer Cartel](https://www.smartcompany.com.au/retail/savvy-market-research-won-beer-cartel-online-retail-award/)
+
+Richard explains how the Australian Craft Beer Survey supported industry knowledge and content marketing. The article credits both founders with developing the campaign and reports Beer Cartel's ORIAS award.
+
+Richard interview
+
+[Browse the media archive](https://ecommerceteardown.com/media) or [read my biography and experience](https://ecommerceteardown.com/cv).
