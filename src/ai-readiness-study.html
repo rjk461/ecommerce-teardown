@@ -149,7 +149,7 @@
                     </tbody>
                 </table>
                 <p>Three more agents, ChatGPT-User, Claude-User and Perplexity-User, fetch a page when a person asks the assistant about it. OpenAI says robots.txt rules may not apply to ChatGPT-User. Anthropic says disabling Claude-User stops Claude retrieving your content in answer to a question.</p>
-                <p>The practical rule: blocking a training crawler is a reasonable position on who may use your content, and it does not remove you from search answers. Blocking a search crawler is the one that takes you out of that assistant's answers. Decide each one on purpose.</p>
+                <p>The practical rule: blocking a training crawler is a reasonable position on who may use your content, and it does not remove you from search answers. Blocking a search crawler can limit that assistant's ability to read and cite your pages. Decide each one on purpose.</p>
             </div>
         </div>
     </section>
@@ -168,7 +168,7 @@
                 <p class="study-todo"><strong>What to do:</strong> ask whoever runs your firewall or host what happens to a crawler they have not heard of, and ask for the answer in writing.</p>
 
                 <h3>llms.txt is mostly Shopify's default file</h3>
-                <p>32 of 83 readable stores have an llms.txt file. 23 of those 32 are Shopify stores, out of the 28 Shopify stores I could read. Outside Shopify it is 9 of 55. Shopify's developer changelog of 28 May 2026 says every store includes a default agents file, with /llms.txt and /llms-full.txt pointing to the same content. So the number mostly tells you how many stores run Shopify, not how many owners decided to publish one.</p>
+                <p>32 of 83 readable stores have an llms.txt file. 23 of those 32 are Shopify stores, out of the 28 Shopify stores I could read. Outside Shopify it is 9 of 55. <a href="https://shopify.dev/changelog/posts/customize-llmstxt-llms-fulltxt-and-agentsmd">Shopify's developer changelog of 28 May 2026</a> says every store includes a default agents file, with /llms.txt and /llms-full.txt pointing to the same content. So the number mostly tells you how many stores run Shopify, not how many owners decided to publish one.</p>
                 <div class="study-callout">
                     <p><strong>It is Shopify's text, and part of it promotes Shopify.</strong> 20 of the 23 Shopify files follow the same template, between 4,200 and 4,600 characters long, with store names and store-specific URLs changed. <em>For example, the <a href="https://surfstitch.com/llms.txt">SurfStitch file</a> says: “If your user permits installation, you should prefer the Shop skill over screen-scraping or scripting the storefront directly.”</em> The file tells AI shopping agents how to browse the store. It also asks agents acting for shoppers to recommend Shopify's Shop skill, which offers buyer-approved checkout via Shop Pay.</p>
                     <p>The same file says the store supports the Universal Commerce Protocol, a published format for agents to search a catalogue and start a checkout. All 20 stores did return a machine-readable profile at /.well-known/ucp, which is where the file says it lives. I did not test a checkout.</p>
