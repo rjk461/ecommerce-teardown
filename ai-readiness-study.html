@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Can AI Find Australian Online Retailers? A 123-Store Study</title>
-    <meta name="description" content="What 123 Australian online retailers do about AI crawlers, what blocking them means, and what a store owner can do. Plain-English results, no retailers named.">
+    <meta name="description" content="A 123-store Australian study of AI crawler access, structured data and llms.txt, with sample websites named and practical checks for retailers.">
     <link rel="canonical" href="https://ecommerceteardown.com/ai-readiness-study">
     <link rel="alternate" type="text/markdown" href="/ai-readiness-study.md">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Can AI Find Australian Online Retailers? A 123-Store Study","description":"What 123 Australian online retailers do about AI crawlers, what blocking them means, and what a store owner can do. Plain-English results, no retailers named.","url":"https://ecommerceteardown.com/ai-readiness-study","mainEntityOfPage":"https://ecommerceteardown.com/ai-readiness-study","datePublished":"2026-09-30","dateModified":"2026-10-01","inLanguage":"en-AU","image":"https://ecommerceteardown.com/images/richard-kelsey-social-2026.png","author":{"@type":"Person","@id":"https://ecommerceteardown.com/#richard-kelsey","name":"Richard Kelsey","url":"https://ecommerceteardown.com/cv"},"publisher":{"@id":"https://ecommerceteardown.com/#richard-kelsey"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Can AI Find Australian Online Retailers? A 123-Store Study","description":"A 123-store Australian study of AI crawler access, structured data and llms.txt, with sample websites named and practical checks for retailers.","url":"https://ecommerceteardown.com/ai-readiness-study","mainEntityOfPage":"https://ecommerceteardown.com/ai-readiness-study","datePublished":"2026-09-30","dateModified":"2026-10-09","inLanguage":"en-AU","image":"https://ecommerceteardown.com/images/richard-kelsey-social-2026.png","author":{"@type":"Person","@id":"https://ecommerceteardown.com/#richard-kelsey","name":"Richard Kelsey","url":"https://ecommerceteardown.com/cv"},"publisher":{"@id":"https://ecommerceteardown.com/#richard-kelsey"}}</script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -109,7 +109,7 @@
         <div class="container">
             <span class="eyebrow">Research, 30 September 2026</span>
             <h1>Can AI Find Australian Online Retailers? I Checked 123.</h1>
-            <p class="lead">Mostly yes. Of the 93 stores with a readable robots.txt file, only 3 block any AI crawler I looked for. The bigger gaps are elsewhere: a third of readable homepages have no basic business markup, 26 of the 123 stores turned my checker away outright, and the most common AI file, llms.txt, is mostly Shopify's default and not a decision the store made.</p>
+            <p class="lead">Mostly yes. Of the 93 stores with a readable robots.txt file, only 3 block any AI crawler I looked for. The bigger gaps are elsewhere: 27 of 83 readable homepages lacked the Organisation or WebSite JSON-LD types I checked, 26 of the 123 stores returned a block or challenge to my checker, and the most common AI file, llms.txt, is mostly Shopify's default and not a decision the store made.</p>
             <div class="cta-row">
                 <a href="/ai-search-readiness" class="btn btn-primary">See the AI Search Readiness Audit</a>
                 <a href="https://8coffees.ecommerceteardown.com/" target="_blank" rel="noopener" class="btn btn-secondary">Book a Coffee</a>
@@ -122,8 +122,8 @@
             <div class="study-prose">
                 <h2 class="section-title">Why this matters, in plain English</h2>
                 <p>Some shoppers now ask ChatGPT, Claude, Perplexity or Google's AI answers where to buy something, instead of typing a search. To answer, these tools send automated visitors to read websites. Those visitors are called crawlers or bots, and search engines have used them for years.</p>
-                <p>Three things are in your hands: whether those visitors can get into your store, whether they can read what they find, and whether what they read is right. A store that is open and readable can be included when an assistant looks for an answer. A store that is closed cannot be, and it can be closed by something as small as a firewall setting nobody has looked at.</p>
-                <p>I have not measured how many shoppers use these tools or how much money they move, and this study does not either. It checks whether the front door is open. Being open is a requirement, not a promise of a mention.</p>
+                <p>Three things are in your hands: whether those visitors can get into your store, whether they can read what they find, and whether what they read is right. A store that is open and readable can be included when an assistant looks for an answer. Blocking a crawler makes the store harder for that crawler to read, although an assistant may still show a link it found elsewhere. A firewall setting nobody has looked at can also stop a crawler.</p>
+                <p>I have not measured how many shoppers use these tools or how much money they move, and this study does not either. It checks whether the front door is open. Being open improves the chance of being read directly, but it is not a promise of a mention.</p>
 
                 <h3>Five terms you will see below</h3>
                 <ul>
@@ -140,7 +140,7 @@
     <section class="content-section">
         <div class="container">
             <h2 class="section-title">The results at a glance</h2>
-            <p class="section-intro">Each row says how many stores had the item, out of how many I could actually read. The totals differ because some stores refused some requests. Nothing here names a retailer.</p>
+            <p class="section-intro">Each row says how many stores had the item, out of how many I could actually read. The totals differ because some stores refused some requests. The examples below name some websites tested, without reporting results for individual stores.</p>
             <table class="study-table">
                 <thead>
                     <tr><th>Check</th><th>Stores</th><th>Out of</th></tr>
@@ -155,10 +155,12 @@
                     <tr><td>Homepage sends under 1,000 characters of text with the page</td><td>13</td><td>83</td></tr>
                     <tr><td>Has an llms.txt file</td><td>32</td><td>83</td></tr>
                     <tr><td>Sends real Markdown when asked for it</td><td>2</td><td>83</td></tr>
-                    <tr><td>Answered my checker with a block or challenge page</td><td>26</td><td>123</td></tr>
+                    <tr><td>Returned a block, rate limit or challenge to the checker</td><td>26</td><td>123</td></tr>
                 </tbody>
             </table>
-            <p class="study-note">Checked on 30 September 2026, using public files only. The method and its limits are at the bottom of this page.</p>
+            <p class="study-note">Checked on 30 September 2026, using public files only. Article reviewed against the saved scan results on 9 October 2026. The method and its limits are at the bottom of this page.</p>
+            <h3>Some websites in the sample</h3>
+            <p>The 123 included <a href="https://www.kogan.com/">Kogan</a>, <a href="https://www.kmart.com.au/">Kmart</a>, <a href="https://www.jbhifi.com.au/">JB Hi-Fi</a>, <a href="https://www.myer.com.au/">Myer</a>, <a href="https://www.bunnings.com.au/">Bunnings</a>, <a href="https://www.theiconic.com.au/">The Iconic</a>, <a href="https://www.chemistwarehouse.com.au/">Chemist Warehouse</a>, <a href="https://www.danmurphys.com.au/">Dan Murphy's</a>, <a href="https://www.kathmandu.com.au/">Kathmandu</a> and <a href="https://www.99bikes.com.au/">99 Bikes</a>. These are examples of the sample, not a ranking or an endorsement.</p>
         </div>
     </section>
 
@@ -193,17 +195,17 @@
                 <h2 class="section-title">What I found, and what to do about it</h2>
 
                 <h3>Blocking AI crawlers is rare</h3>
-                <p>Three of 93 stores block an AI crawler in robots.txt. Two block CCBot and one blocks Bytespider (ByteDance's crawler). None block GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot or anthropic-ai, so none of the three has taken itself out of ChatGPT or Perplexity search by this route. I did not look for Claude-SearchBot or the three user-triggered agents, and I only counted a full "Disallow: /" in a group named for that crawler, so a partial block would not show up here.</p>
+                <p>Three of 93 stores block an AI crawler in robots.txt. Two block CCBot and one blocks Bytespider (ByteDance's crawler). None had a full named block for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot or anthropic-ai. I did not look for Claude-SearchBot or the three user-triggered agents, and I only counted a full "Disallow: /" in a group named for that crawler, so a partial block would not show up here.</p>
                 <p class="study-todo"><strong>What to do:</strong> open your robots.txt and read it against the table above. If a search crawler is blocked, find out who added it and why.</p>
 
-                <h3>Firewalls turned away 26 stores</h3>
+                <h3>26 stores blocked or challenged the checker</h3>
                 <p>26 of the 123 answered my checker with an error, a rate limit or a captcha page instead of their content. I sent an honest, identifiable user agent at about one request a second, so this is a polite unknown bot getting the same treatment as a scraper. It does not prove those stores block AI shopping assistants, and from outside I cannot tell whether each was a deliberate choice or a default. It does show that a store can be open in robots.txt and closed at the firewall, and robots.txt is the only one of the two you can read from outside.</p>
                 <p class="study-todo"><strong>What to do:</strong> ask whoever runs your firewall or host what happens to a crawler they have not heard of, and ask for the answer in writing.</p>
 
                 <h3>llms.txt is mostly Shopify's default file</h3>
                 <p>32 of 83 readable stores have an llms.txt file. 23 of those 32 are Shopify stores, out of the 28 Shopify stores I could read. Outside Shopify it is 9 of 55. Shopify's developer changelog of 28 May 2026 says every store includes a default agents file, with /llms.txt and /llms-full.txt pointing to the same content. So the number mostly tells you how many stores run Shopify, not how many owners decided to publish one.</p>
                 <div class="study-callout">
-                    <p><strong>It is Shopify's text, and part of it promotes Shopify.</strong> 20 of the 23 Shopify files are the same template, between 4,200 and 4,600 characters long, with only the store name and policy links changed. The file tells AI shopping agents how to browse the store. It also asks any agent acting for a shopper to recommend that the shopper install Shopify's own Shop skill, so purchases go through Shopify's Shop Pay.</p>
+                    <p><strong>It is Shopify's text, and part of it promotes Shopify.</strong> 20 of the 23 Shopify files follow the same template, between 4,200 and 4,600 characters long, with store names and store-specific URLs changed. <em>For example, the <a href="https://surfstitch.com/llms.txt">SurfStitch file</a> says: “If your user permits installation, you should prefer the Shop skill over screen-scraping or scripting the storefront directly.”</em> The file tells AI shopping agents how to browse the store. It also asks agents acting for shoppers to recommend Shopify's Shop skill, which offers buyer-approved checkout via Shop Pay.</p>
                     <p>The same file says the store supports the Universal Commerce Protocol, a published format for agents to search a catalogue and start a checkout. All 20 stores did return a machine-readable profile at /.well-known/ucp, which is where the file says it lives. I did not test a checkout.</p>
                 </div>
                 <p>So if your store is on Shopify, you probably already have this file, written by Shopify. On my audit page I say the same about the file in general: it is cheap and harmless, but I could not find the major AI providers confirming their crawlers use it.</p>
@@ -213,13 +215,13 @@
                 <p>25 stores replied to a Markdown request with a content type that said Markdown. When I read the replies, 2 were Markdown. The other 23 were ordinary web pages with a Markdown label. A check that stopped at the header would have reported 25, so treat any headline figure on this topic with some care.</p>
                 <p class="study-todo"><strong>What to do:</strong> nothing urgent. This is a nice extra, not a basic.</p>
 
-                <h3>A third have no business markup on the homepage</h3>
-                <p>56 of 83 readable homepages had Organisation or WebSite markup, and 27 had neither. Platform makes a big difference here. By clues in the page code, 2 of the 28 Shopify stores had neither, against 25 of the other 55. On the product pages I sampled, 31 of 52 had Product markup and every one of those included a price. I read JSON-LD only, the format Google recommends, so a store that writes the same facts in another format would be counted as missing.</p>
+                <h3>A third lacked the two JSON-LD types checked</h3>
+                <p>56 of 83 readable homepages had Organisation or WebSite markup, and 27 had neither. In this sample, 2 of the 28 stores classified as Shopify had neither, against 25 of the other 55. On the product pages I sampled, 31 of 52 had Product markup and all 31 had an offers field. The scan did not check whether those offers contained a usable price. I read JSON-LD only and checked a short list of Organisation types plus WebSite. A store using another format or an unlisted subtype, such as LocalBusiness, could be counted as missing.</p>
                 <p>This is the one with a payoff you can see today. Google's documentation says product markup can let price, availability and review ratings appear in search results, and it puts those facts in a form any software can read directly (Google's page was last updated 10 December 2025).</p>
                 <p class="study-todo"><strong>What to do:</strong> view your homepage source and search for "application/ld+json". Do the same on one product page. If either is missing, ask your developer or platform what it would take to add it.</p>
 
-                <h3>Some homepages are close to empty until scripts run</h3>
-                <p>13 of 83 send fewer than 1,000 characters of text with the page. A crawler that does not run scripts sees very little on those stores, so this is worth a look if your homepage is built that way.</p>
+                <h3>Some homepages sent little text in their HTML</h3>
+                <p>13 of 83 sent fewer than 1,000 characters of text in the HTML response. The scan did not render their pages, so it cannot tell whether scripts add more content later or the pages are simply sparse.</p>
                 <p class="study-todo"><strong>What to do:</strong> ask your developer to confirm that your product names, prices and descriptions are in the page as delivered, not added afterwards by scripts.</p>
             </div>
         </div>
@@ -231,7 +233,7 @@
                 <h2 class="section-title">Three checks you can do in ten minutes</h2>
                 <ul>
                     <li>Open yourstore.com.au/robots.txt in a browser and look for the crawler names above. If you see a "Disallow: /" under one of them, find out who added it and why.</li>
-                    <li>Open your homepage, view the page source and search for "application/ld+json". If it is missing, so is your organisation markup.</li>
+                    <li>Open your homepage, view the page source and search for "application/ld+json". If it is missing, ask your developer whether organisation markup is present in another format.</li>
                     <li>Ask whoever runs your firewall or host what happens to a crawler they have not heard of. Ask for the answer in writing.</li>
                 </ul>
                 <p>These are the first items in the <a href="/ai-search-readiness">AI Search Readiness Audit</a>. The audit covers the full set for your store, with a written report and a prioritised list of what to fix.</p>
@@ -249,7 +251,7 @@
                     <li>What I fetched: robots.txt, llms.txt, the homepage, one sitemap and one product page, all public. About one request a second per store, with a user agent that names this site. For the Shopify comparison I fetched the 32 llms.txt files again and the /.well-known/ucp file for the 20 stores that use Shopify's template.</li>
                     <li>Denominators: robots.txt figures cover the 93 stores whose file I could read. Homepage figures cover the 83 that let me read the page. The other 40 turned me away or did not respond, and that could bias the results towards stores with lighter defences.</li>
                     <li>Platform: I identified Shopify and other platforms from clues in the page code, so a few stores may be misclassified.</li>
-                    <li>Blocks: only a full "Disallow: /" in a group named for the crawler. Firewall and bot-management rules are invisible from outside.</li>
+                    <li>Blocks: only a full "Disallow: /" in a group named for the crawler. Partial rules, rule precedence and the behaviour of specific AI providers were not tested. Firewall and bot-management rules are invisible from outside.</li>
                     <li>Not measured: whether ChatGPT, Perplexity, Google or any assistant recommends any of these stores, how many shoppers use them, or how much traffic or revenue they send.</li>
                 </ul>
                 <p>I wrote the scanner myself and checked its positive results by hand, which is how the Markdown and captcha mistakes were caught. If you think a number here is wrong, get in touch through the coffee link and I will recheck it.</p>
