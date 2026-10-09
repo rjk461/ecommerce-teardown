@@ -57,7 +57,7 @@ export const PAGES = [
     schema: ['professionalService', 'service', 'faq'], llms: { section: 'Services', label: 'AI strategy for ecommerce' } },
   { src: 'ai-search-readiness.html', out: 'ai-search-readiness.html', nav: 'ai-strategy', path: '/ai-search-readiness', index: true,
     schema: ['professionalService', 'service', 'faq'], llms: { section: 'Services', label: 'AI search readiness audit' } },
-  { src: 'ai-readiness-study.html', out: 'ai-readiness-study.html', nav: null, path: '/ai-readiness-study', index: true, published: '2026-09-30', modified: '2026-10-01',
+  { src: 'ai-readiness-study.html', out: 'ai-readiness-study.html', nav: null, path: '/ai-readiness-study', index: true, published: '2026-09-30', modified: '2026-10-09',
     schema: ['article'], llms: { section: 'Writing', label: 'Can AI find Australian online retailers? A 123-store study' } },
 ]
 
